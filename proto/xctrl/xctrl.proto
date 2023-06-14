@@ -464,7 +464,8 @@ message ChannelEvent {
   bool video = 22;
   bool held = 23;
   bool bridged = 24;
-  string caller_source = 25;
+  string context = 25;
+  string caller_source = 26;
 }
 
 message DTMFEvent {

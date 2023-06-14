@@ -434,6 +434,7 @@
 | video | [bool](#bool) |  |  |
 | held | [bool](#bool) |  |  |
 | bridged | [bool](#bool) |  |  |
+| context | [string](#string) |  |  |
 | caller_source | [string](#string) |  |  |
 
 
