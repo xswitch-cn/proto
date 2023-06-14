@@ -3,7 +3,7 @@ module git.xswitch.cn/xswitch/proto
 go 1.16
 
 require (
-	git.xswitch.cn/xswitch/xctrl v1.1.0
+	git.xswitch.cn/xswitch/xctrl v1.1.1
 	github.com/davecgh/go-spew v1.1.1
 	github.com/go-redis/redis/v7 v7.4.1
 	github.com/go-sql-driver/mysql v1.5.0
