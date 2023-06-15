@@ -8,46 +8,37 @@ import (
 
 	"git.xswitch.cn/xswitch/proto/go/proto/cman"
 	"git.xswitch.cn/xswitch/proto/go/proto/xctrl"
-	"git.xswitch.cn/xswitch/xctrl/ctrl"
+	"git.xswitch.cn/xswitch/proto/xctrl/client"
+	ulog "git.xswitch.cn/xswitch/proto/xctrl/util/log"
 )
 
 type Logger struct {
-	ctrl.Logger
+	ulog.Logger
 }
 
 func (t *Logger) Log(level int, v ...interface{}) {
-	// if ctrl.LogLevel(level) == ctrl.LLTrace {
-	// }
 	log.Println(v...)
 }
 
 func (t *Logger) Logf(level int, format string, v ...interface{}) {
-	// if ctrl.LogLevel(level) == ctrl.LLTrace {
-	// }
 	log.Printf(format, v...)
 }
 
 // simple example
 func main() {
-	logLevel := ctrl.LLDebug
-	// logLevel = ctrl.LLTrace // uncomment this line to enable trace log
-	isTrace := logLevel == ctrl.LLTrace // should enable trace log in ctrl?
-	ctrl.SetLogLevel(logLevel)          // set ctrl log level
-	ctrl.SetLogger(new(Logger))         // tell ctrl to use our logger
-	log.Print("Hello, world!")          // the world starts from here
-	// init ctrl, connect to NATS and subscribe a subject
-	err := ctrl.Init(isTrace, "nats://localhost:4222")
-	if err != nil {
-		panic(err)
-	}
-	ctrl.EnableApp(new(ctrl.EmptyAppHandler), "cn.xswitch.ctrl", "ctrl")
-	ctrl.EnableNodeStatus("")
-	// init cman service before we can talk to cman
-	ctrl.InitCManService("cn.xswitch.cman.control")
+	logLevel := ulog.LevelDebug
 
-	response, err := ctrl.Service().NativeAPI(context.Background(), &xctrl.NativeAPIRequest{
+	ulog.SetLevel(logLevel)     // set ctrl log level
+	ulog.SetLogger(new(Logger)) // tell ctrl to use our logger
+	log.Print("Hello, world!")  // the world starts from here
+
+	c := client.NewFakeClient()
+	c.Init(client.Selector())
+	service := xctrl.NewXNodeService("fake", c)
+
+	response, err := service.NativeAPI(context.Background(), &xctrl.NativeAPIRequest{
 		Cmd: "status",
-	}, ctrl.WithAddress("cn.xswitch.node"), ctrl.WithRequestTimeout(1*time.Second))
+	}, client.WithAddress("cn.xswitch.node"), client.WithRequestTimeout(1*time.Second))
 
 	if err != nil {
 		panic(err)
@@ -56,7 +47,7 @@ func main() {
 	log.Printf("response: %v", response.Data)
 
 	cListReq := &xctrl.ConferenceListRequest{
-		CtrlUuid: ctrl.UUID(),
+		CtrlUuid: "fakeUUID",
 		Data: &xctrl.ConferenceListRequestData{
 			Command: "conferenceInfo",
 			Data: &xctrl.ConferenceListRequestDataData{
@@ -64,8 +55,8 @@ func main() {
 			},
 		},
 	}
-	rsp, err := ctrl.Service().ConferenceList(context.Background(), cListReq,
-		ctrl.WithAddress("cn.xswitch.node"), ctrl.WithRequestTimeout(1*time.Second))
+	rsp, err := service.ConferenceList(context.Background(), cListReq,
+		client.WithAddress("cn.xswitch.node"), client.WithRequestTimeout(1*time.Second))
 	if err != nil {
 		log.Println(err)
 	} else {
@@ -75,8 +66,10 @@ func main() {
 		}
 	}
 
-	res, err := ctrl.CManService().GetConferenceList(context.Background(), &cman.GetConferenceListRequest{},
-		ctrl.WithRequestTimeout(1*time.Second))
+	cManService := cman.NewCManService("fake", c)
+
+	res, err := cManService.GetConferenceList(context.Background(), &cman.GetConferenceListRequest{},
+		client.WithRequestTimeout(1*time.Second))
 	if err != nil {
 		log.Println(err)
 	} else {
