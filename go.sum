@@ -1,3 +1,4 @@
+git.xswitch.cn/xswitch/proto v0.0.0-20230612135521-10ee99d206f9/go.mod h1:Pue7TM3/U0NayOg1k4Jed3tGxb4Cx+/BH+OXxhIA80Y=
 git.xswitch.cn/xswitch/xctrl v1.1.0/go.mod h1:tWRnhvFbdZ7/0IAzcW69uqWi+bkodvQmvZKnuQY+Myg=
 git.xswitch.cn/xswitch/xctrl v1.1.1 h1:7vC2mGCSwJYuMx08ejyswsiExTGyD0LAyXfWskkIKNY=
 git.xswitch.cn/xswitch/xctrl v1.1.1/go.mod h1:Umra3PkKxNDmaENXid0LcHQJ2XJVSOdcdBgYRwals3U=
