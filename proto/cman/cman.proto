@@ -32,6 +32,8 @@ service cMan {
   rpc pushWhole(pushWholeRequest) returns (pushWholeResponse) {}
   // 轮播指定的参会者，当前版本API，这些参会者必须在同一个节点上。
   rpc loopSome(loopSomeRequest) returns (loopSomeResponse) {}
+  // 获取JWT Token
+  rpc getJWT(getJWTRequest) returns (getJWTResponse) {}
 }
 
 message ConferenceInfoRequest {
@@ -337,4 +339,22 @@ message loopSomeRequestMembers{
 }
 
 message loopSomeResponse{
+}
+
+message getJWTRequest{
+  string auth = 1;
+  getJWTRequestClaims claims = 2;
+}
+
+message getJWTRequestClaims{
+  string user_id = 1;
+  int32 expires = 2;
+  string username = 3;
+  string domain = 4;
+  string login = 5;
+  string session_uuid = 6;
+}
+
+message getJWTResponse{
+  string token = 1;
 }
