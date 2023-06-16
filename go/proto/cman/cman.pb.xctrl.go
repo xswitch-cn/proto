@@ -66,6 +66,8 @@ type CManService interface {
 	PushWhole(ctx context.Context, in *PushWholeRequest, opts ...client.CallOption) (*PushWholeResponse, error)
 	// 轮播指定的参会者，当前版本API，这些参会者必须在同一个节点上。
 	LoopSome(ctx context.Context, in *LoopSomeRequest, opts ...client.CallOption) (*LoopSomeResponse, error)
+	// 获取JWT Token
+	GetJWT(ctx context.Context, in *GetJWTRequest, opts ...client.CallOption) (*GetJWTResponse, error)
 }
 
 type cManService struct {
@@ -180,6 +182,16 @@ func (c *cManService) LoopSome(ctx context.Context, in *LoopSomeRequest, opts ..
 	return out, nil
 }
 
+func (c *cManService) GetJWT(ctx context.Context, in *GetJWTRequest, opts ...client.CallOption) (*GetJWTResponse, error) {
+	req := c.c.NewRequest(c.name, "getJWT", in)
+	out := new(GetJWTResponse)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // Server API for CMan service
 
 type CManHandler interface {
@@ -203,6 +215,8 @@ type CManHandler interface {
 	PushWhole(context.Context, *PushWholeRequest, *PushWholeResponse) error
 	// 轮播指定的参会者，当前版本API，这些参会者必须在同一个节点上。
 	LoopSome(context.Context, *LoopSomeRequest, *LoopSomeResponse) error
+	// 获取JWT Token
+	GetJWT(context.Context, *GetJWTRequest, *GetJWTResponse) error
 }
 
 func RegisterCManHandler(s server.Server, hdlr CManHandler, opts ...server.HandlerOption) error {
@@ -217,6 +231,7 @@ func RegisterCManHandler(s server.Server, hdlr CManHandler, opts ...server.Handl
 		PushMainSubCanvas(ctx context.Context, in *PushMainSubCanvasRequest, out *PushMainSubCanvasResponse) error
 		PushWhole(ctx context.Context, in *PushWholeRequest, out *PushWholeResponse) error
 		LoopSome(ctx context.Context, in *LoopSomeRequest, out *LoopSomeResponse) error
+		GetJWT(ctx context.Context, in *GetJWTRequest, out *GetJWTResponse) error
 	}
 	type CMan struct {
 		cMan
@@ -267,4 +282,8 @@ func (h *cManHandler) PushWhole(ctx context.Context, in *PushWholeRequest, out *
 
 func (h *cManHandler) LoopSome(ctx context.Context, in *LoopSomeRequest, out *LoopSomeResponse) error {
 	return h.CManHandler.LoopSome(ctx, in, out)
+}
+
+func (h *cManHandler) GetJWT(ctx context.Context, in *GetJWTRequest, out *GetJWTResponse) error {
+	return h.CManHandler.GetJWT(ctx, in, out)
 }
