@@ -476,13 +476,21 @@ message DTMFEvent {
 }
 
 message CallParam {
+  // the call uuid, will auto generate if missing
   string uuid = 1;
+  // Calller ID Name
   string cid_name = 2;
+  // Caller ID Number
   string cid_number = 3;
+  // Destination Number
   string dest_number = 4;
+  // Dial String
   string dial_string = 5;
+  // Timeout
   uint32 timeout = 6;
+  // Max Duration
   uint32 max_duration = 7;
+  // More Params
   map<string, string> params = 8;
 }
 

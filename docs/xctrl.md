@@ -290,14 +290,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| uuid | [string](#string) |  |  |
-| cid_name | [string](#string) |  |  |
-| cid_number | [string](#string) |  |  |
-| dest_number | [string](#string) |  |  |
-| dial_string | [string](#string) |  |  |
-| timeout | [uint32](#uint32) |  |  |
-| max_duration | [uint32](#uint32) |  |  |
-| params | [map<string, string>](#map-string-string) |  |  |
+| uuid | [string](#string) |  | the call uuid, will auto generate if missing |
+| cid_name | [string](#string) |  | Calller ID Name |
+| cid_number | [string](#string) |  | Caller ID Number |
+| dest_number | [string](#string) |  | Destination Number |
+| dial_string | [string](#string) |  | Dial String |
+| timeout | [uint32](#uint32) |  | Timeout |
+| max_duration | [uint32](#uint32) |  | Max Duration |
+| params | [map<string, string>](#map-string-string) |  | More Params |
 
 
 
