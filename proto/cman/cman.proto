@@ -8,7 +8,7 @@ package cman;
 /*
     subject:
 
-    cn.xswitch.ctrl.cman
+    cn.xswitch.cman.control
 */
 
 service cMan {
@@ -34,6 +34,12 @@ service cMan {
   rpc loopSome(loopSomeRequest) returns (loopSomeResponse) {}
   // 获取JWT Token
   rpc getJWT(getJWTRequest) returns (getJWTResponse) {}
+  // 获取cMan实例列表
+  rpc getCManInfo(GetCManInfoRequest) returns (GetCManInfoResponse) {}
+  rpc changeLeader(ChangeLeaderRequest) returns (ChangeLeaderResponse) {}
+}
+
+message EmptyMessage{
 }
 
 message ConferenceInfoRequest {
@@ -357,4 +363,33 @@ message getJWTRequestClaims{
 
 message getJWTResponse{
   string token = 1;
+}
+
+message GetCManInfoRequest{
+  // the reply address
+  string reply = 1;
+}
+
+message GetCManInfoResponse{
+  // the instance UUID
+  string uuid = 1;
+  bool is_leader = 2;
+  // ACTIVE or STANDBY in HA,
+  // LEADER, FOLLOWER, or CANDIDATE in RAFT
+  string mode = 3;
+}
+
+message ChangeLeaderRequest {
+  // the instance UUID
+  string uuid = 1;
+  string mode = 2;
+}
+
+message ChangeLeaderResponse{
+  // the instance UUID
+  string uuid = 1;
+  bool is_leader = 2;
+  // ACTIVE or STANDBY in HA,
+  // LEADER, FOLLOWER, or CANDIDATE in RAFT
+  string mode = 3;
 }

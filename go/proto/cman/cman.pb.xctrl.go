@@ -68,6 +68,9 @@ type CManService interface {
 	LoopSome(ctx context.Context, in *LoopSomeRequest, opts ...client.CallOption) (*LoopSomeResponse, error)
 	// 获取JWT Token
 	GetJWT(ctx context.Context, in *GetJWTRequest, opts ...client.CallOption) (*GetJWTResponse, error)
+	// 获取cMan实例列表
+	GetCManInfo(ctx context.Context, in *GetCManInfoRequest, opts ...client.CallOption) (*GetCManInfoResponse, error)
+	ChangeLeader(ctx context.Context, in *ChangeLeaderRequest, opts ...client.CallOption) (*ChangeLeaderResponse, error)
 }
 
 type cManService struct {
@@ -192,6 +195,26 @@ func (c *cManService) GetJWT(ctx context.Context, in *GetJWTRequest, opts ...cli
 	return out, nil
 }
 
+func (c *cManService) GetCManInfo(ctx context.Context, in *GetCManInfoRequest, opts ...client.CallOption) (*GetCManInfoResponse, error) {
+	req := c.c.NewRequest(c.name, "getCManInfo", in)
+	out := new(GetCManInfoResponse)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cManService) ChangeLeader(ctx context.Context, in *ChangeLeaderRequest, opts ...client.CallOption) (*ChangeLeaderResponse, error) {
+	req := c.c.NewRequest(c.name, "changeLeader", in)
+	out := new(ChangeLeaderResponse)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // Server API for CMan service
 
 type CManHandler interface {
@@ -217,6 +240,9 @@ type CManHandler interface {
 	LoopSome(context.Context, *LoopSomeRequest, *LoopSomeResponse) error
 	// 获取JWT Token
 	GetJWT(context.Context, *GetJWTRequest, *GetJWTResponse) error
+	// 获取cMan实例列表
+	GetCManInfo(context.Context, *GetCManInfoRequest, *GetCManInfoResponse) error
+	ChangeLeader(context.Context, *ChangeLeaderRequest, *ChangeLeaderResponse) error
 }
 
 func RegisterCManHandler(s server.Server, hdlr CManHandler, opts ...server.HandlerOption) error {
@@ -232,6 +258,8 @@ func RegisterCManHandler(s server.Server, hdlr CManHandler, opts ...server.Handl
 		PushWhole(ctx context.Context, in *PushWholeRequest, out *PushWholeResponse) error
 		LoopSome(ctx context.Context, in *LoopSomeRequest, out *LoopSomeResponse) error
 		GetJWT(ctx context.Context, in *GetJWTRequest, out *GetJWTResponse) error
+		GetCManInfo(ctx context.Context, in *GetCManInfoRequest, out *GetCManInfoResponse) error
+		ChangeLeader(ctx context.Context, in *ChangeLeaderRequest, out *ChangeLeaderResponse) error
 	}
 	type CMan struct {
 		cMan
@@ -286,4 +314,12 @@ func (h *cManHandler) LoopSome(ctx context.Context, in *LoopSomeRequest, out *Lo
 
 func (h *cManHandler) GetJWT(ctx context.Context, in *GetJWTRequest, out *GetJWTResponse) error {
 	return h.CManHandler.GetJWT(ctx, in, out)
+}
+
+func (h *cManHandler) GetCManInfo(ctx context.Context, in *GetCManInfoRequest, out *GetCManInfoResponse) error {
+	return h.CManHandler.GetCManInfo(ctx, in, out)
+}
+
+func (h *cManHandler) ChangeLeader(ctx context.Context, in *ChangeLeaderRequest, out *ChangeLeaderResponse) error {
+	return h.CManHandler.ChangeLeader(ctx, in, out)
 }
