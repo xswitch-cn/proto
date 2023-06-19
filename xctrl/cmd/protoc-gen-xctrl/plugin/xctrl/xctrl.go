@@ -439,6 +439,9 @@ func (g *micro) generateClientMethod(reqServ, servName, serviceDescVar string, m
 
 	g.P("func (c *", unexport(servAlias), ") ", g.generateClientSignature(servName, method), "{")
 	if !method.GetServerStreaming() && !method.GetClientStreaming() {
+		if reqMethod == "bootstrap" {
+			reqMethod = "verto.broadcast"
+		}
 		g.P(`req := c.c.NewRequest(c.name, "`, reqMethod, `", in)`)
 		if reqMethod == "XNode.NativeJSAPI" {
 			outType = "X" + outType

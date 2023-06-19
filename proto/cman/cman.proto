@@ -209,13 +209,13 @@ message GetConferenceListResponse {
 }
 
 message BootstrapRequest{
-  string event_channel = 1;
+  string eventChannel = 1;
   BootstrapRequestParamsData data = 2;
   string sessid = 3;
 }
 
 message BootstrapRequestParamsData{
-  BootstrapRequestParamsDataLiveArray live_array = 1;
+  BootstrapRequestParamsDataLiveArray liveArray = 1;
 }
 
 message BootstrapRequestParamsDataLiveArray{

@@ -106,7 +106,7 @@ func (c *cManService) ConferenceInfo(ctx context.Context, in *ConferenceInfoRequ
 }
 
 func (c *cManService) Bootstrap(ctx context.Context, in *BootstrapRequest, opts ...client.CallOption) (*BootstrapResponse, error) {
-	req := c.c.NewRequest(c.name, "bootstrap", in)
+	req := c.c.NewRequest(c.name, "verto.broadcast", in)
 	out := new(BootstrapResponse)
 	err := c.c.Call(ctx, req, out, opts...)
 	if err != nil {
