@@ -14,6 +14,424 @@ public final class CManProto {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface EmptyMessageOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cman.EmptyMessage)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code cman.EmptyMessage}
+   */
+  public static final class EmptyMessage extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cman.EmptyMessage)
+      EmptyMessageOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use EmptyMessage.newBuilder() to construct.
+    private EmptyMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private EmptyMessage() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new EmptyMessage();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private EmptyMessage(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cman.CManProto.internal_static_cman_EmptyMessage_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cman.CManProto.internal_static_cman_EmptyMessage_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cman.CManProto.EmptyMessage.class, cman.CManProto.EmptyMessage.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cman.CManProto.EmptyMessage)) {
+        return super.equals(obj);
+      }
+      cman.CManProto.EmptyMessage other = (cman.CManProto.EmptyMessage) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cman.CManProto.EmptyMessage parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cman.CManProto.EmptyMessage parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cman.CManProto.EmptyMessage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cman.CManProto.EmptyMessage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cman.CManProto.EmptyMessage parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cman.CManProto.EmptyMessage parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cman.CManProto.EmptyMessage parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cman.CManProto.EmptyMessage parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cman.CManProto.EmptyMessage parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cman.CManProto.EmptyMessage parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cman.CManProto.EmptyMessage parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cman.CManProto.EmptyMessage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cman.CManProto.EmptyMessage prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code cman.EmptyMessage}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cman.EmptyMessage)
+        cman.CManProto.EmptyMessageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cman.CManProto.internal_static_cman_EmptyMessage_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cman.CManProto.internal_static_cman_EmptyMessage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cman.CManProto.EmptyMessage.class, cman.CManProto.EmptyMessage.Builder.class);
+      }
+
+      // Construct using cman.CManProto.EmptyMessage.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cman.CManProto.internal_static_cman_EmptyMessage_descriptor;
+      }
+
+      @java.lang.Override
+      public cman.CManProto.EmptyMessage getDefaultInstanceForType() {
+        return cman.CManProto.EmptyMessage.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cman.CManProto.EmptyMessage build() {
+        cman.CManProto.EmptyMessage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cman.CManProto.EmptyMessage buildPartial() {
+        cman.CManProto.EmptyMessage result = new cman.CManProto.EmptyMessage(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cman.CManProto.EmptyMessage) {
+          return mergeFrom((cman.CManProto.EmptyMessage)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cman.CManProto.EmptyMessage other) {
+        if (other == cman.CManProto.EmptyMessage.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cman.CManProto.EmptyMessage parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cman.CManProto.EmptyMessage) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cman.EmptyMessage)
+    }
+
+    // @@protoc_insertion_point(class_scope:cman.EmptyMessage)
+    private static final cman.CManProto.EmptyMessage DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cman.CManProto.EmptyMessage();
+    }
+
+    public static cman.CManProto.EmptyMessage getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EmptyMessage>
+        PARSER = new com.google.protobuf.AbstractParser<EmptyMessage>() {
+      @java.lang.Override
+      public EmptyMessage parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new EmptyMessage(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<EmptyMessage> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EmptyMessage> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cman.CManProto.EmptyMessage getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ConferenceInfoRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:cman.ConferenceInfoRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -43610,6 +44028,5686 @@ public final class CManProto {
 
   }
 
+  public interface getJWTRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cman.getJWTRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string auth = 1;</code>
+     * @return The auth.
+     */
+    java.lang.String getAuth();
+    /**
+     * <code>string auth = 1;</code>
+     * @return The bytes for auth.
+     */
+    com.google.protobuf.ByteString
+        getAuthBytes();
+
+    /**
+     * <code>.cman.getJWTRequestClaims claims = 2;</code>
+     * @return Whether the claims field is set.
+     */
+    boolean hasClaims();
+    /**
+     * <code>.cman.getJWTRequestClaims claims = 2;</code>
+     * @return The claims.
+     */
+    cman.CManProto.getJWTRequestClaims getClaims();
+    /**
+     * <code>.cman.getJWTRequestClaims claims = 2;</code>
+     */
+    cman.CManProto.getJWTRequestClaimsOrBuilder getClaimsOrBuilder();
+  }
+  /**
+   * Protobuf type {@code cman.getJWTRequest}
+   */
+  public static final class getJWTRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cman.getJWTRequest)
+      getJWTRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use getJWTRequest.newBuilder() to construct.
+    private getJWTRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private getJWTRequest() {
+      auth_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new getJWTRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private getJWTRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              auth_ = s;
+              break;
+            }
+            case 18: {
+              cman.CManProto.getJWTRequestClaims.Builder subBuilder = null;
+              if (claims_ != null) {
+                subBuilder = claims_.toBuilder();
+              }
+              claims_ = input.readMessage(cman.CManProto.getJWTRequestClaims.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(claims_);
+                claims_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cman.CManProto.internal_static_cman_getJWTRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cman.CManProto.internal_static_cman_getJWTRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cman.CManProto.getJWTRequest.class, cman.CManProto.getJWTRequest.Builder.class);
+    }
+
+    public static final int AUTH_FIELD_NUMBER = 1;
+    private volatile java.lang.Object auth_;
+    /**
+     * <code>string auth = 1;</code>
+     * @return The auth.
+     */
+    @java.lang.Override
+    public java.lang.String getAuth() {
+      java.lang.Object ref = auth_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        auth_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string auth = 1;</code>
+     * @return The bytes for auth.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAuthBytes() {
+      java.lang.Object ref = auth_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        auth_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CLAIMS_FIELD_NUMBER = 2;
+    private cman.CManProto.getJWTRequestClaims claims_;
+    /**
+     * <code>.cman.getJWTRequestClaims claims = 2;</code>
+     * @return Whether the claims field is set.
+     */
+    @java.lang.Override
+    public boolean hasClaims() {
+      return claims_ != null;
+    }
+    /**
+     * <code>.cman.getJWTRequestClaims claims = 2;</code>
+     * @return The claims.
+     */
+    @java.lang.Override
+    public cman.CManProto.getJWTRequestClaims getClaims() {
+      return claims_ == null ? cman.CManProto.getJWTRequestClaims.getDefaultInstance() : claims_;
+    }
+    /**
+     * <code>.cman.getJWTRequestClaims claims = 2;</code>
+     */
+    @java.lang.Override
+    public cman.CManProto.getJWTRequestClaimsOrBuilder getClaimsOrBuilder() {
+      return getClaims();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(auth_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, auth_);
+      }
+      if (claims_ != null) {
+        output.writeMessage(2, getClaims());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(auth_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, auth_);
+      }
+      if (claims_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getClaims());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cman.CManProto.getJWTRequest)) {
+        return super.equals(obj);
+      }
+      cman.CManProto.getJWTRequest other = (cman.CManProto.getJWTRequest) obj;
+
+      if (!getAuth()
+          .equals(other.getAuth())) return false;
+      if (hasClaims() != other.hasClaims()) return false;
+      if (hasClaims()) {
+        if (!getClaims()
+            .equals(other.getClaims())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + AUTH_FIELD_NUMBER;
+      hash = (53 * hash) + getAuth().hashCode();
+      if (hasClaims()) {
+        hash = (37 * hash) + CLAIMS_FIELD_NUMBER;
+        hash = (53 * hash) + getClaims().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cman.CManProto.getJWTRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cman.CManProto.getJWTRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cman.CManProto.getJWTRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cman.CManProto.getJWTRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cman.CManProto.getJWTRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cman.CManProto.getJWTRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cman.CManProto.getJWTRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cman.CManProto.getJWTRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cman.CManProto.getJWTRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cman.CManProto.getJWTRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cman.CManProto.getJWTRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cman.CManProto.getJWTRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cman.CManProto.getJWTRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code cman.getJWTRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cman.getJWTRequest)
+        cman.CManProto.getJWTRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cman.CManProto.internal_static_cman_getJWTRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cman.CManProto.internal_static_cman_getJWTRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cman.CManProto.getJWTRequest.class, cman.CManProto.getJWTRequest.Builder.class);
+      }
+
+      // Construct using cman.CManProto.getJWTRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        auth_ = "";
+
+        if (claimsBuilder_ == null) {
+          claims_ = null;
+        } else {
+          claims_ = null;
+          claimsBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cman.CManProto.internal_static_cman_getJWTRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public cman.CManProto.getJWTRequest getDefaultInstanceForType() {
+        return cman.CManProto.getJWTRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cman.CManProto.getJWTRequest build() {
+        cman.CManProto.getJWTRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cman.CManProto.getJWTRequest buildPartial() {
+        cman.CManProto.getJWTRequest result = new cman.CManProto.getJWTRequest(this);
+        result.auth_ = auth_;
+        if (claimsBuilder_ == null) {
+          result.claims_ = claims_;
+        } else {
+          result.claims_ = claimsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cman.CManProto.getJWTRequest) {
+          return mergeFrom((cman.CManProto.getJWTRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cman.CManProto.getJWTRequest other) {
+        if (other == cman.CManProto.getJWTRequest.getDefaultInstance()) return this;
+        if (!other.getAuth().isEmpty()) {
+          auth_ = other.auth_;
+          onChanged();
+        }
+        if (other.hasClaims()) {
+          mergeClaims(other.getClaims());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cman.CManProto.getJWTRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cman.CManProto.getJWTRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object auth_ = "";
+      /**
+       * <code>string auth = 1;</code>
+       * @return The auth.
+       */
+      public java.lang.String getAuth() {
+        java.lang.Object ref = auth_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          auth_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string auth = 1;</code>
+       * @return The bytes for auth.
+       */
+      public com.google.protobuf.ByteString
+          getAuthBytes() {
+        java.lang.Object ref = auth_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          auth_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string auth = 1;</code>
+       * @param value The auth to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAuth(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        auth_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string auth = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAuth() {
+        
+        auth_ = getDefaultInstance().getAuth();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string auth = 1;</code>
+       * @param value The bytes for auth to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAuthBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        auth_ = value;
+        onChanged();
+        return this;
+      }
+
+      private cman.CManProto.getJWTRequestClaims claims_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cman.CManProto.getJWTRequestClaims, cman.CManProto.getJWTRequestClaims.Builder, cman.CManProto.getJWTRequestClaimsOrBuilder> claimsBuilder_;
+      /**
+       * <code>.cman.getJWTRequestClaims claims = 2;</code>
+       * @return Whether the claims field is set.
+       */
+      public boolean hasClaims() {
+        return claimsBuilder_ != null || claims_ != null;
+      }
+      /**
+       * <code>.cman.getJWTRequestClaims claims = 2;</code>
+       * @return The claims.
+       */
+      public cman.CManProto.getJWTRequestClaims getClaims() {
+        if (claimsBuilder_ == null) {
+          return claims_ == null ? cman.CManProto.getJWTRequestClaims.getDefaultInstance() : claims_;
+        } else {
+          return claimsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.cman.getJWTRequestClaims claims = 2;</code>
+       */
+      public Builder setClaims(cman.CManProto.getJWTRequestClaims value) {
+        if (claimsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          claims_ = value;
+          onChanged();
+        } else {
+          claimsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cman.getJWTRequestClaims claims = 2;</code>
+       */
+      public Builder setClaims(
+          cman.CManProto.getJWTRequestClaims.Builder builderForValue) {
+        if (claimsBuilder_ == null) {
+          claims_ = builderForValue.build();
+          onChanged();
+        } else {
+          claimsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cman.getJWTRequestClaims claims = 2;</code>
+       */
+      public Builder mergeClaims(cman.CManProto.getJWTRequestClaims value) {
+        if (claimsBuilder_ == null) {
+          if (claims_ != null) {
+            claims_ =
+              cman.CManProto.getJWTRequestClaims.newBuilder(claims_).mergeFrom(value).buildPartial();
+          } else {
+            claims_ = value;
+          }
+          onChanged();
+        } else {
+          claimsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cman.getJWTRequestClaims claims = 2;</code>
+       */
+      public Builder clearClaims() {
+        if (claimsBuilder_ == null) {
+          claims_ = null;
+          onChanged();
+        } else {
+          claims_ = null;
+          claimsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cman.getJWTRequestClaims claims = 2;</code>
+       */
+      public cman.CManProto.getJWTRequestClaims.Builder getClaimsBuilder() {
+        
+        onChanged();
+        return getClaimsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.cman.getJWTRequestClaims claims = 2;</code>
+       */
+      public cman.CManProto.getJWTRequestClaimsOrBuilder getClaimsOrBuilder() {
+        if (claimsBuilder_ != null) {
+          return claimsBuilder_.getMessageOrBuilder();
+        } else {
+          return claims_ == null ?
+              cman.CManProto.getJWTRequestClaims.getDefaultInstance() : claims_;
+        }
+      }
+      /**
+       * <code>.cman.getJWTRequestClaims claims = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cman.CManProto.getJWTRequestClaims, cman.CManProto.getJWTRequestClaims.Builder, cman.CManProto.getJWTRequestClaimsOrBuilder> 
+          getClaimsFieldBuilder() {
+        if (claimsBuilder_ == null) {
+          claimsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              cman.CManProto.getJWTRequestClaims, cman.CManProto.getJWTRequestClaims.Builder, cman.CManProto.getJWTRequestClaimsOrBuilder>(
+                  getClaims(),
+                  getParentForChildren(),
+                  isClean());
+          claims_ = null;
+        }
+        return claimsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cman.getJWTRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:cman.getJWTRequest)
+    private static final cman.CManProto.getJWTRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cman.CManProto.getJWTRequest();
+    }
+
+    public static cman.CManProto.getJWTRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<getJWTRequest>
+        PARSER = new com.google.protobuf.AbstractParser<getJWTRequest>() {
+      @java.lang.Override
+      public getJWTRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new getJWTRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<getJWTRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<getJWTRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cman.CManProto.getJWTRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface getJWTRequestClaimsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cman.getJWTRequestClaims)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string user_id = 1;</code>
+     * @return The userId.
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>string user_id = 1;</code>
+     * @return The bytes for userId.
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
+
+    /**
+     * <code>int32 expires = 2;</code>
+     * @return The expires.
+     */
+    int getExpires();
+
+    /**
+     * <code>string username = 3;</code>
+     * @return The username.
+     */
+    java.lang.String getUsername();
+    /**
+     * <code>string username = 3;</code>
+     * @return The bytes for username.
+     */
+    com.google.protobuf.ByteString
+        getUsernameBytes();
+
+    /**
+     * <code>string domain = 4;</code>
+     * @return The domain.
+     */
+    java.lang.String getDomain();
+    /**
+     * <code>string domain = 4;</code>
+     * @return The bytes for domain.
+     */
+    com.google.protobuf.ByteString
+        getDomainBytes();
+
+    /**
+     * <code>string login = 5;</code>
+     * @return The login.
+     */
+    java.lang.String getLogin();
+    /**
+     * <code>string login = 5;</code>
+     * @return The bytes for login.
+     */
+    com.google.protobuf.ByteString
+        getLoginBytes();
+
+    /**
+     * <code>string session_uuid = 6;</code>
+     * @return The sessionUuid.
+     */
+    java.lang.String getSessionUuid();
+    /**
+     * <code>string session_uuid = 6;</code>
+     * @return The bytes for sessionUuid.
+     */
+    com.google.protobuf.ByteString
+        getSessionUuidBytes();
+  }
+  /**
+   * Protobuf type {@code cman.getJWTRequestClaims}
+   */
+  public static final class getJWTRequestClaims extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cman.getJWTRequestClaims)
+      getJWTRequestClaimsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use getJWTRequestClaims.newBuilder() to construct.
+    private getJWTRequestClaims(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private getJWTRequestClaims() {
+      userId_ = "";
+      username_ = "";
+      domain_ = "";
+      login_ = "";
+      sessionUuid_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new getJWTRequestClaims();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private getJWTRequestClaims(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userId_ = s;
+              break;
+            }
+            case 16: {
+
+              expires_ = input.readInt32();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              username_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              domain_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              login_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sessionUuid_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cman.CManProto.internal_static_cman_getJWTRequestClaims_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cman.CManProto.internal_static_cman_getJWTRequestClaims_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cman.CManProto.getJWTRequestClaims.class, cman.CManProto.getJWTRequestClaims.Builder.class);
+    }
+
+    public static final int USER_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object userId_;
+    /**
+     * <code>string user_id = 1;</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_id = 1;</code>
+     * @return The bytes for userId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EXPIRES_FIELD_NUMBER = 2;
+    private int expires_;
+    /**
+     * <code>int32 expires = 2;</code>
+     * @return The expires.
+     */
+    @java.lang.Override
+    public int getExpires() {
+      return expires_;
+    }
+
+    public static final int USERNAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object username_;
+    /**
+     * <code>string username = 3;</code>
+     * @return The username.
+     */
+    @java.lang.Override
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        username_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string username = 3;</code>
+     * @return The bytes for username.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        username_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DOMAIN_FIELD_NUMBER = 4;
+    private volatile java.lang.Object domain_;
+    /**
+     * <code>string domain = 4;</code>
+     * @return The domain.
+     */
+    @java.lang.Override
+    public java.lang.String getDomain() {
+      java.lang.Object ref = domain_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        domain_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string domain = 4;</code>
+     * @return The bytes for domain.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDomainBytes() {
+      java.lang.Object ref = domain_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        domain_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LOGIN_FIELD_NUMBER = 5;
+    private volatile java.lang.Object login_;
+    /**
+     * <code>string login = 5;</code>
+     * @return The login.
+     */
+    @java.lang.Override
+    public java.lang.String getLogin() {
+      java.lang.Object ref = login_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        login_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string login = 5;</code>
+     * @return The bytes for login.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLoginBytes() {
+      java.lang.Object ref = login_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        login_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SESSION_UUID_FIELD_NUMBER = 6;
+    private volatile java.lang.Object sessionUuid_;
+    /**
+     * <code>string session_uuid = 6;</code>
+     * @return The sessionUuid.
+     */
+    @java.lang.Override
+    public java.lang.String getSessionUuid() {
+      java.lang.Object ref = sessionUuid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sessionUuid_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string session_uuid = 6;</code>
+     * @return The bytes for sessionUuid.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSessionUuidBytes() {
+      java.lang.Object ref = sessionUuid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sessionUuid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
+      }
+      if (expires_ != 0) {
+        output.writeInt32(2, expires_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, username_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(domain_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, domain_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(login_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, login_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sessionUuid_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, sessionUuid_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
+      }
+      if (expires_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, expires_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, username_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(domain_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, domain_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(login_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, login_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sessionUuid_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, sessionUuid_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cman.CManProto.getJWTRequestClaims)) {
+        return super.equals(obj);
+      }
+      cman.CManProto.getJWTRequestClaims other = (cman.CManProto.getJWTRequestClaims) obj;
+
+      if (!getUserId()
+          .equals(other.getUserId())) return false;
+      if (getExpires()
+          != other.getExpires()) return false;
+      if (!getUsername()
+          .equals(other.getUsername())) return false;
+      if (!getDomain()
+          .equals(other.getDomain())) return false;
+      if (!getLogin()
+          .equals(other.getLogin())) return false;
+      if (!getSessionUuid()
+          .equals(other.getSessionUuid())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId().hashCode();
+      hash = (37 * hash) + EXPIRES_FIELD_NUMBER;
+      hash = (53 * hash) + getExpires();
+      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUsername().hashCode();
+      hash = (37 * hash) + DOMAIN_FIELD_NUMBER;
+      hash = (53 * hash) + getDomain().hashCode();
+      hash = (37 * hash) + LOGIN_FIELD_NUMBER;
+      hash = (53 * hash) + getLogin().hashCode();
+      hash = (37 * hash) + SESSION_UUID_FIELD_NUMBER;
+      hash = (53 * hash) + getSessionUuid().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cman.CManProto.getJWTRequestClaims parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cman.CManProto.getJWTRequestClaims parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cman.CManProto.getJWTRequestClaims parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cman.CManProto.getJWTRequestClaims parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cman.CManProto.getJWTRequestClaims parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cman.CManProto.getJWTRequestClaims parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cman.CManProto.getJWTRequestClaims parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cman.CManProto.getJWTRequestClaims parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cman.CManProto.getJWTRequestClaims parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cman.CManProto.getJWTRequestClaims parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cman.CManProto.getJWTRequestClaims parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cman.CManProto.getJWTRequestClaims parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cman.CManProto.getJWTRequestClaims prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code cman.getJWTRequestClaims}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cman.getJWTRequestClaims)
+        cman.CManProto.getJWTRequestClaimsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cman.CManProto.internal_static_cman_getJWTRequestClaims_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cman.CManProto.internal_static_cman_getJWTRequestClaims_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cman.CManProto.getJWTRequestClaims.class, cman.CManProto.getJWTRequestClaims.Builder.class);
+      }
+
+      // Construct using cman.CManProto.getJWTRequestClaims.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        userId_ = "";
+
+        expires_ = 0;
+
+        username_ = "";
+
+        domain_ = "";
+
+        login_ = "";
+
+        sessionUuid_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cman.CManProto.internal_static_cman_getJWTRequestClaims_descriptor;
+      }
+
+      @java.lang.Override
+      public cman.CManProto.getJWTRequestClaims getDefaultInstanceForType() {
+        return cman.CManProto.getJWTRequestClaims.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cman.CManProto.getJWTRequestClaims build() {
+        cman.CManProto.getJWTRequestClaims result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cman.CManProto.getJWTRequestClaims buildPartial() {
+        cman.CManProto.getJWTRequestClaims result = new cman.CManProto.getJWTRequestClaims(this);
+        result.userId_ = userId_;
+        result.expires_ = expires_;
+        result.username_ = username_;
+        result.domain_ = domain_;
+        result.login_ = login_;
+        result.sessionUuid_ = sessionUuid_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cman.CManProto.getJWTRequestClaims) {
+          return mergeFrom((cman.CManProto.getJWTRequestClaims)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cman.CManProto.getJWTRequestClaims other) {
+        if (other == cman.CManProto.getJWTRequestClaims.getDefaultInstance()) return this;
+        if (!other.getUserId().isEmpty()) {
+          userId_ = other.userId_;
+          onChanged();
+        }
+        if (other.getExpires() != 0) {
+          setExpires(other.getExpires());
+        }
+        if (!other.getUsername().isEmpty()) {
+          username_ = other.username_;
+          onChanged();
+        }
+        if (!other.getDomain().isEmpty()) {
+          domain_ = other.domain_;
+          onChanged();
+        }
+        if (!other.getLogin().isEmpty()) {
+          login_ = other.login_;
+          onChanged();
+        }
+        if (!other.getSessionUuid().isEmpty()) {
+          sessionUuid_ = other.sessionUuid_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cman.CManProto.getJWTRequestClaims parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cman.CManProto.getJWTRequestClaims) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>string user_id = 1;</code>
+       * @return The userId.
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_id = 1;</code>
+       * @return The bytes for userId.
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_id = 1;</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id = 1;</code>
+       * @param value The bytes for userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int expires_ ;
+      /**
+       * <code>int32 expires = 2;</code>
+       * @return The expires.
+       */
+      @java.lang.Override
+      public int getExpires() {
+        return expires_;
+      }
+      /**
+       * <code>int32 expires = 2;</code>
+       * @param value The expires to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExpires(int value) {
+        
+        expires_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 expires = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearExpires() {
+        
+        expires_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object username_ = "";
+      /**
+       * <code>string username = 3;</code>
+       * @return The username.
+       */
+      public java.lang.String getUsername() {
+        java.lang.Object ref = username_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          username_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string username = 3;</code>
+       * @return The bytes for username.
+       */
+      public com.google.protobuf.ByteString
+          getUsernameBytes() {
+        java.lang.Object ref = username_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          username_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string username = 3;</code>
+       * @param value The username to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUsername(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        username_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string username = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUsername() {
+        
+        username_ = getDefaultInstance().getUsername();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string username = 3;</code>
+       * @param value The bytes for username to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUsernameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        username_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object domain_ = "";
+      /**
+       * <code>string domain = 4;</code>
+       * @return The domain.
+       */
+      public java.lang.String getDomain() {
+        java.lang.Object ref = domain_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          domain_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string domain = 4;</code>
+       * @return The bytes for domain.
+       */
+      public com.google.protobuf.ByteString
+          getDomainBytes() {
+        java.lang.Object ref = domain_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          domain_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string domain = 4;</code>
+       * @param value The domain to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDomain(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        domain_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string domain = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDomain() {
+        
+        domain_ = getDefaultInstance().getDomain();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string domain = 4;</code>
+       * @param value The bytes for domain to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDomainBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        domain_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object login_ = "";
+      /**
+       * <code>string login = 5;</code>
+       * @return The login.
+       */
+      public java.lang.String getLogin() {
+        java.lang.Object ref = login_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          login_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string login = 5;</code>
+       * @return The bytes for login.
+       */
+      public com.google.protobuf.ByteString
+          getLoginBytes() {
+        java.lang.Object ref = login_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          login_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string login = 5;</code>
+       * @param value The login to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLogin(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        login_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string login = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLogin() {
+        
+        login_ = getDefaultInstance().getLogin();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string login = 5;</code>
+       * @param value The bytes for login to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLoginBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        login_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sessionUuid_ = "";
+      /**
+       * <code>string session_uuid = 6;</code>
+       * @return The sessionUuid.
+       */
+      public java.lang.String getSessionUuid() {
+        java.lang.Object ref = sessionUuid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sessionUuid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string session_uuid = 6;</code>
+       * @return The bytes for sessionUuid.
+       */
+      public com.google.protobuf.ByteString
+          getSessionUuidBytes() {
+        java.lang.Object ref = sessionUuid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sessionUuid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string session_uuid = 6;</code>
+       * @param value The sessionUuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSessionUuid(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sessionUuid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string session_uuid = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSessionUuid() {
+        
+        sessionUuid_ = getDefaultInstance().getSessionUuid();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string session_uuid = 6;</code>
+       * @param value The bytes for sessionUuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSessionUuidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sessionUuid_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cman.getJWTRequestClaims)
+    }
+
+    // @@protoc_insertion_point(class_scope:cman.getJWTRequestClaims)
+    private static final cman.CManProto.getJWTRequestClaims DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cman.CManProto.getJWTRequestClaims();
+    }
+
+    public static cman.CManProto.getJWTRequestClaims getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<getJWTRequestClaims>
+        PARSER = new com.google.protobuf.AbstractParser<getJWTRequestClaims>() {
+      @java.lang.Override
+      public getJWTRequestClaims parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new getJWTRequestClaims(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<getJWTRequestClaims> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<getJWTRequestClaims> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cman.CManProto.getJWTRequestClaims getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface getJWTResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cman.getJWTResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string token = 1;</code>
+     * @return The token.
+     */
+    java.lang.String getToken();
+    /**
+     * <code>string token = 1;</code>
+     * @return The bytes for token.
+     */
+    com.google.protobuf.ByteString
+        getTokenBytes();
+  }
+  /**
+   * Protobuf type {@code cman.getJWTResponse}
+   */
+  public static final class getJWTResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cman.getJWTResponse)
+      getJWTResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use getJWTResponse.newBuilder() to construct.
+    private getJWTResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private getJWTResponse() {
+      token_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new getJWTResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private getJWTResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              token_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cman.CManProto.internal_static_cman_getJWTResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cman.CManProto.internal_static_cman_getJWTResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cman.CManProto.getJWTResponse.class, cman.CManProto.getJWTResponse.Builder.class);
+    }
+
+    public static final int TOKEN_FIELD_NUMBER = 1;
+    private volatile java.lang.Object token_;
+    /**
+     * <code>string token = 1;</code>
+     * @return The token.
+     */
+    @java.lang.Override
+    public java.lang.String getToken() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        token_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string token = 1;</code>
+     * @return The bytes for token.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTokenBytes() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        token_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(token_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(token_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cman.CManProto.getJWTResponse)) {
+        return super.equals(obj);
+      }
+      cman.CManProto.getJWTResponse other = (cman.CManProto.getJWTResponse) obj;
+
+      if (!getToken()
+          .equals(other.getToken())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getToken().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cman.CManProto.getJWTResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cman.CManProto.getJWTResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cman.CManProto.getJWTResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cman.CManProto.getJWTResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cman.CManProto.getJWTResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cman.CManProto.getJWTResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cman.CManProto.getJWTResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cman.CManProto.getJWTResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cman.CManProto.getJWTResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cman.CManProto.getJWTResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cman.CManProto.getJWTResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cman.CManProto.getJWTResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cman.CManProto.getJWTResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code cman.getJWTResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cman.getJWTResponse)
+        cman.CManProto.getJWTResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cman.CManProto.internal_static_cman_getJWTResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cman.CManProto.internal_static_cman_getJWTResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cman.CManProto.getJWTResponse.class, cman.CManProto.getJWTResponse.Builder.class);
+      }
+
+      // Construct using cman.CManProto.getJWTResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        token_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cman.CManProto.internal_static_cman_getJWTResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cman.CManProto.getJWTResponse getDefaultInstanceForType() {
+        return cman.CManProto.getJWTResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cman.CManProto.getJWTResponse build() {
+        cman.CManProto.getJWTResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cman.CManProto.getJWTResponse buildPartial() {
+        cman.CManProto.getJWTResponse result = new cman.CManProto.getJWTResponse(this);
+        result.token_ = token_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cman.CManProto.getJWTResponse) {
+          return mergeFrom((cman.CManProto.getJWTResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cman.CManProto.getJWTResponse other) {
+        if (other == cman.CManProto.getJWTResponse.getDefaultInstance()) return this;
+        if (!other.getToken().isEmpty()) {
+          token_ = other.token_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cman.CManProto.getJWTResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cman.CManProto.getJWTResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object token_ = "";
+      /**
+       * <code>string token = 1;</code>
+       * @return The token.
+       */
+      public java.lang.String getToken() {
+        java.lang.Object ref = token_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          token_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string token = 1;</code>
+       * @return The bytes for token.
+       */
+      public com.google.protobuf.ByteString
+          getTokenBytes() {
+        java.lang.Object ref = token_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          token_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string token = 1;</code>
+       * @param value The token to set.
+       * @return This builder for chaining.
+       */
+      public Builder setToken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        token_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string token = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearToken() {
+        
+        token_ = getDefaultInstance().getToken();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string token = 1;</code>
+       * @param value The bytes for token to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        token_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cman.getJWTResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cman.getJWTResponse)
+    private static final cman.CManProto.getJWTResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cman.CManProto.getJWTResponse();
+    }
+
+    public static cman.CManProto.getJWTResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<getJWTResponse>
+        PARSER = new com.google.protobuf.AbstractParser<getJWTResponse>() {
+      @java.lang.Override
+      public getJWTResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new getJWTResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<getJWTResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<getJWTResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cman.CManProto.getJWTResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetCManInfoRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cman.GetCManInfoRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * the reply address
+     * </pre>
+     *
+     * <code>string reply = 1;</code>
+     * @return The reply.
+     */
+    java.lang.String getReply();
+    /**
+     * <pre>
+     * the reply address
+     * </pre>
+     *
+     * <code>string reply = 1;</code>
+     * @return The bytes for reply.
+     */
+    com.google.protobuf.ByteString
+        getReplyBytes();
+  }
+  /**
+   * Protobuf type {@code cman.GetCManInfoRequest}
+   */
+  public static final class GetCManInfoRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cman.GetCManInfoRequest)
+      GetCManInfoRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetCManInfoRequest.newBuilder() to construct.
+    private GetCManInfoRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetCManInfoRequest() {
+      reply_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetCManInfoRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetCManInfoRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              reply_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cman.CManProto.internal_static_cman_GetCManInfoRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cman.CManProto.internal_static_cman_GetCManInfoRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cman.CManProto.GetCManInfoRequest.class, cman.CManProto.GetCManInfoRequest.Builder.class);
+    }
+
+    public static final int REPLY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object reply_;
+    /**
+     * <pre>
+     * the reply address
+     * </pre>
+     *
+     * <code>string reply = 1;</code>
+     * @return The reply.
+     */
+    @java.lang.Override
+    public java.lang.String getReply() {
+      java.lang.Object ref = reply_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        reply_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * the reply address
+     * </pre>
+     *
+     * <code>string reply = 1;</code>
+     * @return The bytes for reply.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getReplyBytes() {
+      java.lang.Object ref = reply_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        reply_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reply_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, reply_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reply_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, reply_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cman.CManProto.GetCManInfoRequest)) {
+        return super.equals(obj);
+      }
+      cman.CManProto.GetCManInfoRequest other = (cman.CManProto.GetCManInfoRequest) obj;
+
+      if (!getReply()
+          .equals(other.getReply())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REPLY_FIELD_NUMBER;
+      hash = (53 * hash) + getReply().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cman.CManProto.GetCManInfoRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cman.CManProto.GetCManInfoRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cman.CManProto.GetCManInfoRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cman.CManProto.GetCManInfoRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cman.CManProto.GetCManInfoRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cman.CManProto.GetCManInfoRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cman.CManProto.GetCManInfoRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cman.CManProto.GetCManInfoRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cman.CManProto.GetCManInfoRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cman.CManProto.GetCManInfoRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cman.CManProto.GetCManInfoRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cman.CManProto.GetCManInfoRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cman.CManProto.GetCManInfoRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code cman.GetCManInfoRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cman.GetCManInfoRequest)
+        cman.CManProto.GetCManInfoRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cman.CManProto.internal_static_cman_GetCManInfoRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cman.CManProto.internal_static_cman_GetCManInfoRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cman.CManProto.GetCManInfoRequest.class, cman.CManProto.GetCManInfoRequest.Builder.class);
+      }
+
+      // Construct using cman.CManProto.GetCManInfoRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        reply_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cman.CManProto.internal_static_cman_GetCManInfoRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public cman.CManProto.GetCManInfoRequest getDefaultInstanceForType() {
+        return cman.CManProto.GetCManInfoRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cman.CManProto.GetCManInfoRequest build() {
+        cman.CManProto.GetCManInfoRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cman.CManProto.GetCManInfoRequest buildPartial() {
+        cman.CManProto.GetCManInfoRequest result = new cman.CManProto.GetCManInfoRequest(this);
+        result.reply_ = reply_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cman.CManProto.GetCManInfoRequest) {
+          return mergeFrom((cman.CManProto.GetCManInfoRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cman.CManProto.GetCManInfoRequest other) {
+        if (other == cman.CManProto.GetCManInfoRequest.getDefaultInstance()) return this;
+        if (!other.getReply().isEmpty()) {
+          reply_ = other.reply_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cman.CManProto.GetCManInfoRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cman.CManProto.GetCManInfoRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object reply_ = "";
+      /**
+       * <pre>
+       * the reply address
+       * </pre>
+       *
+       * <code>string reply = 1;</code>
+       * @return The reply.
+       */
+      public java.lang.String getReply() {
+        java.lang.Object ref = reply_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          reply_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * the reply address
+       * </pre>
+       *
+       * <code>string reply = 1;</code>
+       * @return The bytes for reply.
+       */
+      public com.google.protobuf.ByteString
+          getReplyBytes() {
+        java.lang.Object ref = reply_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          reply_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * the reply address
+       * </pre>
+       *
+       * <code>string reply = 1;</code>
+       * @param value The reply to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReply(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        reply_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * the reply address
+       * </pre>
+       *
+       * <code>string reply = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReply() {
+        
+        reply_ = getDefaultInstance().getReply();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * the reply address
+       * </pre>
+       *
+       * <code>string reply = 1;</code>
+       * @param value The bytes for reply to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReplyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        reply_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cman.GetCManInfoRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:cman.GetCManInfoRequest)
+    private static final cman.CManProto.GetCManInfoRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cman.CManProto.GetCManInfoRequest();
+    }
+
+    public static cman.CManProto.GetCManInfoRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetCManInfoRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GetCManInfoRequest>() {
+      @java.lang.Override
+      public GetCManInfoRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetCManInfoRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetCManInfoRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetCManInfoRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cman.CManProto.GetCManInfoRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetCManInfoResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cman.GetCManInfoResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * the instance UUID
+     * </pre>
+     *
+     * <code>string uuid = 1;</code>
+     * @return The uuid.
+     */
+    java.lang.String getUuid();
+    /**
+     * <pre>
+     * the instance UUID
+     * </pre>
+     *
+     * <code>string uuid = 1;</code>
+     * @return The bytes for uuid.
+     */
+    com.google.protobuf.ByteString
+        getUuidBytes();
+
+    /**
+     * <code>bool is_leader = 2;</code>
+     * @return The isLeader.
+     */
+    boolean getIsLeader();
+
+    /**
+     * <pre>
+     * ACTIVE or STANDBY in HA,
+     * LEADER, FOLLOWER, or CANDIDATE in RAFT
+     * </pre>
+     *
+     * <code>string mode = 3;</code>
+     * @return The mode.
+     */
+    java.lang.String getMode();
+    /**
+     * <pre>
+     * ACTIVE or STANDBY in HA,
+     * LEADER, FOLLOWER, or CANDIDATE in RAFT
+     * </pre>
+     *
+     * <code>string mode = 3;</code>
+     * @return The bytes for mode.
+     */
+    com.google.protobuf.ByteString
+        getModeBytes();
+  }
+  /**
+   * Protobuf type {@code cman.GetCManInfoResponse}
+   */
+  public static final class GetCManInfoResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cman.GetCManInfoResponse)
+      GetCManInfoResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetCManInfoResponse.newBuilder() to construct.
+    private GetCManInfoResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetCManInfoResponse() {
+      uuid_ = "";
+      mode_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetCManInfoResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetCManInfoResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              uuid_ = s;
+              break;
+            }
+            case 16: {
+
+              isLeader_ = input.readBool();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              mode_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cman.CManProto.internal_static_cman_GetCManInfoResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cman.CManProto.internal_static_cman_GetCManInfoResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cman.CManProto.GetCManInfoResponse.class, cman.CManProto.GetCManInfoResponse.Builder.class);
+    }
+
+    public static final int UUID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object uuid_;
+    /**
+     * <pre>
+     * the instance UUID
+     * </pre>
+     *
+     * <code>string uuid = 1;</code>
+     * @return The uuid.
+     */
+    @java.lang.Override
+    public java.lang.String getUuid() {
+      java.lang.Object ref = uuid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uuid_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * the instance UUID
+     * </pre>
+     *
+     * <code>string uuid = 1;</code>
+     * @return The bytes for uuid.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUuidBytes() {
+      java.lang.Object ref = uuid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        uuid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int IS_LEADER_FIELD_NUMBER = 2;
+    private boolean isLeader_;
+    /**
+     * <code>bool is_leader = 2;</code>
+     * @return The isLeader.
+     */
+    @java.lang.Override
+    public boolean getIsLeader() {
+      return isLeader_;
+    }
+
+    public static final int MODE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object mode_;
+    /**
+     * <pre>
+     * ACTIVE or STANDBY in HA,
+     * LEADER, FOLLOWER, or CANDIDATE in RAFT
+     * </pre>
+     *
+     * <code>string mode = 3;</code>
+     * @return The mode.
+     */
+    @java.lang.Override
+    public java.lang.String getMode() {
+      java.lang.Object ref = mode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mode_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * ACTIVE or STANDBY in HA,
+     * LEADER, FOLLOWER, or CANDIDATE in RAFT
+     * </pre>
+     *
+     * <code>string mode = 3;</code>
+     * @return The bytes for mode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getModeBytes() {
+      java.lang.Object ref = mode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        mode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uuid_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uuid_);
+      }
+      if (isLeader_ != false) {
+        output.writeBool(2, isLeader_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mode_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, mode_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uuid_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uuid_);
+      }
+      if (isLeader_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, isLeader_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mode_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, mode_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cman.CManProto.GetCManInfoResponse)) {
+        return super.equals(obj);
+      }
+      cman.CManProto.GetCManInfoResponse other = (cman.CManProto.GetCManInfoResponse) obj;
+
+      if (!getUuid()
+          .equals(other.getUuid())) return false;
+      if (getIsLeader()
+          != other.getIsLeader()) return false;
+      if (!getMode()
+          .equals(other.getMode())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + UUID_FIELD_NUMBER;
+      hash = (53 * hash) + getUuid().hashCode();
+      hash = (37 * hash) + IS_LEADER_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsLeader());
+      hash = (37 * hash) + MODE_FIELD_NUMBER;
+      hash = (53 * hash) + getMode().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cman.CManProto.GetCManInfoResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cman.CManProto.GetCManInfoResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cman.CManProto.GetCManInfoResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cman.CManProto.GetCManInfoResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cman.CManProto.GetCManInfoResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cman.CManProto.GetCManInfoResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cman.CManProto.GetCManInfoResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cman.CManProto.GetCManInfoResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cman.CManProto.GetCManInfoResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cman.CManProto.GetCManInfoResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cman.CManProto.GetCManInfoResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cman.CManProto.GetCManInfoResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cman.CManProto.GetCManInfoResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code cman.GetCManInfoResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cman.GetCManInfoResponse)
+        cman.CManProto.GetCManInfoResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cman.CManProto.internal_static_cman_GetCManInfoResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cman.CManProto.internal_static_cman_GetCManInfoResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cman.CManProto.GetCManInfoResponse.class, cman.CManProto.GetCManInfoResponse.Builder.class);
+      }
+
+      // Construct using cman.CManProto.GetCManInfoResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        uuid_ = "";
+
+        isLeader_ = false;
+
+        mode_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cman.CManProto.internal_static_cman_GetCManInfoResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cman.CManProto.GetCManInfoResponse getDefaultInstanceForType() {
+        return cman.CManProto.GetCManInfoResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cman.CManProto.GetCManInfoResponse build() {
+        cman.CManProto.GetCManInfoResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cman.CManProto.GetCManInfoResponse buildPartial() {
+        cman.CManProto.GetCManInfoResponse result = new cman.CManProto.GetCManInfoResponse(this);
+        result.uuid_ = uuid_;
+        result.isLeader_ = isLeader_;
+        result.mode_ = mode_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cman.CManProto.GetCManInfoResponse) {
+          return mergeFrom((cman.CManProto.GetCManInfoResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cman.CManProto.GetCManInfoResponse other) {
+        if (other == cman.CManProto.GetCManInfoResponse.getDefaultInstance()) return this;
+        if (!other.getUuid().isEmpty()) {
+          uuid_ = other.uuid_;
+          onChanged();
+        }
+        if (other.getIsLeader() != false) {
+          setIsLeader(other.getIsLeader());
+        }
+        if (!other.getMode().isEmpty()) {
+          mode_ = other.mode_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cman.CManProto.GetCManInfoResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cman.CManProto.GetCManInfoResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object uuid_ = "";
+      /**
+       * <pre>
+       * the instance UUID
+       * </pre>
+       *
+       * <code>string uuid = 1;</code>
+       * @return The uuid.
+       */
+      public java.lang.String getUuid() {
+        java.lang.Object ref = uuid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uuid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * the instance UUID
+       * </pre>
+       *
+       * <code>string uuid = 1;</code>
+       * @return The bytes for uuid.
+       */
+      public com.google.protobuf.ByteString
+          getUuidBytes() {
+        java.lang.Object ref = uuid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          uuid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * the instance UUID
+       * </pre>
+       *
+       * <code>string uuid = 1;</code>
+       * @param value The uuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUuid(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        uuid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * the instance UUID
+       * </pre>
+       *
+       * <code>string uuid = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUuid() {
+        
+        uuid_ = getDefaultInstance().getUuid();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * the instance UUID
+       * </pre>
+       *
+       * <code>string uuid = 1;</code>
+       * @param value The bytes for uuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUuidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        uuid_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean isLeader_ ;
+      /**
+       * <code>bool is_leader = 2;</code>
+       * @return The isLeader.
+       */
+      @java.lang.Override
+      public boolean getIsLeader() {
+        return isLeader_;
+      }
+      /**
+       * <code>bool is_leader = 2;</code>
+       * @param value The isLeader to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsLeader(boolean value) {
+        
+        isLeader_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_leader = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsLeader() {
+        
+        isLeader_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object mode_ = "";
+      /**
+       * <pre>
+       * ACTIVE or STANDBY in HA,
+       * LEADER, FOLLOWER, or CANDIDATE in RAFT
+       * </pre>
+       *
+       * <code>string mode = 3;</code>
+       * @return The mode.
+       */
+      public java.lang.String getMode() {
+        java.lang.Object ref = mode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          mode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * ACTIVE or STANDBY in HA,
+       * LEADER, FOLLOWER, or CANDIDATE in RAFT
+       * </pre>
+       *
+       * <code>string mode = 3;</code>
+       * @return The bytes for mode.
+       */
+      public com.google.protobuf.ByteString
+          getModeBytes() {
+        java.lang.Object ref = mode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          mode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * ACTIVE or STANDBY in HA,
+       * LEADER, FOLLOWER, or CANDIDATE in RAFT
+       * </pre>
+       *
+       * <code>string mode = 3;</code>
+       * @param value The mode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        mode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * ACTIVE or STANDBY in HA,
+       * LEADER, FOLLOWER, or CANDIDATE in RAFT
+       * </pre>
+       *
+       * <code>string mode = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMode() {
+        
+        mode_ = getDefaultInstance().getMode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * ACTIVE or STANDBY in HA,
+       * LEADER, FOLLOWER, or CANDIDATE in RAFT
+       * </pre>
+       *
+       * <code>string mode = 3;</code>
+       * @param value The bytes for mode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        mode_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cman.GetCManInfoResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cman.GetCManInfoResponse)
+    private static final cman.CManProto.GetCManInfoResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cman.CManProto.GetCManInfoResponse();
+    }
+
+    public static cman.CManProto.GetCManInfoResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetCManInfoResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GetCManInfoResponse>() {
+      @java.lang.Override
+      public GetCManInfoResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetCManInfoResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetCManInfoResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetCManInfoResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cman.CManProto.GetCManInfoResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ChangeLeaderRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cman.ChangeLeaderRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * the instance UUID
+     * </pre>
+     *
+     * <code>string uuid = 1;</code>
+     * @return The uuid.
+     */
+    java.lang.String getUuid();
+    /**
+     * <pre>
+     * the instance UUID
+     * </pre>
+     *
+     * <code>string uuid = 1;</code>
+     * @return The bytes for uuid.
+     */
+    com.google.protobuf.ByteString
+        getUuidBytes();
+
+    /**
+     * <code>string mode = 2;</code>
+     * @return The mode.
+     */
+    java.lang.String getMode();
+    /**
+     * <code>string mode = 2;</code>
+     * @return The bytes for mode.
+     */
+    com.google.protobuf.ByteString
+        getModeBytes();
+  }
+  /**
+   * Protobuf type {@code cman.ChangeLeaderRequest}
+   */
+  public static final class ChangeLeaderRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cman.ChangeLeaderRequest)
+      ChangeLeaderRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ChangeLeaderRequest.newBuilder() to construct.
+    private ChangeLeaderRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ChangeLeaderRequest() {
+      uuid_ = "";
+      mode_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ChangeLeaderRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ChangeLeaderRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              uuid_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              mode_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cman.CManProto.internal_static_cman_ChangeLeaderRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cman.CManProto.internal_static_cman_ChangeLeaderRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cman.CManProto.ChangeLeaderRequest.class, cman.CManProto.ChangeLeaderRequest.Builder.class);
+    }
+
+    public static final int UUID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object uuid_;
+    /**
+     * <pre>
+     * the instance UUID
+     * </pre>
+     *
+     * <code>string uuid = 1;</code>
+     * @return The uuid.
+     */
+    @java.lang.Override
+    public java.lang.String getUuid() {
+      java.lang.Object ref = uuid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uuid_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * the instance UUID
+     * </pre>
+     *
+     * <code>string uuid = 1;</code>
+     * @return The bytes for uuid.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUuidBytes() {
+      java.lang.Object ref = uuid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        uuid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MODE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object mode_;
+    /**
+     * <code>string mode = 2;</code>
+     * @return The mode.
+     */
+    @java.lang.Override
+    public java.lang.String getMode() {
+      java.lang.Object ref = mode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mode_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string mode = 2;</code>
+     * @return The bytes for mode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getModeBytes() {
+      java.lang.Object ref = mode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        mode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uuid_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uuid_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mode_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mode_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uuid_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uuid_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mode_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, mode_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cman.CManProto.ChangeLeaderRequest)) {
+        return super.equals(obj);
+      }
+      cman.CManProto.ChangeLeaderRequest other = (cman.CManProto.ChangeLeaderRequest) obj;
+
+      if (!getUuid()
+          .equals(other.getUuid())) return false;
+      if (!getMode()
+          .equals(other.getMode())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + UUID_FIELD_NUMBER;
+      hash = (53 * hash) + getUuid().hashCode();
+      hash = (37 * hash) + MODE_FIELD_NUMBER;
+      hash = (53 * hash) + getMode().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cman.CManProto.ChangeLeaderRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cman.CManProto.ChangeLeaderRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cman.CManProto.ChangeLeaderRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cman.CManProto.ChangeLeaderRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cman.CManProto.ChangeLeaderRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cman.CManProto.ChangeLeaderRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cman.CManProto.ChangeLeaderRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cman.CManProto.ChangeLeaderRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cman.CManProto.ChangeLeaderRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cman.CManProto.ChangeLeaderRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cman.CManProto.ChangeLeaderRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cman.CManProto.ChangeLeaderRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cman.CManProto.ChangeLeaderRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code cman.ChangeLeaderRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cman.ChangeLeaderRequest)
+        cman.CManProto.ChangeLeaderRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cman.CManProto.internal_static_cman_ChangeLeaderRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cman.CManProto.internal_static_cman_ChangeLeaderRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cman.CManProto.ChangeLeaderRequest.class, cman.CManProto.ChangeLeaderRequest.Builder.class);
+      }
+
+      // Construct using cman.CManProto.ChangeLeaderRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        uuid_ = "";
+
+        mode_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cman.CManProto.internal_static_cman_ChangeLeaderRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public cman.CManProto.ChangeLeaderRequest getDefaultInstanceForType() {
+        return cman.CManProto.ChangeLeaderRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cman.CManProto.ChangeLeaderRequest build() {
+        cman.CManProto.ChangeLeaderRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cman.CManProto.ChangeLeaderRequest buildPartial() {
+        cman.CManProto.ChangeLeaderRequest result = new cman.CManProto.ChangeLeaderRequest(this);
+        result.uuid_ = uuid_;
+        result.mode_ = mode_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cman.CManProto.ChangeLeaderRequest) {
+          return mergeFrom((cman.CManProto.ChangeLeaderRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cman.CManProto.ChangeLeaderRequest other) {
+        if (other == cman.CManProto.ChangeLeaderRequest.getDefaultInstance()) return this;
+        if (!other.getUuid().isEmpty()) {
+          uuid_ = other.uuid_;
+          onChanged();
+        }
+        if (!other.getMode().isEmpty()) {
+          mode_ = other.mode_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cman.CManProto.ChangeLeaderRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cman.CManProto.ChangeLeaderRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object uuid_ = "";
+      /**
+       * <pre>
+       * the instance UUID
+       * </pre>
+       *
+       * <code>string uuid = 1;</code>
+       * @return The uuid.
+       */
+      public java.lang.String getUuid() {
+        java.lang.Object ref = uuid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uuid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * the instance UUID
+       * </pre>
+       *
+       * <code>string uuid = 1;</code>
+       * @return The bytes for uuid.
+       */
+      public com.google.protobuf.ByteString
+          getUuidBytes() {
+        java.lang.Object ref = uuid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          uuid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * the instance UUID
+       * </pre>
+       *
+       * <code>string uuid = 1;</code>
+       * @param value The uuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUuid(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        uuid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * the instance UUID
+       * </pre>
+       *
+       * <code>string uuid = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUuid() {
+        
+        uuid_ = getDefaultInstance().getUuid();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * the instance UUID
+       * </pre>
+       *
+       * <code>string uuid = 1;</code>
+       * @param value The bytes for uuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUuidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        uuid_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object mode_ = "";
+      /**
+       * <code>string mode = 2;</code>
+       * @return The mode.
+       */
+      public java.lang.String getMode() {
+        java.lang.Object ref = mode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          mode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string mode = 2;</code>
+       * @return The bytes for mode.
+       */
+      public com.google.protobuf.ByteString
+          getModeBytes() {
+        java.lang.Object ref = mode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          mode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string mode = 2;</code>
+       * @param value The mode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        mode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string mode = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMode() {
+        
+        mode_ = getDefaultInstance().getMode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string mode = 2;</code>
+       * @param value The bytes for mode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        mode_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cman.ChangeLeaderRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:cman.ChangeLeaderRequest)
+    private static final cman.CManProto.ChangeLeaderRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cman.CManProto.ChangeLeaderRequest();
+    }
+
+    public static cman.CManProto.ChangeLeaderRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ChangeLeaderRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ChangeLeaderRequest>() {
+      @java.lang.Override
+      public ChangeLeaderRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ChangeLeaderRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ChangeLeaderRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ChangeLeaderRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cman.CManProto.ChangeLeaderRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ChangeLeaderResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cman.ChangeLeaderResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * the instance UUID
+     * </pre>
+     *
+     * <code>string uuid = 1;</code>
+     * @return The uuid.
+     */
+    java.lang.String getUuid();
+    /**
+     * <pre>
+     * the instance UUID
+     * </pre>
+     *
+     * <code>string uuid = 1;</code>
+     * @return The bytes for uuid.
+     */
+    com.google.protobuf.ByteString
+        getUuidBytes();
+
+    /**
+     * <code>bool is_leader = 2;</code>
+     * @return The isLeader.
+     */
+    boolean getIsLeader();
+
+    /**
+     * <pre>
+     * ACTIVE or STANDBY in HA,
+     * LEADER, FOLLOWER, or CANDIDATE in RAFT
+     * </pre>
+     *
+     * <code>string mode = 3;</code>
+     * @return The mode.
+     */
+    java.lang.String getMode();
+    /**
+     * <pre>
+     * ACTIVE or STANDBY in HA,
+     * LEADER, FOLLOWER, or CANDIDATE in RAFT
+     * </pre>
+     *
+     * <code>string mode = 3;</code>
+     * @return The bytes for mode.
+     */
+    com.google.protobuf.ByteString
+        getModeBytes();
+  }
+  /**
+   * Protobuf type {@code cman.ChangeLeaderResponse}
+   */
+  public static final class ChangeLeaderResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cman.ChangeLeaderResponse)
+      ChangeLeaderResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ChangeLeaderResponse.newBuilder() to construct.
+    private ChangeLeaderResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ChangeLeaderResponse() {
+      uuid_ = "";
+      mode_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ChangeLeaderResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ChangeLeaderResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              uuid_ = s;
+              break;
+            }
+            case 16: {
+
+              isLeader_ = input.readBool();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              mode_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cman.CManProto.internal_static_cman_ChangeLeaderResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cman.CManProto.internal_static_cman_ChangeLeaderResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cman.CManProto.ChangeLeaderResponse.class, cman.CManProto.ChangeLeaderResponse.Builder.class);
+    }
+
+    public static final int UUID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object uuid_;
+    /**
+     * <pre>
+     * the instance UUID
+     * </pre>
+     *
+     * <code>string uuid = 1;</code>
+     * @return The uuid.
+     */
+    @java.lang.Override
+    public java.lang.String getUuid() {
+      java.lang.Object ref = uuid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uuid_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * the instance UUID
+     * </pre>
+     *
+     * <code>string uuid = 1;</code>
+     * @return The bytes for uuid.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUuidBytes() {
+      java.lang.Object ref = uuid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        uuid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int IS_LEADER_FIELD_NUMBER = 2;
+    private boolean isLeader_;
+    /**
+     * <code>bool is_leader = 2;</code>
+     * @return The isLeader.
+     */
+    @java.lang.Override
+    public boolean getIsLeader() {
+      return isLeader_;
+    }
+
+    public static final int MODE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object mode_;
+    /**
+     * <pre>
+     * ACTIVE or STANDBY in HA,
+     * LEADER, FOLLOWER, or CANDIDATE in RAFT
+     * </pre>
+     *
+     * <code>string mode = 3;</code>
+     * @return The mode.
+     */
+    @java.lang.Override
+    public java.lang.String getMode() {
+      java.lang.Object ref = mode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mode_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * ACTIVE or STANDBY in HA,
+     * LEADER, FOLLOWER, or CANDIDATE in RAFT
+     * </pre>
+     *
+     * <code>string mode = 3;</code>
+     * @return The bytes for mode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getModeBytes() {
+      java.lang.Object ref = mode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        mode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uuid_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uuid_);
+      }
+      if (isLeader_ != false) {
+        output.writeBool(2, isLeader_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mode_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, mode_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uuid_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uuid_);
+      }
+      if (isLeader_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, isLeader_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mode_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, mode_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cman.CManProto.ChangeLeaderResponse)) {
+        return super.equals(obj);
+      }
+      cman.CManProto.ChangeLeaderResponse other = (cman.CManProto.ChangeLeaderResponse) obj;
+
+      if (!getUuid()
+          .equals(other.getUuid())) return false;
+      if (getIsLeader()
+          != other.getIsLeader()) return false;
+      if (!getMode()
+          .equals(other.getMode())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + UUID_FIELD_NUMBER;
+      hash = (53 * hash) + getUuid().hashCode();
+      hash = (37 * hash) + IS_LEADER_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsLeader());
+      hash = (37 * hash) + MODE_FIELD_NUMBER;
+      hash = (53 * hash) + getMode().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cman.CManProto.ChangeLeaderResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cman.CManProto.ChangeLeaderResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cman.CManProto.ChangeLeaderResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cman.CManProto.ChangeLeaderResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cman.CManProto.ChangeLeaderResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cman.CManProto.ChangeLeaderResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cman.CManProto.ChangeLeaderResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cman.CManProto.ChangeLeaderResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cman.CManProto.ChangeLeaderResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cman.CManProto.ChangeLeaderResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cman.CManProto.ChangeLeaderResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cman.CManProto.ChangeLeaderResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cman.CManProto.ChangeLeaderResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code cman.ChangeLeaderResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cman.ChangeLeaderResponse)
+        cman.CManProto.ChangeLeaderResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cman.CManProto.internal_static_cman_ChangeLeaderResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cman.CManProto.internal_static_cman_ChangeLeaderResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cman.CManProto.ChangeLeaderResponse.class, cman.CManProto.ChangeLeaderResponse.Builder.class);
+      }
+
+      // Construct using cman.CManProto.ChangeLeaderResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        uuid_ = "";
+
+        isLeader_ = false;
+
+        mode_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cman.CManProto.internal_static_cman_ChangeLeaderResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cman.CManProto.ChangeLeaderResponse getDefaultInstanceForType() {
+        return cman.CManProto.ChangeLeaderResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cman.CManProto.ChangeLeaderResponse build() {
+        cman.CManProto.ChangeLeaderResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cman.CManProto.ChangeLeaderResponse buildPartial() {
+        cman.CManProto.ChangeLeaderResponse result = new cman.CManProto.ChangeLeaderResponse(this);
+        result.uuid_ = uuid_;
+        result.isLeader_ = isLeader_;
+        result.mode_ = mode_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cman.CManProto.ChangeLeaderResponse) {
+          return mergeFrom((cman.CManProto.ChangeLeaderResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cman.CManProto.ChangeLeaderResponse other) {
+        if (other == cman.CManProto.ChangeLeaderResponse.getDefaultInstance()) return this;
+        if (!other.getUuid().isEmpty()) {
+          uuid_ = other.uuid_;
+          onChanged();
+        }
+        if (other.getIsLeader() != false) {
+          setIsLeader(other.getIsLeader());
+        }
+        if (!other.getMode().isEmpty()) {
+          mode_ = other.mode_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cman.CManProto.ChangeLeaderResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cman.CManProto.ChangeLeaderResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object uuid_ = "";
+      /**
+       * <pre>
+       * the instance UUID
+       * </pre>
+       *
+       * <code>string uuid = 1;</code>
+       * @return The uuid.
+       */
+      public java.lang.String getUuid() {
+        java.lang.Object ref = uuid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uuid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * the instance UUID
+       * </pre>
+       *
+       * <code>string uuid = 1;</code>
+       * @return The bytes for uuid.
+       */
+      public com.google.protobuf.ByteString
+          getUuidBytes() {
+        java.lang.Object ref = uuid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          uuid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * the instance UUID
+       * </pre>
+       *
+       * <code>string uuid = 1;</code>
+       * @param value The uuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUuid(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        uuid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * the instance UUID
+       * </pre>
+       *
+       * <code>string uuid = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUuid() {
+        
+        uuid_ = getDefaultInstance().getUuid();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * the instance UUID
+       * </pre>
+       *
+       * <code>string uuid = 1;</code>
+       * @param value The bytes for uuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUuidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        uuid_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean isLeader_ ;
+      /**
+       * <code>bool is_leader = 2;</code>
+       * @return The isLeader.
+       */
+      @java.lang.Override
+      public boolean getIsLeader() {
+        return isLeader_;
+      }
+      /**
+       * <code>bool is_leader = 2;</code>
+       * @param value The isLeader to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsLeader(boolean value) {
+        
+        isLeader_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_leader = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsLeader() {
+        
+        isLeader_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object mode_ = "";
+      /**
+       * <pre>
+       * ACTIVE or STANDBY in HA,
+       * LEADER, FOLLOWER, or CANDIDATE in RAFT
+       * </pre>
+       *
+       * <code>string mode = 3;</code>
+       * @return The mode.
+       */
+      public java.lang.String getMode() {
+        java.lang.Object ref = mode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          mode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * ACTIVE or STANDBY in HA,
+       * LEADER, FOLLOWER, or CANDIDATE in RAFT
+       * </pre>
+       *
+       * <code>string mode = 3;</code>
+       * @return The bytes for mode.
+       */
+      public com.google.protobuf.ByteString
+          getModeBytes() {
+        java.lang.Object ref = mode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          mode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * ACTIVE or STANDBY in HA,
+       * LEADER, FOLLOWER, or CANDIDATE in RAFT
+       * </pre>
+       *
+       * <code>string mode = 3;</code>
+       * @param value The mode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        mode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * ACTIVE or STANDBY in HA,
+       * LEADER, FOLLOWER, or CANDIDATE in RAFT
+       * </pre>
+       *
+       * <code>string mode = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMode() {
+        
+        mode_ = getDefaultInstance().getMode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * ACTIVE or STANDBY in HA,
+       * LEADER, FOLLOWER, or CANDIDATE in RAFT
+       * </pre>
+       *
+       * <code>string mode = 3;</code>
+       * @param value The bytes for mode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        mode_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cman.ChangeLeaderResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cman.ChangeLeaderResponse)
+    private static final cman.CManProto.ChangeLeaderResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cman.CManProto.ChangeLeaderResponse();
+    }
+
+    public static cman.CManProto.ChangeLeaderResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ChangeLeaderResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ChangeLeaderResponse>() {
+      @java.lang.Override
+      public ChangeLeaderResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ChangeLeaderResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ChangeLeaderResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ChangeLeaderResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cman.CManProto.ChangeLeaderResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cman_EmptyMessage_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cman_EmptyMessage_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cman_ConferenceInfoRequest_descriptor;
   private static final 
@@ -43840,6 +49938,41 @@ public final class CManProto {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cman_loopSomeResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cman_getJWTRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cman_getJWTRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cman_getJWTRequestClaims_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cman_getJWTRequestClaims_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cman_getJWTResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cman_getJWTResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cman_GetCManInfoRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cman_GetCManInfoRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cman_GetCManInfoResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cman_GetCManInfoResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cman_ChangeLeaderRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cman_ChangeLeaderRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cman_ChangeLeaderResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cman_ChangeLeaderResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -43849,149 +49982,161 @@ public final class CManProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025proto/cman/cman.proto\022\004cman\"\267\001\n\025Confer" +
-      "enceInfoRequest\022\014\n\004name\030\001 \001(\t\022\023\n\013showMem" +
-      "bers\030\002 \001(\010\022E\n\rmemberFilters\030\003 \003(\0132..cman" +
-      ".ConferenceInfoRequest.MemberFiltersEntr" +
-      "y\0324\n\022MemberFiltersEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005" +
-      "value\030\002 \001(\t:\0028\001\"T\n\026ConferenceInfoRespons" +
-      "e\022:\n\nconference\030\001 \001(\0132&.cman.ConferenceI" +
-      "nfoResponseConference\"\360\001\n ConferenceInfo" +
-      "ResponseConference\022\014\n\004name\030\001 \001(\t\022\016\n\006doma" +
-      "in\030\002 \001(\t\022:\n\005nodes\030\003 \003(\0132+.cman.Conferenc" +
-      "eInfoResponseConferenceNodes\022\014\n\004size\030\004 \001" +
-      "(\005\022\024\n\014member_count\030\005 \001(\005\022\016\n\006states\030\006 \001(\t" +
-      "\022>\n\007members\030\007 \003(\0132-.cman.ConferenceInfoR" +
-      "esponseConferenceMembers\"\271\003\n%ConferenceI" +
-      "nfoResponseConferenceNodes\022\020\n\010nodeUUID\030\001" +
-      " \001(\t\022\027\n\017confMemberCount\030\002 \001(\005\022\014\n\004size\030\003 " +
-      "\001(\005\022M\n\014GroupMembers\030\004 \003(\01327.cman.Confere" +
-      "nceInfoResponseConferenceNodesGroupMembe" +
-      "rs\022\025\n\rconfCreatTime\030\005 \001(\t\022\020\n\010confUUID\030\006 " +
-      "\001(\t\022\020\n\010nodeType\030\007 \001(\t\022\017\n\007localIP\030\010 \001(\t\022K" +
-      "\n\013nodeMembers\030\t \001(\01326.cman.ConferenceInf" +
-      "oResponseConferenceNodesNodeMembers\022\031\n\021m" +
-      "oderatorMemberID\030\n \001(\t\022\022\n\ndestNumber\030\013 \001" +
-      "(\t\022\016\n\006action\030\014 \001(\t\022\r\n\005state\030\r \001(\t\022\023\n\013las" +
-      "tUpdated\030\016 \001(\t\022\014\n\004port\030\017 \001(\005\"S\n1Conferen" +
-      "ceInfoResponseConferenceNodesGroupMember" +
-      "s\022\017\n\007groupID\030\001 \001(\t\022\r\n\005count\030\002 \001(\005\"2\n0Con" +
-      "ferenceInfoResponseConferenceNodesNodeMe" +
-      "mbers\"\262\003\n\'ConferenceInfoResponseConferen" +
-      "ceMembers\022\020\n\010memberID\030\001 \001(\t\022\021\n\tcidNumber" +
-      "\030\002 \001(\t\022\017\n\007cidName\030\003 \001(\t\022\r\n\005codec\030\004 \001(\t\022C" +
-      "\n\006status\030\005 \001(\01323.cman.ConferenceInfoResp" +
-      "onseConferenceMembersStatus\022\r\n\005email\030\006 \001" +
-      "(\t\022\020\n\010nodeUUID\030\007 \001(\t\022\016\n\006active\030\010 \001(\010\022\014\n\004" +
-      "uuid\030\t \001(\t\022\017\n\007groupID\030\n \001(\t\022\022\n\nmemberTyp" +
-      "e\030\013 \001(\t\022\020\n\010nodeType\030\014 \001(\t\022\016\n\006domain\030\r \001(" +
-      "\t\022\020\n\010canvasID\030\016 \001(\005\022\030\n\020watchingCanvasID\030" +
-      "\017 \001(\005\022\016\n\006roleID\030\020 \001(\t\022\017\n\007layerID\030\021 \001(\005\022\025" +
-      "\n\rreservationID\030\022 \001(\t\022\023\n\013channelName\030\023 \001" +
-      "(\t\"\301\001\n-ConferenceInfoResponseConferenceM" +
-      "embersStatus\022G\n\005audio\030\001 \001(\01328.cman.Confe" +
-      "renceInfoResponseConferenceMembersStatus" +
-      "Audio\022G\n\005video\030\002 \001(\01328.cman.ConferenceIn" +
-      "foResponseConferenceMembersStatusVideo\"\226" +
-      "\001\n2ConferenceInfoResponseConferenceMembe" +
-      "rsStatusAudio\022\017\n\007talking\030\001 \001(\010\022\014\n\004deaf\030\002" +
-      " \001(\010\022\r\n\005muted\030\003 \001(\010\022\016\n\006onHold\030\004 \001(\010\022\023\n\013e" +
-      "nergyScore\030\005 \001(\005\022\r\n\005floor\030\006 \001(\010\"\232\002\n2Conf" +
-      "erenceInfoResponseConferenceMembersStatu" +
-      "sVideo\022\017\n\007visible\030\001 \001(\010\022\021\n\tnoRecover\030\002 \001" +
-      "(\010\022\027\n\017avatarPresented\030\003 \001(\010\022\021\n\tmediaFlow" +
-      "\030\004 \001(\010\022\r\n\005muted\030\005 \001(\010\022\r\n\005floor\030\006 \001(\010\022\025\n\r" +
-      "reservationID\030\007 \001(\t\022\016\n\006roleID\030\010 \001(\t\022\024\n\014v" +
-      "ideoLayerID\030\t \001(\005\022\020\n\010canvasID\030\n \001(\005\022\030\n\020w" +
-      "atchingCanvasID\030\013 \001(\005\022\r\n\005order\030\014 \001(\005\"!\n\037" +
-      "ConferenceInfoResponseVariables\"\270\002\n\035Conf" +
-      "erenceInfoResponseMembers\022\014\n\004type\030\001 \001(\t\022" +
-      "\n\n\002id\030\002 \001(\005\022\014\n\004uuid\030\003 \001(\t\022\026\n\016caller_id_n" +
-      "ame\030\004 \001(\t\022\030\n\020caller_id_number\030\005 \001(\t\022\021\n\tj" +
-      "oin_time\030\006 \001(\005\022\024\n\014last_talking\030\007 \001(\005\022\016\n\006" +
-      "energy\030\010 \001(\005\022\021\n\tvolume_in\030\t \001(\005\022\022\n\nvolum" +
-      "e_out\030\n \001(\005\022\025\n\routput_volume\030\013 \001(\005\022\024\n\014in" +
-      "put_volume\030\014 \001(\005\0220\n\005flags\030\r \001(\0132!.cman.C" +
-      "onferenceInfoResponseFlags\"\361\001\n\033Conferenc" +
-      "eInfoResponseFlags\022\020\n\010can_hear\030\001 \001(\010\022\017\n\007" +
-      "can_see\030\002 \001(\010\022\021\n\tcan_speak\030\003 \001(\010\022\014\n\004hold" +
-      "\030\004 \001(\010\022\023\n\013mute_detect\030\005 \001(\010\022\017\n\007talking\030\006" +
-      " \001(\010\022\021\n\thas_video\030\007 \001(\010\022\024\n\014video_bridge\030" +
-      "\010 \001(\010\022\021\n\thas_floor\030\t \001(\010\022\024\n\014is_moderator" +
-      "\030\n \001(\010\022\026\n\016end_conference\030\013 \001(\010\"\032\n\030GetCon" +
-      "ferenceListRequest\"#\n!ConferenceObjectNo" +
-      "desGroupMembers\"\"\n ConferenceObjectNodes" +
-      "NodeMembers\"\353\002\n\025ConferenceObjectNodes\022\020\n" +
-      "\010nodeUUID\030\001 \001(\t\022\027\n\017confMemberCount\030\002 \001(\005" +
-      "\022\014\n\004size\030\003 \001(\005\022=\n\014groupMembers\030\004 \003(\0132\'.c" +
-      "man.ConferenceObjectNodesGroupMembers\022\027\n" +
-      "\017confCreatedTime\030\005 \001(\t\022\020\n\010confUUID\030\006 \001(\t" +
-      "\022\017\n\007localIP\030\007 \001(\t\022;\n\013nodeMembers\030\010 \003(\0132&" +
-      ".cman.ConferenceObjectNodesNodeMembers\022\031" +
-      "\n\021moderatorMemberID\030\t \001(\t\022\022\n\ndestNumber\030" +
-      "\n \001(\t\022\016\n\006action\030\013 \001(\t\022\r\n\005state\030\014 \001(\t\022\023\n\013" +
-      "lastUpdated\030\r \001(\t\"\216\001\n\020ConferenceObject\022\014" +
-      "\n\004name\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022*\n\005nodes\030\003 " +
-      "\003(\0132\033.cman.ConferenceObjectNodes\022\014\n\004size" +
-      "\030\004 \001(\005\022\023\n\013memberCount\030\005 \001(\t\022\r\n\005state\030\006 \001" +
-      "(\t\"H\n\031GetConferenceListResponse\022+\n\013confe" +
-      "rences\030\001 \003(\0132\026.cman.ConferenceObject\"i\n\020" +
-      "BootstrapRequest\022\025\n\revent_channel\030\001 \001(\t\022" +
-      ".\n\004data\030\002 \001(\0132 .cman.BootstrapRequestPar" +
-      "amsData\022\016\n\006sessid\030\003 \001(\t\"[\n\032BootstrapRequ" +
-      "estParamsData\022=\n\nlive_array\030\001 \001(\0132).cman" +
-      ".BootstrapRequestParamsDataLiveArray\"\220\001\n" +
-      "#BootstrapRequestParamsDataLiveArray\022\017\n\007" +
-      "command\030\001 \001(\t\022\017\n\007context\030\002 \001(\t\022\014\n\004name\030\003" +
-      " \001(\t\0229\n\003obj\030\004 \001(\0132,.cman.BootstrapReques" +
-      "tParamsDataLiveArrayObj\"(\n&BootstrapRequ" +
-      "estParamsDataLiveArrayObj\"k\n\021BootstrapRe" +
-      "sponse\022\025\n\revent_channel\030\001 \001(\t\022\016\n\006sessid\030" +
-      "\002 \001(\t\022/\n\004data\030\003 \001(\0132!.cman.BootstrapResp" +
-      "onseParamsData\"\233\001\n\033BootstrapResponsePara" +
-      "msData\022\016\n\006action\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\014\n\004" +
-      "data\030\003 \001(\014\022\022\n\nwire_serno\030\004 \001(\005\022<\n\tconf_i" +
-      "nfo\030\005 \001(\0132).cman.BootstrapResponseParams" +
-      "DataConfInfo\"\201\001\n#BootstrapResponseParams" +
-      "DataConfInfo\022\014\n\004size\030\001 \001(\005\022L\n\rgroup_memb" +
-      "ers\030\002 \001(\01325.cman.BootstrapResponseParams" +
-      "DataConfInfoGroupMembers\"C\n/BootstrapRes" +
-      "ponseParamsDataConfInfoGroupMembers\022\020\n\010n" +
-      "o_group\030\001 \001(\005\"+\n\033getNodeForConferenceReq" +
-      "uest\022\014\n\004name\030\001 \001(\t\"0\n\034getNodeForConferen" +
-      "ceResponse\022\020\n\010nodeUUID\030\001 \001(\t\"p\n\022confCont" +
-      "rolRequest\022\017\n\007command\030\001 \001(\t\022\026\n\016conferenc" +
-      "eName\030\002 \001(\t\022\020\n\010nodeUUID\030\003 \001(\t\022\020\n\010memberI" +
-      "D\030\004 \001(\t\022\r\n\005value\030\005 \001(\t\"\025\n\023confControlRes" +
-      "ponse\"]\n\017pushMainRequest\022\017\n\007command\030\001 \001(" +
-      "\t\022\027\n\017conference_name\030\002 \001(\t\022\020\n\010nodeUUID\030\003" +
-      " \001(\t\022\016\n\006stream\030\004 \001(\005\"\022\n\020pushMainResponse" +
-      "\"\226\001\n\024pushSubCanvasRequest\022\017\n\007command\030\001 \001" +
-      "(\t\022\027\n\017conference_name\030\002 \001(\t\022\020\n\010nodeUUID\030" +
-      "\003 \001(\t\022\016\n\006layout\030\004 \001(\t\0222\n\007members\030\005 \003(\0132!" +
-      ".cman.pushSubCanvasRequestMembers\"S\n\033pus" +
-      "hSubCanvasRequestMembers\022\020\n\010memberID\030\001 \001" +
-      "(\t\022\020\n\010position\030\002 \001(\t\022\020\n\010nodeUUID\030\003 \001(\t\"\027" +
-      "\n\025pushSubCanvasResponse\"\236\001\n\030pushMainSubC" +
-      "anvasRequest\022\017\n\007command\030\001 \001(\t\022\027\n\017confere" +
-      "nce_name\030\002 \001(\t\022\020\n\010nodeUUID\030\003 \001(\t\022\016\n\006layo" +
-      "ut\030\004 \001(\t\0226\n\007members\030\005 \003(\0132%.cman.pushMai" +
-      "nSubCanvasRequestMembers\"W\n\037pushMainSubC" +
-      "anvasRequestMembers\022\020\n\010memberID\030\001 \001(\t\022\020\n" +
-      "\010position\030\002 \001(\t\022\020\n\010nodeUUID\030\003 \001(\t\"\033\n\031pus" +
-      "hMainSubCanvasResponse\"\216\001\n\020pushWholeRequ" +
-      "est\022\017\n\007command\030\001 \001(\t\022\027\n\017conference_name\030" +
-      "\002 \001(\t\022\020\n\010nodeUUID\030\003 \001(\t\022\016\n\006layout\030\004 \001(\t\022" +
-      ".\n\007members\030\005 \003(\0132\035.cman.pushWholeRequest" +
-      "Members\"O\n\027pushWholeRequestMembers\022\020\n\010me" +
-      "mberID\030\001 \001(\t\022\020\n\010position\030\002 \001(\t\022\020\n\010nodeUU" +
-      "ID\030\003 \001(\t\"\023\n\021pushWholeResponse\"\214\001\n\017loopSo" +
-      "meRequest\022\017\n\007command\030\001 \001(\t\022\027\n\017conference" +
-      "_name\030\002 \001(\t\022\020\n\010interval\030\003 \001(\t\022\016\n\006layout\030" +
-      "\004 \001(\t\022-\n\007members\030\005 \003(\0132\034.cman.loopSomeRe" +
-      "questMembers\"<\n\026loopSomeRequestMembers\022\020" +
-      "\n\010memberID\030\001 \001(\t\022\020\n\010nodeUUID\030\002 \001(\t\"\022\n\020lo" +
-      "opSomeResponse2\362\005\n\004cMan\022V\n\021getConference" +
+      "\n\025proto/cman/cman.proto\022\004cman\"\016\n\014EmptyMe" +
+      "ssage\"\267\001\n\025ConferenceInfoRequest\022\014\n\004name\030" +
+      "\001 \001(\t\022\023\n\013showMembers\030\002 \001(\010\022E\n\rmemberFilt" +
+      "ers\030\003 \003(\0132..cman.ConferenceInfoRequest.M" +
+      "emberFiltersEntry\0324\n\022MemberFiltersEntry\022" +
+      "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"T\n\026Confe" +
+      "renceInfoResponse\022:\n\nconference\030\001 \001(\0132&." +
+      "cman.ConferenceInfoResponseConference\"\360\001" +
+      "\n ConferenceInfoResponseConference\022\014\n\004na" +
+      "me\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022:\n\005nodes\030\003 \003(\0132" +
+      "+.cman.ConferenceInfoResponseConferenceN" +
+      "odes\022\014\n\004size\030\004 \001(\005\022\024\n\014member_count\030\005 \001(\005" +
+      "\022\016\n\006states\030\006 \001(\t\022>\n\007members\030\007 \003(\0132-.cman" +
+      ".ConferenceInfoResponseConferenceMembers" +
+      "\"\271\003\n%ConferenceInfoResponseConferenceNod" +
+      "es\022\020\n\010nodeUUID\030\001 \001(\t\022\027\n\017confMemberCount\030" +
+      "\002 \001(\005\022\014\n\004size\030\003 \001(\005\022M\n\014GroupMembers\030\004 \003(" +
+      "\01327.cman.ConferenceInfoResponseConferenc" +
+      "eNodesGroupMembers\022\025\n\rconfCreatTime\030\005 \001(" +
+      "\t\022\020\n\010confUUID\030\006 \001(\t\022\020\n\010nodeType\030\007 \001(\t\022\017\n" +
+      "\007localIP\030\010 \001(\t\022K\n\013nodeMembers\030\t \001(\01326.cm" +
+      "an.ConferenceInfoResponseConferenceNodes" +
+      "NodeMembers\022\031\n\021moderatorMemberID\030\n \001(\t\022\022" +
+      "\n\ndestNumber\030\013 \001(\t\022\016\n\006action\030\014 \001(\t\022\r\n\005st" +
+      "ate\030\r \001(\t\022\023\n\013lastUpdated\030\016 \001(\t\022\014\n\004port\030\017" +
+      " \001(\005\"S\n1ConferenceInfoResponseConference" +
+      "NodesGroupMembers\022\017\n\007groupID\030\001 \001(\t\022\r\n\005co" +
+      "unt\030\002 \001(\005\"2\n0ConferenceInfoResponseConfe" +
+      "renceNodesNodeMembers\"\262\003\n\'ConferenceInfo" +
+      "ResponseConferenceMembers\022\020\n\010memberID\030\001 " +
+      "\001(\t\022\021\n\tcidNumber\030\002 \001(\t\022\017\n\007cidName\030\003 \001(\t\022" +
+      "\r\n\005codec\030\004 \001(\t\022C\n\006status\030\005 \001(\01323.cman.Co" +
+      "nferenceInfoResponseConferenceMembersSta" +
+      "tus\022\r\n\005email\030\006 \001(\t\022\020\n\010nodeUUID\030\007 \001(\t\022\016\n\006" +
+      "active\030\010 \001(\010\022\014\n\004uuid\030\t \001(\t\022\017\n\007groupID\030\n " +
+      "\001(\t\022\022\n\nmemberType\030\013 \001(\t\022\020\n\010nodeType\030\014 \001(" +
+      "\t\022\016\n\006domain\030\r \001(\t\022\020\n\010canvasID\030\016 \001(\005\022\030\n\020w" +
+      "atchingCanvasID\030\017 \001(\005\022\016\n\006roleID\030\020 \001(\t\022\017\n" +
+      "\007layerID\030\021 \001(\005\022\025\n\rreservationID\030\022 \001(\t\022\023\n" +
+      "\013channelName\030\023 \001(\t\"\301\001\n-ConferenceInfoRes" +
+      "ponseConferenceMembersStatus\022G\n\005audio\030\001 " +
+      "\001(\01328.cman.ConferenceInfoResponseConfere" +
+      "nceMembersStatusAudio\022G\n\005video\030\002 \001(\01328.c" +
+      "man.ConferenceInfoResponseConferenceMemb" +
+      "ersStatusVideo\"\226\001\n2ConferenceInfoRespons" +
+      "eConferenceMembersStatusAudio\022\017\n\007talking" +
+      "\030\001 \001(\010\022\014\n\004deaf\030\002 \001(\010\022\r\n\005muted\030\003 \001(\010\022\016\n\006o" +
+      "nHold\030\004 \001(\010\022\023\n\013energyScore\030\005 \001(\005\022\r\n\005floo" +
+      "r\030\006 \001(\010\"\232\002\n2ConferenceInfoResponseConfer" +
+      "enceMembersStatusVideo\022\017\n\007visible\030\001 \001(\010\022" +
+      "\021\n\tnoRecover\030\002 \001(\010\022\027\n\017avatarPresented\030\003 " +
+      "\001(\010\022\021\n\tmediaFlow\030\004 \001(\010\022\r\n\005muted\030\005 \001(\010\022\r\n" +
+      "\005floor\030\006 \001(\010\022\025\n\rreservationID\030\007 \001(\t\022\016\n\006r" +
+      "oleID\030\010 \001(\t\022\024\n\014videoLayerID\030\t \001(\005\022\020\n\010can" +
+      "vasID\030\n \001(\005\022\030\n\020watchingCanvasID\030\013 \001(\005\022\r\n" +
+      "\005order\030\014 \001(\005\"!\n\037ConferenceInfoResponseVa" +
+      "riables\"\270\002\n\035ConferenceInfoResponseMember" +
+      "s\022\014\n\004type\030\001 \001(\t\022\n\n\002id\030\002 \001(\005\022\014\n\004uuid\030\003 \001(" +
+      "\t\022\026\n\016caller_id_name\030\004 \001(\t\022\030\n\020caller_id_n" +
+      "umber\030\005 \001(\t\022\021\n\tjoin_time\030\006 \001(\005\022\024\n\014last_t" +
+      "alking\030\007 \001(\005\022\016\n\006energy\030\010 \001(\005\022\021\n\tvolume_i" +
+      "n\030\t \001(\005\022\022\n\nvolume_out\030\n \001(\005\022\025\n\routput_vo" +
+      "lume\030\013 \001(\005\022\024\n\014input_volume\030\014 \001(\005\0220\n\005flag" +
+      "s\030\r \001(\0132!.cman.ConferenceInfoResponseFla" +
+      "gs\"\361\001\n\033ConferenceInfoResponseFlags\022\020\n\010ca" +
+      "n_hear\030\001 \001(\010\022\017\n\007can_see\030\002 \001(\010\022\021\n\tcan_spe" +
+      "ak\030\003 \001(\010\022\014\n\004hold\030\004 \001(\010\022\023\n\013mute_detect\030\005 " +
+      "\001(\010\022\017\n\007talking\030\006 \001(\010\022\021\n\thas_video\030\007 \001(\010\022" +
+      "\024\n\014video_bridge\030\010 \001(\010\022\021\n\thas_floor\030\t \001(\010" +
+      "\022\024\n\014is_moderator\030\n \001(\010\022\026\n\016end_conference" +
+      "\030\013 \001(\010\"\032\n\030GetConferenceListRequest\"#\n!Co" +
+      "nferenceObjectNodesGroupMembers\"\"\n Confe" +
+      "renceObjectNodesNodeMembers\"\353\002\n\025Conferen" +
+      "ceObjectNodes\022\020\n\010nodeUUID\030\001 \001(\t\022\027\n\017confM" +
+      "emberCount\030\002 \001(\005\022\014\n\004size\030\003 \001(\005\022=\n\014groupM" +
+      "embers\030\004 \003(\0132\'.cman.ConferenceObjectNode" +
+      "sGroupMembers\022\027\n\017confCreatedTime\030\005 \001(\t\022\020" +
+      "\n\010confUUID\030\006 \001(\t\022\017\n\007localIP\030\007 \001(\t\022;\n\013nod" +
+      "eMembers\030\010 \003(\0132&.cman.ConferenceObjectNo" +
+      "desNodeMembers\022\031\n\021moderatorMemberID\030\t \001(" +
+      "\t\022\022\n\ndestNumber\030\n \001(\t\022\016\n\006action\030\013 \001(\t\022\r\n" +
+      "\005state\030\014 \001(\t\022\023\n\013lastUpdated\030\r \001(\t\"\216\001\n\020Co" +
+      "nferenceObject\022\014\n\004name\030\001 \001(\t\022\016\n\006domain\030\002" +
+      " \001(\t\022*\n\005nodes\030\003 \003(\0132\033.cman.ConferenceObj" +
+      "ectNodes\022\014\n\004size\030\004 \001(\005\022\023\n\013memberCount\030\005 " +
+      "\001(\t\022\r\n\005state\030\006 \001(\t\"H\n\031GetConferenceListR" +
+      "esponse\022+\n\013conferences\030\001 \003(\0132\026.cman.Conf" +
+      "erenceObject\"i\n\020BootstrapRequest\022\025\n\reven" +
+      "t_channel\030\001 \001(\t\022.\n\004data\030\002 \001(\0132 .cman.Boo" +
+      "tstrapRequestParamsData\022\016\n\006sessid\030\003 \001(\t\"" +
+      "[\n\032BootstrapRequestParamsData\022=\n\nlive_ar" +
+      "ray\030\001 \001(\0132).cman.BootstrapRequestParamsD" +
+      "ataLiveArray\"\220\001\n#BootstrapRequestParamsD" +
+      "ataLiveArray\022\017\n\007command\030\001 \001(\t\022\017\n\007context" +
+      "\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\0229\n\003obj\030\004 \001(\0132,.cman" +
+      ".BootstrapRequestParamsDataLiveArrayObj\"" +
+      "(\n&BootstrapRequestParamsDataLiveArrayOb" +
+      "j\"k\n\021BootstrapResponse\022\025\n\revent_channel\030" +
+      "\001 \001(\t\022\016\n\006sessid\030\002 \001(\t\022/\n\004data\030\003 \001(\0132!.cm" +
+      "an.BootstrapResponseParamsData\"\233\001\n\033Boots" +
+      "trapResponseParamsData\022\016\n\006action\030\001 \001(\t\022\014" +
+      "\n\004name\030\002 \001(\t\022\014\n\004data\030\003 \001(\014\022\022\n\nwire_serno" +
+      "\030\004 \001(\005\022<\n\tconf_info\030\005 \001(\0132).cman.Bootstr" +
+      "apResponseParamsDataConfInfo\"\201\001\n#Bootstr" +
+      "apResponseParamsDataConfInfo\022\014\n\004size\030\001 \001" +
+      "(\005\022L\n\rgroup_members\030\002 \001(\01325.cman.Bootstr" +
+      "apResponseParamsDataConfInfoGroupMembers" +
+      "\"C\n/BootstrapResponseParamsDataConfInfoG" +
+      "roupMembers\022\020\n\010no_group\030\001 \001(\005\"+\n\033getNode" +
+      "ForConferenceRequest\022\014\n\004name\030\001 \001(\t\"0\n\034ge" +
+      "tNodeForConferenceResponse\022\020\n\010nodeUUID\030\001" +
+      " \001(\t\"p\n\022confControlRequest\022\017\n\007command\030\001 " +
+      "\001(\t\022\026\n\016conferenceName\030\002 \001(\t\022\020\n\010nodeUUID\030" +
+      "\003 \001(\t\022\020\n\010memberID\030\004 \001(\t\022\r\n\005value\030\005 \001(\t\"\025" +
+      "\n\023confControlResponse\"]\n\017pushMainRequest" +
+      "\022\017\n\007command\030\001 \001(\t\022\027\n\017conference_name\030\002 \001" +
+      "(\t\022\020\n\010nodeUUID\030\003 \001(\t\022\016\n\006stream\030\004 \001(\005\"\022\n\020" +
+      "pushMainResponse\"\226\001\n\024pushSubCanvasReques" +
+      "t\022\017\n\007command\030\001 \001(\t\022\027\n\017conference_name\030\002 " +
+      "\001(\t\022\020\n\010nodeUUID\030\003 \001(\t\022\016\n\006layout\030\004 \001(\t\0222\n" +
+      "\007members\030\005 \003(\0132!.cman.pushSubCanvasReque" +
+      "stMembers\"S\n\033pushSubCanvasRequestMembers" +
+      "\022\020\n\010memberID\030\001 \001(\t\022\020\n\010position\030\002 \001(\t\022\020\n\010" +
+      "nodeUUID\030\003 \001(\t\"\027\n\025pushSubCanvasResponse\"" +
+      "\236\001\n\030pushMainSubCanvasRequest\022\017\n\007command\030" +
+      "\001 \001(\t\022\027\n\017conference_name\030\002 \001(\t\022\020\n\010nodeUU" +
+      "ID\030\003 \001(\t\022\016\n\006layout\030\004 \001(\t\0226\n\007members\030\005 \003(" +
+      "\0132%.cman.pushMainSubCanvasRequestMembers" +
+      "\"W\n\037pushMainSubCanvasRequestMembers\022\020\n\010m" +
+      "emberID\030\001 \001(\t\022\020\n\010position\030\002 \001(\t\022\020\n\010nodeU" +
+      "UID\030\003 \001(\t\"\033\n\031pushMainSubCanvasResponse\"\216" +
+      "\001\n\020pushWholeRequest\022\017\n\007command\030\001 \001(\t\022\027\n\017" +
+      "conference_name\030\002 \001(\t\022\020\n\010nodeUUID\030\003 \001(\t\022" +
+      "\016\n\006layout\030\004 \001(\t\022.\n\007members\030\005 \003(\0132\035.cman." +
+      "pushWholeRequestMembers\"O\n\027pushWholeRequ" +
+      "estMembers\022\020\n\010memberID\030\001 \001(\t\022\020\n\010position" +
+      "\030\002 \001(\t\022\020\n\010nodeUUID\030\003 \001(\t\"\023\n\021pushWholeRes" +
+      "ponse\"\214\001\n\017loopSomeRequest\022\017\n\007command\030\001 \001" +
+      "(\t\022\027\n\017conference_name\030\002 \001(\t\022\020\n\010interval\030" +
+      "\003 \001(\t\022\016\n\006layout\030\004 \001(\t\022-\n\007members\030\005 \003(\0132\034" +
+      ".cman.loopSomeRequestMembers\"<\n\026loopSome" +
+      "RequestMembers\022\020\n\010memberID\030\001 \001(\t\022\020\n\010node" +
+      "UUID\030\002 \001(\t\"\022\n\020loopSomeResponse\"H\n\rgetJWT" +
+      "Request\022\014\n\004auth\030\001 \001(\t\022)\n\006claims\030\002 \001(\0132\031." +
+      "cman.getJWTRequestClaims\"~\n\023getJWTReques" +
+      "tClaims\022\017\n\007user_id\030\001 \001(\t\022\017\n\007expires\030\002 \001(" +
+      "\005\022\020\n\010username\030\003 \001(\t\022\016\n\006domain\030\004 \001(\t\022\r\n\005l" +
+      "ogin\030\005 \001(\t\022\024\n\014session_uuid\030\006 \001(\t\"\037\n\016getJ" +
+      "WTResponse\022\r\n\005token\030\001 \001(\t\"#\n\022GetCManInfo" +
+      "Request\022\r\n\005reply\030\001 \001(\t\"D\n\023GetCManInfoRes" +
+      "ponse\022\014\n\004uuid\030\001 \001(\t\022\021\n\tis_leader\030\002 \001(\010\022\014" +
+      "\n\004mode\030\003 \001(\t\"1\n\023ChangeLeaderRequest\022\014\n\004u" +
+      "uid\030\001 \001(\t\022\014\n\004mode\030\002 \001(\t\"E\n\024ChangeLeaderR" +
+      "esponse\022\014\n\004uuid\030\001 \001(\t\022\021\n\tis_leader\030\002 \001(\010" +
+      "\022\014\n\004mode\030\003 \001(\t2\270\007\n\004cMan\022V\n\021getConference" +
       "List\022\036.cman.GetConferenceListRequest\032\037.c" +
       "man.GetConferenceListResponse\"\000\022M\n\016confe" +
       "renceInfo\022\033.cman.ConferenceInfoRequest\032\034" +
@@ -44010,15 +50155,26 @@ public final class CManProto {
       "onse\"\000\022>\n\tpushWhole\022\026.cman.pushWholeRequ" +
       "est\032\027.cman.pushWholeResponse\"\000\022;\n\010loopSo" +
       "me\022\025.cman.loopSomeRequest\032\026.cman.loopSom" +
-      "eResponse\"\000B\027B\tCManProtoZ\nproto/cmanb\006pr" +
-      "oto3"
+      "eResponse\"\000\0225\n\006getJWT\022\023.cman.getJWTReque" +
+      "st\032\024.cman.getJWTResponse\"\000\022D\n\013getCManInf" +
+      "o\022\030.cman.GetCManInfoRequest\032\031.cman.GetCM" +
+      "anInfoResponse\"\000\022G\n\014changeLeader\022\031.cman." +
+      "ChangeLeaderRequest\032\032.cman.ChangeLeaderR" +
+      "esponse\"\000B\027B\tCManProtoZ\nproto/cmanb\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_cman_ConferenceInfoRequest_descriptor =
+    internal_static_cman_EmptyMessage_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_cman_EmptyMessage_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cman_EmptyMessage_descriptor,
+        new java.lang.String[] { });
+    internal_static_cman_ConferenceInfoRequest_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_cman_ConferenceInfoRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_ConferenceInfoRequest_descriptor,
@@ -44030,269 +50186,311 @@ public final class CManProto {
         internal_static_cman_ConferenceInfoRequest_MemberFiltersEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_cman_ConferenceInfoResponse_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_cman_ConferenceInfoResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_ConferenceInfoResponse_descriptor,
         new java.lang.String[] { "Conference", });
     internal_static_cman_ConferenceInfoResponseConference_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_cman_ConferenceInfoResponseConference_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_ConferenceInfoResponseConference_descriptor,
         new java.lang.String[] { "Name", "Domain", "Nodes", "Size", "MemberCount", "States", "Members", });
     internal_static_cman_ConferenceInfoResponseConferenceNodes_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_cman_ConferenceInfoResponseConferenceNodes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_ConferenceInfoResponseConferenceNodes_descriptor,
         new java.lang.String[] { "NodeUUID", "ConfMemberCount", "Size", "GroupMembers", "ConfCreatTime", "ConfUUID", "NodeType", "LocalIP", "NodeMembers", "ModeratorMemberID", "DestNumber", "Action", "State", "LastUpdated", "Port", });
     internal_static_cman_ConferenceInfoResponseConferenceNodesGroupMembers_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_cman_ConferenceInfoResponseConferenceNodesGroupMembers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_ConferenceInfoResponseConferenceNodesGroupMembers_descriptor,
         new java.lang.String[] { "GroupID", "Count", });
     internal_static_cman_ConferenceInfoResponseConferenceNodesNodeMembers_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_cman_ConferenceInfoResponseConferenceNodesNodeMembers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_ConferenceInfoResponseConferenceNodesNodeMembers_descriptor,
         new java.lang.String[] { });
     internal_static_cman_ConferenceInfoResponseConferenceMembers_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_cman_ConferenceInfoResponseConferenceMembers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_ConferenceInfoResponseConferenceMembers_descriptor,
         new java.lang.String[] { "MemberID", "CidNumber", "CidName", "Codec", "Status", "Email", "NodeUUID", "Active", "Uuid", "GroupID", "MemberType", "NodeType", "Domain", "CanvasID", "WatchingCanvasID", "RoleID", "LayerID", "ReservationID", "ChannelName", });
     internal_static_cman_ConferenceInfoResponseConferenceMembersStatus_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_cman_ConferenceInfoResponseConferenceMembersStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_ConferenceInfoResponseConferenceMembersStatus_descriptor,
         new java.lang.String[] { "Audio", "Video", });
     internal_static_cman_ConferenceInfoResponseConferenceMembersStatusAudio_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_cman_ConferenceInfoResponseConferenceMembersStatusAudio_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_ConferenceInfoResponseConferenceMembersStatusAudio_descriptor,
         new java.lang.String[] { "Talking", "Deaf", "Muted", "OnHold", "EnergyScore", "Floor", });
     internal_static_cman_ConferenceInfoResponseConferenceMembersStatusVideo_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_cman_ConferenceInfoResponseConferenceMembersStatusVideo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_ConferenceInfoResponseConferenceMembersStatusVideo_descriptor,
         new java.lang.String[] { "Visible", "NoRecover", "AvatarPresented", "MediaFlow", "Muted", "Floor", "ReservationID", "RoleID", "VideoLayerID", "CanvasID", "WatchingCanvasID", "Order", });
     internal_static_cman_ConferenceInfoResponseVariables_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_cman_ConferenceInfoResponseVariables_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_ConferenceInfoResponseVariables_descriptor,
         new java.lang.String[] { });
     internal_static_cman_ConferenceInfoResponseMembers_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_cman_ConferenceInfoResponseMembers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_ConferenceInfoResponseMembers_descriptor,
         new java.lang.String[] { "Type", "Id", "Uuid", "CallerIdName", "CallerIdNumber", "JoinTime", "LastTalking", "Energy", "VolumeIn", "VolumeOut", "OutputVolume", "InputVolume", "Flags", });
     internal_static_cman_ConferenceInfoResponseFlags_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_cman_ConferenceInfoResponseFlags_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_ConferenceInfoResponseFlags_descriptor,
         new java.lang.String[] { "CanHear", "CanSee", "CanSpeak", "Hold", "MuteDetect", "Talking", "HasVideo", "VideoBridge", "HasFloor", "IsModerator", "EndConference", });
     internal_static_cman_GetConferenceListRequest_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_cman_GetConferenceListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_GetConferenceListRequest_descriptor,
         new java.lang.String[] { });
     internal_static_cman_ConferenceObjectNodesGroupMembers_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_cman_ConferenceObjectNodesGroupMembers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_ConferenceObjectNodesGroupMembers_descriptor,
         new java.lang.String[] { });
     internal_static_cman_ConferenceObjectNodesNodeMembers_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_cman_ConferenceObjectNodesNodeMembers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_ConferenceObjectNodesNodeMembers_descriptor,
         new java.lang.String[] { });
     internal_static_cman_ConferenceObjectNodes_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_cman_ConferenceObjectNodes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_ConferenceObjectNodes_descriptor,
         new java.lang.String[] { "NodeUUID", "ConfMemberCount", "Size", "GroupMembers", "ConfCreatedTime", "ConfUUID", "LocalIP", "NodeMembers", "ModeratorMemberID", "DestNumber", "Action", "State", "LastUpdated", });
     internal_static_cman_ConferenceObject_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_cman_ConferenceObject_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_ConferenceObject_descriptor,
         new java.lang.String[] { "Name", "Domain", "Nodes", "Size", "MemberCount", "State", });
     internal_static_cman_GetConferenceListResponse_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_cman_GetConferenceListResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_GetConferenceListResponse_descriptor,
         new java.lang.String[] { "Conferences", });
     internal_static_cman_BootstrapRequest_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_cman_BootstrapRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_BootstrapRequest_descriptor,
         new java.lang.String[] { "EventChannel", "Data", "Sessid", });
     internal_static_cman_BootstrapRequestParamsData_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_cman_BootstrapRequestParamsData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_BootstrapRequestParamsData_descriptor,
         new java.lang.String[] { "LiveArray", });
     internal_static_cman_BootstrapRequestParamsDataLiveArray_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_cman_BootstrapRequestParamsDataLiveArray_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_BootstrapRequestParamsDataLiveArray_descriptor,
         new java.lang.String[] { "Command", "Context", "Name", "Obj", });
     internal_static_cman_BootstrapRequestParamsDataLiveArrayObj_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_cman_BootstrapRequestParamsDataLiveArrayObj_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_BootstrapRequestParamsDataLiveArrayObj_descriptor,
         new java.lang.String[] { });
     internal_static_cman_BootstrapResponse_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_cman_BootstrapResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_BootstrapResponse_descriptor,
         new java.lang.String[] { "EventChannel", "Sessid", "Data", });
     internal_static_cman_BootstrapResponseParamsData_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_cman_BootstrapResponseParamsData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_BootstrapResponseParamsData_descriptor,
         new java.lang.String[] { "Action", "Name", "Data", "WireSerno", "ConfInfo", });
     internal_static_cman_BootstrapResponseParamsDataConfInfo_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_cman_BootstrapResponseParamsDataConfInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_BootstrapResponseParamsDataConfInfo_descriptor,
         new java.lang.String[] { "Size", "GroupMembers", });
     internal_static_cman_BootstrapResponseParamsDataConfInfoGroupMembers_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_cman_BootstrapResponseParamsDataConfInfoGroupMembers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_BootstrapResponseParamsDataConfInfoGroupMembers_descriptor,
         new java.lang.String[] { "NoGroup", });
     internal_static_cman_getNodeForConferenceRequest_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_cman_getNodeForConferenceRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_getNodeForConferenceRequest_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_cman_getNodeForConferenceResponse_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_cman_getNodeForConferenceResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_getNodeForConferenceResponse_descriptor,
         new java.lang.String[] { "NodeUUID", });
     internal_static_cman_confControlRequest_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_cman_confControlRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_confControlRequest_descriptor,
         new java.lang.String[] { "Command", "ConferenceName", "NodeUUID", "MemberID", "Value", });
     internal_static_cman_confControlResponse_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_cman_confControlResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_confControlResponse_descriptor,
         new java.lang.String[] { });
     internal_static_cman_pushMainRequest_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_cman_pushMainRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_pushMainRequest_descriptor,
         new java.lang.String[] { "Command", "ConferenceName", "NodeUUID", "Stream", });
     internal_static_cman_pushMainResponse_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_cman_pushMainResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_pushMainResponse_descriptor,
         new java.lang.String[] { });
     internal_static_cman_pushSubCanvasRequest_descriptor =
-      getDescriptor().getMessageTypes().get(33);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_cman_pushSubCanvasRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_pushSubCanvasRequest_descriptor,
         new java.lang.String[] { "Command", "ConferenceName", "NodeUUID", "Layout", "Members", });
     internal_static_cman_pushSubCanvasRequestMembers_descriptor =
-      getDescriptor().getMessageTypes().get(34);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_cman_pushSubCanvasRequestMembers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_pushSubCanvasRequestMembers_descriptor,
         new java.lang.String[] { "MemberID", "Position", "NodeUUID", });
     internal_static_cman_pushSubCanvasResponse_descriptor =
-      getDescriptor().getMessageTypes().get(35);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_cman_pushSubCanvasResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_pushSubCanvasResponse_descriptor,
         new java.lang.String[] { });
     internal_static_cman_pushMainSubCanvasRequest_descriptor =
-      getDescriptor().getMessageTypes().get(36);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_cman_pushMainSubCanvasRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_pushMainSubCanvasRequest_descriptor,
         new java.lang.String[] { "Command", "ConferenceName", "NodeUUID", "Layout", "Members", });
     internal_static_cman_pushMainSubCanvasRequestMembers_descriptor =
-      getDescriptor().getMessageTypes().get(37);
+      getDescriptor().getMessageTypes().get(38);
     internal_static_cman_pushMainSubCanvasRequestMembers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_pushMainSubCanvasRequestMembers_descriptor,
         new java.lang.String[] { "MemberID", "Position", "NodeUUID", });
     internal_static_cman_pushMainSubCanvasResponse_descriptor =
-      getDescriptor().getMessageTypes().get(38);
+      getDescriptor().getMessageTypes().get(39);
     internal_static_cman_pushMainSubCanvasResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_pushMainSubCanvasResponse_descriptor,
         new java.lang.String[] { });
     internal_static_cman_pushWholeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(39);
+      getDescriptor().getMessageTypes().get(40);
     internal_static_cman_pushWholeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_pushWholeRequest_descriptor,
         new java.lang.String[] { "Command", "ConferenceName", "NodeUUID", "Layout", "Members", });
     internal_static_cman_pushWholeRequestMembers_descriptor =
-      getDescriptor().getMessageTypes().get(40);
+      getDescriptor().getMessageTypes().get(41);
     internal_static_cman_pushWholeRequestMembers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_pushWholeRequestMembers_descriptor,
         new java.lang.String[] { "MemberID", "Position", "NodeUUID", });
     internal_static_cman_pushWholeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(41);
+      getDescriptor().getMessageTypes().get(42);
     internal_static_cman_pushWholeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_pushWholeResponse_descriptor,
         new java.lang.String[] { });
     internal_static_cman_loopSomeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(42);
+      getDescriptor().getMessageTypes().get(43);
     internal_static_cman_loopSomeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_loopSomeRequest_descriptor,
         new java.lang.String[] { "Command", "ConferenceName", "Interval", "Layout", "Members", });
     internal_static_cman_loopSomeRequestMembers_descriptor =
-      getDescriptor().getMessageTypes().get(43);
+      getDescriptor().getMessageTypes().get(44);
     internal_static_cman_loopSomeRequestMembers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_loopSomeRequestMembers_descriptor,
         new java.lang.String[] { "MemberID", "NodeUUID", });
     internal_static_cman_loopSomeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(44);
+      getDescriptor().getMessageTypes().get(45);
     internal_static_cman_loopSomeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_loopSomeResponse_descriptor,
         new java.lang.String[] { });
+    internal_static_cman_getJWTRequest_descriptor =
+      getDescriptor().getMessageTypes().get(46);
+    internal_static_cman_getJWTRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cman_getJWTRequest_descriptor,
+        new java.lang.String[] { "Auth", "Claims", });
+    internal_static_cman_getJWTRequestClaims_descriptor =
+      getDescriptor().getMessageTypes().get(47);
+    internal_static_cman_getJWTRequestClaims_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cman_getJWTRequestClaims_descriptor,
+        new java.lang.String[] { "UserId", "Expires", "Username", "Domain", "Login", "SessionUuid", });
+    internal_static_cman_getJWTResponse_descriptor =
+      getDescriptor().getMessageTypes().get(48);
+    internal_static_cman_getJWTResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cman_getJWTResponse_descriptor,
+        new java.lang.String[] { "Token", });
+    internal_static_cman_GetCManInfoRequest_descriptor =
+      getDescriptor().getMessageTypes().get(49);
+    internal_static_cman_GetCManInfoRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cman_GetCManInfoRequest_descriptor,
+        new java.lang.String[] { "Reply", });
+    internal_static_cman_GetCManInfoResponse_descriptor =
+      getDescriptor().getMessageTypes().get(50);
+    internal_static_cman_GetCManInfoResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cman_GetCManInfoResponse_descriptor,
+        new java.lang.String[] { "Uuid", "IsLeader", "Mode", });
+    internal_static_cman_ChangeLeaderRequest_descriptor =
+      getDescriptor().getMessageTypes().get(51);
+    internal_static_cman_ChangeLeaderRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cman_ChangeLeaderRequest_descriptor,
+        new java.lang.String[] { "Uuid", "Mode", });
+    internal_static_cman_ChangeLeaderResponse_descriptor =
+      getDescriptor().getMessageTypes().get(52);
+    internal_static_cman_ChangeLeaderResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cman_ChangeLeaderResponse_descriptor,
+        new java.lang.String[] { "Uuid", "IsLeader", "Mode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
