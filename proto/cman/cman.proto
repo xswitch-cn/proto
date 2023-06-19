@@ -210,45 +210,42 @@ message GetConferenceListResponse {
 
 message BootstrapRequest{
   string eventChannel = 1;
-  BootstrapRequestParamsData data = 2;
-  string sessid = 3;
+  string sessid = 2;
+  BootstrapRequestData Data = 3;
 }
 
-message BootstrapRequestParamsData{
-  BootstrapRequestParamsDataLiveArray liveArray = 1;
+message BootstrapRequestData{
+  BootstrapRequestDataLiveArray liveArray = 1;
 }
 
-message BootstrapRequestParamsDataLiveArray{
+message BootstrapRequestDataLiveArray{
   string command = 1;
-  string context = 2;
-  string name = 3;
-  BootstrapRequestParamsDataLiveArrayObj obj = 4;
+  string name = 2;
+  string context = 3;
+  BootstrapRequestDataLiveArrayObj obj = 4;
 }
 
-message BootstrapRequestParamsDataLiveArrayObj{
+message BootstrapRequestDataLiveArrayObj{
+  string groupID = 1;
 }
 
 message BootstrapResponse{
-  string event_channel = 1;
+  string eventChannel = 1;
   string sessid = 2;
-  BootstrapResponseParamsData data = 3;
+  BootstrapResponseData data = 3;
 }
 
-message BootstrapResponseParamsData{
+message BootstrapResponseData{
   string action = 1;
   string name = 2;
-  bytes data = 3;
-  int32 wire_serno = 4;
-  BootstrapResponseParamsDataConfInfo conf_info = 5;
+  int32 wireSerno = 3;
+  // repeated string data = 4;
+  BootstrapResponseDataConfInfo confInfo = 4;
 }
 
-message BootstrapResponseParamsDataConfInfo{
+message BootstrapResponseDataConfInfo{
   int32  size = 1;
-  BootstrapResponseParamsDataConfInfoGroupMembers group_members = 2;
-}
-
-message BootstrapResponseParamsDataConfInfoGroupMembers{
-  int32 no_group = 1;
+  map<string,int32> groupMembers = 2;
 }
 
 message getNodeForConferenceRequest{
