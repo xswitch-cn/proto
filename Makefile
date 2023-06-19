@@ -23,7 +23,10 @@ java:
 doc-md:
 	protoc --doc_out=docs --doc_opt=template/default.md,base.md proto/base/base.proto
 	protoc --doc_out=docs --doc_opt=template/default.md,xctrl.md proto/xctrl/xctrl.proto
+	protoc --doc_out=docs --doc_opt=template/default.md,cman.md proto/cman/cman.proto
 	sed -i -e 's/#map<string, string>/#map-string-string/' docs/xctrl.md
+	sed -i -e 's/#map<string, string>/#map-string-string/' docs/cman.md
+	rm docs/*.md-e
 
 doc-html:
 	protoc --doc_out=proto/xctrl/doc --doc_opt=template/default.html,xctrl.html proto/xctrl/xctrl.proto
