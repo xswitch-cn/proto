@@ -11,13 +11,12 @@
 
 - [cman.proto](#cman.proto)
   - [BootstrapRequest](#cman.BootstrapRequest)
-  - [BootstrapRequestParamsData](#cman.BootstrapRequestParamsData)
-  - [BootstrapRequestParamsDataLiveArray](#cman.BootstrapRequestParamsDataLiveArray)
-  - [BootstrapRequestParamsDataLiveArrayObj](#cman.BootstrapRequestParamsDataLiveArrayObj)
+  - [BootstrapRequestData](#cman.BootstrapRequestData)
+  - [BootstrapRequestDataLiveArray](#cman.BootstrapRequestDataLiveArray)
+  - [BootstrapRequestDataLiveArrayObj](#cman.BootstrapRequestDataLiveArrayObj)
   - [BootstrapResponse](#cman.BootstrapResponse)
-  - [BootstrapResponseParamsData](#cman.BootstrapResponseParamsData)
-  - [BootstrapResponseParamsDataConfInfo](#cman.BootstrapResponseParamsDataConfInfo)
-  - [BootstrapResponseParamsDataConfInfoGroupMembers](#cman.BootstrapResponseParamsDataConfInfoGroupMembers)
+  - [BootstrapResponseData](#cman.BootstrapResponseData)
+  - [BootstrapResponseDataConfInfo](#cman.BootstrapResponseDataConfInfo)
   - [ChangeLeaderRequest](#cman.ChangeLeaderRequest)
   - [ChangeLeaderResponse](#cman.ChangeLeaderResponse)
   - [ConferenceInfoRequest](#cman.ConferenceInfoRequest)
@@ -90,55 +89,60 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| event_channel | [string](#string) |  |  |
-| data | [BootstrapRequestParamsData](#cman.BootstrapRequestParamsData) |  |  |
+| eventChannel | [string](#string) |  |  |
 | sessid | [string](#string) |  |  |
+| Data | [BootstrapRequestData](#cman.BootstrapRequestData) |  |  |
 
 
 
 
 
 
-<a name="user-content-cman.BootstrapRequestParamsData"/>
-<a name="cman.BootstrapRequestParamsData"/>
+<a name="user-content-cman.BootstrapRequestData"/>
+<a name="cman.BootstrapRequestData"/>
 
-### BootstrapRequestParamsData
+### BootstrapRequestData
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| live_array | [BootstrapRequestParamsDataLiveArray](#cman.BootstrapRequestParamsDataLiveArray) |  |  |
+| liveArray | [BootstrapRequestDataLiveArray](#cman.BootstrapRequestDataLiveArray) |  |  |
 
 
 
 
 
 
-<a name="user-content-cman.BootstrapRequestParamsDataLiveArray"/>
-<a name="cman.BootstrapRequestParamsDataLiveArray"/>
+<a name="user-content-cman.BootstrapRequestDataLiveArray"/>
+<a name="cman.BootstrapRequestDataLiveArray"/>
 
-### BootstrapRequestParamsDataLiveArray
+### BootstrapRequestDataLiveArray
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | command | [string](#string) |  |  |
-| context | [string](#string) |  |  |
 | name | [string](#string) |  |  |
-| obj | [BootstrapRequestParamsDataLiveArrayObj](#cman.BootstrapRequestParamsDataLiveArrayObj) |  |  |
+| context | [string](#string) |  |  |
+| obj | [BootstrapRequestDataLiveArrayObj](#cman.BootstrapRequestDataLiveArrayObj) |  |  |
 
 
 
 
 
 
-<a name="user-content-cman.BootstrapRequestParamsDataLiveArrayObj"/>
-<a name="cman.BootstrapRequestParamsDataLiveArrayObj"/>
+<a name="user-content-cman.BootstrapRequestDataLiveArrayObj"/>
+<a name="cman.BootstrapRequestDataLiveArrayObj"/>
 
-### BootstrapRequestParamsDataLiveArrayObj
+### BootstrapRequestDataLiveArrayObj
 
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| groupID | [string](#string) |  |  |
 
 
 
@@ -154,19 +158,19 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| event_channel | [string](#string) |  |  |
+| eventChannel | [string](#string) |  |  |
 | sessid | [string](#string) |  |  |
-| data | [BootstrapResponseParamsData](#cman.BootstrapResponseParamsData) |  |  |
+| data | [BootstrapResponseData](#cman.BootstrapResponseData) |  |  |
 
 
 
 
 
 
-<a name="user-content-cman.BootstrapResponseParamsData"/>
-<a name="cman.BootstrapResponseParamsData"/>
+<a name="user-content-cman.BootstrapResponseData"/>
+<a name="cman.BootstrapResponseData"/>
 
-### BootstrapResponseParamsData
+### BootstrapResponseData
 
 
 
@@ -174,42 +178,25 @@
 | ----- | ---- | ----- | ----------- |
 | action | [string](#string) |  |  |
 | name | [string](#string) |  |  |
-| data | [bytes](#bytes) |  |  |
-| wire_serno | [int32](#int32) |  |  |
-| conf_info | [BootstrapResponseParamsDataConfInfo](#cman.BootstrapResponseParamsDataConfInfo) |  |  |
+| wireSerno | [int32](#int32) |  |  |
+| confInfo | [BootstrapResponseDataConfInfo](#cman.BootstrapResponseDataConfInfo) |  | repeated string data = 4; |
 
 
 
 
 
 
-<a name="user-content-cman.BootstrapResponseParamsDataConfInfo"/>
-<a name="cman.BootstrapResponseParamsDataConfInfo"/>
+<a name="user-content-cman.BootstrapResponseDataConfInfo"/>
+<a name="cman.BootstrapResponseDataConfInfo"/>
 
-### BootstrapResponseParamsDataConfInfo
+### BootstrapResponseDataConfInfo
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | size | [int32](#int32) |  |  |
-| group_members | [BootstrapResponseParamsDataConfInfoGroupMembers](#cman.BootstrapResponseParamsDataConfInfoGroupMembers) |  |  |
-
-
-
-
-
-
-<a name="user-content-cman.BootstrapResponseParamsDataConfInfoGroupMembers"/>
-<a name="cman.BootstrapResponseParamsDataConfInfoGroupMembers"/>
-
-### BootstrapResponseParamsDataConfInfoGroupMembers
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| no_group | [int32](#int32) |  |  |
+| groupMembers | [map<string, int32>](#map<string, int32>) |  |  |
 
 
 
