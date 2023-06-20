@@ -89385,38 +89385,19 @@ public final class XCtrl {
     boolean getShowMembers();
 
     /**
-     * <code>map&lt;string, string&gt; memberFilters = 3;</code>
+     * <code>.google.protobuf.ListValue memberFilters = 3 [json_name = "memberFilters"];</code>
+     * @return Whether the memberFilters field is set.
      */
-    int getMemberFiltersCount();
+    boolean hasMemberFilters();
     /**
-     * <code>map&lt;string, string&gt; memberFilters = 3;</code>
+     * <code>.google.protobuf.ListValue memberFilters = 3 [json_name = "memberFilters"];</code>
+     * @return The memberFilters.
      */
-    boolean containsMemberFilters(
-        java.lang.String key);
+    com.google.protobuf.ListValue getMemberFilters();
     /**
-     * Use {@link #getMemberFiltersMap()} instead.
+     * <code>.google.protobuf.ListValue memberFilters = 3 [json_name = "memberFilters"];</code>
      */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
-    getMemberFilters();
-    /**
-     * <code>map&lt;string, string&gt; memberFilters = 3;</code>
-     */
-    java.util.Map<java.lang.String, java.lang.String>
-    getMemberFiltersMap();
-    /**
-     * <code>map&lt;string, string&gt; memberFilters = 3;</code>
-     */
-
-    java.lang.String getMemberFiltersOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue);
-    /**
-     * <code>map&lt;string, string&gt; memberFilters = 3;</code>
-     */
-
-    java.lang.String getMemberFiltersOrThrow(
-        java.lang.String key);
+    com.google.protobuf.ListValueOrBuilder getMemberFiltersOrBuilder();
   }
   /**
    * Protobuf type {@code xctrl.ConferenceInfoRequestDataData}
@@ -89454,7 +89435,6 @@ public final class XCtrl {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -89477,16 +89457,16 @@ public final class XCtrl {
               break;
             }
             case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                memberFilters_ = com.google.protobuf.MapField.newMapField(
-                    MemberFiltersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
+              com.google.protobuf.ListValue.Builder subBuilder = null;
+              if (memberFilters_ != null) {
+                subBuilder = memberFilters_.toBuilder();
               }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              memberFilters__ = input.readMessage(
-                  MemberFiltersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              memberFilters_.getMutableMap().put(
-                  memberFilters__.getKey(), memberFilters__.getValue());
+              memberFilters_ = input.readMessage(com.google.protobuf.ListValue.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(memberFilters_);
+                memberFilters_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -89513,18 +89493,6 @@ public final class XCtrl {
       return xctrl.XCtrl.internal_static_xctrl_ConferenceInfoRequestDataData_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 3:
-          return internalGetMemberFilters();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -89583,84 +89551,29 @@ public final class XCtrl {
     }
 
     public static final int MEMBERFILTERS_FIELD_NUMBER = 3;
-    private static final class MemberFiltersDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.String> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.String>newDefaultInstance(
-                  xctrl.XCtrl.internal_static_xctrl_ConferenceInfoRequestDataData_MemberFiltersEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> memberFilters_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMemberFilters() {
-      if (memberFilters_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            MemberFiltersDefaultEntryHolder.defaultEntry);
-      }
-      return memberFilters_;
-    }
-
-    public int getMemberFiltersCount() {
-      return internalGetMemberFilters().getMap().size();
-    }
+    private com.google.protobuf.ListValue memberFilters_;
     /**
-     * <code>map&lt;string, string&gt; memberFilters = 3;</code>
-     */
-
-    @java.lang.Override
-    public boolean containsMemberFilters(
-        java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      return internalGetMemberFilters().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getMemberFiltersMap()} instead.
+     * <code>.google.protobuf.ListValue memberFilters = 3 [json_name = "memberFilters"];</code>
+     * @return Whether the memberFilters field is set.
      */
     @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getMemberFilters() {
-      return getMemberFiltersMap();
+    public boolean hasMemberFilters() {
+      return memberFilters_ != null;
     }
     /**
-     * <code>map&lt;string, string&gt; memberFilters = 3;</code>
+     * <code>.google.protobuf.ListValue memberFilters = 3 [json_name = "memberFilters"];</code>
+     * @return The memberFilters.
      */
     @java.lang.Override
-
-    public java.util.Map<java.lang.String, java.lang.String> getMemberFiltersMap() {
-      return internalGetMemberFilters().getMap();
+    public com.google.protobuf.ListValue getMemberFilters() {
+      return memberFilters_ == null ? com.google.protobuf.ListValue.getDefaultInstance() : memberFilters_;
     }
     /**
-     * <code>map&lt;string, string&gt; memberFilters = 3;</code>
+     * <code>.google.protobuf.ListValue memberFilters = 3 [json_name = "memberFilters"];</code>
      */
     @java.lang.Override
-
-    public java.lang.String getMemberFiltersOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetMemberFilters().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, string&gt; memberFilters = 3;</code>
-     */
-    @java.lang.Override
-
-    public java.lang.String getMemberFiltersOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetMemberFilters().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
+    public com.google.protobuf.ListValueOrBuilder getMemberFiltersOrBuilder() {
+      return getMemberFilters();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -89683,12 +89596,9 @@ public final class XCtrl {
       if (showMembers_ != false) {
         output.writeBool(2, showMembers_);
       }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetMemberFilters(),
-          MemberFiltersDefaultEntryHolder.defaultEntry,
-          3);
+      if (memberFilters_ != null) {
+        output.writeMessage(3, getMemberFilters());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -89705,15 +89615,9 @@ public final class XCtrl {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(2, showMembers_);
       }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetMemberFilters().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        memberFilters__ = MemberFiltersDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
+      if (memberFilters_ != null) {
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, memberFilters__);
+          .computeMessageSize(3, getMemberFilters());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -89734,8 +89638,11 @@ public final class XCtrl {
           .equals(other.getConferenceName())) return false;
       if (getShowMembers()
           != other.getShowMembers()) return false;
-      if (!internalGetMemberFilters().equals(
-          other.internalGetMemberFilters())) return false;
+      if (hasMemberFilters() != other.hasMemberFilters()) return false;
+      if (hasMemberFilters()) {
+        if (!getMemberFilters()
+            .equals(other.getMemberFilters())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -89752,9 +89659,9 @@ public final class XCtrl {
       hash = (37 * hash) + SHOWMEMBERS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getShowMembers());
-      if (!internalGetMemberFilters().getMap().isEmpty()) {
+      if (hasMemberFilters()) {
         hash = (37 * hash) + MEMBERFILTERS_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetMemberFilters().hashCode();
+        hash = (53 * hash) + getMemberFilters().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -89863,28 +89770,6 @@ public final class XCtrl {
         return xctrl.XCtrl.internal_static_xctrl_ConferenceInfoRequestDataData_descriptor;
       }
 
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 3:
-            return internalGetMemberFilters();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 3:
-            return internalGetMutableMemberFilters();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -89915,7 +89800,12 @@ public final class XCtrl {
 
         showMembers_ = false;
 
-        internalGetMutableMemberFilters().clear();
+        if (memberFiltersBuilder_ == null) {
+          memberFilters_ = null;
+        } else {
+          memberFilters_ = null;
+          memberFiltersBuilder_ = null;
+        }
         return this;
       }
 
@@ -89942,11 +89832,13 @@ public final class XCtrl {
       @java.lang.Override
       public xctrl.XCtrl.ConferenceInfoRequestDataData buildPartial() {
         xctrl.XCtrl.ConferenceInfoRequestDataData result = new xctrl.XCtrl.ConferenceInfoRequestDataData(this);
-        int from_bitField0_ = bitField0_;
         result.conferenceName_ = conferenceName_;
         result.showMembers_ = showMembers_;
-        result.memberFilters_ = internalGetMemberFilters();
-        result.memberFilters_.makeImmutable();
+        if (memberFiltersBuilder_ == null) {
+          result.memberFilters_ = memberFilters_;
+        } else {
+          result.memberFilters_ = memberFiltersBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -90002,8 +89894,9 @@ public final class XCtrl {
         if (other.getShowMembers() != false) {
           setShowMembers(other.getShowMembers());
         }
-        internalGetMutableMemberFilters().mergeFrom(
-            other.internalGetMemberFilters());
+        if (other.hasMemberFilters()) {
+          mergeMemberFilters(other.getMemberFilters());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -90032,7 +89925,6 @@ public final class XCtrl {
         }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object conferenceName_ = "";
       /**
@@ -90141,135 +90033,123 @@ public final class XCtrl {
         return this;
       }
 
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> memberFilters_;
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMemberFilters() {
-        if (memberFilters_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              MemberFiltersDefaultEntryHolder.defaultEntry);
+      private com.google.protobuf.ListValue memberFilters_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.ListValue, com.google.protobuf.ListValue.Builder, com.google.protobuf.ListValueOrBuilder> memberFiltersBuilder_;
+      /**
+       * <code>.google.protobuf.ListValue memberFilters = 3 [json_name = "memberFilters"];</code>
+       * @return Whether the memberFilters field is set.
+       */
+      public boolean hasMemberFilters() {
+        return memberFiltersBuilder_ != null || memberFilters_ != null;
+      }
+      /**
+       * <code>.google.protobuf.ListValue memberFilters = 3 [json_name = "memberFilters"];</code>
+       * @return The memberFilters.
+       */
+      public com.google.protobuf.ListValue getMemberFilters() {
+        if (memberFiltersBuilder_ == null) {
+          return memberFilters_ == null ? com.google.protobuf.ListValue.getDefaultInstance() : memberFilters_;
+        } else {
+          return memberFiltersBuilder_.getMessage();
         }
-        return memberFilters_;
       }
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMutableMemberFilters() {
-        onChanged();;
-        if (memberFilters_ == null) {
-          memberFilters_ = com.google.protobuf.MapField.newMapField(
-              MemberFiltersDefaultEntryHolder.defaultEntry);
+      /**
+       * <code>.google.protobuf.ListValue memberFilters = 3 [json_name = "memberFilters"];</code>
+       */
+      public Builder setMemberFilters(com.google.protobuf.ListValue value) {
+        if (memberFiltersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          memberFilters_ = value;
+          onChanged();
+        } else {
+          memberFiltersBuilder_.setMessage(value);
         }
-        if (!memberFilters_.isMutable()) {
-          memberFilters_ = memberFilters_.copy();
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.ListValue memberFilters = 3 [json_name = "memberFilters"];</code>
+       */
+      public Builder setMemberFilters(
+          com.google.protobuf.ListValue.Builder builderForValue) {
+        if (memberFiltersBuilder_ == null) {
+          memberFilters_ = builderForValue.build();
+          onChanged();
+        } else {
+          memberFiltersBuilder_.setMessage(builderForValue.build());
         }
-        return memberFilters_;
-      }
 
-      public int getMemberFiltersCount() {
-        return internalGetMemberFilters().getMap().size();
+        return this;
       }
       /**
-       * <code>map&lt;string, string&gt; memberFilters = 3;</code>
+       * <code>.google.protobuf.ListValue memberFilters = 3 [json_name = "memberFilters"];</code>
        */
-
-      @java.lang.Override
-      public boolean containsMemberFilters(
-          java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        return internalGetMemberFilters().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getMemberFiltersMap()} instead.
-       */
-      @java.lang.Override
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String> getMemberFilters() {
-        return getMemberFiltersMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; memberFilters = 3;</code>
-       */
-      @java.lang.Override
-
-      public java.util.Map<java.lang.String, java.lang.String> getMemberFiltersMap() {
-        return internalGetMemberFilters().getMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; memberFilters = 3;</code>
-       */
-      @java.lang.Override
-
-      public java.lang.String getMemberFiltersOrDefault(
-          java.lang.String key,
-          java.lang.String defaultValue) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetMemberFilters().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;string, string&gt; memberFilters = 3;</code>
-       */
-      @java.lang.Override
-
-      public java.lang.String getMemberFiltersOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetMemberFilters().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
+      public Builder mergeMemberFilters(com.google.protobuf.ListValue value) {
+        if (memberFiltersBuilder_ == null) {
+          if (memberFilters_ != null) {
+            memberFilters_ =
+              com.google.protobuf.ListValue.newBuilder(memberFilters_).mergeFrom(value).buildPartial();
+          } else {
+            memberFilters_ = value;
+          }
+          onChanged();
+        } else {
+          memberFiltersBuilder_.mergeFrom(value);
         }
-        return map.get(key);
-      }
 
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.ListValue memberFilters = 3 [json_name = "memberFilters"];</code>
+       */
       public Builder clearMemberFilters() {
-        internalGetMutableMemberFilters().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <code>map&lt;string, string&gt; memberFilters = 3;</code>
-       */
+        if (memberFiltersBuilder_ == null) {
+          memberFilters_ = null;
+          onChanged();
+        } else {
+          memberFilters_ = null;
+          memberFiltersBuilder_ = null;
+        }
 
-      public Builder removeMemberFilters(
-          java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        internalGetMutableMemberFilters().getMutableMap()
-            .remove(key);
         return this;
       }
       /**
-       * Use alternate mutation accessors instead.
+       * <code>.google.protobuf.ListValue memberFilters = 3 [json_name = "memberFilters"];</code>
        */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String>
-      getMutableMemberFilters() {
-        return internalGetMutableMemberFilters().getMutableMap();
+      public com.google.protobuf.ListValue.Builder getMemberFiltersBuilder() {
+        
+        onChanged();
+        return getMemberFiltersFieldBuilder().getBuilder();
       }
       /**
-       * <code>map&lt;string, string&gt; memberFilters = 3;</code>
+       * <code>.google.protobuf.ListValue memberFilters = 3 [json_name = "memberFilters"];</code>
        */
-      public Builder putMemberFilters(
-          java.lang.String key,
-          java.lang.String value) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        if (value == null) {
-  throw new NullPointerException("map value");
-}
-
-        internalGetMutableMemberFilters().getMutableMap()
-            .put(key, value);
-        return this;
+      public com.google.protobuf.ListValueOrBuilder getMemberFiltersOrBuilder() {
+        if (memberFiltersBuilder_ != null) {
+          return memberFiltersBuilder_.getMessageOrBuilder();
+        } else {
+          return memberFilters_ == null ?
+              com.google.protobuf.ListValue.getDefaultInstance() : memberFilters_;
+        }
       }
       /**
-       * <code>map&lt;string, string&gt; memberFilters = 3;</code>
+       * <code>.google.protobuf.ListValue memberFilters = 3 [json_name = "memberFilters"];</code>
        */
-
-      public Builder putAllMemberFilters(
-          java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableMemberFilters().getMutableMap()
-            .putAll(values);
-        return this;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.ListValue, com.google.protobuf.ListValue.Builder, com.google.protobuf.ListValueOrBuilder> 
+          getMemberFiltersFieldBuilder() {
+        if (memberFiltersBuilder_ == null) {
+          memberFiltersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.ListValue, com.google.protobuf.ListValue.Builder, com.google.protobuf.ListValueOrBuilder>(
+                  getMemberFilters(),
+                  getParentForChildren(),
+                  isClean());
+          memberFilters_ = null;
+        }
+        return memberFiltersBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -115050,11 +114930,6 @@ public final class XCtrl {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_xctrl_ConferenceInfoRequestDataData_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_xctrl_ConferenceInfoRequestDataData_MemberFiltersEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_xctrl_ConferenceInfoRequestDataData_MemberFiltersEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_xctrl_ConferenceInfoRequestData_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -115193,405 +115068,405 @@ public final class XCtrl {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027proto/xctrl/xctrl.proto\022\005xctrl\"Z\n\rAcce" +
-      "ptRequest\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001" +
-      "(\t\022\020\n\010takeover\030\003 \001(\010\022\026\n\016channel_params\030\004" +
-      " \003(\t\"Y\n\rNativeRequest\022\021\n\tctrl_uuid\030\001 \001(\t" +
-      "\022\014\n\004uuid\030\002 \001(\t\022\013\n\003cmd\030\003 \001(\t\022\014\n\004args\030\004 \001(" +
-      "\t\022\014\n\004sync\030\005 \001(\010\"@\n\020NativeAPIRequest\022\021\n\tc" +
-      "trl_uuid\030\001 \001(\t\022\013\n\003cmd\030\003 \001(\t\022\014\n\004args\030\004 \001(" +
-      "\t\"`\n\016NativeResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007mes" +
-      "sage\030\002 \001(\t\022\021\n\tnode_uuid\030\003 \001(\t\022\014\n\004data\030\004 " +
-      "\001(\t\022\016\n\006result\030\005 \001(\t\"\021\n\017NativeJSRequest\"\022" +
-      "\n\020NativeJSResponse\"\205\001\n\007Request\022\021\n\tctrl_u" +
-      "uid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(\t\022*\n\006params\030\003 \003(\0132" +
-      "\032.xctrl.Request.ParamsEntry\032-\n\013ParamsEnt" +
-      "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"H\n\rAn" +
-      "swerRequest\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002" +
-      " \001(\t\022\026\n\016channel_params\030\003 \003(\t\"J\n\010Response" +
-      "\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001(\t\022\021\n\tnode_" +
-      "uuid\030\003 \001(\t\022\014\n\004uuid\030\004 \001(\t\"(\n\013Application\022" +
-      "\013\n\003app\030\001 \001(\t\022\014\n\004data\030\002 \001(\t\"k\n\013DialReques" +
-      "t\022\021\n\tctrl_uuid\030\001 \001(\t\022\'\n\013destination\030\002 \001(" +
-      "\0132\022.xctrl.Destination\022 \n\004apps\030\003 \003(\0132\022.xc" +
-      "trl.Application\"]\n\014DialResponse\022\014\n\004code\030" +
-      "\001 \001(\005\022\017\n\007message\030\002 \001(\t\022\021\n\tnode_uuid\030\003 \001(" +
-      "\t\022\014\n\004uuid\030\004 \001(\t\022\r\n\005cause\030\005 \001(\t\"\233\001\n\rBridg" +
-      "eRequest\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(" +
-      "\t\022\020\n\010ringback\030\003 \001(\t\022\024\n\014flow_control\030\004 \001(" +
-      "\t\022\030\n\020continue_on_fail\030\005 \001(\t\022\'\n\013destinati" +
-      "on\030\006 \001(\0132\022.xctrl.Destination\"v\n\024ChannelB" +
-      "ridgeRequest\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030" +
-      "\002 \001(\t\022\021\n\tpeer_uuid\030\003 \001(\t\022\024\n\014bridge_delay" +
-      "\030\004 \001(\005\022\024\n\014flow_control\030\005 \001(\t\"`\n\005Media\022\014\n" +
-      "\004type\030\001 \001(\t\022\014\n\004data\030\002 \001(\t\022\016\n\006engine\030\003 \001(" +
-      "\t\022\r\n\005voice\030\004 \001(\t\022\014\n\004loop\030\005 \001(\r\022\016\n\006offset" +
-      "\030\006 \001(\r\"K\n\013PlayRequest\022\021\n\tctrl_uuid\030\001 \001(\t" +
-      "\022\014\n\004uuid\030\002 \001(\t\022\033\n\005media\030\003 \001(\0132\014.xctrl.Me" +
-      "dia\".\n\013StopRequest\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n" +
-      "\004uuid\030\002 \001(\t\"`\n\020BroadcastRequest\022\021\n\tctrl_" +
-      "uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(\t\022\033\n\005media\030\003 \001(\0132" +
-      "\014.xctrl.Media\022\016\n\006option\030\004 \001(\t\"^\n\013MuteReq" +
-      "uest\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(\t\022\021\n" +
-      "\tdirection\030\003 \001(\t\022\r\n\005level\030\004 \001(\005\022\014\n\004flag\030" +
-      "\005 \001(\t\"\376\001\n\rRecordRequest\022\021\n\tctrl_uuid\030\001 \001" +
-      "(\t\022\014\n\004uuid\030\002 \001(\t\022\014\n\004path\030\003 \001(\t\022\016\n\006action" +
-      "\030\004 \001(\t\022\r\n\005limit\030\005 \001(\r\022\014\n\004beep\030\006 \001(\t\022\023\n\013t" +
-      "erminators\030\007 \001(\t\022\027\n\017silence_seconds\030\010 \001(" +
-      "\r\022\016\n\006thresh\030\t \001(\r\022\014\n\004rate\030\n \001(\r\"E\n\014Recor" +
-      "dAction\022\n\n\006RECORD\020\000\022\t\n\005START\020\001\022\010\n\004STOP\020\002" +
-      "\022\010\n\004MASK\020\003\022\n\n\006UNMASK\020\004\"d\n\016RecordResponse" +
-      "\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001(\t\022\021\n\tnode_" +
-      "uuid\030\003 \001(\t\022\022\n\nterminator\030\004 \001(\t\022\014\n\004path\030\005" +
-      " \001(\t\"\232\001\n\rHangupRequest\022\021\n\tctrl_uuid\030\001 \001(" +
-      "\t\022\014\n\004uuid\030\002 \001(\t\022\r\n\005cause\030\003 \001(\t\022-\n\004flag\030\004" +
-      " \001(\0162\037.xctrl.HangupRequest.HangupFlag\"*\n" +
-      "\nHangupFlag\022\010\n\004SELF\020\000\022\010\n\004PEER\020\001\022\010\n\004BOTH\020" +
-      "\002\"h\n\017TransferRequest\022\021\n\tctrl_uuid\030\001 \001(\t\022" +
-      "\014\n\004uuid\030\002 \001(\t\022\021\n\textension\030\003 \001(\t\022\020\n\010dial" +
-      "plan\030\004 \001(\t\022\017\n\007context\030\005 \001(\t\"~\n\017ThreeWayR" +
-      "equest\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(\t\022" +
-      "\023\n\013target_uuid\030\003 \001(\t\022\021\n\tdirection\030\004 \001(\t\022" +
-      "\014\n\004mode\030\005 \001(\t\022\024\n\014conf_profile\030\006 \001(\t\"R\n\014E" +
-      "cho2Request\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002" +
-      " \001(\t\022\016\n\006action\030\003 \001(\t\022\021\n\tdirection\030\004 \001(\t\"" +
-      "H\n\020InterceptRequest\022\021\n\tctrl_uuid\030\001 \001(\t\022\014" +
-      "\n\004uuid\030\002 \001(\t\022\023\n\013target_uuid\030\003 \001(\t\"Z\n\016Con" +
-      "sultRequest\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002" +
-      " \001(\t\022\'\n\013destination\030\003 \001(\0132\022.xctrl.Destin" +
-      "ation\"\230\001\n\013RecordEvent\022\021\n\tnode_uuid\030\001 \001(\t" +
-      "\022\014\n\004uuid\030\002 \001(\t\022\016\n\006action\030\003 \001(\t\022\014\n\004path\030\004" +
-      " \001(\t\022\014\n\004size\030\005 \001(\r\022\017\n\007samples\030\006 \001(\r\022\021\n\tr" +
-      "ecord_ms\030\007 \001(\r\022\030\n\020completion_cause\030\010 \001(\t" +
-      "\"\316\002\n\004Node\022\014\n\004uuid\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\n\n" +
-      "\002ip\030\003 \001(\t\022\017\n\007version\030\004 \001(\t\022\014\n\004rack\030\005 \001(\r" +
-      "\022\017\n\007address\030\006 \001(\t\022\016\n\006uptime\030\007 \001(\r\022\020\n\010ses" +
-      "sions\030\010 \001(\r\022\024\n\014sessions_max\030\t \001(\r\022\017\n\007sps" +
-      "_max\030\n \001(\r\022\020\n\010sps_last\030\013 \001(\r\022\025\n\rsps_last" +
-      "_5min\030\014 \001(\r\022\036\n\026sessions_since_startup\030\r " +
-      "\001(\r\022\031\n\021session_peak_5min\030\016 \001(\r\022\030\n\020sessio" +
-      "n_peak_max\030\017 \001(\r\022\'\n\014sip_profiles\030\020 \003(\0132\021" +
-      ".xctrl.SipProfile\"(\n\nSipProfile\022\014\n\004name\030" +
-      "\001 \001(\t\022\014\n\004port\030\002 \001(\005\"^\n\004Ctrl\022\014\n\004uuid\030\001 \001(" +
-      "\t\022\014\n\004name\030\002 \001(\t\022\n\n\002ip\030\003 \001(\t\022\017\n\007version\030\004" +
-      " \001(\t\022\014\n\004rack\030\005 \001(\r\022\017\n\007address\030\006 \001(\t\"\255\004\n\014" +
-      "ChannelEvent\022\021\n\tnode_uuid\030\001 \001(\t\022\014\n\004uuid\030" +
-      "\002 \001(\t\022\021\n\tpeer_uuid\030\003 \001(\t\022\021\n\tdirection\030\004 " +
-      "\001(\t\022\r\n\005state\030\005 \001(\t\022\020\n\010cid_name\030\006 \001(\t\022\022\n\n" +
-      "cid_number\030\007 \001(\t\022\023\n\013dest_number\030\010 \001(\t\022\024\n" +
-      "\014create_epoch\030\t \001(\r\022\022\n\nring_epoch\030\n \001(\r\022" +
-      "\024\n\014answer_epoch\030\013 \001(\r\022\024\n\014hangup_epoch\030\014 " +
-      "\001(\r\022\r\n\005peers\030\r \003(\t\022/\n\006params\030\016 \003(\0132\037.xct" +
-      "rl.ChannelEvent.ParamsEntry\022\017\n\007billsec\030\017" +
-      " \001(\t\022\020\n\010duration\030\020 \001(\t\022\r\n\005cause\030\021 \001(\t\022\017\n" +
-      "\007node_ip\030\022 \001(\t\022\016\n\006domain\030\023 \001(\t\022\014\n\004dtmf\030\024" +
-      " \001(\t\022\020\n\010answered\030\025 \001(\010\022\r\n\005video\030\026 \001(\010\022\014\n" +
-      "\004held\030\027 \001(\010\022\017\n\007bridged\030\030 \001(\010\022\017\n\007context\030" +
-      "\031 \001(\t\022\025\n\rcaller_source\030\032 \001(\t\032-\n\013ParamsEn" +
-      "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"W\n\tD" +
-      "TMFEvent\022\021\n\tnode_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(" +
-      "\t\022\022\n\ndtmf_digit\030\003 \001(\t\022\025\n\rdtmf_duration\030\004" +
-      " \001(\r\"\355\001\n\tCallParam\022\014\n\004uuid\030\001 \001(\t\022\020\n\010cid_" +
-      "name\030\002 \001(\t\022\022\n\ncid_number\030\003 \001(\t\022\023\n\013dest_n" +
-      "umber\030\004 \001(\t\022\023\n\013dial_string\030\005 \001(\t\022\017\n\007time" +
-      "out\030\006 \001(\r\022\024\n\014max_duration\030\007 \001(\r\022,\n\006param" +
-      "s\030\010 \003(\0132\034.xctrl.CallParam.ParamsEntry\032-\n" +
-      "\013ParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t" +
-      ":\0028\001\"\317\001\n\013Destination\022\017\n\007ringall\030\001 \001(\010\022;\n" +
-      "\rglobal_params\030\002 \003(\0132$.xctrl.Destination" +
-      ".GlobalParamsEntry\022%\n\013call_params\030\003 \003(\0132" +
-      "\020.xctrl.CallParam\022\026\n\016channel_params\030\004 \003(" +
-      "\t\0323\n\021GlobalParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v" +
-      "alue\030\002 \001(\t:\0028\001\"\213\001\n\rSetVarRequest\022\021\n\tctrl" +
-      "_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(\t\022,\n\004data\030\003 \003(\0132" +
-      "\036.xctrl.SetVarRequest.DataEntry\032+\n\tDataE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\">\n\r" +
-      "GetVarRequest\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid" +
-      "\030\002 \001(\t\022\014\n\004data\030\003 \003(\t\"\246\001\n\013VarResponse\022\014\n\004" +
-      "code\030\001 \001(\005\022\017\n\007message\030\002 \001(\t\022\021\n\tnode_uuid" +
-      "\030\003 \001(\t\022\014\n\004uuid\030\004 \001(\t\022*\n\004data\030\005 \003(\0132\034.xct" +
-      "rl.VarResponse.DataEntry\032+\n\tDataEntry\022\013\n" +
-      "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"2\n\017GetStat" +
-      "eRequest\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(" +
-      "\t\"\224\002\n\rStateResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007mes" +
-      "sage\030\002 \001(\t\022\021\n\tnode_uuid\030\003 \001(\t\022\014\n\004uuid\030\004 " +
-      "\001(\t\022\025\n\rchannel_state\030\005 \001(\t\022\022\n\ncall_state" +
-      "\030\006 \001(\t\022\024\n\014answer_state\030\007 \001(\t\022\017\n\007bridged\030" +
-      "\010 \001(\010\022\020\n\010answered\030\t \001(\010\022\014\n\004held\030\n \001(\010\022\r\n" +
-      "\005video\030\013 \001(\010\022\023\n\013video_ready\030\014 \001(\010\022\022\n\ncon" +
-      "trolled\030\r \001(\010\022\r\n\005ready\030\016 \001(\010\022\n\n\002up\030\017 \001(\010" +
-      "\"H\n\025GetChannelDataRequest\022\021\n\tctrl_uuid\030\001" +
-      " \001(\t\022\014\n\004uuid\030\002 \001(\t\022\016\n\006format\030\003 \001(\t\"\207\001\n\023C" +
-      "hannelDataResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007mess" +
-      "age\030\002 \001(\t\022\021\n\tnode_uuid\030\003 \001(\t\022\014\n\004uuid\030\004 \001" +
-      "(\t\022\016\n\006format\030\005 \001(\t\022 \n\004data\030\006 \001(\0132\022.xctrl" +
-      ".ChannelData\"\272\001\n\013ChannelData\022\031\n\021variable" +
-      "_cc_queue\030\001 \001(\t\022\036\n\026variable_cc_queue_nam" +
-      "e\030\002 \001(\t\022&\n\036variable_cc_agent_session_uui" +
-      "d\030\003 \001(\t\022\037\n\027variable_cc_member_uuid\030\004 \001(\t" +
-      "\022\'\n\037variable_xcc_origin_dest_number\030\005 \001(" +
-      "\t\"\231\002\n\013DTMFRequest\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004" +
-      "uuid\030\002 \001(\t\022\022\n\nmin_digits\030\003 \001(\r\022\022\n\nmax_di" +
-      "gits\030\004 \001(\r\022\017\n\007timeout\030\005 \001(\r\022\025\n\rdigit_tim" +
-      "eout\030\006 \001(\r\022\023\n\013terminators\030\007 \001(\t\022\033\n\005media" +
-      "\030\010 \001(\0132\014.xctrl.Media\022\021\n\tmax_tries\030\t \001(\r\022" +
-      "\r\n\005regex\030\n \001(\t\022#\n\rmedia_invalid\030\013 \001(\0132\014." +
-      "xctrl.Media\022 \n\030play_last_invalid_prompt\030" +
-      "\014 \001(\010\"p\n\014DTMFResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007m" +
+      "\n\027proto/xctrl/xctrl.proto\022\005xctrl\032\034google" +
+      "/protobuf/struct.proto\"Z\n\rAcceptRequest\022" +
+      "\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(\t\022\020\n\010take" +
+      "over\030\003 \001(\010\022\026\n\016channel_params\030\004 \003(\t\"Y\n\rNa" +
+      "tiveRequest\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002" +
+      " \001(\t\022\013\n\003cmd\030\003 \001(\t\022\014\n\004args\030\004 \001(\t\022\014\n\004sync\030" +
+      "\005 \001(\010\"@\n\020NativeAPIRequest\022\021\n\tctrl_uuid\030\001" +
+      " \001(\t\022\013\n\003cmd\030\003 \001(\t\022\014\n\004args\030\004 \001(\t\"`\n\016Nativ" +
+      "eResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001(\t" +
+      "\022\021\n\tnode_uuid\030\003 \001(\t\022\014\n\004data\030\004 \001(\t\022\016\n\006res" +
+      "ult\030\005 \001(\t\"\021\n\017NativeJSRequest\"\022\n\020NativeJS" +
+      "Response\"\205\001\n\007Request\022\021\n\tctrl_uuid\030\001 \001(\t\022" +
+      "\014\n\004uuid\030\002 \001(\t\022*\n\006params\030\003 \003(\0132\032.xctrl.Re" +
+      "quest.ParamsEntry\032-\n\013ParamsEntry\022\013\n\003key\030" +
+      "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"H\n\rAnswerReques" +
+      "t\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(\t\022\026\n\016ch" +
+      "annel_params\030\003 \003(\t\"J\n\010Response\022\014\n\004code\030\001" +
+      " \001(\005\022\017\n\007message\030\002 \001(\t\022\021\n\tnode_uuid\030\003 \001(\t" +
+      "\022\014\n\004uuid\030\004 \001(\t\"(\n\013Application\022\013\n\003app\030\001 \001" +
+      "(\t\022\014\n\004data\030\002 \001(\t\"k\n\013DialRequest\022\021\n\tctrl_" +
+      "uuid\030\001 \001(\t\022\'\n\013destination\030\002 \001(\0132\022.xctrl." +
+      "Destination\022 \n\004apps\030\003 \003(\0132\022.xctrl.Applic" +
+      "ation\"]\n\014DialResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007m" +
       "essage\030\002 \001(\t\022\021\n\tnode_uuid\030\003 \001(\t\022\014\n\004uuid\030" +
-      "\004 \001(\t\022\014\n\004dtmf\030\005 \001(\t\022\022\n\nterminator\030\006 \001(\t\"" +
-      "\233\002\n\rDigitsRequest\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004" +
-      "uuid\030\002 \001(\t\022\022\n\nmin_digits\030\003 \001(\r\022\022\n\nmax_di" +
-      "gits\030\004 \001(\r\022\017\n\007timeout\030\005 \001(\r\022\025\n\rdigit_tim" +
-      "eout\030\006 \001(\r\022\023\n\013terminators\030\007 \001(\t\022\033\n\005media" +
-      "\030\010 \001(\0132\014.xctrl.Media\022\021\n\tmax_tries\030\t \001(\r\022" +
-      "\r\n\005regex\030\n \001(\t\022#\n\rmedia_invalid\030\013 \001(\0132\014." +
-      "xctrl.Media\022 \n\030play_last_invalid_prompt\030" +
-      "\014 \001(\010\"r\n\016DigitsResponse\022\014\n\004code\030\001 \001(\005\022\017\n" +
-      "\007message\030\002 \001(\t\022\021\n\tnode_uuid\030\003 \001(\t\022\014\n\004uui" +
-      "d\030\004 \001(\t\022\014\n\004dtmf\030\005 \001(\t\022\022\n\nterminator\030\006 \001(" +
-      "\t\"\331\002\n\rSpeechRequest\022\021\n\tctrl_uuid\030\001 \001(\t\022\016" +
-      "\n\006engine\030\002 \001(\t\022\030\n\020no_input_timeout\030\003 \001(\r" +
-      "\022\026\n\016speech_timeout\030\004 \001(\r\022\026\n\016partial_even" +
-      "ts\030\005 \001(\010\022#\n\033disable_detected_data_event\030" +
-      "\006 \001(\010\0220\n\006params\030\007 \003(\0132 .xctrl.SpeechRequ" +
-      "est.ParamsEntry\022\017\n\007grammar\030\010 \001(\t\022\032\n\022max_" +
-      "speech_timeout\030\t \001(\r\022\017\n\007nobreak\030\n \001(\010\022\027\n" +
-      "\017nobreak_timeout\030\013 \001(\r\032-\n\013ParamsEntry\022\013\n" +
-      "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\225\001\n\rDetect" +
+      "\004 \001(\t\022\r\n\005cause\030\005 \001(\t\"\233\001\n\rBridgeRequest\022\021" +
+      "\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(\t\022\020\n\010ringb" +
+      "ack\030\003 \001(\t\022\024\n\014flow_control\030\004 \001(\t\022\030\n\020conti" +
+      "nue_on_fail\030\005 \001(\t\022\'\n\013destination\030\006 \001(\0132\022" +
+      ".xctrl.Destination\"v\n\024ChannelBridgeReque" +
+      "st\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(\t\022\021\n\tp" +
+      "eer_uuid\030\003 \001(\t\022\024\n\014bridge_delay\030\004 \001(\005\022\024\n\014" +
+      "flow_control\030\005 \001(\t\"`\n\005Media\022\014\n\004type\030\001 \001(" +
+      "\t\022\014\n\004data\030\002 \001(\t\022\016\n\006engine\030\003 \001(\t\022\r\n\005voice" +
+      "\030\004 \001(\t\022\014\n\004loop\030\005 \001(\r\022\016\n\006offset\030\006 \001(\r\"K\n\013" +
+      "PlayRequest\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002" +
+      " \001(\t\022\033\n\005media\030\003 \001(\0132\014.xctrl.Media\".\n\013Sto" +
+      "pRequest\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(" +
+      "\t\"`\n\020BroadcastRequest\022\021\n\tctrl_uuid\030\001 \001(\t" +
+      "\022\014\n\004uuid\030\002 \001(\t\022\033\n\005media\030\003 \001(\0132\014.xctrl.Me" +
+      "dia\022\016\n\006option\030\004 \001(\t\"^\n\013MuteRequest\022\021\n\tct" +
+      "rl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(\t\022\021\n\tdirection" +
+      "\030\003 \001(\t\022\r\n\005level\030\004 \001(\005\022\014\n\004flag\030\005 \001(\t\"\376\001\n\r" +
+      "RecordRequest\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid" +
+      "\030\002 \001(\t\022\014\n\004path\030\003 \001(\t\022\016\n\006action\030\004 \001(\t\022\r\n\005" +
+      "limit\030\005 \001(\r\022\014\n\004beep\030\006 \001(\t\022\023\n\013terminators" +
+      "\030\007 \001(\t\022\027\n\017silence_seconds\030\010 \001(\r\022\016\n\006thres" +
+      "h\030\t \001(\r\022\014\n\004rate\030\n \001(\r\"E\n\014RecordAction\022\n\n" +
+      "\006RECORD\020\000\022\t\n\005START\020\001\022\010\n\004STOP\020\002\022\010\n\004MASK\020\003" +
+      "\022\n\n\006UNMASK\020\004\"d\n\016RecordResponse\022\014\n\004code\030\001" +
+      " \001(\005\022\017\n\007message\030\002 \001(\t\022\021\n\tnode_uuid\030\003 \001(\t" +
+      "\022\022\n\nterminator\030\004 \001(\t\022\014\n\004path\030\005 \001(\t\"\232\001\n\rH" +
+      "angupRequest\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030" +
+      "\002 \001(\t\022\r\n\005cause\030\003 \001(\t\022-\n\004flag\030\004 \001(\0162\037.xct" +
+      "rl.HangupRequest.HangupFlag\"*\n\nHangupFla" +
+      "g\022\010\n\004SELF\020\000\022\010\n\004PEER\020\001\022\010\n\004BOTH\020\002\"h\n\017Trans" +
+      "ferRequest\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 " +
+      "\001(\t\022\021\n\textension\030\003 \001(\t\022\020\n\010dialplan\030\004 \001(\t" +
+      "\022\017\n\007context\030\005 \001(\t\"~\n\017ThreeWayRequest\022\021\n\t" +
+      "ctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(\t\022\023\n\013target_" +
+      "uuid\030\003 \001(\t\022\021\n\tdirection\030\004 \001(\t\022\014\n\004mode\030\005 " +
+      "\001(\t\022\024\n\014conf_profile\030\006 \001(\t\"R\n\014Echo2Reques" +
+      "t\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(\t\022\016\n\006ac" +
+      "tion\030\003 \001(\t\022\021\n\tdirection\030\004 \001(\t\"H\n\020Interce" +
+      "ptRequest\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001" +
+      "(\t\022\023\n\013target_uuid\030\003 \001(\t\"Z\n\016ConsultReques" +
+      "t\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(\t\022\'\n\013de" +
+      "stination\030\003 \001(\0132\022.xctrl.Destination\"\230\001\n\013" +
+      "RecordEvent\022\021\n\tnode_uuid\030\001 \001(\t\022\014\n\004uuid\030\002" +
+      " \001(\t\022\016\n\006action\030\003 \001(\t\022\014\n\004path\030\004 \001(\t\022\014\n\004si" +
+      "ze\030\005 \001(\r\022\017\n\007samples\030\006 \001(\r\022\021\n\trecord_ms\030\007" +
+      " \001(\r\022\030\n\020completion_cause\030\010 \001(\t\"\316\002\n\004Node\022" +
+      "\014\n\004uuid\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\n\n\002ip\030\003 \001(\t\022" +
+      "\017\n\007version\030\004 \001(\t\022\014\n\004rack\030\005 \001(\r\022\017\n\007addres" +
+      "s\030\006 \001(\t\022\016\n\006uptime\030\007 \001(\r\022\020\n\010sessions\030\010 \001(" +
+      "\r\022\024\n\014sessions_max\030\t \001(\r\022\017\n\007sps_max\030\n \001(\r" +
+      "\022\020\n\010sps_last\030\013 \001(\r\022\025\n\rsps_last_5min\030\014 \001(" +
+      "\r\022\036\n\026sessions_since_startup\030\r \001(\r\022\031\n\021ses" +
+      "sion_peak_5min\030\016 \001(\r\022\030\n\020session_peak_max" +
+      "\030\017 \001(\r\022\'\n\014sip_profiles\030\020 \003(\0132\021.xctrl.Sip" +
+      "Profile\"(\n\nSipProfile\022\014\n\004name\030\001 \001(\t\022\014\n\004p" +
+      "ort\030\002 \001(\005\"^\n\004Ctrl\022\014\n\004uuid\030\001 \001(\t\022\014\n\004name\030" +
+      "\002 \001(\t\022\n\n\002ip\030\003 \001(\t\022\017\n\007version\030\004 \001(\t\022\014\n\004ra" +
+      "ck\030\005 \001(\r\022\017\n\007address\030\006 \001(\t\"\255\004\n\014ChannelEve" +
+      "nt\022\021\n\tnode_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(\t\022\021\n\tp" +
+      "eer_uuid\030\003 \001(\t\022\021\n\tdirection\030\004 \001(\t\022\r\n\005sta" +
+      "te\030\005 \001(\t\022\020\n\010cid_name\030\006 \001(\t\022\022\n\ncid_number" +
+      "\030\007 \001(\t\022\023\n\013dest_number\030\010 \001(\t\022\024\n\014create_ep" +
+      "och\030\t \001(\r\022\022\n\nring_epoch\030\n \001(\r\022\024\n\014answer_" +
+      "epoch\030\013 \001(\r\022\024\n\014hangup_epoch\030\014 \001(\r\022\r\n\005pee" +
+      "rs\030\r \003(\t\022/\n\006params\030\016 \003(\0132\037.xctrl.Channel" +
+      "Event.ParamsEntry\022\017\n\007billsec\030\017 \001(\t\022\020\n\010du" +
+      "ration\030\020 \001(\t\022\r\n\005cause\030\021 \001(\t\022\017\n\007node_ip\030\022" +
+      " \001(\t\022\016\n\006domain\030\023 \001(\t\022\014\n\004dtmf\030\024 \001(\t\022\020\n\010an" +
+      "swered\030\025 \001(\010\022\r\n\005video\030\026 \001(\010\022\014\n\004held\030\027 \001(" +
+      "\010\022\017\n\007bridged\030\030 \001(\010\022\017\n\007context\030\031 \001(\t\022\025\n\rc" +
+      "aller_source\030\032 \001(\t\032-\n\013ParamsEntry\022\013\n\003key" +
+      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"W\n\tDTMFEvent\022\021" +
+      "\n\tnode_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(\t\022\022\n\ndtmf_" +
+      "digit\030\003 \001(\t\022\025\n\rdtmf_duration\030\004 \001(\r\"\355\001\n\tC" +
+      "allParam\022\014\n\004uuid\030\001 \001(\t\022\020\n\010cid_name\030\002 \001(\t" +
+      "\022\022\n\ncid_number\030\003 \001(\t\022\023\n\013dest_number\030\004 \001(" +
+      "\t\022\023\n\013dial_string\030\005 \001(\t\022\017\n\007timeout\030\006 \001(\r\022" +
+      "\024\n\014max_duration\030\007 \001(\r\022,\n\006params\030\010 \003(\0132\034." +
+      "xctrl.CallParam.ParamsEntry\032-\n\013ParamsEnt" +
+      "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\317\001\n\013D" +
+      "estination\022\017\n\007ringall\030\001 \001(\010\022;\n\rglobal_pa" +
+      "rams\030\002 \003(\0132$.xctrl.Destination.GlobalPar" +
+      "amsEntry\022%\n\013call_params\030\003 \003(\0132\020.xctrl.Ca" +
+      "llParam\022\026\n\016channel_params\030\004 \003(\t\0323\n\021Globa" +
+      "lParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t" +
+      ":\0028\001\"\213\001\n\rSetVarRequest\022\021\n\tctrl_uuid\030\001 \001(" +
+      "\t\022\014\n\004uuid\030\002 \001(\t\022,\n\004data\030\003 \003(\0132\036.xctrl.Se" +
+      "tVarRequest.DataEntry\032+\n\tDataEntry\022\013\n\003ke" +
+      "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\">\n\rGetVarRequ" +
+      "est\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(\t\022\014\n\004" +
+      "data\030\003 \003(\t\"\246\001\n\013VarResponse\022\014\n\004code\030\001 \001(\005" +
+      "\022\017\n\007message\030\002 \001(\t\022\021\n\tnode_uuid\030\003 \001(\t\022\014\n\004" +
+      "uuid\030\004 \001(\t\022*\n\004data\030\005 \003(\0132\034.xctrl.VarResp" +
+      "onse.DataEntry\032+\n\tDataEntry\022\013\n\003key\030\001 \001(\t" +
+      "\022\r\n\005value\030\002 \001(\t:\0028\001\"2\n\017GetStateRequest\022\021" +
+      "\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(\t\"\224\002\n\rStat" +
+      "eResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001(\t" +
+      "\022\021\n\tnode_uuid\030\003 \001(\t\022\014\n\004uuid\030\004 \001(\t\022\025\n\rcha" +
+      "nnel_state\030\005 \001(\t\022\022\n\ncall_state\030\006 \001(\t\022\024\n\014" +
+      "answer_state\030\007 \001(\t\022\017\n\007bridged\030\010 \001(\010\022\020\n\010a" +
+      "nswered\030\t \001(\010\022\014\n\004held\030\n \001(\010\022\r\n\005video\030\013 \001" +
+      "(\010\022\023\n\013video_ready\030\014 \001(\010\022\022\n\ncontrolled\030\r " +
+      "\001(\010\022\r\n\005ready\030\016 \001(\010\022\n\n\002up\030\017 \001(\010\"H\n\025GetCha" +
+      "nnelDataRequest\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uu" +
+      "id\030\002 \001(\t\022\016\n\006format\030\003 \001(\t\"\207\001\n\023ChannelData" +
+      "Response\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001(\t\022" +
+      "\021\n\tnode_uuid\030\003 \001(\t\022\014\n\004uuid\030\004 \001(\t\022\016\n\006form" +
+      "at\030\005 \001(\t\022 \n\004data\030\006 \001(\0132\022.xctrl.ChannelDa" +
+      "ta\"\272\001\n\013ChannelData\022\031\n\021variable_cc_queue\030" +
+      "\001 \001(\t\022\036\n\026variable_cc_queue_name\030\002 \001(\t\022&\n" +
+      "\036variable_cc_agent_session_uuid\030\003 \001(\t\022\037\n" +
+      "\027variable_cc_member_uuid\030\004 \001(\t\022\'\n\037variab" +
+      "le_xcc_origin_dest_number\030\005 \001(\t\"\231\002\n\013DTMF" +
       "Request\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(\t" +
-      "\022\033\n\005media\030\003 \001(\0132\014.xctrl.Media\022 \n\004dtmf\030\004 " +
-      "\001(\0132\022.xctrl.DTMFRequest\022$\n\006speech\030\005 \001(\0132" +
-      "\024.xctrl.SpeechRequest\"\237\002\n\014DetectedData\022\014" +
-      "\n\004dtmf\030\001 \001(\t\022\022\n\nterminator\030\002 \001(\t\022\014\n\004text" +
-      "\030\003 \001(\t\022\022\n\nconfidence\030\004 \001(\001\022\020\n\010is_final\030\005" +
-      " \001(\010\022\r\n\005error\030\006 \001(\t\022\014\n\004type\030\007 \001(\t\022\016\n\006eng" +
-      "ine\030\010 \001(\t\022&\n\013engine_data\030\t \001(\0132\021.xctrl.E" +
-      "ngineData\022\016\n\006offset\030\n \001(\r\022\014\n\004uuid\030\013 \001(\t\022" +
-      "\021\n\tnode_uuid\030\014 \001(\t\022\030\n\020video_read_codec\030\r" +
-      " \001(\t\022\031\n\021video_write_codec\030\016 \001(\t\"L\n\nEngin" +
-      "eData\022\035\n\006header\030\001 \001(\0132\r.xctrl.Header\022\037\n\007" +
-      "payload\030\002 \001(\0132\016.xctrl.Payload\"s\n\006Header\022" +
-      "\021\n\tnamespace\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006stat" +
-      "us\030\003 \001(\001\022\022\n\nmessage_id\030\004 \001(\t\022\017\n\007task_id\030" +
-      "\005 \001(\t\022\023\n\013status_text\030\006 \001(\t\"\374\001\n\007Payload\022\r" +
-      "\n\005index\030\001 \001(\001\022\014\n\004time\030\002 \001(\001\022\016\n\006result\030\003 " +
-      "\001(\t\022\022\n\nconfidence\030\004 \001(\001\022\r\n\005words\030\005 \003(\t\022\016" +
-      "\n\006status\030\006 \001(\001\022\016\n\006gender\030\007 \001(\t\022\022\n\nbegin_" +
-      "time\030\010 \001(\001\022(\n\014stash_result\030\t \001(\0132\022.xctrl" +
-      ".StashResult\022\030\n\020audio_extra_info\030\n \001(\t\022\023" +
-      "\n\013sentence_id\030\013 \001(\t\022\024\n\014gender_score\030\014 \001(" +
-      "\001\"f\n\013StashResult\022\022\n\nsentenceId\030\001 \001(\001\022\021\n\t" +
-      "beginTime\030\002 \001(\001\022\014\n\004text\030\003 \001(\t\022\023\n\013current" +
-      "Time\030\004 \001(\001\022\r\n\005words\030\005 \003(\t\"s\n\016DetectRespo" +
+      "\022\022\n\nmin_digits\030\003 \001(\r\022\022\n\nmax_digits\030\004 \001(\r" +
+      "\022\017\n\007timeout\030\005 \001(\r\022\025\n\rdigit_timeout\030\006 \001(\r" +
+      "\022\023\n\013terminators\030\007 \001(\t\022\033\n\005media\030\010 \001(\0132\014.x" +
+      "ctrl.Media\022\021\n\tmax_tries\030\t \001(\r\022\r\n\005regex\030\n" +
+      " \001(\t\022#\n\rmedia_invalid\030\013 \001(\0132\014.xctrl.Medi" +
+      "a\022 \n\030play_last_invalid_prompt\030\014 \001(\010\"p\n\014D" +
+      "TMFResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001" +
+      "(\t\022\021\n\tnode_uuid\030\003 \001(\t\022\014\n\004uuid\030\004 \001(\t\022\014\n\004d" +
+      "tmf\030\005 \001(\t\022\022\n\nterminator\030\006 \001(\t\"\233\002\n\rDigits" +
+      "Request\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(\t" +
+      "\022\022\n\nmin_digits\030\003 \001(\r\022\022\n\nmax_digits\030\004 \001(\r" +
+      "\022\017\n\007timeout\030\005 \001(\r\022\025\n\rdigit_timeout\030\006 \001(\r" +
+      "\022\023\n\013terminators\030\007 \001(\t\022\033\n\005media\030\010 \001(\0132\014.x" +
+      "ctrl.Media\022\021\n\tmax_tries\030\t \001(\r\022\r\n\005regex\030\n" +
+      " \001(\t\022#\n\rmedia_invalid\030\013 \001(\0132\014.xctrl.Medi" +
+      "a\022 \n\030play_last_invalid_prompt\030\014 \001(\010\"r\n\016D" +
+      "igitsResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002" +
+      " \001(\t\022\021\n\tnode_uuid\030\003 \001(\t\022\014\n\004uuid\030\004 \001(\t\022\014\n" +
+      "\004dtmf\030\005 \001(\t\022\022\n\nterminator\030\006 \001(\t\"\331\002\n\rSpee" +
+      "chRequest\022\021\n\tctrl_uuid\030\001 \001(\t\022\016\n\006engine\030\002" +
+      " \001(\t\022\030\n\020no_input_timeout\030\003 \001(\r\022\026\n\016speech" +
+      "_timeout\030\004 \001(\r\022\026\n\016partial_events\030\005 \001(\010\022#" +
+      "\n\033disable_detected_data_event\030\006 \001(\010\0220\n\006p" +
+      "arams\030\007 \003(\0132 .xctrl.SpeechRequest.Params" +
+      "Entry\022\017\n\007grammar\030\010 \001(\t\022\032\n\022max_speech_tim" +
+      "eout\030\t \001(\r\022\017\n\007nobreak\030\n \001(\010\022\027\n\017nobreak_t" +
+      "imeout\030\013 \001(\r\032-\n\013ParamsEntry\022\013\n\003key\030\001 \001(\t" +
+      "\022\r\n\005value\030\002 \001(\t:\0028\001\"\225\001\n\rDetectRequest\022\021\n" +
+      "\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(\t\022\033\n\005media\030" +
+      "\003 \001(\0132\014.xctrl.Media\022 \n\004dtmf\030\004 \001(\0132\022.xctr" +
+      "l.DTMFRequest\022$\n\006speech\030\005 \001(\0132\024.xctrl.Sp" +
+      "eechRequest\"\237\002\n\014DetectedData\022\014\n\004dtmf\030\001 \001" +
+      "(\t\022\022\n\nterminator\030\002 \001(\t\022\014\n\004text\030\003 \001(\t\022\022\n\n" +
+      "confidence\030\004 \001(\001\022\020\n\010is_final\030\005 \001(\010\022\r\n\005er" +
+      "ror\030\006 \001(\t\022\014\n\004type\030\007 \001(\t\022\016\n\006engine\030\010 \001(\t\022" +
+      "&\n\013engine_data\030\t \001(\0132\021.xctrl.EngineData\022" +
+      "\016\n\006offset\030\n \001(\r\022\014\n\004uuid\030\013 \001(\t\022\021\n\tnode_uu" +
+      "id\030\014 \001(\t\022\030\n\020video_read_codec\030\r \001(\t\022\031\n\021vi" +
+      "deo_write_codec\030\016 \001(\t\"L\n\nEngineData\022\035\n\006h" +
+      "eader\030\001 \001(\0132\r.xctrl.Header\022\037\n\007payload\030\002 " +
+      "\001(\0132\016.xctrl.Payload\"s\n\006Header\022\021\n\tnamespa" +
+      "ce\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006status\030\003 \001(\001\022\022" +
+      "\n\nmessage_id\030\004 \001(\t\022\017\n\007task_id\030\005 \001(\t\022\023\n\013s" +
+      "tatus_text\030\006 \001(\t\"\374\001\n\007Payload\022\r\n\005index\030\001 " +
+      "\001(\001\022\014\n\004time\030\002 \001(\001\022\016\n\006result\030\003 \001(\t\022\022\n\ncon" +
+      "fidence\030\004 \001(\001\022\r\n\005words\030\005 \003(\t\022\016\n\006status\030\006" +
+      " \001(\001\022\016\n\006gender\030\007 \001(\t\022\022\n\nbegin_time\030\010 \001(\001" +
+      "\022(\n\014stash_result\030\t \001(\0132\022.xctrl.StashResu" +
+      "lt\022\030\n\020audio_extra_info\030\n \001(\t\022\023\n\013sentence" +
+      "_id\030\013 \001(\t\022\024\n\014gender_score\030\014 \001(\001\"f\n\013Stash" +
+      "Result\022\022\n\nsentenceId\030\001 \001(\001\022\021\n\tbeginTime\030" +
+      "\002 \001(\001\022\014\n\004text\030\003 \001(\t\022\023\n\013currentTime\030\004 \001(\001" +
+      "\022\r\n\005words\030\005 \003(\t\"s\n\016DetectResponse\022\014\n\004cod" +
+      "e\030\001 \001(\005\022\017\n\007message\030\002 \001(\t\022\021\n\tnode_uuid\030\003 " +
+      "\001(\t\022\014\n\004uuid\030\004 \001(\t\022!\n\004data\030\005 \001(\0132\023.xctrl." +
+      "DetectedData\"4\n\021StopDetectRequest\022\021\n\tctr" +
+      "l_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(\t\"\256\001\n\030RingBackD" +
+      "etectionRequest\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uu" +
+      "id\030\002 \001(\t\022\021\n\tstop_tone\030\003 \001(\t\022\026\n\016ignore_sa" +
+      "mples\030\004 \001(\t\022\023\n\013auto_hangup\030\005 \001(\010\022\030\n\020answ" +
+      "er_auto_stop\030\006 \001(\010\022\027\n\017max_detect_time\030\007 " +
+      "\001(\r\"]\n\006Action\022\014\n\004name\030\001 \001(\t\022\021\n\towner_uid" +
+      "\030\002 \001(\t\022\021\n\tnode_uuid\030\003 \001(\t\022\037\n\005param\030\004 \001(\013" +
+      "2\020.xctrl.CallParam\"\245\001\n\021DetectFaceRequest" +
+      "\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(\t\022\014\n\004mas" +
+      "k\030\003 \001(\t\022\016\n\006action\030\004 \001(\t\022\014\n\004text\030\005 \001(\t\022\014\n" +
+      "\004font\030\006 \001(\t\022\021\n\tfont_size\030\007 \001(\t\022\020\n\010fg_col" +
+      "or\030\010 \001(\t\022\020\n\010bg_color\030\t \001(\t\"\203\001\n\021DetectedF" +
+      "aceEvent\022\021\n\tnode_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(" +
+      "\t\022\014\n\004code\030\003 \001(\005\022\017\n\007message\030\004 \001(\t\022\017\n\007pict" +
+      "ure\030\005 \001(\t\022\r\n\005width\030\006 \001(\005\022\016\n\006height\030\007 \001(\005" +
+      "\"@\n\017SendDTMFRequest\022\021\n\tctrl_uuid\030\001 \001(\t\022\014" +
+      "\n\004uuid\030\002 \001(\t\022\014\n\004dtmf\030\003 \001(\t\"V\n\017SendINFORe" +
+      "quest\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(\t\022\024" +
+      "\n\014content_type\030\003 \001(\t\022\014\n\004data\030\004 \001(\t\"O\n\013Ho" +
+      "ldRequest\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001" +
+      "(\t\022\016\n\006action\030\003 \001(\t\022\017\n\007display\030\004 \001(\t\"\201\001\n\020" +
+      "VideoResizeEvent\022\021\n\tnode_uuid\030\001 \001(\t\022\014\n\004u" +
+      "uid\030\002 \001(\t\022\021\n\told_width\030\003 \001(\r\022\022\n\nold_heig" +
+      "ht\030\004 \001(\r\022\021\n\tnew_width\030\005 \001(\r\022\022\n\nnew_heigh" +
+      "t\030\006 \001(\r\"\202\001\n\016JStatusRequest\022\021\n\tctrl_uuid\030" +
+      "\001 \001(\t\022/\n\004data\030\002 \001(\0132!.xctrl.JStatusReque" +
+      "st.JStatusData\032,\n\013JStatusData\022\017\n\007command" +
+      "\030\001 \001(\t\022\014\n\004data\030\002 \001(\t\"\211\001\n\rJStatusUptime\022\r" +
+      "\n\005years\030\001 \001(\005\022\014\n\004days\030\002 \001(\005\022\r\n\005hours\030\003 \001" +
+      "(\005\022\017\n\007minutes\030\004 \001(\005\022\017\n\007seconds\030\005 \001(\005\022\024\n\014" +
+      "milliseconds\030\006 \001(\005\022\024\n\014microseconds\030\007 \001(\005" +
+      "\"d\n\024JStatusSessionsCount\022\r\n\005total\030\001 \001(\005\022" +
+      "\016\n\006active\030\002 \001(\005\022\014\n\004peak\030\003 \001(\005\022\020\n\010peak5Mi" +
+      "n\030\004 \001(\005\022\r\n\005limit\030\005 \001(\005\"S\n\023JStatusSession" +
+      "sRate\022\017\n\007current\030\001 \001(\005\022\013\n\003max\030\002 \001(\005\022\014\n\004p" +
+      "eak\030\003 \001(\005\022\020\n\010peak5Min\030\004 \001(\005\"g\n\017JStatusSe" +
+      "ssions\022*\n\005count\030\001 \001(\0132\033.xctrl.JStatusSes" +
+      "sionsCount\022(\n\004rate\030\002 \001(\0132\032.xctrl.JStatus" +
+      "SessionsRate\"/\n\016JStatusIdleCPU\022\014\n\004used\030\001" +
+      " \001(\002\022\017\n\007allowed\030\002 \001(\002\"0\n\020JStatusStackSiz" +
+      "e\022\017\n\007current\030\001 \001(\005\022\013\n\003max\030\002 \001(\005\"m\n\017JStat" +
+      "usResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001(" +
+      "\t\022\021\n\tnode_uuid\030\003 \001(\t\022(\n\004data\030\005 \001(\0132\032.xct" +
+      "rl.JStatusResponseData\"\342\001\n\023JStatusRespon" +
+      "seData\022\024\n\014systemStatus\030\001 \001(\t\022\017\n\007version\030" +
+      "\002 \001(\t\022$\n\006uptime\030\003 \001(\0132\024.xctrl.JStatusUpt" +
+      "ime\022(\n\010sessions\030\004 \001(\0132\026.xctrl.JStatusSes" +
+      "sions\022&\n\007idleCPU\030\005 \001(\0132\025.xctrl.JStatusId" +
+      "leCPU\022,\n\013stackSizeKB\030\006 \001(\0132\027.xctrl.JStat" +
+      "usStackSize\"\216\001\n\035ConferenceInfoRequestDat" +
+      "aData\022\026\n\016conferenceName\030\001 \001(\t\022\023\n\013showMem" +
+      "bers\030\002 \001(\010\022@\n\rmemberFilters\030\003 \001(\0132\032.goog" +
+      "le.protobuf.ListValueR\rmemberFilters\"`\n\031" +
+      "ConferenceInfoRequestData\022\017\n\007command\030\001 \001" +
+      "(\t\0222\n\004data\030\002 \001(\0132$.xctrl.ConferenceInfoR" +
+      "equestDataData\"Z\n\025ConferenceInfoRequest\022" +
+      "\021\n\tctrl_uuid\030\001 \001(\t\022.\n\004data\030\002 \001(\0132 .xctrl" +
+      ".ConferenceInfoRequestData\"o\n\026Conference" +
+      "InfoResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 " +
+      "\001(\t\022\021\n\tnode_uuid\030\003 \001(\t\022#\n\004data\030\005 \001(\0132\025.x" +
+      "ctrl.ConferenceInfo\"\223\005\n\016ConferenceInfo\022\027" +
+      "\n\017conference_name\030\001 \001(\t\022\024\n\014member_count\030" +
+      "\002 \001(\005\022\023\n\013ghost_count\030\003 \001(\005\022\014\n\004rate\030\004 \001(\005" +
+      "\022\020\n\010run_time\030\005 \001(\005\022\027\n\017conference_uuid\030\006 " +
+      "\001(\t\022\024\n\014canvas_count\030\007 \001(\005\022\021\n\tmax_bw_in\030\010" +
+      " \001(\005\022\023\n\013force_bw_in\030\t \001(\005\022\033\n\023video_floor" +
+      "_packets\030\n \001(\005\022\016\n\006locked\030\013 \001(\010\022\020\n\010destru" +
+      "ct\030\014 \001(\010\022\020\n\010wait_mod\030\r \001(\010\022\024\n\014audio_alwa" +
+      "ys\030\016 \001(\010\022\017\n\007running\030\017 \001(\010\022\020\n\010answered\030\020 " +
+      "\001(\010\022\023\n\013enforce_min\030\021 \001(\010\022\021\n\tbridge_to\030\022 " +
+      "\001(\010\022\017\n\007dynamic\030\023 \001(\010\022\022\n\nexit_sound\030\024 \001(\010" +
+      "\022\023\n\013enter_sound\030\025 \001(\010\022\021\n\trecording\030\026 \001(\010" +
+      "\022\024\n\014video_bridge\030\027 \001(\010\022\030\n\020video_floor_on" +
+      "ly\030\030 \001(\010\022\025\n\rvideo_rfc4579\030\031 \001(\010\022\016\n\006domai" +
+      "n\030\032 \001(\t\0229\n\tvariables\030\033 \001(\0132&.xctrl.Confe" +
+      "renceInfoResponseVariables\0225\n\007members\030\034 " +
+      "\003(\0132$.xctrl.ConferenceInfoResponseMember" +
+      "s\"!\n\037ConferenceInfoResponseVariables\"\271\002\n" +
+      "\035ConferenceInfoResponseMembers\022\014\n\004type\030\001" +
+      " \001(\t\022\n\n\002id\030\002 \001(\005\022\014\n\004uuid\030\003 \001(\t\022\026\n\016caller" +
+      "_id_name\030\004 \001(\t\022\030\n\020caller_id_number\030\005 \001(\t" +
+      "\022\021\n\tjoin_time\030\006 \001(\005\022\024\n\014last_talking\030\007 \001(" +
+      "\005\022\016\n\006energy\030\010 \001(\005\022\021\n\tvolume_in\030\t \001(\005\022\022\n\n" +
+      "volume_out\030\n \001(\005\022\025\n\routput_volume\030\013 \001(\005\022" +
+      "\024\n\014input_volume\030\014 \001(\005\0221\n\005flags\030\r \001(\0132\".x" +
+      "ctrl.ConferenceInfoResponseFlags\"\361\001\n\033Con" +
+      "ferenceInfoResponseFlags\022\020\n\010can_hear\030\001 \001" +
+      "(\010\022\017\n\007can_see\030\002 \001(\010\022\021\n\tcan_speak\030\003 \001(\010\022\014" +
+      "\n\004hold\030\004 \001(\010\022\023\n\013mute_detect\030\005 \001(\010\022\017\n\007tal" +
+      "king\030\006 \001(\010\022\021\n\thas_video\030\007 \001(\010\022\024\n\014video_b" +
+      "ridge\030\010 \001(\010\022\021\n\thas_floor\030\t \001(\010\022\024\n\014is_mod" +
+      "erator\030\n \001(\010\022\026\n\016end_conference\030\013 \001(\010\"/\n\035" +
+      "ConferenceListRequestDataData\022\016\n\006domain\030" +
+      "\001 \001(\t\"`\n\031ConferenceListRequestData\022\017\n\007co" +
+      "mmand\030\001 \001(\t\0222\n\004data\030\002 \001(\0132$.xctrl.Confer" +
+      "enceListRequestDataData\"Z\n\025ConferenceLis" +
+      "tRequest\022\021\n\tctrl_uuid\030\001 \001(\t\022.\n\004data\030\002 \001(" +
+      "\0132 .xctrl.ConferenceListRequestData\"o\n\026C" +
+      "onferenceListResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007m" +
+      "essage\030\002 \001(\t\022\021\n\tnode_uuid\030\003 \001(\t\022#\n\004data\030" +
+      "\004 \003(\0132\025.xctrl.ConferenceInfo\"u\n\013FIFORequ" +
+      "est\022\014\n\004uuid\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\r\n\005inout" +
+      "\030\003 \001(\t\022\022\n\nwait_music\030\004 \001(\t\022\025\n\rexit_annou" +
+      "nce\030\005 \001(\t\022\020\n\010priority\030\006 \001(\005\"N\n\014FIFORespo" +
       "nse\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001(\t\022\021\n\tno" +
-      "de_uuid\030\003 \001(\t\022\014\n\004uuid\030\004 \001(\t\022!\n\004data\030\005 \001(" +
-      "\0132\023.xctrl.DetectedData\"4\n\021StopDetectRequ" +
-      "est\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 \001(\t\"\256\001\n" +
-      "\030RingBackDetectionRequest\022\021\n\tctrl_uuid\030\001" +
-      " \001(\t\022\014\n\004uuid\030\002 \001(\t\022\021\n\tstop_tone\030\003 \001(\t\022\026\n" +
-      "\016ignore_samples\030\004 \001(\t\022\023\n\013auto_hangup\030\005 \001" +
-      "(\010\022\030\n\020answer_auto_stop\030\006 \001(\010\022\027\n\017max_dete" +
-      "ct_time\030\007 \001(\r\"]\n\006Action\022\014\n\004name\030\001 \001(\t\022\021\n" +
-      "\towner_uid\030\002 \001(\t\022\021\n\tnode_uuid\030\003 \001(\t\022\037\n\005p" +
-      "aram\030\004 \001(\0132\020.xctrl.CallParam\"\245\001\n\021DetectF" +
-      "aceRequest\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uuid\030\002 " +
-      "\001(\t\022\014\n\004mask\030\003 \001(\t\022\016\n\006action\030\004 \001(\t\022\014\n\004tex" +
-      "t\030\005 \001(\t\022\014\n\004font\030\006 \001(\t\022\021\n\tfont_size\030\007 \001(\t" +
-      "\022\020\n\010fg_color\030\010 \001(\t\022\020\n\010bg_color\030\t \001(\t\"\203\001\n" +
-      "\021DetectedFaceEvent\022\021\n\tnode_uuid\030\001 \001(\t\022\014\n" +
-      "\004uuid\030\002 \001(\t\022\014\n\004code\030\003 \001(\005\022\017\n\007message\030\004 \001" +
-      "(\t\022\017\n\007picture\030\005 \001(\t\022\r\n\005width\030\006 \001(\005\022\016\n\006he" +
-      "ight\030\007 \001(\005\"@\n\017SendDTMFRequest\022\021\n\tctrl_uu" +
-      "id\030\001 \001(\t\022\014\n\004uuid\030\002 \001(\t\022\014\n\004dtmf\030\003 \001(\t\"V\n\017" +
-      "SendINFORequest\022\021\n\tctrl_uuid\030\001 \001(\t\022\014\n\004uu" +
-      "id\030\002 \001(\t\022\024\n\014content_type\030\003 \001(\t\022\014\n\004data\030\004" +
-      " \001(\t\"O\n\013HoldRequest\022\021\n\tctrl_uuid\030\001 \001(\t\022\014" +
-      "\n\004uuid\030\002 \001(\t\022\016\n\006action\030\003 \001(\t\022\017\n\007display\030" +
-      "\004 \001(\t\"\201\001\n\020VideoResizeEvent\022\021\n\tnode_uuid\030" +
-      "\001 \001(\t\022\014\n\004uuid\030\002 \001(\t\022\021\n\told_width\030\003 \001(\r\022\022" +
-      "\n\nold_height\030\004 \001(\r\022\021\n\tnew_width\030\005 \001(\r\022\022\n" +
-      "\nnew_height\030\006 \001(\r\"\202\001\n\016JStatusRequest\022\021\n\t" +
-      "ctrl_uuid\030\001 \001(\t\022/\n\004data\030\002 \001(\0132!.xctrl.JS" +
-      "tatusRequest.JStatusData\032,\n\013JStatusData\022" +
-      "\017\n\007command\030\001 \001(\t\022\014\n\004data\030\002 \001(\t\"\211\001\n\rJStat" +
-      "usUptime\022\r\n\005years\030\001 \001(\005\022\014\n\004days\030\002 \001(\005\022\r\n" +
-      "\005hours\030\003 \001(\005\022\017\n\007minutes\030\004 \001(\005\022\017\n\007seconds" +
-      "\030\005 \001(\005\022\024\n\014milliseconds\030\006 \001(\005\022\024\n\014microsec" +
-      "onds\030\007 \001(\005\"d\n\024JStatusSessionsCount\022\r\n\005to" +
-      "tal\030\001 \001(\005\022\016\n\006active\030\002 \001(\005\022\014\n\004peak\030\003 \001(\005\022" +
-      "\020\n\010peak5Min\030\004 \001(\005\022\r\n\005limit\030\005 \001(\005\"S\n\023JSta" +
-      "tusSessionsRate\022\017\n\007current\030\001 \001(\005\022\013\n\003max\030" +
-      "\002 \001(\005\022\014\n\004peak\030\003 \001(\005\022\020\n\010peak5Min\030\004 \001(\005\"g\n" +
-      "\017JStatusSessions\022*\n\005count\030\001 \001(\0132\033.xctrl." +
-      "JStatusSessionsCount\022(\n\004rate\030\002 \001(\0132\032.xct" +
-      "rl.JStatusSessionsRate\"/\n\016JStatusIdleCPU" +
-      "\022\014\n\004used\030\001 \001(\002\022\017\n\007allowed\030\002 \001(\002\"0\n\020JStat" +
-      "usStackSize\022\017\n\007current\030\001 \001(\005\022\013\n\003max\030\002 \001(" +
-      "\005\"m\n\017JStatusResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007me" +
-      "ssage\030\002 \001(\t\022\021\n\tnode_uuid\030\003 \001(\t\022(\n\004data\030\005" +
-      " \001(\0132\032.xctrl.JStatusResponseData\"\342\001\n\023JSt" +
-      "atusResponseData\022\024\n\014systemStatus\030\001 \001(\t\022\017" +
-      "\n\007version\030\002 \001(\t\022$\n\006uptime\030\003 \001(\0132\024.xctrl." +
-      "JStatusUptime\022(\n\010sessions\030\004 \001(\0132\026.xctrl." +
-      "JStatusSessions\022&\n\007idleCPU\030\005 \001(\0132\025.xctrl" +
-      ".JStatusIdleCPU\022,\n\013stackSizeKB\030\006 \001(\0132\027.x" +
-      "ctrl.JStatusStackSize\"\322\001\n\035ConferenceInfo" +
-      "RequestDataData\022\026\n\016conferenceName\030\001 \001(\t\022" +
-      "\023\n\013showMembers\030\002 \001(\010\022N\n\rmemberFilters\030\003 " +
-      "\003(\01327.xctrl.ConferenceInfoRequestDataDat" +
-      "a.MemberFiltersEntry\0324\n\022MemberFiltersEnt" +
-      "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"`\n\031Co" +
-      "nferenceInfoRequestData\022\017\n\007command\030\001 \001(\t" +
-      "\0222\n\004data\030\002 \001(\0132$.xctrl.ConferenceInfoReq" +
-      "uestDataData\"Z\n\025ConferenceInfoRequest\022\021\n" +
-      "\tctrl_uuid\030\001 \001(\t\022.\n\004data\030\002 \001(\0132 .xctrl.C" +
-      "onferenceInfoRequestData\"o\n\026ConferenceIn" +
-      "foResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001(" +
-      "\t\022\021\n\tnode_uuid\030\003 \001(\t\022#\n\004data\030\005 \001(\0132\025.xct" +
-      "rl.ConferenceInfo\"\223\005\n\016ConferenceInfo\022\027\n\017" +
-      "conference_name\030\001 \001(\t\022\024\n\014member_count\030\002 " +
-      "\001(\005\022\023\n\013ghost_count\030\003 \001(\005\022\014\n\004rate\030\004 \001(\005\022\020" +
-      "\n\010run_time\030\005 \001(\005\022\027\n\017conference_uuid\030\006 \001(" +
-      "\t\022\024\n\014canvas_count\030\007 \001(\005\022\021\n\tmax_bw_in\030\010 \001" +
-      "(\005\022\023\n\013force_bw_in\030\t \001(\005\022\033\n\023video_floor_p" +
-      "ackets\030\n \001(\005\022\016\n\006locked\030\013 \001(\010\022\020\n\010destruct" +
-      "\030\014 \001(\010\022\020\n\010wait_mod\030\r \001(\010\022\024\n\014audio_always" +
-      "\030\016 \001(\010\022\017\n\007running\030\017 \001(\010\022\020\n\010answered\030\020 \001(" +
-      "\010\022\023\n\013enforce_min\030\021 \001(\010\022\021\n\tbridge_to\030\022 \001(" +
-      "\010\022\017\n\007dynamic\030\023 \001(\010\022\022\n\nexit_sound\030\024 \001(\010\022\023" +
-      "\n\013enter_sound\030\025 \001(\010\022\021\n\trecording\030\026 \001(\010\022\024" +
-      "\n\014video_bridge\030\027 \001(\010\022\030\n\020video_floor_only" +
-      "\030\030 \001(\010\022\025\n\rvideo_rfc4579\030\031 \001(\010\022\016\n\006domain\030" +
-      "\032 \001(\t\0229\n\tvariables\030\033 \001(\0132&.xctrl.Confere" +
-      "nceInfoResponseVariables\0225\n\007members\030\034 \003(" +
-      "\0132$.xctrl.ConferenceInfoResponseMembers\"" +
-      "!\n\037ConferenceInfoResponseVariables\"\271\002\n\035C" +
-      "onferenceInfoResponseMembers\022\014\n\004type\030\001 \001" +
-      "(\t\022\n\n\002id\030\002 \001(\005\022\014\n\004uuid\030\003 \001(\t\022\026\n\016caller_i" +
-      "d_name\030\004 \001(\t\022\030\n\020caller_id_number\030\005 \001(\t\022\021" +
-      "\n\tjoin_time\030\006 \001(\005\022\024\n\014last_talking\030\007 \001(\005\022" +
-      "\016\n\006energy\030\010 \001(\005\022\021\n\tvolume_in\030\t \001(\005\022\022\n\nvo" +
-      "lume_out\030\n \001(\005\022\025\n\routput_volume\030\013 \001(\005\022\024\n" +
-      "\014input_volume\030\014 \001(\005\0221\n\005flags\030\r \001(\0132\".xct" +
-      "rl.ConferenceInfoResponseFlags\"\361\001\n\033Confe" +
-      "renceInfoResponseFlags\022\020\n\010can_hear\030\001 \001(\010" +
-      "\022\017\n\007can_see\030\002 \001(\010\022\021\n\tcan_speak\030\003 \001(\010\022\014\n\004" +
-      "hold\030\004 \001(\010\022\023\n\013mute_detect\030\005 \001(\010\022\017\n\007talki" +
-      "ng\030\006 \001(\010\022\021\n\thas_video\030\007 \001(\010\022\024\n\014video_bri" +
-      "dge\030\010 \001(\010\022\021\n\thas_floor\030\t \001(\010\022\024\n\014is_moder" +
-      "ator\030\n \001(\010\022\026\n\016end_conference\030\013 \001(\010\"/\n\035Co" +
-      "nferenceListRequestDataData\022\016\n\006domain\030\001 " +
-      "\001(\t\"`\n\031ConferenceListRequestData\022\017\n\007comm" +
-      "and\030\001 \001(\t\0222\n\004data\030\002 \001(\0132$.xctrl.Conferen" +
-      "ceListRequestDataData\"Z\n\025ConferenceListR" +
-      "equest\022\021\n\tctrl_uuid\030\001 \001(\t\022.\n\004data\030\002 \001(\0132" +
-      " .xctrl.ConferenceListRequestData\"o\n\026Con" +
-      "ferenceListResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007mes" +
-      "sage\030\002 \001(\t\022\021\n\tnode_uuid\030\003 \001(\t\022#\n\004data\030\004 " +
-      "\003(\0132\025.xctrl.ConferenceInfo\"u\n\013FIFOReques" +
-      "t\022\014\n\004uuid\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\r\n\005inout\030\003" +
-      " \001(\t\022\022\n\nwait_music\030\004 \001(\t\022\025\n\rexit_announc" +
-      "e\030\005 \001(\t\022\020\n\010priority\030\006 \001(\005\"N\n\014FIFORespons" +
-      "e\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001(\t\022\021\n\tnode" +
-      "_uuid\030\003 \001(\t\022\014\n\004uuid\030\004 \001(\t\"/\n\021CallcenterR" +
-      "equest\022\014\n\004uuid\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"T\n\022Ca" +
-      "llcenterResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007messag" +
-      "e\030\002 \001(\t\022\021\n\tnode_uuid\030\003 \001(\t\022\014\n\004uuid\030\004 \001(\t" +
-      "\"O\n\021ConferenceRequest\022\014\n\004uuid\030\001 \001(\t\022\014\n\004n" +
-      "ame\030\002 \001(\t\022\017\n\007profile\030\003 \001(\t\022\r\n\005flags\030\004 \003(" +
-      "\t\"T\n\022ConferenceResponse\022\014\n\004code\030\001 \001(\005\022\017\n" +
-      "\007message\030\002 \001(\t\022\021\n\tnode_uuid\030\003 \001(\t\022\014\n\004uui" +
-      "d\030\004 \001(\t\"}\n\tAIRequest\022\014\n\004uuid\030\001 \001(\t\022\013\n\003ur" +
-      "l\030\002 \001(\t\022(\n\004data\030\003 \003(\0132\032.xctrl.AIRequest." +
-      "DataEntry\032+\n\tDataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v" +
-      "alue\030\002 \001(\t:\0028\001\"L\n\nAIResponse\022\014\n\004code\030\001 \001" +
-      "(\005\022\017\n\007message\030\002 \001(\t\022\021\n\tnode_uuid\030\003 \001(\t\022\014" +
-      "\n\004uuid\030\004 \001(\t\"\205\001\n\rHttAPIRequest\022\014\n\004uuid\030\001" +
-      " \001(\t\022\013\n\003url\030\002 \001(\t\022,\n\004data\030\003 \003(\0132\036.xctrl." +
-      "HttAPIRequest.DataEntry\032+\n\tDataEntry\022\013\n\003" +
-      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"P\n\016HttAPIRe" +
-      "sponse\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001(\t\022\021\n" +
-      "\tnode_uuid\030\003 \001(\t\022\014\n\004uuid\030\004 \001(\t\"*\n\nLuaReq" +
-      "uest\022\014\n\004uuid\030\001 \001(\t\022\016\n\006script\030\002 \001(\t\"M\n\013Lu" +
-      "aResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001(\t" +
-      "\022\021\n\tnode_uuid\030\003 \001(\t\022\014\n\004uuid\030\004 \001(\t\"\'\n\022Ctr" +
-      "lStartUpRequest\022\021\n\tctrl_uuid\030\001 \001(\t*)\n\tMe" +
-      "diaType\022\010\n\004FILE\020\000\022\010\n\004TEXT\020\001\022\010\n\004SSML\020\002*\352\001" +
-      "\n\013EventMethod\022\013\n\007Invalid\020\000\022\020\n\014NodeRegist" +
-      "er\020\001\022\022\n\016NodeUnregister\020\002\022\016\n\nNodeUpdate\020\003" +
-      "\022\013\n\007Channel\020\004\022\n\n\006Native\020\005\022\007\n\003Vcc\020\006\022\n\n\006Re" +
-      "sult\020\007\022\016\n\nDialResult\020\010\022\020\n\014NativeResult\020\t" +
-      "\022\014\n\010FetchXML\020\n\022\014\n\010Dialplan\020\013\022\017\n\013NativeEv" +
-      "ent\020\014\022\007\n\003CDR\020\r\022\022\n\016DetectedSpeech\020\0162\327\023\n\005X" +
-      "Node\0221\n\004Dial\022\022.xctrl.DialRequest\032\023.xctrl" +
-      ".DialResponse\"\000\0221\n\006Answer\022\024.xctrl.Answer" +
-      "Request\032\017.xctrl.Response\"\000\0221\n\006Accept\022\024.x" +
-      "ctrl.AcceptRequest\032\017.xctrl.Response\"\000\022-\n" +
-      "\004Play\022\022.xctrl.PlayRequest\032\017.xctrl.Respon" +
-      "se\"\000\022-\n\004Stop\022\022.xctrl.StopRequest\032\017.xctrl" +
-      ".Response\"\000\0227\n\tBroadcast\022\027.xctrl.Broadca" +
-      "stRequest\032\017.xctrl.Response\"\000\022-\n\004Mute\022\022.x" +
-      "ctrl.MuteRequest\032\017.xctrl.Response\"\000\0227\n\006R" +
-      "ecord\022\024.xctrl.RecordRequest\032\025.xctrl.Reco" +
-      "rdResponse\"\000\0221\n\006Hangup\022\024.xctrl.HangupReq" +
-      "uest\032\017.xctrl.Response\"\000\0221\n\006Bridge\022\024.xctr" +
-      "l.BridgeRequest\032\017.xctrl.Response\"\000\022?\n\rCh" +
-      "annelBridge\022\033.xctrl.ChannelBridgeRequest" +
-      "\032\017.xctrl.Response\"\000\022-\n\010UnBridge\022\016.xctrl." +
-      "Request\032\017.xctrl.Response\"\000\022.\n\tUnBridge2\022" +
-      "\016.xctrl.Request\032\017.xctrl.Response\"\000\022-\n\004Ho" +
-      "ld\022\022.xctrl.HoldRequest\032\017.xctrl.Response\"" +
-      "\000\0225\n\010Transfer\022\026.xctrl.TransferRequest\032\017." +
-      "xctrl.Response\"\000\0225\n\010ThreeWay\022\026.xctrl.Thr" +
-      "eeWayRequest\032\017.xctrl.Response\"\000\022/\n\005Echo2" +
-      "\022\023.xctrl.Echo2Request\032\017.xctrl.Response\"\000" +
-      "\0227\n\tIntercept\022\027.xctrl.InterceptRequest\032\017" +
-      ".xctrl.Response\"\000\0223\n\007Consult\022\025.xctrl.Con" +
-      "sultRequest\032\017.xctrl.Response\"\000\0221\n\006SetVar" +
-      "\022\024.xctrl.SetVarRequest\032\017.xctrl.Response\"" +
-      "\000\0224\n\006GetVar\022\024.xctrl.GetVarRequest\032\022.xctr" +
-      "l.VarResponse\"\000\022:\n\010GetState\022\026.xctrl.GetS" +
-      "tateRequest\032\024.xctrl.StateResponse\"\000\022L\n\016G" +
-      "etChannelData\022\034.xctrl.GetChannelDataRequ" +
-      "est\032\032.xctrl.ChannelDataResponse\"\000\0225\n\010Rea" +
-      "dDTMF\022\022.xctrl.DTMFRequest\032\023.xctrl.DTMFRe" +
-      "sponse\"\000\022;\n\nReadDigits\022\024.xctrl.DigitsReq" +
-      "uest\032\025.xctrl.DigitsResponse\"\000\022=\n\014DetectS" +
-      "peech\022\024.xctrl.DetectRequest\032\025.xctrl.Dete" +
-      "ctResponse\"\000\022?\n\020StopDetectSpeech\022\030.xctrl" +
-      ".StopDetectRequest\032\017.xctrl.Response\"\000\022G\n" +
-      "\021RingBackDetection\022\037.xctrl.RingBackDetec" +
-      "tionRequest\032\017.xctrl.Response\"\000\0229\n\nDetect" +
-      "Face\022\030.xctrl.DetectFaceRequest\032\017.xctrl.R" +
-      "esponse\"\000\0225\n\010SendDTMF\022\026.xctrl.SendDTMFRe" +
-      "quest\032\017.xctrl.Response\"\000\0225\n\010SendINFO\022\026.x" +
-      "ctrl.SendINFORequest\032\017.xctrl.Response\"\000\022" +
-      ":\n\tNativeApp\022\024.xctrl.NativeRequest\032\025.xct" +
-      "rl.NativeResponse\"\000\022=\n\tNativeAPI\022\027.xctrl" +
-      ".NativeAPIRequest\032\025.xctrl.NativeResponse" +
-      "\"\000\022@\n\013NativeJSAPI\022\026.xctrl.NativeJSReques" +
-      "t\032\027.xctrl.NativeJSResponse\"\000\022:\n\007JStatus\022" +
-      "\025.xctrl.JStatusRequest\032\026.xctrl.JStatusRe" +
-      "sponse\"\000\022O\n\016ConferenceInfo\022\034.xctrl.Confe" +
-      "renceInfoRequest\032\035.xctrl.ConferenceInfoR" +
-      "esponse\"\000\022O\n\016ConferenceList\022\034.xctrl.Conf" +
-      "erenceListRequest\032\035.xctrl.ConferenceList" +
-      "Response\"\000\0221\n\004FIFO\022\022.xctrl.FIFORequest\032\023" +
-      ".xctrl.FIFOResponse\"\000\022C\n\nCallcenter\022\030.xc" +
-      "trl.CallcenterRequest\032\031.xctrl.Callcenter" +
-      "Response\"\000\022C\n\nConference\022\030.xctrl.Confere" +
-      "nceRequest\032\031.xctrl.ConferenceResponse\"\000\022" +
-      "+\n\002AI\022\020.xctrl.AIRequest\032\021.xctrl.AIRespon" +
-      "se\"\000\0227\n\006HttAPI\022\024.xctrl.HttAPIRequest\032\025.x" +
-      "ctrl.HttAPIResponse\"\000\022.\n\003Lua\022\021.xctrl.Lua" +
-      "Request\032\022.xctrl.LuaResponse\"\000\022-\n\010Registe" +
-      "r\022\016.xctrl.Request\032\017.xctrl.Response\"\000B\024B\005" +
-      "XCtrlZ\013proto/xctrlb\006proto3"
+      "de_uuid\030\003 \001(\t\022\014\n\004uuid\030\004 \001(\t\"/\n\021Callcente" +
+      "rRequest\022\014\n\004uuid\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"T\n\022" +
+      "CallcenterResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007mess" +
+      "age\030\002 \001(\t\022\021\n\tnode_uuid\030\003 \001(\t\022\014\n\004uuid\030\004 \001" +
+      "(\t\"O\n\021ConferenceRequest\022\014\n\004uuid\030\001 \001(\t\022\014\n" +
+      "\004name\030\002 \001(\t\022\017\n\007profile\030\003 \001(\t\022\r\n\005flags\030\004 " +
+      "\003(\t\"T\n\022ConferenceResponse\022\014\n\004code\030\001 \001(\005\022" +
+      "\017\n\007message\030\002 \001(\t\022\021\n\tnode_uuid\030\003 \001(\t\022\014\n\004u" +
+      "uid\030\004 \001(\t\"}\n\tAIRequest\022\014\n\004uuid\030\001 \001(\t\022\013\n\003" +
+      "url\030\002 \001(\t\022(\n\004data\030\003 \003(\0132\032.xctrl.AIReques" +
+      "t.DataEntry\032+\n\tDataEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
+      "\005value\030\002 \001(\t:\0028\001\"L\n\nAIResponse\022\014\n\004code\030\001" +
+      " \001(\005\022\017\n\007message\030\002 \001(\t\022\021\n\tnode_uuid\030\003 \001(\t" +
+      "\022\014\n\004uuid\030\004 \001(\t\"\205\001\n\rHttAPIRequest\022\014\n\004uuid" +
+      "\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022,\n\004data\030\003 \003(\0132\036.xctr" +
+      "l.HttAPIRequest.DataEntry\032+\n\tDataEntry\022\013" +
+      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"P\n\016HttAPI" +
+      "Response\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001(\t\022" +
+      "\021\n\tnode_uuid\030\003 \001(\t\022\014\n\004uuid\030\004 \001(\t\"*\n\nLuaR" +
+      "equest\022\014\n\004uuid\030\001 \001(\t\022\016\n\006script\030\002 \001(\t\"M\n\013" +
+      "LuaResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001" +
+      "(\t\022\021\n\tnode_uuid\030\003 \001(\t\022\014\n\004uuid\030\004 \001(\t\"\'\n\022C" +
+      "trlStartUpRequest\022\021\n\tctrl_uuid\030\001 \001(\t*)\n\t" +
+      "MediaType\022\010\n\004FILE\020\000\022\010\n\004TEXT\020\001\022\010\n\004SSML\020\002*" +
+      "\352\001\n\013EventMethod\022\013\n\007Invalid\020\000\022\020\n\014NodeRegi" +
+      "ster\020\001\022\022\n\016NodeUnregister\020\002\022\016\n\nNodeUpdate" +
+      "\020\003\022\013\n\007Channel\020\004\022\n\n\006Native\020\005\022\007\n\003Vcc\020\006\022\n\n\006" +
+      "Result\020\007\022\016\n\nDialResult\020\010\022\020\n\014NativeResult" +
+      "\020\t\022\014\n\010FetchXML\020\n\022\014\n\010Dialplan\020\013\022\017\n\013Native" +
+      "Event\020\014\022\007\n\003CDR\020\r\022\022\n\016DetectedSpeech\020\0162\327\023\n" +
+      "\005XNode\0221\n\004Dial\022\022.xctrl.DialRequest\032\023.xct" +
+      "rl.DialResponse\"\000\0221\n\006Answer\022\024.xctrl.Answ" +
+      "erRequest\032\017.xctrl.Response\"\000\0221\n\006Accept\022\024" +
+      ".xctrl.AcceptRequest\032\017.xctrl.Response\"\000\022" +
+      "-\n\004Play\022\022.xctrl.PlayRequest\032\017.xctrl.Resp" +
+      "onse\"\000\022-\n\004Stop\022\022.xctrl.StopRequest\032\017.xct" +
+      "rl.Response\"\000\0227\n\tBroadcast\022\027.xctrl.Broad" +
+      "castRequest\032\017.xctrl.Response\"\000\022-\n\004Mute\022\022" +
+      ".xctrl.MuteRequest\032\017.xctrl.Response\"\000\0227\n" +
+      "\006Record\022\024.xctrl.RecordRequest\032\025.xctrl.Re" +
+      "cordResponse\"\000\0221\n\006Hangup\022\024.xctrl.HangupR" +
+      "equest\032\017.xctrl.Response\"\000\0221\n\006Bridge\022\024.xc" +
+      "trl.BridgeRequest\032\017.xctrl.Response\"\000\022?\n\r" +
+      "ChannelBridge\022\033.xctrl.ChannelBridgeReque" +
+      "st\032\017.xctrl.Response\"\000\022-\n\010UnBridge\022\016.xctr" +
+      "l.Request\032\017.xctrl.Response\"\000\022.\n\tUnBridge" +
+      "2\022\016.xctrl.Request\032\017.xctrl.Response\"\000\022-\n\004" +
+      "Hold\022\022.xctrl.HoldRequest\032\017.xctrl.Respons" +
+      "e\"\000\0225\n\010Transfer\022\026.xctrl.TransferRequest\032" +
+      "\017.xctrl.Response\"\000\0225\n\010ThreeWay\022\026.xctrl.T" +
+      "hreeWayRequest\032\017.xctrl.Response\"\000\022/\n\005Ech" +
+      "o2\022\023.xctrl.Echo2Request\032\017.xctrl.Response" +
+      "\"\000\0227\n\tIntercept\022\027.xctrl.InterceptRequest" +
+      "\032\017.xctrl.Response\"\000\0223\n\007Consult\022\025.xctrl.C" +
+      "onsultRequest\032\017.xctrl.Response\"\000\0221\n\006SetV" +
+      "ar\022\024.xctrl.SetVarRequest\032\017.xctrl.Respons" +
+      "e\"\000\0224\n\006GetVar\022\024.xctrl.GetVarRequest\032\022.xc" +
+      "trl.VarResponse\"\000\022:\n\010GetState\022\026.xctrl.Ge" +
+      "tStateRequest\032\024.xctrl.StateResponse\"\000\022L\n" +
+      "\016GetChannelData\022\034.xctrl.GetChannelDataRe" +
+      "quest\032\032.xctrl.ChannelDataResponse\"\000\0225\n\010R" +
+      "eadDTMF\022\022.xctrl.DTMFRequest\032\023.xctrl.DTMF" +
+      "Response\"\000\022;\n\nReadDigits\022\024.xctrl.DigitsR" +
+      "equest\032\025.xctrl.DigitsResponse\"\000\022=\n\014Detec" +
+      "tSpeech\022\024.xctrl.DetectRequest\032\025.xctrl.De" +
+      "tectResponse\"\000\022?\n\020StopDetectSpeech\022\030.xct" +
+      "rl.StopDetectRequest\032\017.xctrl.Response\"\000\022" +
+      "G\n\021RingBackDetection\022\037.xctrl.RingBackDet" +
+      "ectionRequest\032\017.xctrl.Response\"\000\0229\n\nDete" +
+      "ctFace\022\030.xctrl.DetectFaceRequest\032\017.xctrl" +
+      ".Response\"\000\0225\n\010SendDTMF\022\026.xctrl.SendDTMF" +
+      "Request\032\017.xctrl.Response\"\000\0225\n\010SendINFO\022\026" +
+      ".xctrl.SendINFORequest\032\017.xctrl.Response\"" +
+      "\000\022:\n\tNativeApp\022\024.xctrl.NativeRequest\032\025.x" +
+      "ctrl.NativeResponse\"\000\022=\n\tNativeAPI\022\027.xct" +
+      "rl.NativeAPIRequest\032\025.xctrl.NativeRespon" +
+      "se\"\000\022@\n\013NativeJSAPI\022\026.xctrl.NativeJSRequ" +
+      "est\032\027.xctrl.NativeJSResponse\"\000\022:\n\007JStatu" +
+      "s\022\025.xctrl.JStatusRequest\032\026.xctrl.JStatus" +
+      "Response\"\000\022O\n\016ConferenceInfo\022\034.xctrl.Con" +
+      "ferenceInfoRequest\032\035.xctrl.ConferenceInf" +
+      "oResponse\"\000\022O\n\016ConferenceList\022\034.xctrl.Co" +
+      "nferenceListRequest\032\035.xctrl.ConferenceLi" +
+      "stResponse\"\000\0221\n\004FIFO\022\022.xctrl.FIFORequest" +
+      "\032\023.xctrl.FIFOResponse\"\000\022C\n\nCallcenter\022\030." +
+      "xctrl.CallcenterRequest\032\031.xctrl.Callcent" +
+      "erResponse\"\000\022C\n\nConference\022\030.xctrl.Confe" +
+      "renceRequest\032\031.xctrl.ConferenceResponse\"" +
+      "\000\022+\n\002AI\022\020.xctrl.AIRequest\032\021.xctrl.AIResp" +
+      "onse\"\000\0227\n\006HttAPI\022\024.xctrl.HttAPIRequest\032\025" +
+      ".xctrl.HttAPIResponse\"\000\022.\n\003Lua\022\021.xctrl.L" +
+      "uaRequest\032\022.xctrl.LuaResponse\"\000\022-\n\010Regis" +
+      "ter\022\016.xctrl.Request\032\017.xctrl.Response\"\000B\024" +
+      "B\005XCtrlZ\013proto/xctrlb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.protobuf.StructProto.getDescriptor(),
         });
     internal_static_xctrl_AcceptRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -116085,12 +115960,6 @@ public final class XCtrl {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_xctrl_ConferenceInfoRequestDataData_descriptor,
         new java.lang.String[] { "ConferenceName", "ShowMembers", "MemberFilters", });
-    internal_static_xctrl_ConferenceInfoRequestDataData_MemberFiltersEntry_descriptor =
-      internal_static_xctrl_ConferenceInfoRequestDataData_descriptor.getNestedTypes().get(0);
-    internal_static_xctrl_ConferenceInfoRequestDataData_MemberFiltersEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_xctrl_ConferenceInfoRequestDataData_MemberFiltersEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
     internal_static_xctrl_ConferenceInfoRequestData_descriptor =
       getDescriptor().getMessageTypes().get(74);
     internal_static_xctrl_ConferenceInfoRequestData_fieldAccessorTable = new
@@ -116247,6 +116116,7 @@ public final class XCtrl {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_xctrl_CtrlStartUpRequest_descriptor,
         new java.lang.String[] { "CtrlUuid", });
+    com.google.protobuf.StructProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

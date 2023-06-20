@@ -23193,43 +23193,43 @@ public final class CManProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string event_channel = 1;</code>
+     * <code>string eventChannel = 1;</code>
      * @return The eventChannel.
      */
     java.lang.String getEventChannel();
     /**
-     * <code>string event_channel = 1;</code>
+     * <code>string eventChannel = 1;</code>
      * @return The bytes for eventChannel.
      */
     com.google.protobuf.ByteString
         getEventChannelBytes();
 
     /**
-     * <code>.cman.BootstrapRequestParamsData data = 2;</code>
-     * @return Whether the data field is set.
-     */
-    boolean hasData();
-    /**
-     * <code>.cman.BootstrapRequestParamsData data = 2;</code>
-     * @return The data.
-     */
-    cman.CManProto.BootstrapRequestParamsData getData();
-    /**
-     * <code>.cman.BootstrapRequestParamsData data = 2;</code>
-     */
-    cman.CManProto.BootstrapRequestParamsDataOrBuilder getDataOrBuilder();
-
-    /**
-     * <code>string sessid = 3;</code>
+     * <code>string sessid = 2;</code>
      * @return The sessid.
      */
     java.lang.String getSessid();
     /**
-     * <code>string sessid = 3;</code>
+     * <code>string sessid = 2;</code>
      * @return The bytes for sessid.
      */
     com.google.protobuf.ByteString
         getSessidBytes();
+
+    /**
+     * <code>.cman.BootstrapRequestData Data = 3;</code>
+     * @return Whether the data field is set.
+     */
+    boolean hasData();
+    /**
+     * <code>.cman.BootstrapRequestData Data = 3;</code>
+     * @return The data.
+     */
+    cman.CManProto.BootstrapRequestData getData();
+    /**
+     * <code>.cman.BootstrapRequestData Data = 3;</code>
+     */
+    cman.CManProto.BootstrapRequestDataOrBuilder getDataOrBuilder();
   }
   /**
    * Protobuf type {@code cman.BootstrapRequest}
@@ -23285,22 +23285,22 @@ public final class CManProto {
               break;
             }
             case 18: {
-              cman.CManProto.BootstrapRequestParamsData.Builder subBuilder = null;
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sessid_ = s;
+              break;
+            }
+            case 26: {
+              cman.CManProto.BootstrapRequestData.Builder subBuilder = null;
               if (data_ != null) {
                 subBuilder = data_.toBuilder();
               }
-              data_ = input.readMessage(cman.CManProto.BootstrapRequestParamsData.parser(), extensionRegistry);
+              data_ = input.readMessage(cman.CManProto.BootstrapRequestData.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(data_);
                 data_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sessid_ = s;
               break;
             }
             default: {
@@ -23335,10 +23335,10 @@ public final class CManProto {
               cman.CManProto.BootstrapRequest.class, cman.CManProto.BootstrapRequest.Builder.class);
     }
 
-    public static final int EVENT_CHANNEL_FIELD_NUMBER = 1;
+    public static final int EVENTCHANNEL_FIELD_NUMBER = 1;
     private volatile java.lang.Object eventChannel_;
     /**
-     * <code>string event_channel = 1;</code>
+     * <code>string eventChannel = 1;</code>
      * @return The eventChannel.
      */
     @java.lang.Override
@@ -23355,7 +23355,7 @@ public final class CManProto {
       }
     }
     /**
-     * <code>string event_channel = 1;</code>
+     * <code>string eventChannel = 1;</code>
      * @return The bytes for eventChannel.
      */
     @java.lang.Override
@@ -23373,36 +23373,10 @@ public final class CManProto {
       }
     }
 
-    public static final int DATA_FIELD_NUMBER = 2;
-    private cman.CManProto.BootstrapRequestParamsData data_;
-    /**
-     * <code>.cman.BootstrapRequestParamsData data = 2;</code>
-     * @return Whether the data field is set.
-     */
-    @java.lang.Override
-    public boolean hasData() {
-      return data_ != null;
-    }
-    /**
-     * <code>.cman.BootstrapRequestParamsData data = 2;</code>
-     * @return The data.
-     */
-    @java.lang.Override
-    public cman.CManProto.BootstrapRequestParamsData getData() {
-      return data_ == null ? cman.CManProto.BootstrapRequestParamsData.getDefaultInstance() : data_;
-    }
-    /**
-     * <code>.cman.BootstrapRequestParamsData data = 2;</code>
-     */
-    @java.lang.Override
-    public cman.CManProto.BootstrapRequestParamsDataOrBuilder getDataOrBuilder() {
-      return getData();
-    }
-
-    public static final int SESSID_FIELD_NUMBER = 3;
+    public static final int SESSID_FIELD_NUMBER = 2;
     private volatile java.lang.Object sessid_;
     /**
-     * <code>string sessid = 3;</code>
+     * <code>string sessid = 2;</code>
      * @return The sessid.
      */
     @java.lang.Override
@@ -23419,7 +23393,7 @@ public final class CManProto {
       }
     }
     /**
-     * <code>string sessid = 3;</code>
+     * <code>string sessid = 2;</code>
      * @return The bytes for sessid.
      */
     @java.lang.Override
@@ -23435,6 +23409,32 @@ public final class CManProto {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int DATA_FIELD_NUMBER = 3;
+    private cman.CManProto.BootstrapRequestData data_;
+    /**
+     * <code>.cman.BootstrapRequestData Data = 3;</code>
+     * @return Whether the data field is set.
+     */
+    @java.lang.Override
+    public boolean hasData() {
+      return data_ != null;
+    }
+    /**
+     * <code>.cman.BootstrapRequestData Data = 3;</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public cman.CManProto.BootstrapRequestData getData() {
+      return data_ == null ? cman.CManProto.BootstrapRequestData.getDefaultInstance() : data_;
+    }
+    /**
+     * <code>.cman.BootstrapRequestData Data = 3;</code>
+     */
+    @java.lang.Override
+    public cman.CManProto.BootstrapRequestDataOrBuilder getDataOrBuilder() {
+      return getData();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -23454,11 +23454,11 @@ public final class CManProto {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventChannel_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, eventChannel_);
       }
-      if (data_ != null) {
-        output.writeMessage(2, getData());
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sessid_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sessid_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sessid_);
+      }
+      if (data_ != null) {
+        output.writeMessage(3, getData());
       }
       unknownFields.writeTo(output);
     }
@@ -23472,12 +23472,12 @@ public final class CManProto {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventChannel_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, eventChannel_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sessid_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sessid_);
+      }
       if (data_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getData());
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sessid_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sessid_);
+          .computeMessageSize(3, getData());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -23496,13 +23496,13 @@ public final class CManProto {
 
       if (!getEventChannel()
           .equals(other.getEventChannel())) return false;
+      if (!getSessid()
+          .equals(other.getSessid())) return false;
       if (hasData() != other.hasData()) return false;
       if (hasData()) {
         if (!getData()
             .equals(other.getData())) return false;
       }
-      if (!getSessid()
-          .equals(other.getSessid())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -23514,14 +23514,14 @@ public final class CManProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + EVENT_CHANNEL_FIELD_NUMBER;
+      hash = (37 * hash) + EVENTCHANNEL_FIELD_NUMBER;
       hash = (53 * hash) + getEventChannel().hashCode();
+      hash = (37 * hash) + SESSID_FIELD_NUMBER;
+      hash = (53 * hash) + getSessid().hashCode();
       if (hasData()) {
         hash = (37 * hash) + DATA_FIELD_NUMBER;
         hash = (53 * hash) + getData().hashCode();
       }
-      hash = (37 * hash) + SESSID_FIELD_NUMBER;
-      hash = (53 * hash) + getSessid().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -23657,14 +23657,14 @@ public final class CManProto {
         super.clear();
         eventChannel_ = "";
 
+        sessid_ = "";
+
         if (dataBuilder_ == null) {
           data_ = null;
         } else {
           data_ = null;
           dataBuilder_ = null;
         }
-        sessid_ = "";
-
         return this;
       }
 
@@ -23692,12 +23692,12 @@ public final class CManProto {
       public cman.CManProto.BootstrapRequest buildPartial() {
         cman.CManProto.BootstrapRequest result = new cman.CManProto.BootstrapRequest(this);
         result.eventChannel_ = eventChannel_;
+        result.sessid_ = sessid_;
         if (dataBuilder_ == null) {
           result.data_ = data_;
         } else {
           result.data_ = dataBuilder_.build();
         }
-        result.sessid_ = sessid_;
         onBuilt();
         return result;
       }
@@ -23750,12 +23750,12 @@ public final class CManProto {
           eventChannel_ = other.eventChannel_;
           onChanged();
         }
-        if (other.hasData()) {
-          mergeData(other.getData());
-        }
         if (!other.getSessid().isEmpty()) {
           sessid_ = other.sessid_;
           onChanged();
+        }
+        if (other.hasData()) {
+          mergeData(other.getData());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -23788,7 +23788,7 @@ public final class CManProto {
 
       private java.lang.Object eventChannel_ = "";
       /**
-       * <code>string event_channel = 1;</code>
+       * <code>string eventChannel = 1;</code>
        * @return The eventChannel.
        */
       public java.lang.String getEventChannel() {
@@ -23804,7 +23804,7 @@ public final class CManProto {
         }
       }
       /**
-       * <code>string event_channel = 1;</code>
+       * <code>string eventChannel = 1;</code>
        * @return The bytes for eventChannel.
        */
       public com.google.protobuf.ByteString
@@ -23821,7 +23821,7 @@ public final class CManProto {
         }
       }
       /**
-       * <code>string event_channel = 1;</code>
+       * <code>string eventChannel = 1;</code>
        * @param value The eventChannel to set.
        * @return This builder for chaining.
        */
@@ -23836,7 +23836,7 @@ public final class CManProto {
         return this;
       }
       /**
-       * <code>string event_channel = 1;</code>
+       * <code>string eventChannel = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearEventChannel() {
@@ -23846,7 +23846,7 @@ public final class CManProto {
         return this;
       }
       /**
-       * <code>string event_channel = 1;</code>
+       * <code>string eventChannel = 1;</code>
        * @param value The bytes for eventChannel to set.
        * @return This builder for chaining.
        */
@@ -23862,128 +23862,9 @@ public final class CManProto {
         return this;
       }
 
-      private cman.CManProto.BootstrapRequestParamsData data_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          cman.CManProto.BootstrapRequestParamsData, cman.CManProto.BootstrapRequestParamsData.Builder, cman.CManProto.BootstrapRequestParamsDataOrBuilder> dataBuilder_;
-      /**
-       * <code>.cman.BootstrapRequestParamsData data = 2;</code>
-       * @return Whether the data field is set.
-       */
-      public boolean hasData() {
-        return dataBuilder_ != null || data_ != null;
-      }
-      /**
-       * <code>.cman.BootstrapRequestParamsData data = 2;</code>
-       * @return The data.
-       */
-      public cman.CManProto.BootstrapRequestParamsData getData() {
-        if (dataBuilder_ == null) {
-          return data_ == null ? cman.CManProto.BootstrapRequestParamsData.getDefaultInstance() : data_;
-        } else {
-          return dataBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.cman.BootstrapRequestParamsData data = 2;</code>
-       */
-      public Builder setData(cman.CManProto.BootstrapRequestParamsData value) {
-        if (dataBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          data_ = value;
-          onChanged();
-        } else {
-          dataBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.cman.BootstrapRequestParamsData data = 2;</code>
-       */
-      public Builder setData(
-          cman.CManProto.BootstrapRequestParamsData.Builder builderForValue) {
-        if (dataBuilder_ == null) {
-          data_ = builderForValue.build();
-          onChanged();
-        } else {
-          dataBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.cman.BootstrapRequestParamsData data = 2;</code>
-       */
-      public Builder mergeData(cman.CManProto.BootstrapRequestParamsData value) {
-        if (dataBuilder_ == null) {
-          if (data_ != null) {
-            data_ =
-              cman.CManProto.BootstrapRequestParamsData.newBuilder(data_).mergeFrom(value).buildPartial();
-          } else {
-            data_ = value;
-          }
-          onChanged();
-        } else {
-          dataBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.cman.BootstrapRequestParamsData data = 2;</code>
-       */
-      public Builder clearData() {
-        if (dataBuilder_ == null) {
-          data_ = null;
-          onChanged();
-        } else {
-          data_ = null;
-          dataBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.cman.BootstrapRequestParamsData data = 2;</code>
-       */
-      public cman.CManProto.BootstrapRequestParamsData.Builder getDataBuilder() {
-        
-        onChanged();
-        return getDataFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.cman.BootstrapRequestParamsData data = 2;</code>
-       */
-      public cman.CManProto.BootstrapRequestParamsDataOrBuilder getDataOrBuilder() {
-        if (dataBuilder_ != null) {
-          return dataBuilder_.getMessageOrBuilder();
-        } else {
-          return data_ == null ?
-              cman.CManProto.BootstrapRequestParamsData.getDefaultInstance() : data_;
-        }
-      }
-      /**
-       * <code>.cman.BootstrapRequestParamsData data = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          cman.CManProto.BootstrapRequestParamsData, cman.CManProto.BootstrapRequestParamsData.Builder, cman.CManProto.BootstrapRequestParamsDataOrBuilder> 
-          getDataFieldBuilder() {
-        if (dataBuilder_ == null) {
-          dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              cman.CManProto.BootstrapRequestParamsData, cman.CManProto.BootstrapRequestParamsData.Builder, cman.CManProto.BootstrapRequestParamsDataOrBuilder>(
-                  getData(),
-                  getParentForChildren(),
-                  isClean());
-          data_ = null;
-        }
-        return dataBuilder_;
-      }
-
       private java.lang.Object sessid_ = "";
       /**
-       * <code>string sessid = 3;</code>
+       * <code>string sessid = 2;</code>
        * @return The sessid.
        */
       public java.lang.String getSessid() {
@@ -23999,7 +23880,7 @@ public final class CManProto {
         }
       }
       /**
-       * <code>string sessid = 3;</code>
+       * <code>string sessid = 2;</code>
        * @return The bytes for sessid.
        */
       public com.google.protobuf.ByteString
@@ -24016,7 +23897,7 @@ public final class CManProto {
         }
       }
       /**
-       * <code>string sessid = 3;</code>
+       * <code>string sessid = 2;</code>
        * @param value The sessid to set.
        * @return This builder for chaining.
        */
@@ -24031,7 +23912,7 @@ public final class CManProto {
         return this;
       }
       /**
-       * <code>string sessid = 3;</code>
+       * <code>string sessid = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearSessid() {
@@ -24041,7 +23922,7 @@ public final class CManProto {
         return this;
       }
       /**
-       * <code>string sessid = 3;</code>
+       * <code>string sessid = 2;</code>
        * @param value The bytes for sessid to set.
        * @return This builder for chaining.
        */
@@ -24055,6 +23936,125 @@ public final class CManProto {
         sessid_ = value;
         onChanged();
         return this;
+      }
+
+      private cman.CManProto.BootstrapRequestData data_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cman.CManProto.BootstrapRequestData, cman.CManProto.BootstrapRequestData.Builder, cman.CManProto.BootstrapRequestDataOrBuilder> dataBuilder_;
+      /**
+       * <code>.cman.BootstrapRequestData Data = 3;</code>
+       * @return Whether the data field is set.
+       */
+      public boolean hasData() {
+        return dataBuilder_ != null || data_ != null;
+      }
+      /**
+       * <code>.cman.BootstrapRequestData Data = 3;</code>
+       * @return The data.
+       */
+      public cman.CManProto.BootstrapRequestData getData() {
+        if (dataBuilder_ == null) {
+          return data_ == null ? cman.CManProto.BootstrapRequestData.getDefaultInstance() : data_;
+        } else {
+          return dataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.cman.BootstrapRequestData Data = 3;</code>
+       */
+      public Builder setData(cman.CManProto.BootstrapRequestData value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cman.BootstrapRequestData Data = 3;</code>
+       */
+      public Builder setData(
+          cman.CManProto.BootstrapRequestData.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cman.BootstrapRequestData Data = 3;</code>
+       */
+      public Builder mergeData(cman.CManProto.BootstrapRequestData value) {
+        if (dataBuilder_ == null) {
+          if (data_ != null) {
+            data_ =
+              cman.CManProto.BootstrapRequestData.newBuilder(data_).mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          dataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cman.BootstrapRequestData Data = 3;</code>
+       */
+      public Builder clearData() {
+        if (dataBuilder_ == null) {
+          data_ = null;
+          onChanged();
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.cman.BootstrapRequestData Data = 3;</code>
+       */
+      public cman.CManProto.BootstrapRequestData.Builder getDataBuilder() {
+        
+        onChanged();
+        return getDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.cman.BootstrapRequestData Data = 3;</code>
+       */
+      public cman.CManProto.BootstrapRequestDataOrBuilder getDataOrBuilder() {
+        if (dataBuilder_ != null) {
+          return dataBuilder_.getMessageOrBuilder();
+        } else {
+          return data_ == null ?
+              cman.CManProto.BootstrapRequestData.getDefaultInstance() : data_;
+        }
+      }
+      /**
+       * <code>.cman.BootstrapRequestData Data = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cman.CManProto.BootstrapRequestData, cman.CManProto.BootstrapRequestData.Builder, cman.CManProto.BootstrapRequestDataOrBuilder> 
+          getDataFieldBuilder() {
+        if (dataBuilder_ == null) {
+          dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              cman.CManProto.BootstrapRequestData, cman.CManProto.BootstrapRequestData.Builder, cman.CManProto.BootstrapRequestDataOrBuilder>(
+                  getData(),
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        return dataBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -24109,45 +24109,45 @@ public final class CManProto {
 
   }
 
-  public interface BootstrapRequestParamsDataOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:cman.BootstrapRequestParamsData)
+  public interface BootstrapRequestDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cman.BootstrapRequestData)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.cman.BootstrapRequestParamsDataLiveArray live_array = 1;</code>
+     * <code>.cman.BootstrapRequestDataLiveArray liveArray = 1;</code>
      * @return Whether the liveArray field is set.
      */
     boolean hasLiveArray();
     /**
-     * <code>.cman.BootstrapRequestParamsDataLiveArray live_array = 1;</code>
+     * <code>.cman.BootstrapRequestDataLiveArray liveArray = 1;</code>
      * @return The liveArray.
      */
-    cman.CManProto.BootstrapRequestParamsDataLiveArray getLiveArray();
+    cman.CManProto.BootstrapRequestDataLiveArray getLiveArray();
     /**
-     * <code>.cman.BootstrapRequestParamsDataLiveArray live_array = 1;</code>
+     * <code>.cman.BootstrapRequestDataLiveArray liveArray = 1;</code>
      */
-    cman.CManProto.BootstrapRequestParamsDataLiveArrayOrBuilder getLiveArrayOrBuilder();
+    cman.CManProto.BootstrapRequestDataLiveArrayOrBuilder getLiveArrayOrBuilder();
   }
   /**
-   * Protobuf type {@code cman.BootstrapRequestParamsData}
+   * Protobuf type {@code cman.BootstrapRequestData}
    */
-  public static final class BootstrapRequestParamsData extends
+  public static final class BootstrapRequestData extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:cman.BootstrapRequestParamsData)
-      BootstrapRequestParamsDataOrBuilder {
+      // @@protoc_insertion_point(message_implements:cman.BootstrapRequestData)
+      BootstrapRequestDataOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use BootstrapRequestParamsData.newBuilder() to construct.
-    private BootstrapRequestParamsData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use BootstrapRequestData.newBuilder() to construct.
+    private BootstrapRequestData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private BootstrapRequestParamsData() {
+    private BootstrapRequestData() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new BootstrapRequestParamsData();
+      return new BootstrapRequestData();
     }
 
     @java.lang.Override
@@ -24155,7 +24155,7 @@ public final class CManProto {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BootstrapRequestParamsData(
+    private BootstrapRequestData(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -24174,11 +24174,11 @@ public final class CManProto {
               done = true;
               break;
             case 10: {
-              cman.CManProto.BootstrapRequestParamsDataLiveArray.Builder subBuilder = null;
+              cman.CManProto.BootstrapRequestDataLiveArray.Builder subBuilder = null;
               if (liveArray_ != null) {
                 subBuilder = liveArray_.toBuilder();
               }
-              liveArray_ = input.readMessage(cman.CManProto.BootstrapRequestParamsDataLiveArray.parser(), extensionRegistry);
+              liveArray_ = input.readMessage(cman.CManProto.BootstrapRequestDataLiveArray.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(liveArray_);
                 liveArray_ = subBuilder.buildPartial();
@@ -24207,21 +24207,21 @@ public final class CManProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return cman.CManProto.internal_static_cman_BootstrapRequestParamsData_descriptor;
+      return cman.CManProto.internal_static_cman_BootstrapRequestData_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return cman.CManProto.internal_static_cman_BootstrapRequestParamsData_fieldAccessorTable
+      return cman.CManProto.internal_static_cman_BootstrapRequestData_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              cman.CManProto.BootstrapRequestParamsData.class, cman.CManProto.BootstrapRequestParamsData.Builder.class);
+              cman.CManProto.BootstrapRequestData.class, cman.CManProto.BootstrapRequestData.Builder.class);
     }
 
-    public static final int LIVE_ARRAY_FIELD_NUMBER = 1;
-    private cman.CManProto.BootstrapRequestParamsDataLiveArray liveArray_;
+    public static final int LIVEARRAY_FIELD_NUMBER = 1;
+    private cman.CManProto.BootstrapRequestDataLiveArray liveArray_;
     /**
-     * <code>.cman.BootstrapRequestParamsDataLiveArray live_array = 1;</code>
+     * <code>.cman.BootstrapRequestDataLiveArray liveArray = 1;</code>
      * @return Whether the liveArray field is set.
      */
     @java.lang.Override
@@ -24229,18 +24229,18 @@ public final class CManProto {
       return liveArray_ != null;
     }
     /**
-     * <code>.cman.BootstrapRequestParamsDataLiveArray live_array = 1;</code>
+     * <code>.cman.BootstrapRequestDataLiveArray liveArray = 1;</code>
      * @return The liveArray.
      */
     @java.lang.Override
-    public cman.CManProto.BootstrapRequestParamsDataLiveArray getLiveArray() {
-      return liveArray_ == null ? cman.CManProto.BootstrapRequestParamsDataLiveArray.getDefaultInstance() : liveArray_;
+    public cman.CManProto.BootstrapRequestDataLiveArray getLiveArray() {
+      return liveArray_ == null ? cman.CManProto.BootstrapRequestDataLiveArray.getDefaultInstance() : liveArray_;
     }
     /**
-     * <code>.cman.BootstrapRequestParamsDataLiveArray live_array = 1;</code>
+     * <code>.cman.BootstrapRequestDataLiveArray liveArray = 1;</code>
      */
     @java.lang.Override
-    public cman.CManProto.BootstrapRequestParamsDataLiveArrayOrBuilder getLiveArrayOrBuilder() {
+    public cman.CManProto.BootstrapRequestDataLiveArrayOrBuilder getLiveArrayOrBuilder() {
       return getLiveArray();
     }
 
@@ -24284,10 +24284,10 @@ public final class CManProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof cman.CManProto.BootstrapRequestParamsData)) {
+      if (!(obj instanceof cman.CManProto.BootstrapRequestData)) {
         return super.equals(obj);
       }
-      cman.CManProto.BootstrapRequestParamsData other = (cman.CManProto.BootstrapRequestParamsData) obj;
+      cman.CManProto.BootstrapRequestData other = (cman.CManProto.BootstrapRequestData) obj;
 
       if (hasLiveArray() != other.hasLiveArray()) return false;
       if (hasLiveArray()) {
@@ -24306,7 +24306,7 @@ public final class CManProto {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (hasLiveArray()) {
-        hash = (37 * hash) + LIVE_ARRAY_FIELD_NUMBER;
+        hash = (37 * hash) + LIVEARRAY_FIELD_NUMBER;
         hash = (53 * hash) + getLiveArray().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -24314,69 +24314,69 @@ public final class CManProto {
       return hash;
     }
 
-    public static cman.CManProto.BootstrapRequestParamsData parseFrom(
+    public static cman.CManProto.BootstrapRequestData parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static cman.CManProto.BootstrapRequestParamsData parseFrom(
+    public static cman.CManProto.BootstrapRequestData parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static cman.CManProto.BootstrapRequestParamsData parseFrom(
+    public static cman.CManProto.BootstrapRequestData parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static cman.CManProto.BootstrapRequestParamsData parseFrom(
+    public static cman.CManProto.BootstrapRequestData parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static cman.CManProto.BootstrapRequestParamsData parseFrom(byte[] data)
+    public static cman.CManProto.BootstrapRequestData parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static cman.CManProto.BootstrapRequestParamsData parseFrom(
+    public static cman.CManProto.BootstrapRequestData parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static cman.CManProto.BootstrapRequestParamsData parseFrom(java.io.InputStream input)
+    public static cman.CManProto.BootstrapRequestData parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static cman.CManProto.BootstrapRequestParamsData parseFrom(
+    public static cman.CManProto.BootstrapRequestData parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static cman.CManProto.BootstrapRequestParamsData parseDelimitedFrom(java.io.InputStream input)
+    public static cman.CManProto.BootstrapRequestData parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static cman.CManProto.BootstrapRequestParamsData parseDelimitedFrom(
+    public static cman.CManProto.BootstrapRequestData parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static cman.CManProto.BootstrapRequestParamsData parseFrom(
+    public static cman.CManProto.BootstrapRequestData parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static cman.CManProto.BootstrapRequestParamsData parseFrom(
+    public static cman.CManProto.BootstrapRequestData parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -24389,7 +24389,7 @@ public final class CManProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(cman.CManProto.BootstrapRequestParamsData prototype) {
+    public static Builder newBuilder(cman.CManProto.BootstrapRequestData prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -24405,26 +24405,26 @@ public final class CManProto {
       return builder;
     }
     /**
-     * Protobuf type {@code cman.BootstrapRequestParamsData}
+     * Protobuf type {@code cman.BootstrapRequestData}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:cman.BootstrapRequestParamsData)
-        cman.CManProto.BootstrapRequestParamsDataOrBuilder {
+        // @@protoc_insertion_point(builder_implements:cman.BootstrapRequestData)
+        cman.CManProto.BootstrapRequestDataOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return cman.CManProto.internal_static_cman_BootstrapRequestParamsData_descriptor;
+        return cman.CManProto.internal_static_cman_BootstrapRequestData_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return cman.CManProto.internal_static_cman_BootstrapRequestParamsData_fieldAccessorTable
+        return cman.CManProto.internal_static_cman_BootstrapRequestData_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                cman.CManProto.BootstrapRequestParamsData.class, cman.CManProto.BootstrapRequestParamsData.Builder.class);
+                cman.CManProto.BootstrapRequestData.class, cman.CManProto.BootstrapRequestData.Builder.class);
       }
 
-      // Construct using cman.CManProto.BootstrapRequestParamsData.newBuilder()
+      // Construct using cman.CManProto.BootstrapRequestData.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -24454,17 +24454,17 @@ public final class CManProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return cman.CManProto.internal_static_cman_BootstrapRequestParamsData_descriptor;
+        return cman.CManProto.internal_static_cman_BootstrapRequestData_descriptor;
       }
 
       @java.lang.Override
-      public cman.CManProto.BootstrapRequestParamsData getDefaultInstanceForType() {
-        return cman.CManProto.BootstrapRequestParamsData.getDefaultInstance();
+      public cman.CManProto.BootstrapRequestData getDefaultInstanceForType() {
+        return cman.CManProto.BootstrapRequestData.getDefaultInstance();
       }
 
       @java.lang.Override
-      public cman.CManProto.BootstrapRequestParamsData build() {
-        cman.CManProto.BootstrapRequestParamsData result = buildPartial();
+      public cman.CManProto.BootstrapRequestData build() {
+        cman.CManProto.BootstrapRequestData result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -24472,8 +24472,8 @@ public final class CManProto {
       }
 
       @java.lang.Override
-      public cman.CManProto.BootstrapRequestParamsData buildPartial() {
-        cman.CManProto.BootstrapRequestParamsData result = new cman.CManProto.BootstrapRequestParamsData(this);
+      public cman.CManProto.BootstrapRequestData buildPartial() {
+        cman.CManProto.BootstrapRequestData result = new cman.CManProto.BootstrapRequestData(this);
         if (liveArrayBuilder_ == null) {
           result.liveArray_ = liveArray_;
         } else {
@@ -24517,16 +24517,16 @@ public final class CManProto {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof cman.CManProto.BootstrapRequestParamsData) {
-          return mergeFrom((cman.CManProto.BootstrapRequestParamsData)other);
+        if (other instanceof cman.CManProto.BootstrapRequestData) {
+          return mergeFrom((cman.CManProto.BootstrapRequestData)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(cman.CManProto.BootstrapRequestParamsData other) {
-        if (other == cman.CManProto.BootstrapRequestParamsData.getDefaultInstance()) return this;
+      public Builder mergeFrom(cman.CManProto.BootstrapRequestData other) {
+        if (other == cman.CManProto.BootstrapRequestData.getDefaultInstance()) return this;
         if (other.hasLiveArray()) {
           mergeLiveArray(other.getLiveArray());
         }
@@ -24545,11 +24545,11 @@ public final class CManProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        cman.CManProto.BootstrapRequestParamsData parsedMessage = null;
+        cman.CManProto.BootstrapRequestData parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (cman.CManProto.BootstrapRequestParamsData) e.getUnfinishedMessage();
+          parsedMessage = (cman.CManProto.BootstrapRequestData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -24559,31 +24559,31 @@ public final class CManProto {
         return this;
       }
 
-      private cman.CManProto.BootstrapRequestParamsDataLiveArray liveArray_;
+      private cman.CManProto.BootstrapRequestDataLiveArray liveArray_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          cman.CManProto.BootstrapRequestParamsDataLiveArray, cman.CManProto.BootstrapRequestParamsDataLiveArray.Builder, cman.CManProto.BootstrapRequestParamsDataLiveArrayOrBuilder> liveArrayBuilder_;
+          cman.CManProto.BootstrapRequestDataLiveArray, cman.CManProto.BootstrapRequestDataLiveArray.Builder, cman.CManProto.BootstrapRequestDataLiveArrayOrBuilder> liveArrayBuilder_;
       /**
-       * <code>.cman.BootstrapRequestParamsDataLiveArray live_array = 1;</code>
+       * <code>.cman.BootstrapRequestDataLiveArray liveArray = 1;</code>
        * @return Whether the liveArray field is set.
        */
       public boolean hasLiveArray() {
         return liveArrayBuilder_ != null || liveArray_ != null;
       }
       /**
-       * <code>.cman.BootstrapRequestParamsDataLiveArray live_array = 1;</code>
+       * <code>.cman.BootstrapRequestDataLiveArray liveArray = 1;</code>
        * @return The liveArray.
        */
-      public cman.CManProto.BootstrapRequestParamsDataLiveArray getLiveArray() {
+      public cman.CManProto.BootstrapRequestDataLiveArray getLiveArray() {
         if (liveArrayBuilder_ == null) {
-          return liveArray_ == null ? cman.CManProto.BootstrapRequestParamsDataLiveArray.getDefaultInstance() : liveArray_;
+          return liveArray_ == null ? cman.CManProto.BootstrapRequestDataLiveArray.getDefaultInstance() : liveArray_;
         } else {
           return liveArrayBuilder_.getMessage();
         }
       }
       /**
-       * <code>.cman.BootstrapRequestParamsDataLiveArray live_array = 1;</code>
+       * <code>.cman.BootstrapRequestDataLiveArray liveArray = 1;</code>
        */
-      public Builder setLiveArray(cman.CManProto.BootstrapRequestParamsDataLiveArray value) {
+      public Builder setLiveArray(cman.CManProto.BootstrapRequestDataLiveArray value) {
         if (liveArrayBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -24597,10 +24597,10 @@ public final class CManProto {
         return this;
       }
       /**
-       * <code>.cman.BootstrapRequestParamsDataLiveArray live_array = 1;</code>
+       * <code>.cman.BootstrapRequestDataLiveArray liveArray = 1;</code>
        */
       public Builder setLiveArray(
-          cman.CManProto.BootstrapRequestParamsDataLiveArray.Builder builderForValue) {
+          cman.CManProto.BootstrapRequestDataLiveArray.Builder builderForValue) {
         if (liveArrayBuilder_ == null) {
           liveArray_ = builderForValue.build();
           onChanged();
@@ -24611,13 +24611,13 @@ public final class CManProto {
         return this;
       }
       /**
-       * <code>.cman.BootstrapRequestParamsDataLiveArray live_array = 1;</code>
+       * <code>.cman.BootstrapRequestDataLiveArray liveArray = 1;</code>
        */
-      public Builder mergeLiveArray(cman.CManProto.BootstrapRequestParamsDataLiveArray value) {
+      public Builder mergeLiveArray(cman.CManProto.BootstrapRequestDataLiveArray value) {
         if (liveArrayBuilder_ == null) {
           if (liveArray_ != null) {
             liveArray_ =
-              cman.CManProto.BootstrapRequestParamsDataLiveArray.newBuilder(liveArray_).mergeFrom(value).buildPartial();
+              cman.CManProto.BootstrapRequestDataLiveArray.newBuilder(liveArray_).mergeFrom(value).buildPartial();
           } else {
             liveArray_ = value;
           }
@@ -24629,7 +24629,7 @@ public final class CManProto {
         return this;
       }
       /**
-       * <code>.cman.BootstrapRequestParamsDataLiveArray live_array = 1;</code>
+       * <code>.cman.BootstrapRequestDataLiveArray liveArray = 1;</code>
        */
       public Builder clearLiveArray() {
         if (liveArrayBuilder_ == null) {
@@ -24643,33 +24643,33 @@ public final class CManProto {
         return this;
       }
       /**
-       * <code>.cman.BootstrapRequestParamsDataLiveArray live_array = 1;</code>
+       * <code>.cman.BootstrapRequestDataLiveArray liveArray = 1;</code>
        */
-      public cman.CManProto.BootstrapRequestParamsDataLiveArray.Builder getLiveArrayBuilder() {
+      public cman.CManProto.BootstrapRequestDataLiveArray.Builder getLiveArrayBuilder() {
         
         onChanged();
         return getLiveArrayFieldBuilder().getBuilder();
       }
       /**
-       * <code>.cman.BootstrapRequestParamsDataLiveArray live_array = 1;</code>
+       * <code>.cman.BootstrapRequestDataLiveArray liveArray = 1;</code>
        */
-      public cman.CManProto.BootstrapRequestParamsDataLiveArrayOrBuilder getLiveArrayOrBuilder() {
+      public cman.CManProto.BootstrapRequestDataLiveArrayOrBuilder getLiveArrayOrBuilder() {
         if (liveArrayBuilder_ != null) {
           return liveArrayBuilder_.getMessageOrBuilder();
         } else {
           return liveArray_ == null ?
-              cman.CManProto.BootstrapRequestParamsDataLiveArray.getDefaultInstance() : liveArray_;
+              cman.CManProto.BootstrapRequestDataLiveArray.getDefaultInstance() : liveArray_;
         }
       }
       /**
-       * <code>.cman.BootstrapRequestParamsDataLiveArray live_array = 1;</code>
+       * <code>.cman.BootstrapRequestDataLiveArray liveArray = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          cman.CManProto.BootstrapRequestParamsDataLiveArray, cman.CManProto.BootstrapRequestParamsDataLiveArray.Builder, cman.CManProto.BootstrapRequestParamsDataLiveArrayOrBuilder> 
+          cman.CManProto.BootstrapRequestDataLiveArray, cman.CManProto.BootstrapRequestDataLiveArray.Builder, cman.CManProto.BootstrapRequestDataLiveArrayOrBuilder> 
           getLiveArrayFieldBuilder() {
         if (liveArrayBuilder_ == null) {
           liveArrayBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              cman.CManProto.BootstrapRequestParamsDataLiveArray, cman.CManProto.BootstrapRequestParamsDataLiveArray.Builder, cman.CManProto.BootstrapRequestParamsDataLiveArrayOrBuilder>(
+              cman.CManProto.BootstrapRequestDataLiveArray, cman.CManProto.BootstrapRequestDataLiveArray.Builder, cman.CManProto.BootstrapRequestDataLiveArrayOrBuilder>(
                   getLiveArray(),
                   getParentForChildren(),
                   isClean());
@@ -24690,48 +24690,48 @@ public final class CManProto {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:cman.BootstrapRequestParamsData)
+      // @@protoc_insertion_point(builder_scope:cman.BootstrapRequestData)
     }
 
-    // @@protoc_insertion_point(class_scope:cman.BootstrapRequestParamsData)
-    private static final cman.CManProto.BootstrapRequestParamsData DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:cman.BootstrapRequestData)
+    private static final cman.CManProto.BootstrapRequestData DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new cman.CManProto.BootstrapRequestParamsData();
+      DEFAULT_INSTANCE = new cman.CManProto.BootstrapRequestData();
     }
 
-    public static cman.CManProto.BootstrapRequestParamsData getDefaultInstance() {
+    public static cman.CManProto.BootstrapRequestData getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<BootstrapRequestParamsData>
-        PARSER = new com.google.protobuf.AbstractParser<BootstrapRequestParamsData>() {
+    private static final com.google.protobuf.Parser<BootstrapRequestData>
+        PARSER = new com.google.protobuf.AbstractParser<BootstrapRequestData>() {
       @java.lang.Override
-      public BootstrapRequestParamsData parsePartialFrom(
+      public BootstrapRequestData parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BootstrapRequestParamsData(input, extensionRegistry);
+        return new BootstrapRequestData(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<BootstrapRequestParamsData> parser() {
+    public static com.google.protobuf.Parser<BootstrapRequestData> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<BootstrapRequestParamsData> getParserForType() {
+    public com.google.protobuf.Parser<BootstrapRequestData> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public cman.CManProto.BootstrapRequestParamsData getDefaultInstanceForType() {
+    public cman.CManProto.BootstrapRequestData getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface BootstrapRequestParamsDataLiveArrayOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:cman.BootstrapRequestParamsDataLiveArray)
+  public interface BootstrapRequestDataLiveArrayOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cman.BootstrapRequestDataLiveArray)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -24747,67 +24747,67 @@ public final class CManProto {
         getCommandBytes();
 
     /**
-     * <code>string context = 2;</code>
-     * @return The context.
-     */
-    java.lang.String getContext();
-    /**
-     * <code>string context = 2;</code>
-     * @return The bytes for context.
-     */
-    com.google.protobuf.ByteString
-        getContextBytes();
-
-    /**
-     * <code>string name = 3;</code>
+     * <code>string name = 2;</code>
      * @return The name.
      */
     java.lang.String getName();
     /**
-     * <code>string name = 3;</code>
+     * <code>string name = 2;</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
-     * <code>.cman.BootstrapRequestParamsDataLiveArrayObj obj = 4;</code>
+     * <code>string context = 3;</code>
+     * @return The context.
+     */
+    java.lang.String getContext();
+    /**
+     * <code>string context = 3;</code>
+     * @return The bytes for context.
+     */
+    com.google.protobuf.ByteString
+        getContextBytes();
+
+    /**
+     * <code>.cman.BootstrapRequestDataLiveArrayObj obj = 4;</code>
      * @return Whether the obj field is set.
      */
     boolean hasObj();
     /**
-     * <code>.cman.BootstrapRequestParamsDataLiveArrayObj obj = 4;</code>
+     * <code>.cman.BootstrapRequestDataLiveArrayObj obj = 4;</code>
      * @return The obj.
      */
-    cman.CManProto.BootstrapRequestParamsDataLiveArrayObj getObj();
+    cman.CManProto.BootstrapRequestDataLiveArrayObj getObj();
     /**
-     * <code>.cman.BootstrapRequestParamsDataLiveArrayObj obj = 4;</code>
+     * <code>.cman.BootstrapRequestDataLiveArrayObj obj = 4;</code>
      */
-    cman.CManProto.BootstrapRequestParamsDataLiveArrayObjOrBuilder getObjOrBuilder();
+    cman.CManProto.BootstrapRequestDataLiveArrayObjOrBuilder getObjOrBuilder();
   }
   /**
-   * Protobuf type {@code cman.BootstrapRequestParamsDataLiveArray}
+   * Protobuf type {@code cman.BootstrapRequestDataLiveArray}
    */
-  public static final class BootstrapRequestParamsDataLiveArray extends
+  public static final class BootstrapRequestDataLiveArray extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:cman.BootstrapRequestParamsDataLiveArray)
-      BootstrapRequestParamsDataLiveArrayOrBuilder {
+      // @@protoc_insertion_point(message_implements:cman.BootstrapRequestDataLiveArray)
+      BootstrapRequestDataLiveArrayOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use BootstrapRequestParamsDataLiveArray.newBuilder() to construct.
-    private BootstrapRequestParamsDataLiveArray(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use BootstrapRequestDataLiveArray.newBuilder() to construct.
+    private BootstrapRequestDataLiveArray(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private BootstrapRequestParamsDataLiveArray() {
+    private BootstrapRequestDataLiveArray() {
       command_ = "";
-      context_ = "";
       name_ = "";
+      context_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new BootstrapRequestParamsDataLiveArray();
+      return new BootstrapRequestDataLiveArray();
     }
 
     @java.lang.Override
@@ -24815,7 +24815,7 @@ public final class CManProto {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BootstrapRequestParamsDataLiveArray(
+    private BootstrapRequestDataLiveArray(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -24842,21 +24842,21 @@ public final class CManProto {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              context_ = s;
+              name_ = s;
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              name_ = s;
+              context_ = s;
               break;
             }
             case 34: {
-              cman.CManProto.BootstrapRequestParamsDataLiveArrayObj.Builder subBuilder = null;
+              cman.CManProto.BootstrapRequestDataLiveArrayObj.Builder subBuilder = null;
               if (obj_ != null) {
                 subBuilder = obj_.toBuilder();
               }
-              obj_ = input.readMessage(cman.CManProto.BootstrapRequestParamsDataLiveArrayObj.parser(), extensionRegistry);
+              obj_ = input.readMessage(cman.CManProto.BootstrapRequestDataLiveArrayObj.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(obj_);
                 obj_ = subBuilder.buildPartial();
@@ -24885,15 +24885,15 @@ public final class CManProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return cman.CManProto.internal_static_cman_BootstrapRequestParamsDataLiveArray_descriptor;
+      return cman.CManProto.internal_static_cman_BootstrapRequestDataLiveArray_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return cman.CManProto.internal_static_cman_BootstrapRequestParamsDataLiveArray_fieldAccessorTable
+      return cman.CManProto.internal_static_cman_BootstrapRequestDataLiveArray_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              cman.CManProto.BootstrapRequestParamsDataLiveArray.class, cman.CManProto.BootstrapRequestParamsDataLiveArray.Builder.class);
+              cman.CManProto.BootstrapRequestDataLiveArray.class, cman.CManProto.BootstrapRequestDataLiveArray.Builder.class);
     }
 
     public static final int COMMAND_FIELD_NUMBER = 1;
@@ -24934,48 +24934,10 @@ public final class CManProto {
       }
     }
 
-    public static final int CONTEXT_FIELD_NUMBER = 2;
-    private volatile java.lang.Object context_;
-    /**
-     * <code>string context = 2;</code>
-     * @return The context.
-     */
-    @java.lang.Override
-    public java.lang.String getContext() {
-      java.lang.Object ref = context_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        context_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string context = 2;</code>
-     * @return The bytes for context.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getContextBytes() {
-      java.lang.Object ref = context_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        context_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int NAME_FIELD_NUMBER = 3;
+    public static final int NAME_FIELD_NUMBER = 2;
     private volatile java.lang.Object name_;
     /**
-     * <code>string name = 3;</code>
+     * <code>string name = 2;</code>
      * @return The name.
      */
     @java.lang.Override
@@ -24992,7 +24954,7 @@ public final class CManProto {
       }
     }
     /**
-     * <code>string name = 3;</code>
+     * <code>string name = 2;</code>
      * @return The bytes for name.
      */
     @java.lang.Override
@@ -25010,10 +24972,48 @@ public final class CManProto {
       }
     }
 
-    public static final int OBJ_FIELD_NUMBER = 4;
-    private cman.CManProto.BootstrapRequestParamsDataLiveArrayObj obj_;
+    public static final int CONTEXT_FIELD_NUMBER = 3;
+    private volatile java.lang.Object context_;
     /**
-     * <code>.cman.BootstrapRequestParamsDataLiveArrayObj obj = 4;</code>
+     * <code>string context = 3;</code>
+     * @return The context.
+     */
+    @java.lang.Override
+    public java.lang.String getContext() {
+      java.lang.Object ref = context_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        context_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string context = 3;</code>
+     * @return The bytes for context.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getContextBytes() {
+      java.lang.Object ref = context_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        context_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OBJ_FIELD_NUMBER = 4;
+    private cman.CManProto.BootstrapRequestDataLiveArrayObj obj_;
+    /**
+     * <code>.cman.BootstrapRequestDataLiveArrayObj obj = 4;</code>
      * @return Whether the obj field is set.
      */
     @java.lang.Override
@@ -25021,18 +25021,18 @@ public final class CManProto {
       return obj_ != null;
     }
     /**
-     * <code>.cman.BootstrapRequestParamsDataLiveArrayObj obj = 4;</code>
+     * <code>.cman.BootstrapRequestDataLiveArrayObj obj = 4;</code>
      * @return The obj.
      */
     @java.lang.Override
-    public cman.CManProto.BootstrapRequestParamsDataLiveArrayObj getObj() {
-      return obj_ == null ? cman.CManProto.BootstrapRequestParamsDataLiveArrayObj.getDefaultInstance() : obj_;
+    public cman.CManProto.BootstrapRequestDataLiveArrayObj getObj() {
+      return obj_ == null ? cman.CManProto.BootstrapRequestDataLiveArrayObj.getDefaultInstance() : obj_;
     }
     /**
-     * <code>.cman.BootstrapRequestParamsDataLiveArrayObj obj = 4;</code>
+     * <code>.cman.BootstrapRequestDataLiveArrayObj obj = 4;</code>
      */
     @java.lang.Override
-    public cman.CManProto.BootstrapRequestParamsDataLiveArrayObjOrBuilder getObjOrBuilder() {
+    public cman.CManProto.BootstrapRequestDataLiveArrayObjOrBuilder getObjOrBuilder() {
       return getObj();
     }
 
@@ -25053,11 +25053,11 @@ public final class CManProto {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(command_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, command_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(context_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, context_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(context_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, context_);
       }
       if (obj_ != null) {
         output.writeMessage(4, getObj());
@@ -25074,11 +25074,11 @@ public final class CManProto {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(command_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, command_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(context_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, context_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(context_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, context_);
       }
       if (obj_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -25094,17 +25094,17 @@ public final class CManProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof cman.CManProto.BootstrapRequestParamsDataLiveArray)) {
+      if (!(obj instanceof cman.CManProto.BootstrapRequestDataLiveArray)) {
         return super.equals(obj);
       }
-      cman.CManProto.BootstrapRequestParamsDataLiveArray other = (cman.CManProto.BootstrapRequestParamsDataLiveArray) obj;
+      cman.CManProto.BootstrapRequestDataLiveArray other = (cman.CManProto.BootstrapRequestDataLiveArray) obj;
 
       if (!getCommand()
           .equals(other.getCommand())) return false;
-      if (!getContext()
-          .equals(other.getContext())) return false;
       if (!getName()
           .equals(other.getName())) return false;
+      if (!getContext()
+          .equals(other.getContext())) return false;
       if (hasObj() != other.hasObj()) return false;
       if (hasObj()) {
         if (!getObj()
@@ -25123,10 +25123,10 @@ public final class CManProto {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + COMMAND_FIELD_NUMBER;
       hash = (53 * hash) + getCommand().hashCode();
-      hash = (37 * hash) + CONTEXT_FIELD_NUMBER;
-      hash = (53 * hash) + getContext().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + CONTEXT_FIELD_NUMBER;
+      hash = (53 * hash) + getContext().hashCode();
       if (hasObj()) {
         hash = (37 * hash) + OBJ_FIELD_NUMBER;
         hash = (53 * hash) + getObj().hashCode();
@@ -25136,69 +25136,69 @@ public final class CManProto {
       return hash;
     }
 
-    public static cman.CManProto.BootstrapRequestParamsDataLiveArray parseFrom(
+    public static cman.CManProto.BootstrapRequestDataLiveArray parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static cman.CManProto.BootstrapRequestParamsDataLiveArray parseFrom(
+    public static cman.CManProto.BootstrapRequestDataLiveArray parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static cman.CManProto.BootstrapRequestParamsDataLiveArray parseFrom(
+    public static cman.CManProto.BootstrapRequestDataLiveArray parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static cman.CManProto.BootstrapRequestParamsDataLiveArray parseFrom(
+    public static cman.CManProto.BootstrapRequestDataLiveArray parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static cman.CManProto.BootstrapRequestParamsDataLiveArray parseFrom(byte[] data)
+    public static cman.CManProto.BootstrapRequestDataLiveArray parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static cman.CManProto.BootstrapRequestParamsDataLiveArray parseFrom(
+    public static cman.CManProto.BootstrapRequestDataLiveArray parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static cman.CManProto.BootstrapRequestParamsDataLiveArray parseFrom(java.io.InputStream input)
+    public static cman.CManProto.BootstrapRequestDataLiveArray parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static cman.CManProto.BootstrapRequestParamsDataLiveArray parseFrom(
+    public static cman.CManProto.BootstrapRequestDataLiveArray parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static cman.CManProto.BootstrapRequestParamsDataLiveArray parseDelimitedFrom(java.io.InputStream input)
+    public static cman.CManProto.BootstrapRequestDataLiveArray parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static cman.CManProto.BootstrapRequestParamsDataLiveArray parseDelimitedFrom(
+    public static cman.CManProto.BootstrapRequestDataLiveArray parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static cman.CManProto.BootstrapRequestParamsDataLiveArray parseFrom(
+    public static cman.CManProto.BootstrapRequestDataLiveArray parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static cman.CManProto.BootstrapRequestParamsDataLiveArray parseFrom(
+    public static cman.CManProto.BootstrapRequestDataLiveArray parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -25211,7 +25211,7 @@ public final class CManProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(cman.CManProto.BootstrapRequestParamsDataLiveArray prototype) {
+    public static Builder newBuilder(cman.CManProto.BootstrapRequestDataLiveArray prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -25227,26 +25227,26 @@ public final class CManProto {
       return builder;
     }
     /**
-     * Protobuf type {@code cman.BootstrapRequestParamsDataLiveArray}
+     * Protobuf type {@code cman.BootstrapRequestDataLiveArray}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:cman.BootstrapRequestParamsDataLiveArray)
-        cman.CManProto.BootstrapRequestParamsDataLiveArrayOrBuilder {
+        // @@protoc_insertion_point(builder_implements:cman.BootstrapRequestDataLiveArray)
+        cman.CManProto.BootstrapRequestDataLiveArrayOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return cman.CManProto.internal_static_cman_BootstrapRequestParamsDataLiveArray_descriptor;
+        return cman.CManProto.internal_static_cman_BootstrapRequestDataLiveArray_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return cman.CManProto.internal_static_cman_BootstrapRequestParamsDataLiveArray_fieldAccessorTable
+        return cman.CManProto.internal_static_cman_BootstrapRequestDataLiveArray_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                cman.CManProto.BootstrapRequestParamsDataLiveArray.class, cman.CManProto.BootstrapRequestParamsDataLiveArray.Builder.class);
+                cman.CManProto.BootstrapRequestDataLiveArray.class, cman.CManProto.BootstrapRequestDataLiveArray.Builder.class);
       }
 
-      // Construct using cman.CManProto.BootstrapRequestParamsDataLiveArray.newBuilder()
+      // Construct using cman.CManProto.BootstrapRequestDataLiveArray.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -25266,9 +25266,9 @@ public final class CManProto {
         super.clear();
         command_ = "";
 
-        context_ = "";
-
         name_ = "";
+
+        context_ = "";
 
         if (objBuilder_ == null) {
           obj_ = null;
@@ -25282,17 +25282,17 @@ public final class CManProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return cman.CManProto.internal_static_cman_BootstrapRequestParamsDataLiveArray_descriptor;
+        return cman.CManProto.internal_static_cman_BootstrapRequestDataLiveArray_descriptor;
       }
 
       @java.lang.Override
-      public cman.CManProto.BootstrapRequestParamsDataLiveArray getDefaultInstanceForType() {
-        return cman.CManProto.BootstrapRequestParamsDataLiveArray.getDefaultInstance();
+      public cman.CManProto.BootstrapRequestDataLiveArray getDefaultInstanceForType() {
+        return cman.CManProto.BootstrapRequestDataLiveArray.getDefaultInstance();
       }
 
       @java.lang.Override
-      public cman.CManProto.BootstrapRequestParamsDataLiveArray build() {
-        cman.CManProto.BootstrapRequestParamsDataLiveArray result = buildPartial();
+      public cman.CManProto.BootstrapRequestDataLiveArray build() {
+        cman.CManProto.BootstrapRequestDataLiveArray result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -25300,11 +25300,11 @@ public final class CManProto {
       }
 
       @java.lang.Override
-      public cman.CManProto.BootstrapRequestParamsDataLiveArray buildPartial() {
-        cman.CManProto.BootstrapRequestParamsDataLiveArray result = new cman.CManProto.BootstrapRequestParamsDataLiveArray(this);
+      public cman.CManProto.BootstrapRequestDataLiveArray buildPartial() {
+        cman.CManProto.BootstrapRequestDataLiveArray result = new cman.CManProto.BootstrapRequestDataLiveArray(this);
         result.command_ = command_;
-        result.context_ = context_;
         result.name_ = name_;
+        result.context_ = context_;
         if (objBuilder_ == null) {
           result.obj_ = obj_;
         } else {
@@ -25348,26 +25348,26 @@ public final class CManProto {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof cman.CManProto.BootstrapRequestParamsDataLiveArray) {
-          return mergeFrom((cman.CManProto.BootstrapRequestParamsDataLiveArray)other);
+        if (other instanceof cman.CManProto.BootstrapRequestDataLiveArray) {
+          return mergeFrom((cman.CManProto.BootstrapRequestDataLiveArray)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(cman.CManProto.BootstrapRequestParamsDataLiveArray other) {
-        if (other == cman.CManProto.BootstrapRequestParamsDataLiveArray.getDefaultInstance()) return this;
+      public Builder mergeFrom(cman.CManProto.BootstrapRequestDataLiveArray other) {
+        if (other == cman.CManProto.BootstrapRequestDataLiveArray.getDefaultInstance()) return this;
         if (!other.getCommand().isEmpty()) {
           command_ = other.command_;
           onChanged();
         }
-        if (!other.getContext().isEmpty()) {
-          context_ = other.context_;
-          onChanged();
-        }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getContext().isEmpty()) {
+          context_ = other.context_;
           onChanged();
         }
         if (other.hasObj()) {
@@ -25388,11 +25388,11 @@ public final class CManProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        cman.CManProto.BootstrapRequestParamsDataLiveArray parsedMessage = null;
+        cman.CManProto.BootstrapRequestDataLiveArray parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (cman.CManProto.BootstrapRequestParamsDataLiveArray) e.getUnfinishedMessage();
+          parsedMessage = (cman.CManProto.BootstrapRequestDataLiveArray) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -25478,85 +25478,9 @@ public final class CManProto {
         return this;
       }
 
-      private java.lang.Object context_ = "";
-      /**
-       * <code>string context = 2;</code>
-       * @return The context.
-       */
-      public java.lang.String getContext() {
-        java.lang.Object ref = context_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          context_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string context = 2;</code>
-       * @return The bytes for context.
-       */
-      public com.google.protobuf.ByteString
-          getContextBytes() {
-        java.lang.Object ref = context_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          context_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string context = 2;</code>
-       * @param value The context to set.
-       * @return This builder for chaining.
-       */
-      public Builder setContext(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        context_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string context = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearContext() {
-        
-        context_ = getDefaultInstance().getContext();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string context = 2;</code>
-       * @param value The bytes for context to set.
-       * @return This builder for chaining.
-       */
-      public Builder setContextBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        context_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object name_ = "";
       /**
-       * <code>string name = 3;</code>
+       * <code>string name = 2;</code>
        * @return The name.
        */
       public java.lang.String getName() {
@@ -25572,7 +25496,7 @@ public final class CManProto {
         }
       }
       /**
-       * <code>string name = 3;</code>
+       * <code>string name = 2;</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
@@ -25589,7 +25513,7 @@ public final class CManProto {
         }
       }
       /**
-       * <code>string name = 3;</code>
+       * <code>string name = 2;</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -25604,7 +25528,7 @@ public final class CManProto {
         return this;
       }
       /**
-       * <code>string name = 3;</code>
+       * <code>string name = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
@@ -25614,7 +25538,7 @@ public final class CManProto {
         return this;
       }
       /**
-       * <code>string name = 3;</code>
+       * <code>string name = 2;</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -25630,31 +25554,107 @@ public final class CManProto {
         return this;
       }
 
-      private cman.CManProto.BootstrapRequestParamsDataLiveArrayObj obj_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          cman.CManProto.BootstrapRequestParamsDataLiveArrayObj, cman.CManProto.BootstrapRequestParamsDataLiveArrayObj.Builder, cman.CManProto.BootstrapRequestParamsDataLiveArrayObjOrBuilder> objBuilder_;
+      private java.lang.Object context_ = "";
       /**
-       * <code>.cman.BootstrapRequestParamsDataLiveArrayObj obj = 4;</code>
+       * <code>string context = 3;</code>
+       * @return The context.
+       */
+      public java.lang.String getContext() {
+        java.lang.Object ref = context_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          context_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string context = 3;</code>
+       * @return The bytes for context.
+       */
+      public com.google.protobuf.ByteString
+          getContextBytes() {
+        java.lang.Object ref = context_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          context_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string context = 3;</code>
+       * @param value The context to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContext(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        context_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string context = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearContext() {
+        
+        context_ = getDefaultInstance().getContext();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string context = 3;</code>
+       * @param value The bytes for context to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContextBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        context_ = value;
+        onChanged();
+        return this;
+      }
+
+      private cman.CManProto.BootstrapRequestDataLiveArrayObj obj_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cman.CManProto.BootstrapRequestDataLiveArrayObj, cman.CManProto.BootstrapRequestDataLiveArrayObj.Builder, cman.CManProto.BootstrapRequestDataLiveArrayObjOrBuilder> objBuilder_;
+      /**
+       * <code>.cman.BootstrapRequestDataLiveArrayObj obj = 4;</code>
        * @return Whether the obj field is set.
        */
       public boolean hasObj() {
         return objBuilder_ != null || obj_ != null;
       }
       /**
-       * <code>.cman.BootstrapRequestParamsDataLiveArrayObj obj = 4;</code>
+       * <code>.cman.BootstrapRequestDataLiveArrayObj obj = 4;</code>
        * @return The obj.
        */
-      public cman.CManProto.BootstrapRequestParamsDataLiveArrayObj getObj() {
+      public cman.CManProto.BootstrapRequestDataLiveArrayObj getObj() {
         if (objBuilder_ == null) {
-          return obj_ == null ? cman.CManProto.BootstrapRequestParamsDataLiveArrayObj.getDefaultInstance() : obj_;
+          return obj_ == null ? cman.CManProto.BootstrapRequestDataLiveArrayObj.getDefaultInstance() : obj_;
         } else {
           return objBuilder_.getMessage();
         }
       }
       /**
-       * <code>.cman.BootstrapRequestParamsDataLiveArrayObj obj = 4;</code>
+       * <code>.cman.BootstrapRequestDataLiveArrayObj obj = 4;</code>
        */
-      public Builder setObj(cman.CManProto.BootstrapRequestParamsDataLiveArrayObj value) {
+      public Builder setObj(cman.CManProto.BootstrapRequestDataLiveArrayObj value) {
         if (objBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -25668,10 +25668,10 @@ public final class CManProto {
         return this;
       }
       /**
-       * <code>.cman.BootstrapRequestParamsDataLiveArrayObj obj = 4;</code>
+       * <code>.cman.BootstrapRequestDataLiveArrayObj obj = 4;</code>
        */
       public Builder setObj(
-          cman.CManProto.BootstrapRequestParamsDataLiveArrayObj.Builder builderForValue) {
+          cman.CManProto.BootstrapRequestDataLiveArrayObj.Builder builderForValue) {
         if (objBuilder_ == null) {
           obj_ = builderForValue.build();
           onChanged();
@@ -25682,13 +25682,13 @@ public final class CManProto {
         return this;
       }
       /**
-       * <code>.cman.BootstrapRequestParamsDataLiveArrayObj obj = 4;</code>
+       * <code>.cman.BootstrapRequestDataLiveArrayObj obj = 4;</code>
        */
-      public Builder mergeObj(cman.CManProto.BootstrapRequestParamsDataLiveArrayObj value) {
+      public Builder mergeObj(cman.CManProto.BootstrapRequestDataLiveArrayObj value) {
         if (objBuilder_ == null) {
           if (obj_ != null) {
             obj_ =
-              cman.CManProto.BootstrapRequestParamsDataLiveArrayObj.newBuilder(obj_).mergeFrom(value).buildPartial();
+              cman.CManProto.BootstrapRequestDataLiveArrayObj.newBuilder(obj_).mergeFrom(value).buildPartial();
           } else {
             obj_ = value;
           }
@@ -25700,7 +25700,7 @@ public final class CManProto {
         return this;
       }
       /**
-       * <code>.cman.BootstrapRequestParamsDataLiveArrayObj obj = 4;</code>
+       * <code>.cman.BootstrapRequestDataLiveArrayObj obj = 4;</code>
        */
       public Builder clearObj() {
         if (objBuilder_ == null) {
@@ -25714,33 +25714,33 @@ public final class CManProto {
         return this;
       }
       /**
-       * <code>.cman.BootstrapRequestParamsDataLiveArrayObj obj = 4;</code>
+       * <code>.cman.BootstrapRequestDataLiveArrayObj obj = 4;</code>
        */
-      public cman.CManProto.BootstrapRequestParamsDataLiveArrayObj.Builder getObjBuilder() {
+      public cman.CManProto.BootstrapRequestDataLiveArrayObj.Builder getObjBuilder() {
         
         onChanged();
         return getObjFieldBuilder().getBuilder();
       }
       /**
-       * <code>.cman.BootstrapRequestParamsDataLiveArrayObj obj = 4;</code>
+       * <code>.cman.BootstrapRequestDataLiveArrayObj obj = 4;</code>
        */
-      public cman.CManProto.BootstrapRequestParamsDataLiveArrayObjOrBuilder getObjOrBuilder() {
+      public cman.CManProto.BootstrapRequestDataLiveArrayObjOrBuilder getObjOrBuilder() {
         if (objBuilder_ != null) {
           return objBuilder_.getMessageOrBuilder();
         } else {
           return obj_ == null ?
-              cman.CManProto.BootstrapRequestParamsDataLiveArrayObj.getDefaultInstance() : obj_;
+              cman.CManProto.BootstrapRequestDataLiveArrayObj.getDefaultInstance() : obj_;
         }
       }
       /**
-       * <code>.cman.BootstrapRequestParamsDataLiveArrayObj obj = 4;</code>
+       * <code>.cman.BootstrapRequestDataLiveArrayObj obj = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          cman.CManProto.BootstrapRequestParamsDataLiveArrayObj, cman.CManProto.BootstrapRequestParamsDataLiveArrayObj.Builder, cman.CManProto.BootstrapRequestParamsDataLiveArrayObjOrBuilder> 
+          cman.CManProto.BootstrapRequestDataLiveArrayObj, cman.CManProto.BootstrapRequestDataLiveArrayObj.Builder, cman.CManProto.BootstrapRequestDataLiveArrayObjOrBuilder> 
           getObjFieldBuilder() {
         if (objBuilder_ == null) {
           objBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              cman.CManProto.BootstrapRequestParamsDataLiveArrayObj, cman.CManProto.BootstrapRequestParamsDataLiveArrayObj.Builder, cman.CManProto.BootstrapRequestParamsDataLiveArrayObjOrBuilder>(
+              cman.CManProto.BootstrapRequestDataLiveArrayObj, cman.CManProto.BootstrapRequestDataLiveArrayObj.Builder, cman.CManProto.BootstrapRequestDataLiveArrayObjOrBuilder>(
                   getObj(),
                   getParentForChildren(),
                   isClean());
@@ -25761,70 +25761,83 @@ public final class CManProto {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:cman.BootstrapRequestParamsDataLiveArray)
+      // @@protoc_insertion_point(builder_scope:cman.BootstrapRequestDataLiveArray)
     }
 
-    // @@protoc_insertion_point(class_scope:cman.BootstrapRequestParamsDataLiveArray)
-    private static final cman.CManProto.BootstrapRequestParamsDataLiveArray DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:cman.BootstrapRequestDataLiveArray)
+    private static final cman.CManProto.BootstrapRequestDataLiveArray DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new cman.CManProto.BootstrapRequestParamsDataLiveArray();
+      DEFAULT_INSTANCE = new cman.CManProto.BootstrapRequestDataLiveArray();
     }
 
-    public static cman.CManProto.BootstrapRequestParamsDataLiveArray getDefaultInstance() {
+    public static cman.CManProto.BootstrapRequestDataLiveArray getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<BootstrapRequestParamsDataLiveArray>
-        PARSER = new com.google.protobuf.AbstractParser<BootstrapRequestParamsDataLiveArray>() {
+    private static final com.google.protobuf.Parser<BootstrapRequestDataLiveArray>
+        PARSER = new com.google.protobuf.AbstractParser<BootstrapRequestDataLiveArray>() {
       @java.lang.Override
-      public BootstrapRequestParamsDataLiveArray parsePartialFrom(
+      public BootstrapRequestDataLiveArray parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BootstrapRequestParamsDataLiveArray(input, extensionRegistry);
+        return new BootstrapRequestDataLiveArray(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<BootstrapRequestParamsDataLiveArray> parser() {
+    public static com.google.protobuf.Parser<BootstrapRequestDataLiveArray> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<BootstrapRequestParamsDataLiveArray> getParserForType() {
+    public com.google.protobuf.Parser<BootstrapRequestDataLiveArray> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public cman.CManProto.BootstrapRequestParamsDataLiveArray getDefaultInstanceForType() {
+    public cman.CManProto.BootstrapRequestDataLiveArray getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface BootstrapRequestParamsDataLiveArrayObjOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:cman.BootstrapRequestParamsDataLiveArrayObj)
+  public interface BootstrapRequestDataLiveArrayObjOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cman.BootstrapRequestDataLiveArrayObj)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string groupID = 1;</code>
+     * @return The groupID.
+     */
+    java.lang.String getGroupID();
+    /**
+     * <code>string groupID = 1;</code>
+     * @return The bytes for groupID.
+     */
+    com.google.protobuf.ByteString
+        getGroupIDBytes();
   }
   /**
-   * Protobuf type {@code cman.BootstrapRequestParamsDataLiveArrayObj}
+   * Protobuf type {@code cman.BootstrapRequestDataLiveArrayObj}
    */
-  public static final class BootstrapRequestParamsDataLiveArrayObj extends
+  public static final class BootstrapRequestDataLiveArrayObj extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:cman.BootstrapRequestParamsDataLiveArrayObj)
-      BootstrapRequestParamsDataLiveArrayObjOrBuilder {
+      // @@protoc_insertion_point(message_implements:cman.BootstrapRequestDataLiveArrayObj)
+      BootstrapRequestDataLiveArrayObjOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use BootstrapRequestParamsDataLiveArrayObj.newBuilder() to construct.
-    private BootstrapRequestParamsDataLiveArrayObj(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use BootstrapRequestDataLiveArrayObj.newBuilder() to construct.
+    private BootstrapRequestDataLiveArrayObj(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private BootstrapRequestParamsDataLiveArrayObj() {
+    private BootstrapRequestDataLiveArrayObj() {
+      groupID_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new BootstrapRequestParamsDataLiveArrayObj();
+      return new BootstrapRequestDataLiveArrayObj();
     }
 
     @java.lang.Override
@@ -25832,7 +25845,7 @@ public final class CManProto {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BootstrapRequestParamsDataLiveArrayObj(
+    private BootstrapRequestDataLiveArrayObj(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -25850,6 +25863,12 @@ public final class CManProto {
             case 0:
               done = true;
               break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              groupID_ = s;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -25871,15 +25890,53 @@ public final class CManProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return cman.CManProto.internal_static_cman_BootstrapRequestParamsDataLiveArrayObj_descriptor;
+      return cman.CManProto.internal_static_cman_BootstrapRequestDataLiveArrayObj_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return cman.CManProto.internal_static_cman_BootstrapRequestParamsDataLiveArrayObj_fieldAccessorTable
+      return cman.CManProto.internal_static_cman_BootstrapRequestDataLiveArrayObj_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              cman.CManProto.BootstrapRequestParamsDataLiveArrayObj.class, cman.CManProto.BootstrapRequestParamsDataLiveArrayObj.Builder.class);
+              cman.CManProto.BootstrapRequestDataLiveArrayObj.class, cman.CManProto.BootstrapRequestDataLiveArrayObj.Builder.class);
+    }
+
+    public static final int GROUPID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object groupID_;
+    /**
+     * <code>string groupID = 1;</code>
+     * @return The groupID.
+     */
+    @java.lang.Override
+    public java.lang.String getGroupID() {
+      java.lang.Object ref = groupID_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        groupID_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string groupID = 1;</code>
+     * @return The bytes for groupID.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getGroupIDBytes() {
+      java.lang.Object ref = groupID_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        groupID_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -25896,6 +25953,9 @@ public final class CManProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupID_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, groupID_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -25905,6 +25965,9 @@ public final class CManProto {
       if (size != -1) return size;
 
       size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupID_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, groupID_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -25915,11 +25978,13 @@ public final class CManProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof cman.CManProto.BootstrapRequestParamsDataLiveArrayObj)) {
+      if (!(obj instanceof cman.CManProto.BootstrapRequestDataLiveArrayObj)) {
         return super.equals(obj);
       }
-      cman.CManProto.BootstrapRequestParamsDataLiveArrayObj other = (cman.CManProto.BootstrapRequestParamsDataLiveArrayObj) obj;
+      cman.CManProto.BootstrapRequestDataLiveArrayObj other = (cman.CManProto.BootstrapRequestDataLiveArrayObj) obj;
 
+      if (!getGroupID()
+          .equals(other.getGroupID())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -25931,74 +25996,76 @@ public final class CManProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + GROUPID_FIELD_NUMBER;
+      hash = (53 * hash) + getGroupID().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static cman.CManProto.BootstrapRequestParamsDataLiveArrayObj parseFrom(
+    public static cman.CManProto.BootstrapRequestDataLiveArrayObj parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static cman.CManProto.BootstrapRequestParamsDataLiveArrayObj parseFrom(
+    public static cman.CManProto.BootstrapRequestDataLiveArrayObj parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static cman.CManProto.BootstrapRequestParamsDataLiveArrayObj parseFrom(
+    public static cman.CManProto.BootstrapRequestDataLiveArrayObj parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static cman.CManProto.BootstrapRequestParamsDataLiveArrayObj parseFrom(
+    public static cman.CManProto.BootstrapRequestDataLiveArrayObj parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static cman.CManProto.BootstrapRequestParamsDataLiveArrayObj parseFrom(byte[] data)
+    public static cman.CManProto.BootstrapRequestDataLiveArrayObj parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static cman.CManProto.BootstrapRequestParamsDataLiveArrayObj parseFrom(
+    public static cman.CManProto.BootstrapRequestDataLiveArrayObj parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static cman.CManProto.BootstrapRequestParamsDataLiveArrayObj parseFrom(java.io.InputStream input)
+    public static cman.CManProto.BootstrapRequestDataLiveArrayObj parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static cman.CManProto.BootstrapRequestParamsDataLiveArrayObj parseFrom(
+    public static cman.CManProto.BootstrapRequestDataLiveArrayObj parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static cman.CManProto.BootstrapRequestParamsDataLiveArrayObj parseDelimitedFrom(java.io.InputStream input)
+    public static cman.CManProto.BootstrapRequestDataLiveArrayObj parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static cman.CManProto.BootstrapRequestParamsDataLiveArrayObj parseDelimitedFrom(
+    public static cman.CManProto.BootstrapRequestDataLiveArrayObj parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static cman.CManProto.BootstrapRequestParamsDataLiveArrayObj parseFrom(
+    public static cman.CManProto.BootstrapRequestDataLiveArrayObj parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static cman.CManProto.BootstrapRequestParamsDataLiveArrayObj parseFrom(
+    public static cman.CManProto.BootstrapRequestDataLiveArrayObj parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -26011,7 +26078,7 @@ public final class CManProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(cman.CManProto.BootstrapRequestParamsDataLiveArrayObj prototype) {
+    public static Builder newBuilder(cman.CManProto.BootstrapRequestDataLiveArrayObj prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -26027,26 +26094,26 @@ public final class CManProto {
       return builder;
     }
     /**
-     * Protobuf type {@code cman.BootstrapRequestParamsDataLiveArrayObj}
+     * Protobuf type {@code cman.BootstrapRequestDataLiveArrayObj}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:cman.BootstrapRequestParamsDataLiveArrayObj)
-        cman.CManProto.BootstrapRequestParamsDataLiveArrayObjOrBuilder {
+        // @@protoc_insertion_point(builder_implements:cman.BootstrapRequestDataLiveArrayObj)
+        cman.CManProto.BootstrapRequestDataLiveArrayObjOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return cman.CManProto.internal_static_cman_BootstrapRequestParamsDataLiveArrayObj_descriptor;
+        return cman.CManProto.internal_static_cman_BootstrapRequestDataLiveArrayObj_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return cman.CManProto.internal_static_cman_BootstrapRequestParamsDataLiveArrayObj_fieldAccessorTable
+        return cman.CManProto.internal_static_cman_BootstrapRequestDataLiveArrayObj_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                cman.CManProto.BootstrapRequestParamsDataLiveArrayObj.class, cman.CManProto.BootstrapRequestParamsDataLiveArrayObj.Builder.class);
+                cman.CManProto.BootstrapRequestDataLiveArrayObj.class, cman.CManProto.BootstrapRequestDataLiveArrayObj.Builder.class);
       }
 
-      // Construct using cman.CManProto.BootstrapRequestParamsDataLiveArrayObj.newBuilder()
+      // Construct using cman.CManProto.BootstrapRequestDataLiveArrayObj.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -26064,23 +26131,25 @@ public final class CManProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        groupID_ = "";
+
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return cman.CManProto.internal_static_cman_BootstrapRequestParamsDataLiveArrayObj_descriptor;
+        return cman.CManProto.internal_static_cman_BootstrapRequestDataLiveArrayObj_descriptor;
       }
 
       @java.lang.Override
-      public cman.CManProto.BootstrapRequestParamsDataLiveArrayObj getDefaultInstanceForType() {
-        return cman.CManProto.BootstrapRequestParamsDataLiveArrayObj.getDefaultInstance();
+      public cman.CManProto.BootstrapRequestDataLiveArrayObj getDefaultInstanceForType() {
+        return cman.CManProto.BootstrapRequestDataLiveArrayObj.getDefaultInstance();
       }
 
       @java.lang.Override
-      public cman.CManProto.BootstrapRequestParamsDataLiveArrayObj build() {
-        cman.CManProto.BootstrapRequestParamsDataLiveArrayObj result = buildPartial();
+      public cman.CManProto.BootstrapRequestDataLiveArrayObj build() {
+        cman.CManProto.BootstrapRequestDataLiveArrayObj result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -26088,8 +26157,9 @@ public final class CManProto {
       }
 
       @java.lang.Override
-      public cman.CManProto.BootstrapRequestParamsDataLiveArrayObj buildPartial() {
-        cman.CManProto.BootstrapRequestParamsDataLiveArrayObj result = new cman.CManProto.BootstrapRequestParamsDataLiveArrayObj(this);
+      public cman.CManProto.BootstrapRequestDataLiveArrayObj buildPartial() {
+        cman.CManProto.BootstrapRequestDataLiveArrayObj result = new cman.CManProto.BootstrapRequestDataLiveArrayObj(this);
+        result.groupID_ = groupID_;
         onBuilt();
         return result;
       }
@@ -26128,16 +26198,20 @@ public final class CManProto {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof cman.CManProto.BootstrapRequestParamsDataLiveArrayObj) {
-          return mergeFrom((cman.CManProto.BootstrapRequestParamsDataLiveArrayObj)other);
+        if (other instanceof cman.CManProto.BootstrapRequestDataLiveArrayObj) {
+          return mergeFrom((cman.CManProto.BootstrapRequestDataLiveArrayObj)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(cman.CManProto.BootstrapRequestParamsDataLiveArrayObj other) {
-        if (other == cman.CManProto.BootstrapRequestParamsDataLiveArrayObj.getDefaultInstance()) return this;
+      public Builder mergeFrom(cman.CManProto.BootstrapRequestDataLiveArrayObj other) {
+        if (other == cman.CManProto.BootstrapRequestDataLiveArrayObj.getDefaultInstance()) return this;
+        if (!other.getGroupID().isEmpty()) {
+          groupID_ = other.groupID_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -26153,17 +26227,93 @@ public final class CManProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        cman.CManProto.BootstrapRequestParamsDataLiveArrayObj parsedMessage = null;
+        cman.CManProto.BootstrapRequestDataLiveArrayObj parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (cman.CManProto.BootstrapRequestParamsDataLiveArrayObj) e.getUnfinishedMessage();
+          parsedMessage = (cman.CManProto.BootstrapRequestDataLiveArrayObj) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+
+      private java.lang.Object groupID_ = "";
+      /**
+       * <code>string groupID = 1;</code>
+       * @return The groupID.
+       */
+      public java.lang.String getGroupID() {
+        java.lang.Object ref = groupID_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          groupID_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string groupID = 1;</code>
+       * @return The bytes for groupID.
+       */
+      public com.google.protobuf.ByteString
+          getGroupIDBytes() {
+        java.lang.Object ref = groupID_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          groupID_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string groupID = 1;</code>
+       * @param value The groupID to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroupID(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        groupID_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string groupID = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGroupID() {
+        
+        groupID_ = getDefaultInstance().getGroupID();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string groupID = 1;</code>
+       * @param value The bytes for groupID to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroupIDBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        groupID_ = value;
+        onChanged();
         return this;
       }
       @java.lang.Override
@@ -26179,41 +26329,41 @@ public final class CManProto {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:cman.BootstrapRequestParamsDataLiveArrayObj)
+      // @@protoc_insertion_point(builder_scope:cman.BootstrapRequestDataLiveArrayObj)
     }
 
-    // @@protoc_insertion_point(class_scope:cman.BootstrapRequestParamsDataLiveArrayObj)
-    private static final cman.CManProto.BootstrapRequestParamsDataLiveArrayObj DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:cman.BootstrapRequestDataLiveArrayObj)
+    private static final cman.CManProto.BootstrapRequestDataLiveArrayObj DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new cman.CManProto.BootstrapRequestParamsDataLiveArrayObj();
+      DEFAULT_INSTANCE = new cman.CManProto.BootstrapRequestDataLiveArrayObj();
     }
 
-    public static cman.CManProto.BootstrapRequestParamsDataLiveArrayObj getDefaultInstance() {
+    public static cman.CManProto.BootstrapRequestDataLiveArrayObj getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<BootstrapRequestParamsDataLiveArrayObj>
-        PARSER = new com.google.protobuf.AbstractParser<BootstrapRequestParamsDataLiveArrayObj>() {
+    private static final com.google.protobuf.Parser<BootstrapRequestDataLiveArrayObj>
+        PARSER = new com.google.protobuf.AbstractParser<BootstrapRequestDataLiveArrayObj>() {
       @java.lang.Override
-      public BootstrapRequestParamsDataLiveArrayObj parsePartialFrom(
+      public BootstrapRequestDataLiveArrayObj parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BootstrapRequestParamsDataLiveArrayObj(input, extensionRegistry);
+        return new BootstrapRequestDataLiveArrayObj(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<BootstrapRequestParamsDataLiveArrayObj> parser() {
+    public static com.google.protobuf.Parser<BootstrapRequestDataLiveArrayObj> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<BootstrapRequestParamsDataLiveArrayObj> getParserForType() {
+    public com.google.protobuf.Parser<BootstrapRequestDataLiveArrayObj> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public cman.CManProto.BootstrapRequestParamsDataLiveArrayObj getDefaultInstanceForType() {
+    public cman.CManProto.BootstrapRequestDataLiveArrayObj getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -26224,12 +26374,12 @@ public final class CManProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string event_channel = 1;</code>
+     * <code>string eventChannel = 1;</code>
      * @return The eventChannel.
      */
     java.lang.String getEventChannel();
     /**
-     * <code>string event_channel = 1;</code>
+     * <code>string eventChannel = 1;</code>
      * @return The bytes for eventChannel.
      */
     com.google.protobuf.ByteString
@@ -26248,19 +26398,19 @@ public final class CManProto {
         getSessidBytes();
 
     /**
-     * <code>.cman.BootstrapResponseParamsData data = 3;</code>
+     * <code>.cman.BootstrapResponseData data = 3;</code>
      * @return Whether the data field is set.
      */
     boolean hasData();
     /**
-     * <code>.cman.BootstrapResponseParamsData data = 3;</code>
+     * <code>.cman.BootstrapResponseData data = 3;</code>
      * @return The data.
      */
-    cman.CManProto.BootstrapResponseParamsData getData();
+    cman.CManProto.BootstrapResponseData getData();
     /**
-     * <code>.cman.BootstrapResponseParamsData data = 3;</code>
+     * <code>.cman.BootstrapResponseData data = 3;</code>
      */
-    cman.CManProto.BootstrapResponseParamsDataOrBuilder getDataOrBuilder();
+    cman.CManProto.BootstrapResponseDataOrBuilder getDataOrBuilder();
   }
   /**
    * Protobuf type {@code cman.BootstrapResponse}
@@ -26322,11 +26472,11 @@ public final class CManProto {
               break;
             }
             case 26: {
-              cman.CManProto.BootstrapResponseParamsData.Builder subBuilder = null;
+              cman.CManProto.BootstrapResponseData.Builder subBuilder = null;
               if (data_ != null) {
                 subBuilder = data_.toBuilder();
               }
-              data_ = input.readMessage(cman.CManProto.BootstrapResponseParamsData.parser(), extensionRegistry);
+              data_ = input.readMessage(cman.CManProto.BootstrapResponseData.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(data_);
                 data_ = subBuilder.buildPartial();
@@ -26366,10 +26516,10 @@ public final class CManProto {
               cman.CManProto.BootstrapResponse.class, cman.CManProto.BootstrapResponse.Builder.class);
     }
 
-    public static final int EVENT_CHANNEL_FIELD_NUMBER = 1;
+    public static final int EVENTCHANNEL_FIELD_NUMBER = 1;
     private volatile java.lang.Object eventChannel_;
     /**
-     * <code>string event_channel = 1;</code>
+     * <code>string eventChannel = 1;</code>
      * @return The eventChannel.
      */
     @java.lang.Override
@@ -26386,7 +26536,7 @@ public final class CManProto {
       }
     }
     /**
-     * <code>string event_channel = 1;</code>
+     * <code>string eventChannel = 1;</code>
      * @return The bytes for eventChannel.
      */
     @java.lang.Override
@@ -26443,9 +26593,9 @@ public final class CManProto {
     }
 
     public static final int DATA_FIELD_NUMBER = 3;
-    private cman.CManProto.BootstrapResponseParamsData data_;
+    private cman.CManProto.BootstrapResponseData data_;
     /**
-     * <code>.cman.BootstrapResponseParamsData data = 3;</code>
+     * <code>.cman.BootstrapResponseData data = 3;</code>
      * @return Whether the data field is set.
      */
     @java.lang.Override
@@ -26453,18 +26603,18 @@ public final class CManProto {
       return data_ != null;
     }
     /**
-     * <code>.cman.BootstrapResponseParamsData data = 3;</code>
+     * <code>.cman.BootstrapResponseData data = 3;</code>
      * @return The data.
      */
     @java.lang.Override
-    public cman.CManProto.BootstrapResponseParamsData getData() {
-      return data_ == null ? cman.CManProto.BootstrapResponseParamsData.getDefaultInstance() : data_;
+    public cman.CManProto.BootstrapResponseData getData() {
+      return data_ == null ? cman.CManProto.BootstrapResponseData.getDefaultInstance() : data_;
     }
     /**
-     * <code>.cman.BootstrapResponseParamsData data = 3;</code>
+     * <code>.cman.BootstrapResponseData data = 3;</code>
      */
     @java.lang.Override
-    public cman.CManProto.BootstrapResponseParamsDataOrBuilder getDataOrBuilder() {
+    public cman.CManProto.BootstrapResponseDataOrBuilder getDataOrBuilder() {
       return getData();
     }
 
@@ -26545,7 +26695,7 @@ public final class CManProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + EVENT_CHANNEL_FIELD_NUMBER;
+      hash = (37 * hash) + EVENTCHANNEL_FIELD_NUMBER;
       hash = (53 * hash) + getEventChannel().hashCode();
       hash = (37 * hash) + SESSID_FIELD_NUMBER;
       hash = (53 * hash) + getSessid().hashCode();
@@ -26819,7 +26969,7 @@ public final class CManProto {
 
       private java.lang.Object eventChannel_ = "";
       /**
-       * <code>string event_channel = 1;</code>
+       * <code>string eventChannel = 1;</code>
        * @return The eventChannel.
        */
       public java.lang.String getEventChannel() {
@@ -26835,7 +26985,7 @@ public final class CManProto {
         }
       }
       /**
-       * <code>string event_channel = 1;</code>
+       * <code>string eventChannel = 1;</code>
        * @return The bytes for eventChannel.
        */
       public com.google.protobuf.ByteString
@@ -26852,7 +27002,7 @@ public final class CManProto {
         }
       }
       /**
-       * <code>string event_channel = 1;</code>
+       * <code>string eventChannel = 1;</code>
        * @param value The eventChannel to set.
        * @return This builder for chaining.
        */
@@ -26867,7 +27017,7 @@ public final class CManProto {
         return this;
       }
       /**
-       * <code>string event_channel = 1;</code>
+       * <code>string eventChannel = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearEventChannel() {
@@ -26877,7 +27027,7 @@ public final class CManProto {
         return this;
       }
       /**
-       * <code>string event_channel = 1;</code>
+       * <code>string eventChannel = 1;</code>
        * @param value The bytes for eventChannel to set.
        * @return This builder for chaining.
        */
@@ -26969,31 +27119,31 @@ public final class CManProto {
         return this;
       }
 
-      private cman.CManProto.BootstrapResponseParamsData data_;
+      private cman.CManProto.BootstrapResponseData data_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          cman.CManProto.BootstrapResponseParamsData, cman.CManProto.BootstrapResponseParamsData.Builder, cman.CManProto.BootstrapResponseParamsDataOrBuilder> dataBuilder_;
+          cman.CManProto.BootstrapResponseData, cman.CManProto.BootstrapResponseData.Builder, cman.CManProto.BootstrapResponseDataOrBuilder> dataBuilder_;
       /**
-       * <code>.cman.BootstrapResponseParamsData data = 3;</code>
+       * <code>.cman.BootstrapResponseData data = 3;</code>
        * @return Whether the data field is set.
        */
       public boolean hasData() {
         return dataBuilder_ != null || data_ != null;
       }
       /**
-       * <code>.cman.BootstrapResponseParamsData data = 3;</code>
+       * <code>.cman.BootstrapResponseData data = 3;</code>
        * @return The data.
        */
-      public cman.CManProto.BootstrapResponseParamsData getData() {
+      public cman.CManProto.BootstrapResponseData getData() {
         if (dataBuilder_ == null) {
-          return data_ == null ? cman.CManProto.BootstrapResponseParamsData.getDefaultInstance() : data_;
+          return data_ == null ? cman.CManProto.BootstrapResponseData.getDefaultInstance() : data_;
         } else {
           return dataBuilder_.getMessage();
         }
       }
       /**
-       * <code>.cman.BootstrapResponseParamsData data = 3;</code>
+       * <code>.cman.BootstrapResponseData data = 3;</code>
        */
-      public Builder setData(cman.CManProto.BootstrapResponseParamsData value) {
+      public Builder setData(cman.CManProto.BootstrapResponseData value) {
         if (dataBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -27007,10 +27157,10 @@ public final class CManProto {
         return this;
       }
       /**
-       * <code>.cman.BootstrapResponseParamsData data = 3;</code>
+       * <code>.cman.BootstrapResponseData data = 3;</code>
        */
       public Builder setData(
-          cman.CManProto.BootstrapResponseParamsData.Builder builderForValue) {
+          cman.CManProto.BootstrapResponseData.Builder builderForValue) {
         if (dataBuilder_ == null) {
           data_ = builderForValue.build();
           onChanged();
@@ -27021,13 +27171,13 @@ public final class CManProto {
         return this;
       }
       /**
-       * <code>.cman.BootstrapResponseParamsData data = 3;</code>
+       * <code>.cman.BootstrapResponseData data = 3;</code>
        */
-      public Builder mergeData(cman.CManProto.BootstrapResponseParamsData value) {
+      public Builder mergeData(cman.CManProto.BootstrapResponseData value) {
         if (dataBuilder_ == null) {
           if (data_ != null) {
             data_ =
-              cman.CManProto.BootstrapResponseParamsData.newBuilder(data_).mergeFrom(value).buildPartial();
+              cman.CManProto.BootstrapResponseData.newBuilder(data_).mergeFrom(value).buildPartial();
           } else {
             data_ = value;
           }
@@ -27039,7 +27189,7 @@ public final class CManProto {
         return this;
       }
       /**
-       * <code>.cman.BootstrapResponseParamsData data = 3;</code>
+       * <code>.cman.BootstrapResponseData data = 3;</code>
        */
       public Builder clearData() {
         if (dataBuilder_ == null) {
@@ -27053,33 +27203,33 @@ public final class CManProto {
         return this;
       }
       /**
-       * <code>.cman.BootstrapResponseParamsData data = 3;</code>
+       * <code>.cman.BootstrapResponseData data = 3;</code>
        */
-      public cman.CManProto.BootstrapResponseParamsData.Builder getDataBuilder() {
+      public cman.CManProto.BootstrapResponseData.Builder getDataBuilder() {
         
         onChanged();
         return getDataFieldBuilder().getBuilder();
       }
       /**
-       * <code>.cman.BootstrapResponseParamsData data = 3;</code>
+       * <code>.cman.BootstrapResponseData data = 3;</code>
        */
-      public cman.CManProto.BootstrapResponseParamsDataOrBuilder getDataOrBuilder() {
+      public cman.CManProto.BootstrapResponseDataOrBuilder getDataOrBuilder() {
         if (dataBuilder_ != null) {
           return dataBuilder_.getMessageOrBuilder();
         } else {
           return data_ == null ?
-              cman.CManProto.BootstrapResponseParamsData.getDefaultInstance() : data_;
+              cman.CManProto.BootstrapResponseData.getDefaultInstance() : data_;
         }
       }
       /**
-       * <code>.cman.BootstrapResponseParamsData data = 3;</code>
+       * <code>.cman.BootstrapResponseData data = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          cman.CManProto.BootstrapResponseParamsData, cman.CManProto.BootstrapResponseParamsData.Builder, cman.CManProto.BootstrapResponseParamsDataOrBuilder> 
+          cman.CManProto.BootstrapResponseData, cman.CManProto.BootstrapResponseData.Builder, cman.CManProto.BootstrapResponseDataOrBuilder> 
           getDataFieldBuilder() {
         if (dataBuilder_ == null) {
           dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              cman.CManProto.BootstrapResponseParamsData, cman.CManProto.BootstrapResponseParamsData.Builder, cman.CManProto.BootstrapResponseParamsDataOrBuilder>(
+              cman.CManProto.BootstrapResponseData, cman.CManProto.BootstrapResponseData.Builder, cman.CManProto.BootstrapResponseDataOrBuilder>(
                   getData(),
                   getParentForChildren(),
                   isClean());
@@ -27140,8 +27290,8 @@ public final class CManProto {
 
   }
 
-  public interface BootstrapResponseParamsDataOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:cman.BootstrapResponseParamsData)
+  public interface BootstrapResponseDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cman.BootstrapResponseData)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -27169,55 +27319,60 @@ public final class CManProto {
         getNameBytes();
 
     /**
-     * <code>bytes data = 3;</code>
-     * @return The data.
-     */
-    com.google.protobuf.ByteString getData();
-
-    /**
-     * <code>int32 wire_serno = 4;</code>
+     * <code>int32 wireSerno = 3;</code>
      * @return The wireSerno.
      */
     int getWireSerno();
 
     /**
-     * <code>.cman.BootstrapResponseParamsDataConfInfo conf_info = 5;</code>
+     * <pre>
+     * repeated string data = 4;
+     * </pre>
+     *
+     * <code>.cman.BootstrapResponseDataConfInfo confInfo = 4;</code>
      * @return Whether the confInfo field is set.
      */
     boolean hasConfInfo();
     /**
-     * <code>.cman.BootstrapResponseParamsDataConfInfo conf_info = 5;</code>
+     * <pre>
+     * repeated string data = 4;
+     * </pre>
+     *
+     * <code>.cman.BootstrapResponseDataConfInfo confInfo = 4;</code>
      * @return The confInfo.
      */
-    cman.CManProto.BootstrapResponseParamsDataConfInfo getConfInfo();
+    cman.CManProto.BootstrapResponseDataConfInfo getConfInfo();
     /**
-     * <code>.cman.BootstrapResponseParamsDataConfInfo conf_info = 5;</code>
+     * <pre>
+     * repeated string data = 4;
+     * </pre>
+     *
+     * <code>.cman.BootstrapResponseDataConfInfo confInfo = 4;</code>
      */
-    cman.CManProto.BootstrapResponseParamsDataConfInfoOrBuilder getConfInfoOrBuilder();
+    cman.CManProto.BootstrapResponseDataConfInfoOrBuilder getConfInfoOrBuilder();
   }
   /**
-   * Protobuf type {@code cman.BootstrapResponseParamsData}
+   * Protobuf type {@code cman.BootstrapResponseData}
    */
-  public static final class BootstrapResponseParamsData extends
+  public static final class BootstrapResponseData extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:cman.BootstrapResponseParamsData)
-      BootstrapResponseParamsDataOrBuilder {
+      // @@protoc_insertion_point(message_implements:cman.BootstrapResponseData)
+      BootstrapResponseDataOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use BootstrapResponseParamsData.newBuilder() to construct.
-    private BootstrapResponseParamsData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use BootstrapResponseData.newBuilder() to construct.
+    private BootstrapResponseData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private BootstrapResponseParamsData() {
+    private BootstrapResponseData() {
       action_ = "";
       name_ = "";
-      data_ = com.google.protobuf.ByteString.EMPTY;
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new BootstrapResponseParamsData();
+      return new BootstrapResponseData();
     }
 
     @java.lang.Override
@@ -27225,7 +27380,7 @@ public final class CManProto {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BootstrapResponseParamsData(
+    private BootstrapResponseData(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -27255,22 +27410,17 @@ public final class CManProto {
               name_ = s;
               break;
             }
-            case 26: {
-
-              data_ = input.readBytes();
-              break;
-            }
-            case 32: {
+            case 24: {
 
               wireSerno_ = input.readInt32();
               break;
             }
-            case 42: {
-              cman.CManProto.BootstrapResponseParamsDataConfInfo.Builder subBuilder = null;
+            case 34: {
+              cman.CManProto.BootstrapResponseDataConfInfo.Builder subBuilder = null;
               if (confInfo_ != null) {
                 subBuilder = confInfo_.toBuilder();
               }
-              confInfo_ = input.readMessage(cman.CManProto.BootstrapResponseParamsDataConfInfo.parser(), extensionRegistry);
+              confInfo_ = input.readMessage(cman.CManProto.BootstrapResponseDataConfInfo.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(confInfo_);
                 confInfo_ = subBuilder.buildPartial();
@@ -27299,15 +27449,15 @@ public final class CManProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return cman.CManProto.internal_static_cman_BootstrapResponseParamsData_descriptor;
+      return cman.CManProto.internal_static_cman_BootstrapResponseData_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return cman.CManProto.internal_static_cman_BootstrapResponseParamsData_fieldAccessorTable
+      return cman.CManProto.internal_static_cman_BootstrapResponseData_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              cman.CManProto.BootstrapResponseParamsData.class, cman.CManProto.BootstrapResponseParamsData.Builder.class);
+              cman.CManProto.BootstrapResponseData.class, cman.CManProto.BootstrapResponseData.Builder.class);
     }
 
     public static final int ACTION_FIELD_NUMBER = 1;
@@ -27386,21 +27536,10 @@ public final class CManProto {
       }
     }
 
-    public static final int DATA_FIELD_NUMBER = 3;
-    private com.google.protobuf.ByteString data_;
-    /**
-     * <code>bytes data = 3;</code>
-     * @return The data.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getData() {
-      return data_;
-    }
-
-    public static final int WIRE_SERNO_FIELD_NUMBER = 4;
+    public static final int WIRESERNO_FIELD_NUMBER = 3;
     private int wireSerno_;
     /**
-     * <code>int32 wire_serno = 4;</code>
+     * <code>int32 wireSerno = 3;</code>
      * @return The wireSerno.
      */
     @java.lang.Override
@@ -27408,10 +27547,14 @@ public final class CManProto {
       return wireSerno_;
     }
 
-    public static final int CONF_INFO_FIELD_NUMBER = 5;
-    private cman.CManProto.BootstrapResponseParamsDataConfInfo confInfo_;
+    public static final int CONFINFO_FIELD_NUMBER = 4;
+    private cman.CManProto.BootstrapResponseDataConfInfo confInfo_;
     /**
-     * <code>.cman.BootstrapResponseParamsDataConfInfo conf_info = 5;</code>
+     * <pre>
+     * repeated string data = 4;
+     * </pre>
+     *
+     * <code>.cman.BootstrapResponseDataConfInfo confInfo = 4;</code>
      * @return Whether the confInfo field is set.
      */
     @java.lang.Override
@@ -27419,18 +27562,26 @@ public final class CManProto {
       return confInfo_ != null;
     }
     /**
-     * <code>.cman.BootstrapResponseParamsDataConfInfo conf_info = 5;</code>
+     * <pre>
+     * repeated string data = 4;
+     * </pre>
+     *
+     * <code>.cman.BootstrapResponseDataConfInfo confInfo = 4;</code>
      * @return The confInfo.
      */
     @java.lang.Override
-    public cman.CManProto.BootstrapResponseParamsDataConfInfo getConfInfo() {
-      return confInfo_ == null ? cman.CManProto.BootstrapResponseParamsDataConfInfo.getDefaultInstance() : confInfo_;
+    public cman.CManProto.BootstrapResponseDataConfInfo getConfInfo() {
+      return confInfo_ == null ? cman.CManProto.BootstrapResponseDataConfInfo.getDefaultInstance() : confInfo_;
     }
     /**
-     * <code>.cman.BootstrapResponseParamsDataConfInfo conf_info = 5;</code>
+     * <pre>
+     * repeated string data = 4;
+     * </pre>
+     *
+     * <code>.cman.BootstrapResponseDataConfInfo confInfo = 4;</code>
      */
     @java.lang.Override
-    public cman.CManProto.BootstrapResponseParamsDataConfInfoOrBuilder getConfInfoOrBuilder() {
+    public cman.CManProto.BootstrapResponseDataConfInfoOrBuilder getConfInfoOrBuilder() {
       return getConfInfo();
     }
 
@@ -27454,14 +27605,11 @@ public final class CManProto {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
       }
-      if (!data_.isEmpty()) {
-        output.writeBytes(3, data_);
-      }
       if (wireSerno_ != 0) {
-        output.writeInt32(4, wireSerno_);
+        output.writeInt32(3, wireSerno_);
       }
       if (confInfo_ != null) {
-        output.writeMessage(5, getConfInfo());
+        output.writeMessage(4, getConfInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -27478,17 +27626,13 @@ public final class CManProto {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
       }
-      if (!data_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, data_);
-      }
       if (wireSerno_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, wireSerno_);
+          .computeInt32Size(3, wireSerno_);
       }
       if (confInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getConfInfo());
+          .computeMessageSize(4, getConfInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -27500,17 +27644,15 @@ public final class CManProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof cman.CManProto.BootstrapResponseParamsData)) {
+      if (!(obj instanceof cman.CManProto.BootstrapResponseData)) {
         return super.equals(obj);
       }
-      cman.CManProto.BootstrapResponseParamsData other = (cman.CManProto.BootstrapResponseParamsData) obj;
+      cman.CManProto.BootstrapResponseData other = (cman.CManProto.BootstrapResponseData) obj;
 
       if (!getAction()
           .equals(other.getAction())) return false;
       if (!getName()
           .equals(other.getName())) return false;
-      if (!getData()
-          .equals(other.getData())) return false;
       if (getWireSerno()
           != other.getWireSerno()) return false;
       if (hasConfInfo() != other.hasConfInfo()) return false;
@@ -27533,12 +27675,10 @@ public final class CManProto {
       hash = (53 * hash) + getAction().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + DATA_FIELD_NUMBER;
-      hash = (53 * hash) + getData().hashCode();
-      hash = (37 * hash) + WIRE_SERNO_FIELD_NUMBER;
+      hash = (37 * hash) + WIRESERNO_FIELD_NUMBER;
       hash = (53 * hash) + getWireSerno();
       if (hasConfInfo()) {
-        hash = (37 * hash) + CONF_INFO_FIELD_NUMBER;
+        hash = (37 * hash) + CONFINFO_FIELD_NUMBER;
         hash = (53 * hash) + getConfInfo().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -27546,69 +27686,69 @@ public final class CManProto {
       return hash;
     }
 
-    public static cman.CManProto.BootstrapResponseParamsData parseFrom(
+    public static cman.CManProto.BootstrapResponseData parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static cman.CManProto.BootstrapResponseParamsData parseFrom(
+    public static cman.CManProto.BootstrapResponseData parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static cman.CManProto.BootstrapResponseParamsData parseFrom(
+    public static cman.CManProto.BootstrapResponseData parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static cman.CManProto.BootstrapResponseParamsData parseFrom(
+    public static cman.CManProto.BootstrapResponseData parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static cman.CManProto.BootstrapResponseParamsData parseFrom(byte[] data)
+    public static cman.CManProto.BootstrapResponseData parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static cman.CManProto.BootstrapResponseParamsData parseFrom(
+    public static cman.CManProto.BootstrapResponseData parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static cman.CManProto.BootstrapResponseParamsData parseFrom(java.io.InputStream input)
+    public static cman.CManProto.BootstrapResponseData parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static cman.CManProto.BootstrapResponseParamsData parseFrom(
+    public static cman.CManProto.BootstrapResponseData parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static cman.CManProto.BootstrapResponseParamsData parseDelimitedFrom(java.io.InputStream input)
+    public static cman.CManProto.BootstrapResponseData parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static cman.CManProto.BootstrapResponseParamsData parseDelimitedFrom(
+    public static cman.CManProto.BootstrapResponseData parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static cman.CManProto.BootstrapResponseParamsData parseFrom(
+    public static cman.CManProto.BootstrapResponseData parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static cman.CManProto.BootstrapResponseParamsData parseFrom(
+    public static cman.CManProto.BootstrapResponseData parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -27621,7 +27761,7 @@ public final class CManProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(cman.CManProto.BootstrapResponseParamsData prototype) {
+    public static Builder newBuilder(cman.CManProto.BootstrapResponseData prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -27637,26 +27777,26 @@ public final class CManProto {
       return builder;
     }
     /**
-     * Protobuf type {@code cman.BootstrapResponseParamsData}
+     * Protobuf type {@code cman.BootstrapResponseData}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:cman.BootstrapResponseParamsData)
-        cman.CManProto.BootstrapResponseParamsDataOrBuilder {
+        // @@protoc_insertion_point(builder_implements:cman.BootstrapResponseData)
+        cman.CManProto.BootstrapResponseDataOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return cman.CManProto.internal_static_cman_BootstrapResponseParamsData_descriptor;
+        return cman.CManProto.internal_static_cman_BootstrapResponseData_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return cman.CManProto.internal_static_cman_BootstrapResponseParamsData_fieldAccessorTable
+        return cman.CManProto.internal_static_cman_BootstrapResponseData_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                cman.CManProto.BootstrapResponseParamsData.class, cman.CManProto.BootstrapResponseParamsData.Builder.class);
+                cman.CManProto.BootstrapResponseData.class, cman.CManProto.BootstrapResponseData.Builder.class);
       }
 
-      // Construct using cman.CManProto.BootstrapResponseParamsData.newBuilder()
+      // Construct using cman.CManProto.BootstrapResponseData.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -27678,8 +27818,6 @@ public final class CManProto {
 
         name_ = "";
 
-        data_ = com.google.protobuf.ByteString.EMPTY;
-
         wireSerno_ = 0;
 
         if (confInfoBuilder_ == null) {
@@ -27694,17 +27832,17 @@ public final class CManProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return cman.CManProto.internal_static_cman_BootstrapResponseParamsData_descriptor;
+        return cman.CManProto.internal_static_cman_BootstrapResponseData_descriptor;
       }
 
       @java.lang.Override
-      public cman.CManProto.BootstrapResponseParamsData getDefaultInstanceForType() {
-        return cman.CManProto.BootstrapResponseParamsData.getDefaultInstance();
+      public cman.CManProto.BootstrapResponseData getDefaultInstanceForType() {
+        return cman.CManProto.BootstrapResponseData.getDefaultInstance();
       }
 
       @java.lang.Override
-      public cman.CManProto.BootstrapResponseParamsData build() {
-        cman.CManProto.BootstrapResponseParamsData result = buildPartial();
+      public cman.CManProto.BootstrapResponseData build() {
+        cman.CManProto.BootstrapResponseData result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -27712,11 +27850,10 @@ public final class CManProto {
       }
 
       @java.lang.Override
-      public cman.CManProto.BootstrapResponseParamsData buildPartial() {
-        cman.CManProto.BootstrapResponseParamsData result = new cman.CManProto.BootstrapResponseParamsData(this);
+      public cman.CManProto.BootstrapResponseData buildPartial() {
+        cman.CManProto.BootstrapResponseData result = new cman.CManProto.BootstrapResponseData(this);
         result.action_ = action_;
         result.name_ = name_;
-        result.data_ = data_;
         result.wireSerno_ = wireSerno_;
         if (confInfoBuilder_ == null) {
           result.confInfo_ = confInfo_;
@@ -27761,16 +27898,16 @@ public final class CManProto {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof cman.CManProto.BootstrapResponseParamsData) {
-          return mergeFrom((cman.CManProto.BootstrapResponseParamsData)other);
+        if (other instanceof cman.CManProto.BootstrapResponseData) {
+          return mergeFrom((cman.CManProto.BootstrapResponseData)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(cman.CManProto.BootstrapResponseParamsData other) {
-        if (other == cman.CManProto.BootstrapResponseParamsData.getDefaultInstance()) return this;
+      public Builder mergeFrom(cman.CManProto.BootstrapResponseData other) {
+        if (other == cman.CManProto.BootstrapResponseData.getDefaultInstance()) return this;
         if (!other.getAction().isEmpty()) {
           action_ = other.action_;
           onChanged();
@@ -27778,9 +27915,6 @@ public final class CManProto {
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
           onChanged();
-        }
-        if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
-          setData(other.getData());
         }
         if (other.getWireSerno() != 0) {
           setWireSerno(other.getWireSerno());
@@ -27803,11 +27937,11 @@ public final class CManProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        cman.CManProto.BootstrapResponseParamsData parsedMessage = null;
+        cman.CManProto.BootstrapResponseData parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (cman.CManProto.BootstrapResponseParamsData) e.getUnfinishedMessage();
+          parsedMessage = (cman.CManProto.BootstrapResponseData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -27969,43 +28103,9 @@ public final class CManProto {
         return this;
       }
 
-      private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <code>bytes data = 3;</code>
-       * @return The data.
-       */
-      @java.lang.Override
-      public com.google.protobuf.ByteString getData() {
-        return data_;
-      }
-      /**
-       * <code>bytes data = 3;</code>
-       * @param value The data to set.
-       * @return This builder for chaining.
-       */
-      public Builder setData(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        data_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bytes data = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearData() {
-        
-        data_ = getDefaultInstance().getData();
-        onChanged();
-        return this;
-      }
-
       private int wireSerno_ ;
       /**
-       * <code>int32 wire_serno = 4;</code>
+       * <code>int32 wireSerno = 3;</code>
        * @return The wireSerno.
        */
       @java.lang.Override
@@ -28013,7 +28113,7 @@ public final class CManProto {
         return wireSerno_;
       }
       /**
-       * <code>int32 wire_serno = 4;</code>
+       * <code>int32 wireSerno = 3;</code>
        * @param value The wireSerno to set.
        * @return This builder for chaining.
        */
@@ -28024,7 +28124,7 @@ public final class CManProto {
         return this;
       }
       /**
-       * <code>int32 wire_serno = 4;</code>
+       * <code>int32 wireSerno = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearWireSerno() {
@@ -28034,31 +28134,43 @@ public final class CManProto {
         return this;
       }
 
-      private cman.CManProto.BootstrapResponseParamsDataConfInfo confInfo_;
+      private cman.CManProto.BootstrapResponseDataConfInfo confInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          cman.CManProto.BootstrapResponseParamsDataConfInfo, cman.CManProto.BootstrapResponseParamsDataConfInfo.Builder, cman.CManProto.BootstrapResponseParamsDataConfInfoOrBuilder> confInfoBuilder_;
+          cman.CManProto.BootstrapResponseDataConfInfo, cman.CManProto.BootstrapResponseDataConfInfo.Builder, cman.CManProto.BootstrapResponseDataConfInfoOrBuilder> confInfoBuilder_;
       /**
-       * <code>.cman.BootstrapResponseParamsDataConfInfo conf_info = 5;</code>
+       * <pre>
+       * repeated string data = 4;
+       * </pre>
+       *
+       * <code>.cman.BootstrapResponseDataConfInfo confInfo = 4;</code>
        * @return Whether the confInfo field is set.
        */
       public boolean hasConfInfo() {
         return confInfoBuilder_ != null || confInfo_ != null;
       }
       /**
-       * <code>.cman.BootstrapResponseParamsDataConfInfo conf_info = 5;</code>
+       * <pre>
+       * repeated string data = 4;
+       * </pre>
+       *
+       * <code>.cman.BootstrapResponseDataConfInfo confInfo = 4;</code>
        * @return The confInfo.
        */
-      public cman.CManProto.BootstrapResponseParamsDataConfInfo getConfInfo() {
+      public cman.CManProto.BootstrapResponseDataConfInfo getConfInfo() {
         if (confInfoBuilder_ == null) {
-          return confInfo_ == null ? cman.CManProto.BootstrapResponseParamsDataConfInfo.getDefaultInstance() : confInfo_;
+          return confInfo_ == null ? cman.CManProto.BootstrapResponseDataConfInfo.getDefaultInstance() : confInfo_;
         } else {
           return confInfoBuilder_.getMessage();
         }
       }
       /**
-       * <code>.cman.BootstrapResponseParamsDataConfInfo conf_info = 5;</code>
+       * <pre>
+       * repeated string data = 4;
+       * </pre>
+       *
+       * <code>.cman.BootstrapResponseDataConfInfo confInfo = 4;</code>
        */
-      public Builder setConfInfo(cman.CManProto.BootstrapResponseParamsDataConfInfo value) {
+      public Builder setConfInfo(cman.CManProto.BootstrapResponseDataConfInfo value) {
         if (confInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -28072,10 +28184,14 @@ public final class CManProto {
         return this;
       }
       /**
-       * <code>.cman.BootstrapResponseParamsDataConfInfo conf_info = 5;</code>
+       * <pre>
+       * repeated string data = 4;
+       * </pre>
+       *
+       * <code>.cman.BootstrapResponseDataConfInfo confInfo = 4;</code>
        */
       public Builder setConfInfo(
-          cman.CManProto.BootstrapResponseParamsDataConfInfo.Builder builderForValue) {
+          cman.CManProto.BootstrapResponseDataConfInfo.Builder builderForValue) {
         if (confInfoBuilder_ == null) {
           confInfo_ = builderForValue.build();
           onChanged();
@@ -28086,13 +28202,17 @@ public final class CManProto {
         return this;
       }
       /**
-       * <code>.cman.BootstrapResponseParamsDataConfInfo conf_info = 5;</code>
+       * <pre>
+       * repeated string data = 4;
+       * </pre>
+       *
+       * <code>.cman.BootstrapResponseDataConfInfo confInfo = 4;</code>
        */
-      public Builder mergeConfInfo(cman.CManProto.BootstrapResponseParamsDataConfInfo value) {
+      public Builder mergeConfInfo(cman.CManProto.BootstrapResponseDataConfInfo value) {
         if (confInfoBuilder_ == null) {
           if (confInfo_ != null) {
             confInfo_ =
-              cman.CManProto.BootstrapResponseParamsDataConfInfo.newBuilder(confInfo_).mergeFrom(value).buildPartial();
+              cman.CManProto.BootstrapResponseDataConfInfo.newBuilder(confInfo_).mergeFrom(value).buildPartial();
           } else {
             confInfo_ = value;
           }
@@ -28104,7 +28224,11 @@ public final class CManProto {
         return this;
       }
       /**
-       * <code>.cman.BootstrapResponseParamsDataConfInfo conf_info = 5;</code>
+       * <pre>
+       * repeated string data = 4;
+       * </pre>
+       *
+       * <code>.cman.BootstrapResponseDataConfInfo confInfo = 4;</code>
        */
       public Builder clearConfInfo() {
         if (confInfoBuilder_ == null) {
@@ -28118,33 +28242,45 @@ public final class CManProto {
         return this;
       }
       /**
-       * <code>.cman.BootstrapResponseParamsDataConfInfo conf_info = 5;</code>
+       * <pre>
+       * repeated string data = 4;
+       * </pre>
+       *
+       * <code>.cman.BootstrapResponseDataConfInfo confInfo = 4;</code>
        */
-      public cman.CManProto.BootstrapResponseParamsDataConfInfo.Builder getConfInfoBuilder() {
+      public cman.CManProto.BootstrapResponseDataConfInfo.Builder getConfInfoBuilder() {
         
         onChanged();
         return getConfInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.cman.BootstrapResponseParamsDataConfInfo conf_info = 5;</code>
+       * <pre>
+       * repeated string data = 4;
+       * </pre>
+       *
+       * <code>.cman.BootstrapResponseDataConfInfo confInfo = 4;</code>
        */
-      public cman.CManProto.BootstrapResponseParamsDataConfInfoOrBuilder getConfInfoOrBuilder() {
+      public cman.CManProto.BootstrapResponseDataConfInfoOrBuilder getConfInfoOrBuilder() {
         if (confInfoBuilder_ != null) {
           return confInfoBuilder_.getMessageOrBuilder();
         } else {
           return confInfo_ == null ?
-              cman.CManProto.BootstrapResponseParamsDataConfInfo.getDefaultInstance() : confInfo_;
+              cman.CManProto.BootstrapResponseDataConfInfo.getDefaultInstance() : confInfo_;
         }
       }
       /**
-       * <code>.cman.BootstrapResponseParamsDataConfInfo conf_info = 5;</code>
+       * <pre>
+       * repeated string data = 4;
+       * </pre>
+       *
+       * <code>.cman.BootstrapResponseDataConfInfo confInfo = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          cman.CManProto.BootstrapResponseParamsDataConfInfo, cman.CManProto.BootstrapResponseParamsDataConfInfo.Builder, cman.CManProto.BootstrapResponseParamsDataConfInfoOrBuilder> 
+          cman.CManProto.BootstrapResponseDataConfInfo, cman.CManProto.BootstrapResponseDataConfInfo.Builder, cman.CManProto.BootstrapResponseDataConfInfoOrBuilder> 
           getConfInfoFieldBuilder() {
         if (confInfoBuilder_ == null) {
           confInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              cman.CManProto.BootstrapResponseParamsDataConfInfo, cman.CManProto.BootstrapResponseParamsDataConfInfo.Builder, cman.CManProto.BootstrapResponseParamsDataConfInfoOrBuilder>(
+              cman.CManProto.BootstrapResponseDataConfInfo, cman.CManProto.BootstrapResponseDataConfInfo.Builder, cman.CManProto.BootstrapResponseDataConfInfoOrBuilder>(
                   getConfInfo(),
                   getParentForChildren(),
                   isClean());
@@ -28165,48 +28301,48 @@ public final class CManProto {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:cman.BootstrapResponseParamsData)
+      // @@protoc_insertion_point(builder_scope:cman.BootstrapResponseData)
     }
 
-    // @@protoc_insertion_point(class_scope:cman.BootstrapResponseParamsData)
-    private static final cman.CManProto.BootstrapResponseParamsData DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:cman.BootstrapResponseData)
+    private static final cman.CManProto.BootstrapResponseData DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new cman.CManProto.BootstrapResponseParamsData();
+      DEFAULT_INSTANCE = new cman.CManProto.BootstrapResponseData();
     }
 
-    public static cman.CManProto.BootstrapResponseParamsData getDefaultInstance() {
+    public static cman.CManProto.BootstrapResponseData getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<BootstrapResponseParamsData>
-        PARSER = new com.google.protobuf.AbstractParser<BootstrapResponseParamsData>() {
+    private static final com.google.protobuf.Parser<BootstrapResponseData>
+        PARSER = new com.google.protobuf.AbstractParser<BootstrapResponseData>() {
       @java.lang.Override
-      public BootstrapResponseParamsData parsePartialFrom(
+      public BootstrapResponseData parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BootstrapResponseParamsData(input, extensionRegistry);
+        return new BootstrapResponseData(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<BootstrapResponseParamsData> parser() {
+    public static com.google.protobuf.Parser<BootstrapResponseData> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<BootstrapResponseParamsData> getParserForType() {
+    public com.google.protobuf.Parser<BootstrapResponseData> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public cman.CManProto.BootstrapResponseParamsData getDefaultInstanceForType() {
+    public cman.CManProto.BootstrapResponseData getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface BootstrapResponseParamsDataConfInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:cman.BootstrapResponseParamsDataConfInfo)
+  public interface BootstrapResponseDataConfInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cman.BootstrapResponseDataConfInfo)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -28216,40 +28352,59 @@ public final class CManProto {
     int getSize();
 
     /**
-     * <code>.cman.BootstrapResponseParamsDataConfInfoGroupMembers group_members = 2;</code>
-     * @return Whether the groupMembers field is set.
+     * <code>map&lt;string, int32&gt; groupMembers = 2;</code>
      */
-    boolean hasGroupMembers();
+    int getGroupMembersCount();
     /**
-     * <code>.cman.BootstrapResponseParamsDataConfInfoGroupMembers group_members = 2;</code>
-     * @return The groupMembers.
+     * <code>map&lt;string, int32&gt; groupMembers = 2;</code>
      */
-    cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers getGroupMembers();
+    boolean containsGroupMembers(
+        java.lang.String key);
     /**
-     * <code>.cman.BootstrapResponseParamsDataConfInfoGroupMembers group_members = 2;</code>
+     * Use {@link #getGroupMembersMap()} instead.
      */
-    cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembersOrBuilder getGroupMembersOrBuilder();
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.Integer>
+    getGroupMembers();
+    /**
+     * <code>map&lt;string, int32&gt; groupMembers = 2;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.Integer>
+    getGroupMembersMap();
+    /**
+     * <code>map&lt;string, int32&gt; groupMembers = 2;</code>
+     */
+
+    int getGroupMembersOrDefault(
+        java.lang.String key,
+        int defaultValue);
+    /**
+     * <code>map&lt;string, int32&gt; groupMembers = 2;</code>
+     */
+
+    int getGroupMembersOrThrow(
+        java.lang.String key);
   }
   /**
-   * Protobuf type {@code cman.BootstrapResponseParamsDataConfInfo}
+   * Protobuf type {@code cman.BootstrapResponseDataConfInfo}
    */
-  public static final class BootstrapResponseParamsDataConfInfo extends
+  public static final class BootstrapResponseDataConfInfo extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:cman.BootstrapResponseParamsDataConfInfo)
-      BootstrapResponseParamsDataConfInfoOrBuilder {
+      // @@protoc_insertion_point(message_implements:cman.BootstrapResponseDataConfInfo)
+      BootstrapResponseDataConfInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use BootstrapResponseParamsDataConfInfo.newBuilder() to construct.
-    private BootstrapResponseParamsDataConfInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use BootstrapResponseDataConfInfo.newBuilder() to construct.
+    private BootstrapResponseDataConfInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private BootstrapResponseParamsDataConfInfo() {
+    private BootstrapResponseDataConfInfo() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new BootstrapResponseParamsDataConfInfo();
+      return new BootstrapResponseDataConfInfo();
     }
 
     @java.lang.Override
@@ -28257,7 +28412,7 @@ public final class CManProto {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BootstrapResponseParamsDataConfInfo(
+    private BootstrapResponseDataConfInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -28265,6 +28420,7 @@ public final class CManProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -28281,16 +28437,16 @@ public final class CManProto {
               break;
             }
             case 18: {
-              cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers.Builder subBuilder = null;
-              if (groupMembers_ != null) {
-                subBuilder = groupMembers_.toBuilder();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                groupMembers_ = com.google.protobuf.MapField.newMapField(
+                    GroupMembersDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
               }
-              groupMembers_ = input.readMessage(cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(groupMembers_);
-                groupMembers_ = subBuilder.buildPartial();
-              }
-
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer>
+              groupMembers__ = input.readMessage(
+                  GroupMembersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              groupMembers_.getMutableMap().put(
+                  groupMembers__.getKey(), groupMembers__.getValue());
               break;
             }
             default: {
@@ -28314,15 +28470,27 @@ public final class CManProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return cman.CManProto.internal_static_cman_BootstrapResponseParamsDataConfInfo_descriptor;
+      return cman.CManProto.internal_static_cman_BootstrapResponseDataConfInfo_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 2:
+          return internalGetGroupMembers();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return cman.CManProto.internal_static_cman_BootstrapResponseParamsDataConfInfo_fieldAccessorTable
+      return cman.CManProto.internal_static_cman_BootstrapResponseDataConfInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              cman.CManProto.BootstrapResponseParamsDataConfInfo.class, cman.CManProto.BootstrapResponseParamsDataConfInfo.Builder.class);
+              cman.CManProto.BootstrapResponseDataConfInfo.class, cman.CManProto.BootstrapResponseDataConfInfo.Builder.class);
     }
 
     public static final int SIZE_FIELD_NUMBER = 1;
@@ -28336,30 +28504,85 @@ public final class CManProto {
       return size_;
     }
 
-    public static final int GROUP_MEMBERS_FIELD_NUMBER = 2;
-    private cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers groupMembers_;
-    /**
-     * <code>.cman.BootstrapResponseParamsDataConfInfoGroupMembers group_members = 2;</code>
-     * @return Whether the groupMembers field is set.
-     */
-    @java.lang.Override
-    public boolean hasGroupMembers() {
-      return groupMembers_ != null;
+    public static final int GROUPMEMBERS_FIELD_NUMBER = 2;
+    private static final class GroupMembersDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.Integer> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.Integer>newDefaultInstance(
+                  cman.CManProto.internal_static_cman_BootstrapResponseDataConfInfo_GroupMembersEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.INT32,
+                  0);
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.Integer> groupMembers_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
+    internalGetGroupMembers() {
+      if (groupMembers_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            GroupMembersDefaultEntryHolder.defaultEntry);
+      }
+      return groupMembers_;
+    }
+
+    public int getGroupMembersCount() {
+      return internalGetGroupMembers().getMap().size();
     }
     /**
-     * <code>.cman.BootstrapResponseParamsDataConfInfoGroupMembers group_members = 2;</code>
-     * @return The groupMembers.
+     * <code>map&lt;string, int32&gt; groupMembers = 2;</code>
      */
+
     @java.lang.Override
-    public cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers getGroupMembers() {
-      return groupMembers_ == null ? cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers.getDefaultInstance() : groupMembers_;
+    public boolean containsGroupMembers(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetGroupMembers().getMap().containsKey(key);
     }
     /**
-     * <code>.cman.BootstrapResponseParamsDataConfInfoGroupMembers group_members = 2;</code>
+     * Use {@link #getGroupMembersMap()} instead.
      */
     @java.lang.Override
-    public cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembersOrBuilder getGroupMembersOrBuilder() {
-      return getGroupMembers();
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Integer> getGroupMembers() {
+      return getGroupMembersMap();
+    }
+    /**
+     * <code>map&lt;string, int32&gt; groupMembers = 2;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.Integer> getGroupMembersMap() {
+      return internalGetGroupMembers().getMap();
+    }
+    /**
+     * <code>map&lt;string, int32&gt; groupMembers = 2;</code>
+     */
+    @java.lang.Override
+
+    public int getGroupMembersOrDefault(
+        java.lang.String key,
+        int defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.Integer> map =
+          internalGetGroupMembers().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, int32&gt; groupMembers = 2;</code>
+     */
+    @java.lang.Override
+
+    public int getGroupMembersOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.Integer> map =
+          internalGetGroupMembers().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -28379,9 +28602,12 @@ public final class CManProto {
       if (size_ != 0) {
         output.writeInt32(1, size_);
       }
-      if (groupMembers_ != null) {
-        output.writeMessage(2, getGroupMembers());
-      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetGroupMembers(),
+          GroupMembersDefaultEntryHolder.defaultEntry,
+          2);
       unknownFields.writeTo(output);
     }
 
@@ -28395,9 +28621,15 @@ public final class CManProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, size_);
       }
-      if (groupMembers_ != null) {
+      for (java.util.Map.Entry<java.lang.String, java.lang.Integer> entry
+           : internalGetGroupMembers().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer>
+        groupMembers__ = GroupMembersDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getGroupMembers());
+            .computeMessageSize(2, groupMembers__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -28409,18 +28641,15 @@ public final class CManProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof cman.CManProto.BootstrapResponseParamsDataConfInfo)) {
+      if (!(obj instanceof cman.CManProto.BootstrapResponseDataConfInfo)) {
         return super.equals(obj);
       }
-      cman.CManProto.BootstrapResponseParamsDataConfInfo other = (cman.CManProto.BootstrapResponseParamsDataConfInfo) obj;
+      cman.CManProto.BootstrapResponseDataConfInfo other = (cman.CManProto.BootstrapResponseDataConfInfo) obj;
 
       if (getSize()
           != other.getSize()) return false;
-      if (hasGroupMembers() != other.hasGroupMembers()) return false;
-      if (hasGroupMembers()) {
-        if (!getGroupMembers()
-            .equals(other.getGroupMembers())) return false;
-      }
+      if (!internalGetGroupMembers().equals(
+          other.internalGetGroupMembers())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -28434,78 +28663,78 @@ public final class CManProto {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SIZE_FIELD_NUMBER;
       hash = (53 * hash) + getSize();
-      if (hasGroupMembers()) {
-        hash = (37 * hash) + GROUP_MEMBERS_FIELD_NUMBER;
-        hash = (53 * hash) + getGroupMembers().hashCode();
+      if (!internalGetGroupMembers().getMap().isEmpty()) {
+        hash = (37 * hash) + GROUPMEMBERS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetGroupMembers().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static cman.CManProto.BootstrapResponseParamsDataConfInfo parseFrom(
+    public static cman.CManProto.BootstrapResponseDataConfInfo parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static cman.CManProto.BootstrapResponseParamsDataConfInfo parseFrom(
+    public static cman.CManProto.BootstrapResponseDataConfInfo parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static cman.CManProto.BootstrapResponseParamsDataConfInfo parseFrom(
+    public static cman.CManProto.BootstrapResponseDataConfInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static cman.CManProto.BootstrapResponseParamsDataConfInfo parseFrom(
+    public static cman.CManProto.BootstrapResponseDataConfInfo parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static cman.CManProto.BootstrapResponseParamsDataConfInfo parseFrom(byte[] data)
+    public static cman.CManProto.BootstrapResponseDataConfInfo parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static cman.CManProto.BootstrapResponseParamsDataConfInfo parseFrom(
+    public static cman.CManProto.BootstrapResponseDataConfInfo parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static cman.CManProto.BootstrapResponseParamsDataConfInfo parseFrom(java.io.InputStream input)
+    public static cman.CManProto.BootstrapResponseDataConfInfo parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static cman.CManProto.BootstrapResponseParamsDataConfInfo parseFrom(
+    public static cman.CManProto.BootstrapResponseDataConfInfo parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static cman.CManProto.BootstrapResponseParamsDataConfInfo parseDelimitedFrom(java.io.InputStream input)
+    public static cman.CManProto.BootstrapResponseDataConfInfo parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static cman.CManProto.BootstrapResponseParamsDataConfInfo parseDelimitedFrom(
+    public static cman.CManProto.BootstrapResponseDataConfInfo parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static cman.CManProto.BootstrapResponseParamsDataConfInfo parseFrom(
+    public static cman.CManProto.BootstrapResponseDataConfInfo parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static cman.CManProto.BootstrapResponseParamsDataConfInfo parseFrom(
+    public static cman.CManProto.BootstrapResponseDataConfInfo parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -28518,7 +28747,7 @@ public final class CManProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(cman.CManProto.BootstrapResponseParamsDataConfInfo prototype) {
+    public static Builder newBuilder(cman.CManProto.BootstrapResponseDataConfInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -28534,26 +28763,48 @@ public final class CManProto {
       return builder;
     }
     /**
-     * Protobuf type {@code cman.BootstrapResponseParamsDataConfInfo}
+     * Protobuf type {@code cman.BootstrapResponseDataConfInfo}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:cman.BootstrapResponseParamsDataConfInfo)
-        cman.CManProto.BootstrapResponseParamsDataConfInfoOrBuilder {
+        // @@protoc_insertion_point(builder_implements:cman.BootstrapResponseDataConfInfo)
+        cman.CManProto.BootstrapResponseDataConfInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return cman.CManProto.internal_static_cman_BootstrapResponseParamsDataConfInfo_descriptor;
+        return cman.CManProto.internal_static_cman_BootstrapResponseDataConfInfo_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 2:
+            return internalGetGroupMembers();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 2:
+            return internalGetMutableGroupMembers();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return cman.CManProto.internal_static_cman_BootstrapResponseParamsDataConfInfo_fieldAccessorTable
+        return cman.CManProto.internal_static_cman_BootstrapResponseDataConfInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                cman.CManProto.BootstrapResponseParamsDataConfInfo.class, cman.CManProto.BootstrapResponseParamsDataConfInfo.Builder.class);
+                cman.CManProto.BootstrapResponseDataConfInfo.class, cman.CManProto.BootstrapResponseDataConfInfo.Builder.class);
       }
 
-      // Construct using cman.CManProto.BootstrapResponseParamsDataConfInfo.newBuilder()
+      // Construct using cman.CManProto.BootstrapResponseDataConfInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -28573,29 +28824,24 @@ public final class CManProto {
         super.clear();
         size_ = 0;
 
-        if (groupMembersBuilder_ == null) {
-          groupMembers_ = null;
-        } else {
-          groupMembers_ = null;
-          groupMembersBuilder_ = null;
-        }
+        internalGetMutableGroupMembers().clear();
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return cman.CManProto.internal_static_cman_BootstrapResponseParamsDataConfInfo_descriptor;
+        return cman.CManProto.internal_static_cman_BootstrapResponseDataConfInfo_descriptor;
       }
 
       @java.lang.Override
-      public cman.CManProto.BootstrapResponseParamsDataConfInfo getDefaultInstanceForType() {
-        return cman.CManProto.BootstrapResponseParamsDataConfInfo.getDefaultInstance();
+      public cman.CManProto.BootstrapResponseDataConfInfo getDefaultInstanceForType() {
+        return cman.CManProto.BootstrapResponseDataConfInfo.getDefaultInstance();
       }
 
       @java.lang.Override
-      public cman.CManProto.BootstrapResponseParamsDataConfInfo build() {
-        cman.CManProto.BootstrapResponseParamsDataConfInfo result = buildPartial();
+      public cman.CManProto.BootstrapResponseDataConfInfo build() {
+        cman.CManProto.BootstrapResponseDataConfInfo result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -28603,14 +28849,12 @@ public final class CManProto {
       }
 
       @java.lang.Override
-      public cman.CManProto.BootstrapResponseParamsDataConfInfo buildPartial() {
-        cman.CManProto.BootstrapResponseParamsDataConfInfo result = new cman.CManProto.BootstrapResponseParamsDataConfInfo(this);
+      public cman.CManProto.BootstrapResponseDataConfInfo buildPartial() {
+        cman.CManProto.BootstrapResponseDataConfInfo result = new cman.CManProto.BootstrapResponseDataConfInfo(this);
+        int from_bitField0_ = bitField0_;
         result.size_ = size_;
-        if (groupMembersBuilder_ == null) {
-          result.groupMembers_ = groupMembers_;
-        } else {
-          result.groupMembers_ = groupMembersBuilder_.build();
-        }
+        result.groupMembers_ = internalGetGroupMembers();
+        result.groupMembers_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -28649,22 +28893,21 @@ public final class CManProto {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof cman.CManProto.BootstrapResponseParamsDataConfInfo) {
-          return mergeFrom((cman.CManProto.BootstrapResponseParamsDataConfInfo)other);
+        if (other instanceof cman.CManProto.BootstrapResponseDataConfInfo) {
+          return mergeFrom((cman.CManProto.BootstrapResponseDataConfInfo)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(cman.CManProto.BootstrapResponseParamsDataConfInfo other) {
-        if (other == cman.CManProto.BootstrapResponseParamsDataConfInfo.getDefaultInstance()) return this;
+      public Builder mergeFrom(cman.CManProto.BootstrapResponseDataConfInfo other) {
+        if (other == cman.CManProto.BootstrapResponseDataConfInfo.getDefaultInstance()) return this;
         if (other.getSize() != 0) {
           setSize(other.getSize());
         }
-        if (other.hasGroupMembers()) {
-          mergeGroupMembers(other.getGroupMembers());
-        }
+        internalGetMutableGroupMembers().mergeFrom(
+            other.internalGetGroupMembers());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -28680,11 +28923,11 @@ public final class CManProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        cman.CManProto.BootstrapResponseParamsDataConfInfo parsedMessage = null;
+        cman.CManProto.BootstrapResponseDataConfInfo parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (cman.CManProto.BootstrapResponseParamsDataConfInfo) e.getUnfinishedMessage();
+          parsedMessage = (cman.CManProto.BootstrapResponseDataConfInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -28693,6 +28936,7 @@ public final class CManProto {
         }
         return this;
       }
+      private int bitField0_;
 
       private int size_ ;
       /**
@@ -28725,610 +28969,131 @@ public final class CManProto {
         return this;
       }
 
-      private cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers groupMembers_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers, cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers.Builder, cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembersOrBuilder> groupMembersBuilder_;
-      /**
-       * <code>.cman.BootstrapResponseParamsDataConfInfoGroupMembers group_members = 2;</code>
-       * @return Whether the groupMembers field is set.
-       */
-      public boolean hasGroupMembers() {
-        return groupMembersBuilder_ != null || groupMembers_ != null;
-      }
-      /**
-       * <code>.cman.BootstrapResponseParamsDataConfInfoGroupMembers group_members = 2;</code>
-       * @return The groupMembers.
-       */
-      public cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers getGroupMembers() {
-        if (groupMembersBuilder_ == null) {
-          return groupMembers_ == null ? cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers.getDefaultInstance() : groupMembers_;
-        } else {
-          return groupMembersBuilder_.getMessage();
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.Integer> groupMembers_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
+      internalGetGroupMembers() {
+        if (groupMembers_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              GroupMembersDefaultEntryHolder.defaultEntry);
         }
+        return groupMembers_;
       }
-      /**
-       * <code>.cman.BootstrapResponseParamsDataConfInfoGroupMembers group_members = 2;</code>
-       */
-      public Builder setGroupMembers(cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers value) {
-        if (groupMembersBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          groupMembers_ = value;
-          onChanged();
-        } else {
-          groupMembersBuilder_.setMessage(value);
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
+      internalGetMutableGroupMembers() {
+        onChanged();;
+        if (groupMembers_ == null) {
+          groupMembers_ = com.google.protobuf.MapField.newMapField(
+              GroupMembersDefaultEntryHolder.defaultEntry);
         }
+        if (!groupMembers_.isMutable()) {
+          groupMembers_ = groupMembers_.copy();
+        }
+        return groupMembers_;
+      }
 
-        return this;
+      public int getGroupMembersCount() {
+        return internalGetGroupMembers().getMap().size();
       }
       /**
-       * <code>.cman.BootstrapResponseParamsDataConfInfoGroupMembers group_members = 2;</code>
+       * <code>map&lt;string, int32&gt; groupMembers = 2;</code>
        */
-      public Builder setGroupMembers(
-          cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers.Builder builderForValue) {
-        if (groupMembersBuilder_ == null) {
-          groupMembers_ = builderForValue.build();
-          onChanged();
-        } else {
-          groupMembersBuilder_.setMessage(builderForValue.build());
-        }
 
-        return this;
+      @java.lang.Override
+      public boolean containsGroupMembers(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetGroupMembers().getMap().containsKey(key);
       }
       /**
-       * <code>.cman.BootstrapResponseParamsDataConfInfoGroupMembers group_members = 2;</code>
+       * Use {@link #getGroupMembersMap()} instead.
        */
-      public Builder mergeGroupMembers(cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers value) {
-        if (groupMembersBuilder_ == null) {
-          if (groupMembers_ != null) {
-            groupMembers_ =
-              cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers.newBuilder(groupMembers_).mergeFrom(value).buildPartial();
-          } else {
-            groupMembers_ = value;
-          }
-          onChanged();
-        } else {
-          groupMembersBuilder_.mergeFrom(value);
-        }
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Integer> getGroupMembers() {
+        return getGroupMembersMap();
+      }
+      /**
+       * <code>map&lt;string, int32&gt; groupMembers = 2;</code>
+       */
+      @java.lang.Override
 
-        return this;
+      public java.util.Map<java.lang.String, java.lang.Integer> getGroupMembersMap() {
+        return internalGetGroupMembers().getMap();
       }
       /**
-       * <code>.cman.BootstrapResponseParamsDataConfInfoGroupMembers group_members = 2;</code>
+       * <code>map&lt;string, int32&gt; groupMembers = 2;</code>
        */
+      @java.lang.Override
+
+      public int getGroupMembersOrDefault(
+          java.lang.String key,
+          int defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.Integer> map =
+            internalGetGroupMembers().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, int32&gt; groupMembers = 2;</code>
+       */
+      @java.lang.Override
+
+      public int getGroupMembersOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.Integer> map =
+            internalGetGroupMembers().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
       public Builder clearGroupMembers() {
-        if (groupMembersBuilder_ == null) {
-          groupMembers_ = null;
-          onChanged();
-        } else {
-          groupMembers_ = null;
-          groupMembersBuilder_ = null;
-        }
-
+        internalGetMutableGroupMembers().getMutableMap()
+            .clear();
         return this;
       }
       /**
-       * <code>.cman.BootstrapResponseParamsDataConfInfoGroupMembers group_members = 2;</code>
+       * <code>map&lt;string, int32&gt; groupMembers = 2;</code>
        */
-      public cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers.Builder getGroupMembersBuilder() {
+
+      public Builder removeGroupMembers(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        internalGetMutableGroupMembers().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Integer>
+      getMutableGroupMembers() {
+        return internalGetMutableGroupMembers().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, int32&gt; groupMembers = 2;</code>
+       */
+      public Builder putGroupMembers(
+          java.lang.String key,
+          int value) {
+        if (key == null) { throw new NullPointerException("map key"); }
         
-        onChanged();
-        return getGroupMembersFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.cman.BootstrapResponseParamsDataConfInfoGroupMembers group_members = 2;</code>
-       */
-      public cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembersOrBuilder getGroupMembersOrBuilder() {
-        if (groupMembersBuilder_ != null) {
-          return groupMembersBuilder_.getMessageOrBuilder();
-        } else {
-          return groupMembers_ == null ?
-              cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers.getDefaultInstance() : groupMembers_;
-        }
-      }
-      /**
-       * <code>.cman.BootstrapResponseParamsDataConfInfoGroupMembers group_members = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers, cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers.Builder, cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembersOrBuilder> 
-          getGroupMembersFieldBuilder() {
-        if (groupMembersBuilder_ == null) {
-          groupMembersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers, cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers.Builder, cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembersOrBuilder>(
-                  getGroupMembers(),
-                  getParentForChildren(),
-                  isClean());
-          groupMembers_ = null;
-        }
-        return groupMembersBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:cman.BootstrapResponseParamsDataConfInfo)
-    }
-
-    // @@protoc_insertion_point(class_scope:cman.BootstrapResponseParamsDataConfInfo)
-    private static final cman.CManProto.BootstrapResponseParamsDataConfInfo DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new cman.CManProto.BootstrapResponseParamsDataConfInfo();
-    }
-
-    public static cman.CManProto.BootstrapResponseParamsDataConfInfo getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<BootstrapResponseParamsDataConfInfo>
-        PARSER = new com.google.protobuf.AbstractParser<BootstrapResponseParamsDataConfInfo>() {
-      @java.lang.Override
-      public BootstrapResponseParamsDataConfInfo parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BootstrapResponseParamsDataConfInfo(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<BootstrapResponseParamsDataConfInfo> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<BootstrapResponseParamsDataConfInfo> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public cman.CManProto.BootstrapResponseParamsDataConfInfo getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface BootstrapResponseParamsDataConfInfoGroupMembersOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:cman.BootstrapResponseParamsDataConfInfoGroupMembers)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>int32 no_group = 1;</code>
-     * @return The noGroup.
-     */
-    int getNoGroup();
-  }
-  /**
-   * Protobuf type {@code cman.BootstrapResponseParamsDataConfInfoGroupMembers}
-   */
-  public static final class BootstrapResponseParamsDataConfInfoGroupMembers extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:cman.BootstrapResponseParamsDataConfInfoGroupMembers)
-      BootstrapResponseParamsDataConfInfoGroupMembersOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use BootstrapResponseParamsDataConfInfoGroupMembers.newBuilder() to construct.
-    private BootstrapResponseParamsDataConfInfoGroupMembers(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private BootstrapResponseParamsDataConfInfoGroupMembers() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new BootstrapResponseParamsDataConfInfoGroupMembers();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private BootstrapResponseParamsDataConfInfoGroupMembers(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              noGroup_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return cman.CManProto.internal_static_cman_BootstrapResponseParamsDataConfInfoGroupMembers_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return cman.CManProto.internal_static_cman_BootstrapResponseParamsDataConfInfoGroupMembers_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers.class, cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers.Builder.class);
-    }
-
-    public static final int NO_GROUP_FIELD_NUMBER = 1;
-    private int noGroup_;
-    /**
-     * <code>int32 no_group = 1;</code>
-     * @return The noGroup.
-     */
-    @java.lang.Override
-    public int getNoGroup() {
-      return noGroup_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (noGroup_ != 0) {
-        output.writeInt32(1, noGroup_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (noGroup_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, noGroup_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers)) {
-        return super.equals(obj);
-      }
-      cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers other = (cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers) obj;
-
-      if (getNoGroup()
-          != other.getNoGroup()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NO_GROUP_FIELD_NUMBER;
-      hash = (53 * hash) + getNoGroup();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code cman.BootstrapResponseParamsDataConfInfoGroupMembers}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:cman.BootstrapResponseParamsDataConfInfoGroupMembers)
-        cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembersOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return cman.CManProto.internal_static_cman_BootstrapResponseParamsDataConfInfoGroupMembers_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return cman.CManProto.internal_static_cman_BootstrapResponseParamsDataConfInfoGroupMembers_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers.class, cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers.Builder.class);
-      }
-
-      // Construct using cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        noGroup_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return cman.CManProto.internal_static_cman_BootstrapResponseParamsDataConfInfoGroupMembers_descriptor;
-      }
-
-      @java.lang.Override
-      public cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers getDefaultInstanceForType() {
-        return cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers build() {
-        cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers buildPartial() {
-        cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers result = new cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers(this);
-        result.noGroup_ = noGroup_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers) {
-          return mergeFrom((cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers other) {
-        if (other == cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers.getDefaultInstance()) return this;
-        if (other.getNoGroup() != 0) {
-          setNoGroup(other.getNoGroup());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int noGroup_ ;
-      /**
-       * <code>int32 no_group = 1;</code>
-       * @return The noGroup.
-       */
-      @java.lang.Override
-      public int getNoGroup() {
-        return noGroup_;
-      }
-      /**
-       * <code>int32 no_group = 1;</code>
-       * @param value The noGroup to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNoGroup(int value) {
-        
-        noGroup_ = value;
-        onChanged();
+        internalGetMutableGroupMembers().getMutableMap()
+            .put(key, value);
         return this;
       }
       /**
-       * <code>int32 no_group = 1;</code>
-       * @return This builder for chaining.
+       * <code>map&lt;string, int32&gt; groupMembers = 2;</code>
        */
-      public Builder clearNoGroup() {
-        
-        noGroup_ = 0;
-        onChanged();
+
+      public Builder putAllGroupMembers(
+          java.util.Map<java.lang.String, java.lang.Integer> values) {
+        internalGetMutableGroupMembers().getMutableMap()
+            .putAll(values);
         return this;
       }
       @java.lang.Override
@@ -29344,41 +29109,41 @@ public final class CManProto {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:cman.BootstrapResponseParamsDataConfInfoGroupMembers)
+      // @@protoc_insertion_point(builder_scope:cman.BootstrapResponseDataConfInfo)
     }
 
-    // @@protoc_insertion_point(class_scope:cman.BootstrapResponseParamsDataConfInfoGroupMembers)
-    private static final cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:cman.BootstrapResponseDataConfInfo)
+    private static final cman.CManProto.BootstrapResponseDataConfInfo DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers();
+      DEFAULT_INSTANCE = new cman.CManProto.BootstrapResponseDataConfInfo();
     }
 
-    public static cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers getDefaultInstance() {
+    public static cman.CManProto.BootstrapResponseDataConfInfo getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<BootstrapResponseParamsDataConfInfoGroupMembers>
-        PARSER = new com.google.protobuf.AbstractParser<BootstrapResponseParamsDataConfInfoGroupMembers>() {
+    private static final com.google.protobuf.Parser<BootstrapResponseDataConfInfo>
+        PARSER = new com.google.protobuf.AbstractParser<BootstrapResponseDataConfInfo>() {
       @java.lang.Override
-      public BootstrapResponseParamsDataConfInfoGroupMembers parsePartialFrom(
+      public BootstrapResponseDataConfInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BootstrapResponseParamsDataConfInfoGroupMembers(input, extensionRegistry);
+        return new BootstrapResponseDataConfInfo(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<BootstrapResponseParamsDataConfInfoGroupMembers> parser() {
+    public static com.google.protobuf.Parser<BootstrapResponseDataConfInfo> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<BootstrapResponseParamsDataConfInfoGroupMembers> getParserForType() {
+    public com.google.protobuf.Parser<BootstrapResponseDataConfInfo> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public cman.CManProto.BootstrapResponseParamsDataConfInfoGroupMembers getDefaultInstanceForType() {
+    public cman.CManProto.BootstrapResponseDataConfInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -49814,40 +49579,40 @@ public final class CManProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cman_BootstrapRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cman_BootstrapRequestParamsData_descriptor;
+    internal_static_cman_BootstrapRequestData_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cman_BootstrapRequestParamsData_fieldAccessorTable;
+      internal_static_cman_BootstrapRequestData_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cman_BootstrapRequestParamsDataLiveArray_descriptor;
+    internal_static_cman_BootstrapRequestDataLiveArray_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cman_BootstrapRequestParamsDataLiveArray_fieldAccessorTable;
+      internal_static_cman_BootstrapRequestDataLiveArray_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cman_BootstrapRequestParamsDataLiveArrayObj_descriptor;
+    internal_static_cman_BootstrapRequestDataLiveArrayObj_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cman_BootstrapRequestParamsDataLiveArrayObj_fieldAccessorTable;
+      internal_static_cman_BootstrapRequestDataLiveArrayObj_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cman_BootstrapResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cman_BootstrapResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cman_BootstrapResponseParamsData_descriptor;
+    internal_static_cman_BootstrapResponseData_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cman_BootstrapResponseParamsData_fieldAccessorTable;
+      internal_static_cman_BootstrapResponseData_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cman_BootstrapResponseParamsDataConfInfo_descriptor;
+    internal_static_cman_BootstrapResponseDataConfInfo_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cman_BootstrapResponseParamsDataConfInfo_fieldAccessorTable;
+      internal_static_cman_BootstrapResponseDataConfInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cman_BootstrapResponseParamsDataConfInfoGroupMembers_descriptor;
+    internal_static_cman_BootstrapResponseDataConfInfo_GroupMembersEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cman_BootstrapResponseParamsDataConfInfoGroupMembers_fieldAccessorTable;
+      internal_static_cman_BootstrapResponseDataConfInfo_GroupMembersEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cman_getNodeForConferenceRequest_descriptor;
   private static final 
@@ -50069,28 +49834,26 @@ public final class CManProto {
       "ectNodes\022\014\n\004size\030\004 \001(\005\022\023\n\013memberCount\030\005 " +
       "\001(\t\022\r\n\005state\030\006 \001(\t\"H\n\031GetConferenceListR" +
       "esponse\022+\n\013conferences\030\001 \003(\0132\026.cman.Conf" +
-      "erenceObject\"i\n\020BootstrapRequest\022\025\n\reven" +
-      "t_channel\030\001 \001(\t\022.\n\004data\030\002 \001(\0132 .cman.Boo" +
-      "tstrapRequestParamsData\022\016\n\006sessid\030\003 \001(\t\"" +
-      "[\n\032BootstrapRequestParamsData\022=\n\nlive_ar" +
-      "ray\030\001 \001(\0132).cman.BootstrapRequestParamsD" +
-      "ataLiveArray\"\220\001\n#BootstrapRequestParamsD" +
-      "ataLiveArray\022\017\n\007command\030\001 \001(\t\022\017\n\007context" +
-      "\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\0229\n\003obj\030\004 \001(\0132,.cman" +
-      ".BootstrapRequestParamsDataLiveArrayObj\"" +
-      "(\n&BootstrapRequestParamsDataLiveArrayOb" +
-      "j\"k\n\021BootstrapResponse\022\025\n\revent_channel\030" +
-      "\001 \001(\t\022\016\n\006sessid\030\002 \001(\t\022/\n\004data\030\003 \001(\0132!.cm" +
-      "an.BootstrapResponseParamsData\"\233\001\n\033Boots" +
-      "trapResponseParamsData\022\016\n\006action\030\001 \001(\t\022\014" +
-      "\n\004name\030\002 \001(\t\022\014\n\004data\030\003 \001(\014\022\022\n\nwire_serno" +
-      "\030\004 \001(\005\022<\n\tconf_info\030\005 \001(\0132).cman.Bootstr" +
-      "apResponseParamsDataConfInfo\"\201\001\n#Bootstr" +
-      "apResponseParamsDataConfInfo\022\014\n\004size\030\001 \001" +
-      "(\005\022L\n\rgroup_members\030\002 \001(\01325.cman.Bootstr" +
-      "apResponseParamsDataConfInfoGroupMembers" +
-      "\"C\n/BootstrapResponseParamsDataConfInfoG" +
-      "roupMembers\022\020\n\010no_group\030\001 \001(\005\"+\n\033getNode" +
+      "erenceObject\"b\n\020BootstrapRequest\022\024\n\014even" +
+      "tChannel\030\001 \001(\t\022\016\n\006sessid\030\002 \001(\t\022(\n\004Data\030\003" +
+      " \001(\0132\032.cman.BootstrapRequestData\"N\n\024Boot" +
+      "strapRequestData\0226\n\tliveArray\030\001 \001(\0132#.cm" +
+      "an.BootstrapRequestDataLiveArray\"\204\001\n\035Boo" +
+      "tstrapRequestDataLiveArray\022\017\n\007command\030\001 " +
+      "\001(\t\022\014\n\004name\030\002 \001(\t\022\017\n\007context\030\003 \001(\t\0223\n\003ob" +
+      "j\030\004 \001(\0132&.cman.BootstrapRequestDataLiveA" +
+      "rrayObj\"3\n BootstrapRequestDataLiveArray" +
+      "Obj\022\017\n\007groupID\030\001 \001(\t\"d\n\021BootstrapRespons" +
+      "e\022\024\n\014eventChannel\030\001 \001(\t\022\016\n\006sessid\030\002 \001(\t\022" +
+      ")\n\004data\030\003 \001(\0132\033.cman.BootstrapResponseDa" +
+      "ta\"\177\n\025BootstrapResponseData\022\016\n\006action\030\001 " +
+      "\001(\t\022\014\n\004name\030\002 \001(\t\022\021\n\twireSerno\030\003 \001(\005\0225\n\010" +
+      "confInfo\030\004 \001(\0132#.cman.BootstrapResponseD" +
+      "ataConfInfo\"\257\001\n\035BootstrapResponseDataCon" +
+      "fInfo\022\014\n\004size\030\001 \001(\005\022K\n\014groupMembers\030\002 \003(" +
+      "\01325.cman.BootstrapResponseDataConfInfo.G" +
+      "roupMembersEntry\0323\n\021GroupMembersEntry\022\013\n" +
+      "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\005:\0028\001\"+\n\033getNode" +
       "ForConferenceRequest\022\014\n\004name\030\001 \001(\t\"0\n\034ge" +
       "tNodeForConferenceResponse\022\020\n\010nodeUUID\030\001" +
       " \001(\t\"p\n\022confControlRequest\022\017\n\007command\030\001 " +
@@ -50298,195 +50061,195 @@ public final class CManProto {
     internal_static_cman_BootstrapRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_BootstrapRequest_descriptor,
-        new java.lang.String[] { "EventChannel", "Data", "Sessid", });
-    internal_static_cman_BootstrapRequestParamsData_descriptor =
+        new java.lang.String[] { "EventChannel", "Sessid", "Data", });
+    internal_static_cman_BootstrapRequestData_descriptor =
       getDescriptor().getMessageTypes().get(21);
-    internal_static_cman_BootstrapRequestParamsData_fieldAccessorTable = new
+    internal_static_cman_BootstrapRequestData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cman_BootstrapRequestParamsData_descriptor,
+        internal_static_cman_BootstrapRequestData_descriptor,
         new java.lang.String[] { "LiveArray", });
-    internal_static_cman_BootstrapRequestParamsDataLiveArray_descriptor =
+    internal_static_cman_BootstrapRequestDataLiveArray_descriptor =
       getDescriptor().getMessageTypes().get(22);
-    internal_static_cman_BootstrapRequestParamsDataLiveArray_fieldAccessorTable = new
+    internal_static_cman_BootstrapRequestDataLiveArray_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cman_BootstrapRequestParamsDataLiveArray_descriptor,
-        new java.lang.String[] { "Command", "Context", "Name", "Obj", });
-    internal_static_cman_BootstrapRequestParamsDataLiveArrayObj_descriptor =
+        internal_static_cman_BootstrapRequestDataLiveArray_descriptor,
+        new java.lang.String[] { "Command", "Name", "Context", "Obj", });
+    internal_static_cman_BootstrapRequestDataLiveArrayObj_descriptor =
       getDescriptor().getMessageTypes().get(23);
-    internal_static_cman_BootstrapRequestParamsDataLiveArrayObj_fieldAccessorTable = new
+    internal_static_cman_BootstrapRequestDataLiveArrayObj_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cman_BootstrapRequestParamsDataLiveArrayObj_descriptor,
-        new java.lang.String[] { });
+        internal_static_cman_BootstrapRequestDataLiveArrayObj_descriptor,
+        new java.lang.String[] { "GroupID", });
     internal_static_cman_BootstrapResponse_descriptor =
       getDescriptor().getMessageTypes().get(24);
     internal_static_cman_BootstrapResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_BootstrapResponse_descriptor,
         new java.lang.String[] { "EventChannel", "Sessid", "Data", });
-    internal_static_cman_BootstrapResponseParamsData_descriptor =
+    internal_static_cman_BootstrapResponseData_descriptor =
       getDescriptor().getMessageTypes().get(25);
-    internal_static_cman_BootstrapResponseParamsData_fieldAccessorTable = new
+    internal_static_cman_BootstrapResponseData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cman_BootstrapResponseParamsData_descriptor,
-        new java.lang.String[] { "Action", "Name", "Data", "WireSerno", "ConfInfo", });
-    internal_static_cman_BootstrapResponseParamsDataConfInfo_descriptor =
+        internal_static_cman_BootstrapResponseData_descriptor,
+        new java.lang.String[] { "Action", "Name", "WireSerno", "ConfInfo", });
+    internal_static_cman_BootstrapResponseDataConfInfo_descriptor =
       getDescriptor().getMessageTypes().get(26);
-    internal_static_cman_BootstrapResponseParamsDataConfInfo_fieldAccessorTable = new
+    internal_static_cman_BootstrapResponseDataConfInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cman_BootstrapResponseParamsDataConfInfo_descriptor,
+        internal_static_cman_BootstrapResponseDataConfInfo_descriptor,
         new java.lang.String[] { "Size", "GroupMembers", });
-    internal_static_cman_BootstrapResponseParamsDataConfInfoGroupMembers_descriptor =
-      getDescriptor().getMessageTypes().get(27);
-    internal_static_cman_BootstrapResponseParamsDataConfInfoGroupMembers_fieldAccessorTable = new
+    internal_static_cman_BootstrapResponseDataConfInfo_GroupMembersEntry_descriptor =
+      internal_static_cman_BootstrapResponseDataConfInfo_descriptor.getNestedTypes().get(0);
+    internal_static_cman_BootstrapResponseDataConfInfo_GroupMembersEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cman_BootstrapResponseParamsDataConfInfoGroupMembers_descriptor,
-        new java.lang.String[] { "NoGroup", });
+        internal_static_cman_BootstrapResponseDataConfInfo_GroupMembersEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_cman_getNodeForConferenceRequest_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_cman_getNodeForConferenceRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_getNodeForConferenceRequest_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_cman_getNodeForConferenceResponse_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_cman_getNodeForConferenceResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_getNodeForConferenceResponse_descriptor,
         new java.lang.String[] { "NodeUUID", });
     internal_static_cman_confControlRequest_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_cman_confControlRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_confControlRequest_descriptor,
         new java.lang.String[] { "Command", "ConferenceName", "NodeUUID", "MemberID", "Value", });
     internal_static_cman_confControlResponse_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_cman_confControlResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_confControlResponse_descriptor,
         new java.lang.String[] { });
     internal_static_cman_pushMainRequest_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_cman_pushMainRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_pushMainRequest_descriptor,
         new java.lang.String[] { "Command", "ConferenceName", "NodeUUID", "Stream", });
     internal_static_cman_pushMainResponse_descriptor =
-      getDescriptor().getMessageTypes().get(33);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_cman_pushMainResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_pushMainResponse_descriptor,
         new java.lang.String[] { });
     internal_static_cman_pushSubCanvasRequest_descriptor =
-      getDescriptor().getMessageTypes().get(34);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_cman_pushSubCanvasRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_pushSubCanvasRequest_descriptor,
         new java.lang.String[] { "Command", "ConferenceName", "NodeUUID", "Layout", "Members", });
     internal_static_cman_pushSubCanvasRequestMembers_descriptor =
-      getDescriptor().getMessageTypes().get(35);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_cman_pushSubCanvasRequestMembers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_pushSubCanvasRequestMembers_descriptor,
         new java.lang.String[] { "MemberID", "Position", "NodeUUID", });
     internal_static_cman_pushSubCanvasResponse_descriptor =
-      getDescriptor().getMessageTypes().get(36);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_cman_pushSubCanvasResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_pushSubCanvasResponse_descriptor,
         new java.lang.String[] { });
     internal_static_cman_pushMainSubCanvasRequest_descriptor =
-      getDescriptor().getMessageTypes().get(37);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_cman_pushMainSubCanvasRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_pushMainSubCanvasRequest_descriptor,
         new java.lang.String[] { "Command", "ConferenceName", "NodeUUID", "Layout", "Members", });
     internal_static_cman_pushMainSubCanvasRequestMembers_descriptor =
-      getDescriptor().getMessageTypes().get(38);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_cman_pushMainSubCanvasRequestMembers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_pushMainSubCanvasRequestMembers_descriptor,
         new java.lang.String[] { "MemberID", "Position", "NodeUUID", });
     internal_static_cman_pushMainSubCanvasResponse_descriptor =
-      getDescriptor().getMessageTypes().get(39);
+      getDescriptor().getMessageTypes().get(38);
     internal_static_cman_pushMainSubCanvasResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_pushMainSubCanvasResponse_descriptor,
         new java.lang.String[] { });
     internal_static_cman_pushWholeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(40);
+      getDescriptor().getMessageTypes().get(39);
     internal_static_cman_pushWholeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_pushWholeRequest_descriptor,
         new java.lang.String[] { "Command", "ConferenceName", "NodeUUID", "Layout", "Members", });
     internal_static_cman_pushWholeRequestMembers_descriptor =
-      getDescriptor().getMessageTypes().get(41);
+      getDescriptor().getMessageTypes().get(40);
     internal_static_cman_pushWholeRequestMembers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_pushWholeRequestMembers_descriptor,
         new java.lang.String[] { "MemberID", "Position", "NodeUUID", });
     internal_static_cman_pushWholeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(42);
+      getDescriptor().getMessageTypes().get(41);
     internal_static_cman_pushWholeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_pushWholeResponse_descriptor,
         new java.lang.String[] { });
     internal_static_cman_loopSomeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(43);
+      getDescriptor().getMessageTypes().get(42);
     internal_static_cman_loopSomeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_loopSomeRequest_descriptor,
         new java.lang.String[] { "Command", "ConferenceName", "Interval", "Layout", "Members", });
     internal_static_cman_loopSomeRequestMembers_descriptor =
-      getDescriptor().getMessageTypes().get(44);
+      getDescriptor().getMessageTypes().get(43);
     internal_static_cman_loopSomeRequestMembers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_loopSomeRequestMembers_descriptor,
         new java.lang.String[] { "MemberID", "NodeUUID", });
     internal_static_cman_loopSomeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(45);
+      getDescriptor().getMessageTypes().get(44);
     internal_static_cman_loopSomeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_loopSomeResponse_descriptor,
         new java.lang.String[] { });
     internal_static_cman_getJWTRequest_descriptor =
-      getDescriptor().getMessageTypes().get(46);
+      getDescriptor().getMessageTypes().get(45);
     internal_static_cman_getJWTRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_getJWTRequest_descriptor,
         new java.lang.String[] { "Auth", "Claims", });
     internal_static_cman_getJWTRequestClaims_descriptor =
-      getDescriptor().getMessageTypes().get(47);
+      getDescriptor().getMessageTypes().get(46);
     internal_static_cman_getJWTRequestClaims_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_getJWTRequestClaims_descriptor,
         new java.lang.String[] { "UserId", "Expires", "Username", "Domain", "Login", "SessionUuid", });
     internal_static_cman_getJWTResponse_descriptor =
-      getDescriptor().getMessageTypes().get(48);
+      getDescriptor().getMessageTypes().get(47);
     internal_static_cman_getJWTResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_getJWTResponse_descriptor,
         new java.lang.String[] { "Token", });
     internal_static_cman_GetCManInfoRequest_descriptor =
-      getDescriptor().getMessageTypes().get(49);
+      getDescriptor().getMessageTypes().get(48);
     internal_static_cman_GetCManInfoRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_GetCManInfoRequest_descriptor,
         new java.lang.String[] { "Reply", });
     internal_static_cman_GetCManInfoResponse_descriptor =
-      getDescriptor().getMessageTypes().get(50);
+      getDescriptor().getMessageTypes().get(49);
     internal_static_cman_GetCManInfoResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_GetCManInfoResponse_descriptor,
         new java.lang.String[] { "Uuid", "IsLeader", "Mode", });
     internal_static_cman_ChangeLeaderRequest_descriptor =
-      getDescriptor().getMessageTypes().get(51);
+      getDescriptor().getMessageTypes().get(50);
     internal_static_cman_ChangeLeaderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_ChangeLeaderRequest_descriptor,
         new java.lang.String[] { "Uuid", "Mode", });
     internal_static_cman_ChangeLeaderResponse_descriptor =
-      getDescriptor().getMessageTypes().get(52);
+      getDescriptor().getMessageTypes().get(51);
     internal_static_cman_ChangeLeaderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cman_ChangeLeaderResponse_descriptor,
