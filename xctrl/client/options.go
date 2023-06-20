@@ -42,6 +42,8 @@ type CallOptions struct {
 	Retries int
 	// Request/Response timeout
 	RequestTimeout time.Duration
+	// Async
+	Async bool
 
 	// Middleware for low level call func
 	CallWrappers []CallWrapper
@@ -110,6 +112,14 @@ func WithAddress(a ...string) CallOption {
 func WithRequestTimeout(d time.Duration) CallOption {
 	return func(o *CallOptions) {
 		o.RequestTimeout = d
+	}
+}
+
+// WithAsync is a CallOption which overrides that which
+// set in Options.CallOptions
+func WithAsync() CallOption {
+	return func(o *CallOptions) {
+		o.Async = true
 	}
 }
 
