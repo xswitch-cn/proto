@@ -539,6 +539,8 @@ message SetVarRequest {
   string ctrl_uuid = 1;
   string uuid = 2;
   map<string, string> data = 3;
+  // 变量获取设置
+  repeated string channel_params = 4;
 }
 
 message GetVarRequest {
