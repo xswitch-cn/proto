@@ -298,6 +298,8 @@ message HangupRequest {
     BOTH = 2;
   }
   HangupFlag flag = 4;
+  // set channel params
+  map<string, string> data = 5;
 }
 
 message TransferRequest {
