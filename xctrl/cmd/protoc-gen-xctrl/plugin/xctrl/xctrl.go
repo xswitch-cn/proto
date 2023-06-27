@@ -120,9 +120,7 @@ func (g *micro) GenerateImports(file *generator.FileDescriptor, imports map[gene
 }
 
 // reservedClientName records whether a client name is reserved on the client side.
-var reservedClientName = map[string]bool{
-	"GetState": true, // conflict in ChannelEvent
-}
+var reservedClientName = map[string]bool{}
 
 var channelMethodTimeout = map[string]int{
 	"Answer":            5,
@@ -395,9 +393,15 @@ func (g *micro) generateClientSignature(servName string, method *pb.MethodDescri
 
 // generateChannelClientSignature returns the client-side signature for a Channel method.
 func (g *micro) generateChannelClientSignature(servName string, method *pb.MethodDescriptorProto) string {
+	channelClientName := map[string]bool{
+		"GetState": true,
+	}
 	origMethName := method.GetName()
 	methName := generator.CamelCase(origMethName)
 	if reservedClientName[methName] {
+		methName += "_"
+	}
+	if channelClientName[methName] {
 		methName += "_"
 	}
 	reqArg := "in *" + g.typeName(method.GetInputType())
