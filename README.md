@@ -58,6 +58,8 @@ make proto
 make java
 ```
 
+**注意**：Java代码仅为示例参考，`.proto`在后续更新时不会同步更新。如果使用Java的请自行执行`make proto`生成最新代码。
+
 - 生成Markdown文档
 
 ```shell
