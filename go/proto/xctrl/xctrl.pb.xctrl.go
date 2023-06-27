@@ -90,7 +90,7 @@ type XNodeService interface {
 	// 获取通道变量
 	GetVar(ctx context.Context, in *GetVarRequest, opts ...client.CallOption) (*VarResponse, error)
 	// 获取通道状态
-	GetState_(ctx context.Context, in *GetStateRequest, opts ...client.CallOption) (*StateResponse, error)
+	GetState(ctx context.Context, in *GetStateRequest, opts ...client.CallOption) (*StateResponse, error)
 	// 获取通道数据
 	GetChannelData(ctx context.Context, in *GetChannelDataRequest, opts ...client.CallOption) (*ChannelDataResponse, error)
 	//  读取DTMF按键
@@ -899,7 +899,7 @@ func (c *ChannelEvent) GetVar(in *GetVarRequest, opts ...client.CallOption) *Var
 	return response
 }
 
-func (c *xNodeService) GetState_(ctx context.Context, in *GetStateRequest, opts ...client.CallOption) (*StateResponse, error) {
+func (c *xNodeService) GetState(ctx context.Context, in *GetStateRequest, opts ...client.CallOption) (*StateResponse, error) {
 	req := c.c.NewRequest(c.name, "XNode.GetState", in)
 	out := new(StateResponse)
 	err := c.c.Call(ctx, req, out, opts...)
@@ -929,7 +929,7 @@ func (c *ChannelEvent) GetState_(in *GetStateRequest, opts ...client.CallOption)
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(5*time.Second))
 	}
-	response, err := Service().GetState_(context.TODO(), in, opts...)
+	response, err := Service().GetState(context.TODO(), in, opts...)
 	if err != nil {
 		response = new(StateResponse)
 		e := errors.Parse(err.Error())
@@ -1655,7 +1655,7 @@ type XNodeHandler interface {
 	// 获取通道变量
 	GetVar(context.Context, *GetVarRequest, *VarResponse) error
 	// 获取通道状态
-	GetState_(context.Context, *GetStateRequest, *StateResponse) error
+	GetState(context.Context, *GetStateRequest, *StateResponse) error
 	// 获取通道数据
 	GetChannelData(context.Context, *GetChannelDataRequest, *ChannelDataResponse) error
 	//  读取DTMF按键
@@ -1725,7 +1725,7 @@ func RegisterXNodeHandler(s server.Server, hdlr XNodeHandler, opts ...server.Han
 		Consult(ctx context.Context, in *ConsultRequest, out *Response) error
 		SetVar(ctx context.Context, in *SetVarRequest, out *Response) error
 		GetVar(ctx context.Context, in *GetVarRequest, out *VarResponse) error
-		GetState_(ctx context.Context, in *GetStateRequest, out *StateResponse) error
+		GetState(ctx context.Context, in *GetStateRequest, out *StateResponse) error
 		GetChannelData(ctx context.Context, in *GetChannelDataRequest, out *ChannelDataResponse) error
 		ReadDTMF(ctx context.Context, in *DTMFRequest, out *DTMFResponse) error
 		ReadDigits(ctx context.Context, in *DigitsRequest, out *DigitsResponse) error
@@ -1844,8 +1844,8 @@ func (h *xNodeHandler) GetVar(ctx context.Context, in *GetVarRequest, out *VarRe
 	return h.XNodeHandler.GetVar(ctx, in, out)
 }
 
-func (h *xNodeHandler) GetState_(ctx context.Context, in *GetStateRequest, out *StateResponse) error {
-	return h.XNodeHandler.GetState_(ctx, in, out)
+func (h *xNodeHandler) GetState(ctx context.Context, in *GetStateRequest, out *StateResponse) error {
+	return h.XNodeHandler.GetState(ctx, in, out)
 }
 
 func (h *xNodeHandler) GetChannelData(ctx context.Context, in *GetChannelDataRequest, out *ChannelDataResponse) error {
