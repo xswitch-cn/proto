@@ -223,7 +223,7 @@ func (x RecordRequest_RecordAction) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use RecordRequest_RecordAction.Descriptor instead.
 func (RecordRequest_RecordAction) EnumDescriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{19, 0}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{20, 0}
 }
 
 type HangupRequest_HangupFlag int32
@@ -272,7 +272,7 @@ func (x HangupRequest_HangupFlag) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use HangupRequest_HangupFlag.Descriptor instead.
 func (HangupRequest_HangupFlag) EnumDescriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{21, 0}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{22, 0}
 }
 
 type AcceptRequest struct {
@@ -1417,6 +1417,61 @@ func (x *StopRequest) GetUuid() string {
 	return ""
 }
 
+type AppParam struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	App  string `protobuf:"bytes,1,opt,name=app,proto3" json:"app,omitempty"`
+	Data string `protobuf:"bytes,2,opt,name=data,proto3" json:"data,omitempty"`
+}
+
+func (x *AppParam) Reset() {
+	*x = AppParam{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[17]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *AppParam) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AppParam) ProtoMessage() {}
+
+func (x *AppParam) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[17]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AppParam.ProtoReflect.Descriptor instead.
+func (*AppParam) Descriptor() ([]byte, []int) {
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *AppParam) GetApp() string {
+	if x != nil {
+		return x.App
+	}
+	return ""
+}
+
+func (x *AppParam) GetData() string {
+	if x != nil {
+		return x.Data
+	}
+	return ""
+}
+
 type BroadcastRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1427,12 +1482,16 @@ type BroadcastRequest struct {
 	Media    *Media `protobuf:"bytes,3,opt,name=media,proto3" json:"media,omitempty"`
 	// BOTH, ALEG, BLEG, AHOLDB, BHOLDA
 	Option string `protobuf:"bytes,4,opt,name=option,proto3" json:"option,omitempty"`
+	//IGNORE_READ
+	Record string `protobuf:"bytes,5,opt,name=record,proto3" json:"record,omitempty"`
+	//apps
+	Apps []*AppParam `protobuf:"bytes,6,rep,name=apps,proto3" json:"apps,omitempty"`
 }
 
 func (x *BroadcastRequest) Reset() {
 	*x = BroadcastRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[17]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1445,7 +1504,7 @@ func (x *BroadcastRequest) String() string {
 func (*BroadcastRequest) ProtoMessage() {}
 
 func (x *BroadcastRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[17]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1458,7 +1517,7 @@ func (x *BroadcastRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BroadcastRequest.ProtoReflect.Descriptor instead.
 func (*BroadcastRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{17}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *BroadcastRequest) GetCtrlUuid() string {
@@ -1489,6 +1548,20 @@ func (x *BroadcastRequest) GetOption() string {
 	return ""
 }
 
+func (x *BroadcastRequest) GetRecord() string {
+	if x != nil {
+		return x.Record
+	}
+	return ""
+}
+
+func (x *BroadcastRequest) GetApps() []*AppParam {
+	if x != nil {
+		return x.Apps
+	}
+	return nil
+}
+
 type MuteRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1506,7 +1579,7 @@ type MuteRequest struct {
 func (x *MuteRequest) Reset() {
 	*x = MuteRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[18]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1519,7 +1592,7 @@ func (x *MuteRequest) String() string {
 func (*MuteRequest) ProtoMessage() {}
 
 func (x *MuteRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[18]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1532,7 +1605,7 @@ func (x *MuteRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MuteRequest.ProtoReflect.Descriptor instead.
 func (*MuteRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{18}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *MuteRequest) GetCtrlUuid() string {
@@ -1595,7 +1668,7 @@ type RecordRequest struct {
 func (x *RecordRequest) Reset() {
 	*x = RecordRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[19]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1608,7 +1681,7 @@ func (x *RecordRequest) String() string {
 func (*RecordRequest) ProtoMessage() {}
 
 func (x *RecordRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[19]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1621,7 +1694,7 @@ func (x *RecordRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RecordRequest.ProtoReflect.Descriptor instead.
 func (*RecordRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{19}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *RecordRequest) GetCtrlUuid() string {
@@ -1711,7 +1784,7 @@ type RecordResponse struct {
 func (x *RecordResponse) Reset() {
 	*x = RecordResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[20]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1724,7 +1797,7 @@ func (x *RecordResponse) String() string {
 func (*RecordResponse) ProtoMessage() {}
 
 func (x *RecordResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[20]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1737,7 +1810,7 @@ func (x *RecordResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RecordResponse.ProtoReflect.Descriptor instead.
 func (*RecordResponse) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{20}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *RecordResponse) GetCode() int32 {
@@ -1792,7 +1865,7 @@ type HangupRequest struct {
 func (x *HangupRequest) Reset() {
 	*x = HangupRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[21]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1805,7 +1878,7 @@ func (x *HangupRequest) String() string {
 func (*HangupRequest) ProtoMessage() {}
 
 func (x *HangupRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[21]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1818,7 +1891,7 @@ func (x *HangupRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HangupRequest.ProtoReflect.Descriptor instead.
 func (*HangupRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{21}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *HangupRequest) GetCtrlUuid() string {
@@ -1871,7 +1944,7 @@ type TransferRequest struct {
 func (x *TransferRequest) Reset() {
 	*x = TransferRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[22]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[23]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1884,7 +1957,7 @@ func (x *TransferRequest) String() string {
 func (*TransferRequest) ProtoMessage() {}
 
 func (x *TransferRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[22]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[23]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1897,7 +1970,7 @@ func (x *TransferRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TransferRequest.ProtoReflect.Descriptor instead.
 func (*TransferRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{22}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *TransferRequest) GetCtrlUuid() string {
@@ -1954,7 +2027,7 @@ type ThreeWayRequest struct {
 func (x *ThreeWayRequest) Reset() {
 	*x = ThreeWayRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[23]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[24]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1967,7 +2040,7 @@ func (x *ThreeWayRequest) String() string {
 func (*ThreeWayRequest) ProtoMessage() {}
 
 func (x *ThreeWayRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[23]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[24]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1980,7 +2053,7 @@ func (x *ThreeWayRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ThreeWayRequest.ProtoReflect.Descriptor instead.
 func (*ThreeWayRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{23}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *ThreeWayRequest) GetCtrlUuid() string {
@@ -2041,7 +2114,7 @@ type Echo2Request struct {
 func (x *Echo2Request) Reset() {
 	*x = Echo2Request{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[24]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[25]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2054,7 +2127,7 @@ func (x *Echo2Request) String() string {
 func (*Echo2Request) ProtoMessage() {}
 
 func (x *Echo2Request) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[24]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[25]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2067,7 +2140,7 @@ func (x *Echo2Request) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Echo2Request.ProtoReflect.Descriptor instead.
 func (*Echo2Request) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{24}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *Echo2Request) GetCtrlUuid() string {
@@ -2111,7 +2184,7 @@ type InterceptRequest struct {
 func (x *InterceptRequest) Reset() {
 	*x = InterceptRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[25]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[26]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2124,7 +2197,7 @@ func (x *InterceptRequest) String() string {
 func (*InterceptRequest) ProtoMessage() {}
 
 func (x *InterceptRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[25]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[26]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2137,7 +2210,7 @@ func (x *InterceptRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InterceptRequest.ProtoReflect.Descriptor instead.
 func (*InterceptRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{25}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *InterceptRequest) GetCtrlUuid() string {
@@ -2174,7 +2247,7 @@ type ConsultRequest struct {
 func (x *ConsultRequest) Reset() {
 	*x = ConsultRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[26]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[27]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2187,7 +2260,7 @@ func (x *ConsultRequest) String() string {
 func (*ConsultRequest) ProtoMessage() {}
 
 func (x *ConsultRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[26]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[27]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2200,7 +2273,7 @@ func (x *ConsultRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConsultRequest.ProtoReflect.Descriptor instead.
 func (*ConsultRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{26}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *ConsultRequest) GetCtrlUuid() string {
@@ -2244,7 +2317,7 @@ type RecordEvent struct {
 func (x *RecordEvent) Reset() {
 	*x = RecordEvent{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[27]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[28]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2257,7 +2330,7 @@ func (x *RecordEvent) String() string {
 func (*RecordEvent) ProtoMessage() {}
 
 func (x *RecordEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[27]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[28]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2270,7 +2343,7 @@ func (x *RecordEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RecordEvent.ProtoReflect.Descriptor instead.
 func (*RecordEvent) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{27}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *RecordEvent) GetNodeUuid() string {
@@ -2364,7 +2437,7 @@ type Node struct {
 func (x *Node) Reset() {
 	*x = Node{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[28]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[29]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2377,7 +2450,7 @@ func (x *Node) String() string {
 func (*Node) ProtoMessage() {}
 
 func (x *Node) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[28]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[29]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2390,7 +2463,7 @@ func (x *Node) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Node.ProtoReflect.Descriptor instead.
 func (*Node) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{28}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *Node) GetUuid() string {
@@ -2517,7 +2590,7 @@ type SipProfile struct {
 func (x *SipProfile) Reset() {
 	*x = SipProfile{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[29]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[30]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2530,7 +2603,7 @@ func (x *SipProfile) String() string {
 func (*SipProfile) ProtoMessage() {}
 
 func (x *SipProfile) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[29]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[30]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2543,7 +2616,7 @@ func (x *SipProfile) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SipProfile.ProtoReflect.Descriptor instead.
 func (*SipProfile) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{29}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{30}
 }
 
 func (x *SipProfile) GetName() string {
@@ -2576,7 +2649,7 @@ type Ctrl struct {
 func (x *Ctrl) Reset() {
 	*x = Ctrl{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[30]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[31]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2589,7 +2662,7 @@ func (x *Ctrl) String() string {
 func (*Ctrl) ProtoMessage() {}
 
 func (x *Ctrl) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[30]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[31]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2602,7 +2675,7 @@ func (x *Ctrl) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Ctrl.ProtoReflect.Descriptor instead.
 func (*Ctrl) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{30}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{31}
 }
 
 func (x *Ctrl) GetUuid() string {
@@ -2686,7 +2759,7 @@ type ChannelEvent struct {
 func (x *ChannelEvent) Reset() {
 	*x = ChannelEvent{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[31]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[32]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2699,7 +2772,7 @@ func (x *ChannelEvent) String() string {
 func (*ChannelEvent) ProtoMessage() {}
 
 func (x *ChannelEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[31]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[32]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2712,7 +2785,7 @@ func (x *ChannelEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChannelEvent.ProtoReflect.Descriptor instead.
 func (*ChannelEvent) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{31}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{32}
 }
 
 func (x *ChannelEvent) GetNodeUuid() string {
@@ -2911,7 +2984,7 @@ type DTMFEvent struct {
 func (x *DTMFEvent) Reset() {
 	*x = DTMFEvent{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[32]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[33]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2924,7 +2997,7 @@ func (x *DTMFEvent) String() string {
 func (*DTMFEvent) ProtoMessage() {}
 
 func (x *DTMFEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[32]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[33]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2937,7 +3010,7 @@ func (x *DTMFEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DTMFEvent.ProtoReflect.Descriptor instead.
 func (*DTMFEvent) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{32}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{33}
 }
 
 func (x *DTMFEvent) GetNodeUuid() string {
@@ -2994,7 +3067,7 @@ type CallParam struct {
 func (x *CallParam) Reset() {
 	*x = CallParam{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[33]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[34]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3007,7 +3080,7 @@ func (x *CallParam) String() string {
 func (*CallParam) ProtoMessage() {}
 
 func (x *CallParam) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[33]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[34]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3020,7 +3093,7 @@ func (x *CallParam) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CallParam.ProtoReflect.Descriptor instead.
 func (*CallParam) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{33}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{34}
 }
 
 func (x *CallParam) GetUuid() string {
@@ -3093,7 +3166,7 @@ type Destination struct {
 func (x *Destination) Reset() {
 	*x = Destination{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[34]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[35]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3106,7 +3179,7 @@ func (x *Destination) String() string {
 func (*Destination) ProtoMessage() {}
 
 func (x *Destination) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[34]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[35]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3119,7 +3192,7 @@ func (x *Destination) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Destination.ProtoReflect.Descriptor instead.
 func (*Destination) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{34}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{35}
 }
 
 func (x *Destination) GetRingall() bool {
@@ -3165,7 +3238,7 @@ type SetVarRequest struct {
 func (x *SetVarRequest) Reset() {
 	*x = SetVarRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[35]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[36]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3178,7 +3251,7 @@ func (x *SetVarRequest) String() string {
 func (*SetVarRequest) ProtoMessage() {}
 
 func (x *SetVarRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[35]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[36]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3191,7 +3264,7 @@ func (x *SetVarRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SetVarRequest.ProtoReflect.Descriptor instead.
 func (*SetVarRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{35}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{36}
 }
 
 func (x *SetVarRequest) GetCtrlUuid() string {
@@ -3235,7 +3308,7 @@ type GetVarRequest struct {
 func (x *GetVarRequest) Reset() {
 	*x = GetVarRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[36]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[37]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3248,7 +3321,7 @@ func (x *GetVarRequest) String() string {
 func (*GetVarRequest) ProtoMessage() {}
 
 func (x *GetVarRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[36]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[37]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3261,7 +3334,7 @@ func (x *GetVarRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetVarRequest.ProtoReflect.Descriptor instead.
 func (*GetVarRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{36}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{37}
 }
 
 func (x *GetVarRequest) GetCtrlUuid() string {
@@ -3301,7 +3374,7 @@ type VarResponse struct {
 func (x *VarResponse) Reset() {
 	*x = VarResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[37]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[38]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3314,7 +3387,7 @@ func (x *VarResponse) String() string {
 func (*VarResponse) ProtoMessage() {}
 
 func (x *VarResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[37]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[38]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3327,7 +3400,7 @@ func (x *VarResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VarResponse.ProtoReflect.Descriptor instead.
 func (*VarResponse) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{37}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{38}
 }
 
 func (x *VarResponse) GetCode() int32 {
@@ -3377,7 +3450,7 @@ type GetStateRequest struct {
 func (x *GetStateRequest) Reset() {
 	*x = GetStateRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[38]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[39]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3390,7 +3463,7 @@ func (x *GetStateRequest) String() string {
 func (*GetStateRequest) ProtoMessage() {}
 
 func (x *GetStateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[38]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[39]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3403,7 +3476,7 @@ func (x *GetStateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetStateRequest.ProtoReflect.Descriptor instead.
 func (*GetStateRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{38}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{39}
 }
 
 func (x *GetStateRequest) GetCtrlUuid() string {
@@ -3445,7 +3518,7 @@ type StateResponse struct {
 func (x *StateResponse) Reset() {
 	*x = StateResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[39]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[40]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3458,7 +3531,7 @@ func (x *StateResponse) String() string {
 func (*StateResponse) ProtoMessage() {}
 
 func (x *StateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[39]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[40]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3471,7 +3544,7 @@ func (x *StateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StateResponse.ProtoReflect.Descriptor instead.
 func (*StateResponse) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{39}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{40}
 }
 
 func (x *StateResponse) GetCode() int32 {
@@ -3593,7 +3666,7 @@ type GetChannelDataRequest struct {
 func (x *GetChannelDataRequest) Reset() {
 	*x = GetChannelDataRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[40]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[41]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3606,7 +3679,7 @@ func (x *GetChannelDataRequest) String() string {
 func (*GetChannelDataRequest) ProtoMessage() {}
 
 func (x *GetChannelDataRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[40]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[41]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3619,7 +3692,7 @@ func (x *GetChannelDataRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetChannelDataRequest.ProtoReflect.Descriptor instead.
 func (*GetChannelDataRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{40}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{41}
 }
 
 func (x *GetChannelDataRequest) GetCtrlUuid() string {
@@ -3661,7 +3734,7 @@ type ChannelDataResponse struct {
 func (x *ChannelDataResponse) Reset() {
 	*x = ChannelDataResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[41]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[42]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3674,7 +3747,7 @@ func (x *ChannelDataResponse) String() string {
 func (*ChannelDataResponse) ProtoMessage() {}
 
 func (x *ChannelDataResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[41]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[42]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3687,7 +3760,7 @@ func (x *ChannelDataResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChannelDataResponse.ProtoReflect.Descriptor instead.
 func (*ChannelDataResponse) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{41}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{42}
 }
 
 func (x *ChannelDataResponse) GetCode() int32 {
@@ -3747,7 +3820,7 @@ type ChannelData struct {
 func (x *ChannelData) Reset() {
 	*x = ChannelData{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[42]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[43]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3760,7 +3833,7 @@ func (x *ChannelData) String() string {
 func (*ChannelData) ProtoMessage() {}
 
 func (x *ChannelData) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[42]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[43]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3773,7 +3846,7 @@ func (x *ChannelData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChannelData.ProtoReflect.Descriptor instead.
 func (*ChannelData) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{42}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{43}
 }
 
 func (x *ChannelData) GetVariableCcQueue() string {
@@ -3842,7 +3915,7 @@ type DTMFRequest struct {
 func (x *DTMFRequest) Reset() {
 	*x = DTMFRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[43]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[44]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3855,7 +3928,7 @@ func (x *DTMFRequest) String() string {
 func (*DTMFRequest) ProtoMessage() {}
 
 func (x *DTMFRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[43]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[44]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3868,7 +3941,7 @@ func (x *DTMFRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DTMFRequest.ProtoReflect.Descriptor instead.
 func (*DTMFRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{43}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{44}
 }
 
 func (x *DTMFRequest) GetCtrlUuid() string {
@@ -3973,7 +4046,7 @@ type DTMFResponse struct {
 func (x *DTMFResponse) Reset() {
 	*x = DTMFResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[44]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[45]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3986,7 +4059,7 @@ func (x *DTMFResponse) String() string {
 func (*DTMFResponse) ProtoMessage() {}
 
 func (x *DTMFResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[44]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[45]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3999,7 +4072,7 @@ func (x *DTMFResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DTMFResponse.ProtoReflect.Descriptor instead.
 func (*DTMFResponse) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{44}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{45}
 }
 
 func (x *DTMFResponse) GetCode() int32 {
@@ -4075,7 +4148,7 @@ type DigitsRequest struct {
 func (x *DigitsRequest) Reset() {
 	*x = DigitsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[45]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[46]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4088,7 +4161,7 @@ func (x *DigitsRequest) String() string {
 func (*DigitsRequest) ProtoMessage() {}
 
 func (x *DigitsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[45]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[46]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4101,7 +4174,7 @@ func (x *DigitsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DigitsRequest.ProtoReflect.Descriptor instead.
 func (*DigitsRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{45}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{46}
 }
 
 func (x *DigitsRequest) GetCtrlUuid() string {
@@ -4206,7 +4279,7 @@ type DigitsResponse struct {
 func (x *DigitsResponse) Reset() {
 	*x = DigitsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[46]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[47]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4219,7 +4292,7 @@ func (x *DigitsResponse) String() string {
 func (*DigitsResponse) ProtoMessage() {}
 
 func (x *DigitsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[46]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[47]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4232,7 +4305,7 @@ func (x *DigitsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DigitsResponse.ProtoReflect.Descriptor instead.
 func (*DigitsResponse) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{46}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{47}
 }
 
 func (x *DigitsResponse) GetCode() int32 {
@@ -4298,7 +4371,7 @@ type SpeechRequest struct {
 func (x *SpeechRequest) Reset() {
 	*x = SpeechRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[47]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[48]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4311,7 +4384,7 @@ func (x *SpeechRequest) String() string {
 func (*SpeechRequest) ProtoMessage() {}
 
 func (x *SpeechRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[47]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[48]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4324,7 +4397,7 @@ func (x *SpeechRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SpeechRequest.ProtoReflect.Descriptor instead.
 func (*SpeechRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{47}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{48}
 }
 
 func (x *SpeechRequest) GetCtrlUuid() string {
@@ -4422,7 +4495,7 @@ type DetectRequest struct {
 func (x *DetectRequest) Reset() {
 	*x = DetectRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[48]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[49]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4435,7 +4508,7 @@ func (x *DetectRequest) String() string {
 func (*DetectRequest) ProtoMessage() {}
 
 func (x *DetectRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[48]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[49]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4448,7 +4521,7 @@ func (x *DetectRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DetectRequest.ProtoReflect.Descriptor instead.
 func (*DetectRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{48}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{49}
 }
 
 func (x *DetectRequest) GetCtrlUuid() string {
@@ -4514,7 +4587,7 @@ type DetectedData struct {
 func (x *DetectedData) Reset() {
 	*x = DetectedData{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[49]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[50]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4527,7 +4600,7 @@ func (x *DetectedData) String() string {
 func (*DetectedData) ProtoMessage() {}
 
 func (x *DetectedData) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[49]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[50]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4540,7 +4613,7 @@ func (x *DetectedData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DetectedData.ProtoReflect.Descriptor instead.
 func (*DetectedData) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{49}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{50}
 }
 
 func (x *DetectedData) GetDtmf() string {
@@ -4653,7 +4726,7 @@ type EngineData struct {
 func (x *EngineData) Reset() {
 	*x = EngineData{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[50]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[51]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4666,7 +4739,7 @@ func (x *EngineData) String() string {
 func (*EngineData) ProtoMessage() {}
 
 func (x *EngineData) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[50]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[51]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4679,7 +4752,7 @@ func (x *EngineData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EngineData.ProtoReflect.Descriptor instead.
 func (*EngineData) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{50}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{51}
 }
 
 func (x *EngineData) GetHeader() *Header {
@@ -4712,7 +4785,7 @@ type Header struct {
 func (x *Header) Reset() {
 	*x = Header{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[51]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[52]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4725,7 +4798,7 @@ func (x *Header) String() string {
 func (*Header) ProtoMessage() {}
 
 func (x *Header) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[51]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[52]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4738,7 +4811,7 @@ func (x *Header) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Header.ProtoReflect.Descriptor instead.
 func (*Header) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{51}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{52}
 }
 
 func (x *Header) GetNamespace() string {
@@ -4805,7 +4878,7 @@ type Payload struct {
 func (x *Payload) Reset() {
 	*x = Payload{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[52]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[53]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4818,7 +4891,7 @@ func (x *Payload) String() string {
 func (*Payload) ProtoMessage() {}
 
 func (x *Payload) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[52]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[53]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4831,7 +4904,7 @@ func (x *Payload) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Payload.ProtoReflect.Descriptor instead.
 func (*Payload) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{52}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{53}
 }
 
 func (x *Payload) GetIndex() float64 {
@@ -4933,7 +5006,7 @@ type StashResult struct {
 func (x *StashResult) Reset() {
 	*x = StashResult{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[53]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[54]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4946,7 +5019,7 @@ func (x *StashResult) String() string {
 func (*StashResult) ProtoMessage() {}
 
 func (x *StashResult) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[53]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[54]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4959,7 +5032,7 @@ func (x *StashResult) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StashResult.ProtoReflect.Descriptor instead.
 func (*StashResult) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{53}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{54}
 }
 
 func (x *StashResult) GetSentenceId() float64 {
@@ -5013,7 +5086,7 @@ type DetectResponse struct {
 func (x *DetectResponse) Reset() {
 	*x = DetectResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[54]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[55]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5026,7 +5099,7 @@ func (x *DetectResponse) String() string {
 func (*DetectResponse) ProtoMessage() {}
 
 func (x *DetectResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[54]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[55]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5039,7 +5112,7 @@ func (x *DetectResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DetectResponse.ProtoReflect.Descriptor instead.
 func (*DetectResponse) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{54}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{55}
 }
 
 func (x *DetectResponse) GetCode() int32 {
@@ -5089,7 +5162,7 @@ type StopDetectRequest struct {
 func (x *StopDetectRequest) Reset() {
 	*x = StopDetectRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[55]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[56]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5102,7 +5175,7 @@ func (x *StopDetectRequest) String() string {
 func (*StopDetectRequest) ProtoMessage() {}
 
 func (x *StopDetectRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[55]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[56]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5115,7 +5188,7 @@ func (x *StopDetectRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StopDetectRequest.ProtoReflect.Descriptor instead.
 func (*StopDetectRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{55}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{56}
 }
 
 func (x *StopDetectRequest) GetCtrlUuid() string {
@@ -5154,7 +5227,7 @@ type RingBackDetectionRequest struct {
 func (x *RingBackDetectionRequest) Reset() {
 	*x = RingBackDetectionRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[56]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[57]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5167,7 +5240,7 @@ func (x *RingBackDetectionRequest) String() string {
 func (*RingBackDetectionRequest) ProtoMessage() {}
 
 func (x *RingBackDetectionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[56]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[57]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5180,7 +5253,7 @@ func (x *RingBackDetectionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RingBackDetectionRequest.ProtoReflect.Descriptor instead.
 func (*RingBackDetectionRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{56}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{57}
 }
 
 func (x *RingBackDetectionRequest) GetCtrlUuid() string {
@@ -5246,7 +5319,7 @@ type Action struct {
 func (x *Action) Reset() {
 	*x = Action{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[57]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[58]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5259,7 +5332,7 @@ func (x *Action) String() string {
 func (*Action) ProtoMessage() {}
 
 func (x *Action) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[57]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[58]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5272,7 +5345,7 @@ func (x *Action) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Action.ProtoReflect.Descriptor instead.
 func (*Action) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{57}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{58}
 }
 
 func (x *Action) GetName() string {
@@ -5324,7 +5397,7 @@ type DetectFaceRequest struct {
 func (x *DetectFaceRequest) Reset() {
 	*x = DetectFaceRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[58]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[59]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5337,7 +5410,7 @@ func (x *DetectFaceRequest) String() string {
 func (*DetectFaceRequest) ProtoMessage() {}
 
 func (x *DetectFaceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[58]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[59]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5350,7 +5423,7 @@ func (x *DetectFaceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DetectFaceRequest.ProtoReflect.Descriptor instead.
 func (*DetectFaceRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{58}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{59}
 }
 
 func (x *DetectFaceRequest) GetCtrlUuid() string {
@@ -5433,7 +5506,7 @@ type DetectedFaceEvent struct {
 func (x *DetectedFaceEvent) Reset() {
 	*x = DetectedFaceEvent{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[59]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[60]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5446,7 +5519,7 @@ func (x *DetectedFaceEvent) String() string {
 func (*DetectedFaceEvent) ProtoMessage() {}
 
 func (x *DetectedFaceEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[59]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[60]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5459,7 +5532,7 @@ func (x *DetectedFaceEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DetectedFaceEvent.ProtoReflect.Descriptor instead.
 func (*DetectedFaceEvent) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{59}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{60}
 }
 
 func (x *DetectedFaceEvent) GetNodeUuid() string {
@@ -5524,7 +5597,7 @@ type SendDTMFRequest struct {
 func (x *SendDTMFRequest) Reset() {
 	*x = SendDTMFRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[60]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[61]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5537,7 +5610,7 @@ func (x *SendDTMFRequest) String() string {
 func (*SendDTMFRequest) ProtoMessage() {}
 
 func (x *SendDTMFRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[60]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[61]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5550,7 +5623,7 @@ func (x *SendDTMFRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SendDTMFRequest.ProtoReflect.Descriptor instead.
 func (*SendDTMFRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{60}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{61}
 }
 
 func (x *SendDTMFRequest) GetCtrlUuid() string {
@@ -5588,7 +5661,7 @@ type SendINFORequest struct {
 func (x *SendINFORequest) Reset() {
 	*x = SendINFORequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[61]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[62]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5601,7 +5674,7 @@ func (x *SendINFORequest) String() string {
 func (*SendINFORequest) ProtoMessage() {}
 
 func (x *SendINFORequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[61]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[62]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5614,7 +5687,7 @@ func (x *SendINFORequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SendINFORequest.ProtoReflect.Descriptor instead.
 func (*SendINFORequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{61}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{62}
 }
 
 func (x *SendINFORequest) GetCtrlUuid() string {
@@ -5661,7 +5734,7 @@ type HoldRequest struct {
 func (x *HoldRequest) Reset() {
 	*x = HoldRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[62]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[63]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5674,7 +5747,7 @@ func (x *HoldRequest) String() string {
 func (*HoldRequest) ProtoMessage() {}
 
 func (x *HoldRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[62]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[63]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5687,7 +5760,7 @@ func (x *HoldRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HoldRequest.ProtoReflect.Descriptor instead.
 func (*HoldRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{62}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{63}
 }
 
 func (x *HoldRequest) GetCtrlUuid() string {
@@ -5734,7 +5807,7 @@ type VideoResizeEvent struct {
 func (x *VideoResizeEvent) Reset() {
 	*x = VideoResizeEvent{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[63]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[64]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5747,7 +5820,7 @@ func (x *VideoResizeEvent) String() string {
 func (*VideoResizeEvent) ProtoMessage() {}
 
 func (x *VideoResizeEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[63]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[64]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5760,7 +5833,7 @@ func (x *VideoResizeEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VideoResizeEvent.ProtoReflect.Descriptor instead.
 func (*VideoResizeEvent) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{63}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{64}
 }
 
 func (x *VideoResizeEvent) GetNodeUuid() string {
@@ -5817,7 +5890,7 @@ type JStatusRequest struct {
 func (x *JStatusRequest) Reset() {
 	*x = JStatusRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[64]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[65]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5830,7 +5903,7 @@ func (x *JStatusRequest) String() string {
 func (*JStatusRequest) ProtoMessage() {}
 
 func (x *JStatusRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[64]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[65]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5843,7 +5916,7 @@ func (x *JStatusRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use JStatusRequest.ProtoReflect.Descriptor instead.
 func (*JStatusRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{64}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{65}
 }
 
 func (x *JStatusRequest) GetCtrlUuid() string {
@@ -5877,7 +5950,7 @@ type JStatusUptime struct {
 func (x *JStatusUptime) Reset() {
 	*x = JStatusUptime{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[65]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[66]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5890,7 +5963,7 @@ func (x *JStatusUptime) String() string {
 func (*JStatusUptime) ProtoMessage() {}
 
 func (x *JStatusUptime) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[65]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[66]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5903,7 +5976,7 @@ func (x *JStatusUptime) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use JStatusUptime.ProtoReflect.Descriptor instead.
 func (*JStatusUptime) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{65}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{66}
 }
 
 func (x *JStatusUptime) GetYears() int32 {
@@ -5970,7 +6043,7 @@ type JStatusSessionsCount struct {
 func (x *JStatusSessionsCount) Reset() {
 	*x = JStatusSessionsCount{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[66]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[67]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5983,7 +6056,7 @@ func (x *JStatusSessionsCount) String() string {
 func (*JStatusSessionsCount) ProtoMessage() {}
 
 func (x *JStatusSessionsCount) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[66]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[67]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5996,7 +6069,7 @@ func (x *JStatusSessionsCount) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use JStatusSessionsCount.ProtoReflect.Descriptor instead.
 func (*JStatusSessionsCount) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{66}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{67}
 }
 
 func (x *JStatusSessionsCount) GetTotal() int32 {
@@ -6048,7 +6121,7 @@ type JStatusSessionsRate struct {
 func (x *JStatusSessionsRate) Reset() {
 	*x = JStatusSessionsRate{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[67]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[68]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6061,7 +6134,7 @@ func (x *JStatusSessionsRate) String() string {
 func (*JStatusSessionsRate) ProtoMessage() {}
 
 func (x *JStatusSessionsRate) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[67]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[68]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6074,7 +6147,7 @@ func (x *JStatusSessionsRate) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use JStatusSessionsRate.ProtoReflect.Descriptor instead.
 func (*JStatusSessionsRate) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{67}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{68}
 }
 
 func (x *JStatusSessionsRate) GetCurrent() int32 {
@@ -6117,7 +6190,7 @@ type JStatusSessions struct {
 func (x *JStatusSessions) Reset() {
 	*x = JStatusSessions{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[68]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[69]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6130,7 +6203,7 @@ func (x *JStatusSessions) String() string {
 func (*JStatusSessions) ProtoMessage() {}
 
 func (x *JStatusSessions) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[68]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[69]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6143,7 +6216,7 @@ func (x *JStatusSessions) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use JStatusSessions.ProtoReflect.Descriptor instead.
 func (*JStatusSessions) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{68}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{69}
 }
 
 func (x *JStatusSessions) GetCount() *JStatusSessionsCount {
@@ -6172,7 +6245,7 @@ type JStatusIdleCPU struct {
 func (x *JStatusIdleCPU) Reset() {
 	*x = JStatusIdleCPU{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[69]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[70]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6185,7 +6258,7 @@ func (x *JStatusIdleCPU) String() string {
 func (*JStatusIdleCPU) ProtoMessage() {}
 
 func (x *JStatusIdleCPU) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[69]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[70]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6198,7 +6271,7 @@ func (x *JStatusIdleCPU) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use JStatusIdleCPU.ProtoReflect.Descriptor instead.
 func (*JStatusIdleCPU) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{69}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{70}
 }
 
 func (x *JStatusIdleCPU) GetUsed() float32 {
@@ -6227,7 +6300,7 @@ type JStatusStackSize struct {
 func (x *JStatusStackSize) Reset() {
 	*x = JStatusStackSize{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[70]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[71]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6240,7 +6313,7 @@ func (x *JStatusStackSize) String() string {
 func (*JStatusStackSize) ProtoMessage() {}
 
 func (x *JStatusStackSize) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[70]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[71]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6253,7 +6326,7 @@ func (x *JStatusStackSize) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use JStatusStackSize.ProtoReflect.Descriptor instead.
 func (*JStatusStackSize) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{70}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{71}
 }
 
 func (x *JStatusStackSize) GetCurrent() int32 {
@@ -6284,7 +6357,7 @@ type JStatusResponse struct {
 func (x *JStatusResponse) Reset() {
 	*x = JStatusResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[71]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[72]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6297,7 +6370,7 @@ func (x *JStatusResponse) String() string {
 func (*JStatusResponse) ProtoMessage() {}
 
 func (x *JStatusResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[71]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[72]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6310,7 +6383,7 @@ func (x *JStatusResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use JStatusResponse.ProtoReflect.Descriptor instead.
 func (*JStatusResponse) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{71}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{72}
 }
 
 func (x *JStatusResponse) GetCode() int32 {
@@ -6357,7 +6430,7 @@ type JStatusResponseData struct {
 func (x *JStatusResponseData) Reset() {
 	*x = JStatusResponseData{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[72]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[73]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6370,7 +6443,7 @@ func (x *JStatusResponseData) String() string {
 func (*JStatusResponseData) ProtoMessage() {}
 
 func (x *JStatusResponseData) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[72]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[73]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6383,7 +6456,7 @@ func (x *JStatusResponseData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use JStatusResponseData.ProtoReflect.Descriptor instead.
 func (*JStatusResponseData) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{72}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{73}
 }
 
 func (x *JStatusResponseData) GetSystemStatus() string {
@@ -6441,7 +6514,7 @@ type ConferenceInfoRequestDataData struct {
 func (x *ConferenceInfoRequestDataData) Reset() {
 	*x = ConferenceInfoRequestDataData{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[73]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[74]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6454,7 +6527,7 @@ func (x *ConferenceInfoRequestDataData) String() string {
 func (*ConferenceInfoRequestDataData) ProtoMessage() {}
 
 func (x *ConferenceInfoRequestDataData) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[73]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[74]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6467,7 +6540,7 @@ func (x *ConferenceInfoRequestDataData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConferenceInfoRequestDataData.ProtoReflect.Descriptor instead.
 func (*ConferenceInfoRequestDataData) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{73}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{74}
 }
 
 func (x *ConferenceInfoRequestDataData) GetConferenceName() string {
@@ -6503,7 +6576,7 @@ type ConferenceInfoRequestData struct {
 func (x *ConferenceInfoRequestData) Reset() {
 	*x = ConferenceInfoRequestData{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[74]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[75]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6516,7 +6589,7 @@ func (x *ConferenceInfoRequestData) String() string {
 func (*ConferenceInfoRequestData) ProtoMessage() {}
 
 func (x *ConferenceInfoRequestData) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[74]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[75]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6529,7 +6602,7 @@ func (x *ConferenceInfoRequestData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConferenceInfoRequestData.ProtoReflect.Descriptor instead.
 func (*ConferenceInfoRequestData) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{74}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{75}
 }
 
 func (x *ConferenceInfoRequestData) GetCommand() string {
@@ -6558,7 +6631,7 @@ type ConferenceInfoRequest struct {
 func (x *ConferenceInfoRequest) Reset() {
 	*x = ConferenceInfoRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[75]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[76]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6571,7 +6644,7 @@ func (x *ConferenceInfoRequest) String() string {
 func (*ConferenceInfoRequest) ProtoMessage() {}
 
 func (x *ConferenceInfoRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[75]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[76]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6584,7 +6657,7 @@ func (x *ConferenceInfoRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConferenceInfoRequest.ProtoReflect.Descriptor instead.
 func (*ConferenceInfoRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{75}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{76}
 }
 
 func (x *ConferenceInfoRequest) GetCtrlUuid() string {
@@ -6615,7 +6688,7 @@ type ConferenceInfoResponse struct {
 func (x *ConferenceInfoResponse) Reset() {
 	*x = ConferenceInfoResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[76]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[77]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6628,7 +6701,7 @@ func (x *ConferenceInfoResponse) String() string {
 func (*ConferenceInfoResponse) ProtoMessage() {}
 
 func (x *ConferenceInfoResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[76]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[77]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6641,7 +6714,7 @@ func (x *ConferenceInfoResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConferenceInfoResponse.ProtoReflect.Descriptor instead.
 func (*ConferenceInfoResponse) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{76}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{77}
 }
 
 func (x *ConferenceInfoResponse) GetCode() int32 {
@@ -6710,7 +6783,7 @@ type ConferenceInfo struct {
 func (x *ConferenceInfo) Reset() {
 	*x = ConferenceInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[77]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[78]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6723,7 +6796,7 @@ func (x *ConferenceInfo) String() string {
 func (*ConferenceInfo) ProtoMessage() {}
 
 func (x *ConferenceInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[77]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[78]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6736,7 +6809,7 @@ func (x *ConferenceInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConferenceInfo.ProtoReflect.Descriptor instead.
 func (*ConferenceInfo) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{77}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{78}
 }
 
 func (x *ConferenceInfo) GetConferenceName() string {
@@ -6944,7 +7017,7 @@ type ConferenceInfoResponseVariables struct {
 func (x *ConferenceInfoResponseVariables) Reset() {
 	*x = ConferenceInfoResponseVariables{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[78]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[79]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6957,7 +7030,7 @@ func (x *ConferenceInfoResponseVariables) String() string {
 func (*ConferenceInfoResponseVariables) ProtoMessage() {}
 
 func (x *ConferenceInfoResponseVariables) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[78]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[79]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6970,7 +7043,7 @@ func (x *ConferenceInfoResponseVariables) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConferenceInfoResponseVariables.ProtoReflect.Descriptor instead.
 func (*ConferenceInfoResponseVariables) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{78}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{79}
 }
 
 type ConferenceInfoResponseMembers struct {
@@ -6996,7 +7069,7 @@ type ConferenceInfoResponseMembers struct {
 func (x *ConferenceInfoResponseMembers) Reset() {
 	*x = ConferenceInfoResponseMembers{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[79]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[80]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7009,7 +7082,7 @@ func (x *ConferenceInfoResponseMembers) String() string {
 func (*ConferenceInfoResponseMembers) ProtoMessage() {}
 
 func (x *ConferenceInfoResponseMembers) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[79]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[80]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7022,7 +7095,7 @@ func (x *ConferenceInfoResponseMembers) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConferenceInfoResponseMembers.ProtoReflect.Descriptor instead.
 func (*ConferenceInfoResponseMembers) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{79}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{80}
 }
 
 func (x *ConferenceInfoResponseMembers) GetType() string {
@@ -7137,7 +7210,7 @@ type ConferenceInfoResponseFlags struct {
 func (x *ConferenceInfoResponseFlags) Reset() {
 	*x = ConferenceInfoResponseFlags{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[80]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[81]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7150,7 +7223,7 @@ func (x *ConferenceInfoResponseFlags) String() string {
 func (*ConferenceInfoResponseFlags) ProtoMessage() {}
 
 func (x *ConferenceInfoResponseFlags) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[80]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[81]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7163,7 +7236,7 @@ func (x *ConferenceInfoResponseFlags) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConferenceInfoResponseFlags.ProtoReflect.Descriptor instead.
 func (*ConferenceInfoResponseFlags) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{80}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{81}
 }
 
 func (x *ConferenceInfoResponseFlags) GetCanHear() bool {
@@ -7254,7 +7327,7 @@ type ConferenceListRequestDataData struct {
 func (x *ConferenceListRequestDataData) Reset() {
 	*x = ConferenceListRequestDataData{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[81]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[82]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7267,7 +7340,7 @@ func (x *ConferenceListRequestDataData) String() string {
 func (*ConferenceListRequestDataData) ProtoMessage() {}
 
 func (x *ConferenceListRequestDataData) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[81]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[82]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7280,7 +7353,7 @@ func (x *ConferenceListRequestDataData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConferenceListRequestDataData.ProtoReflect.Descriptor instead.
 func (*ConferenceListRequestDataData) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{81}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{82}
 }
 
 func (x *ConferenceListRequestDataData) GetDomain() string {
@@ -7302,7 +7375,7 @@ type ConferenceListRequestData struct {
 func (x *ConferenceListRequestData) Reset() {
 	*x = ConferenceListRequestData{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[82]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[83]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7315,7 +7388,7 @@ func (x *ConferenceListRequestData) String() string {
 func (*ConferenceListRequestData) ProtoMessage() {}
 
 func (x *ConferenceListRequestData) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[82]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[83]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7328,7 +7401,7 @@ func (x *ConferenceListRequestData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConferenceListRequestData.ProtoReflect.Descriptor instead.
 func (*ConferenceListRequestData) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{82}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{83}
 }
 
 func (x *ConferenceListRequestData) GetCommand() string {
@@ -7357,7 +7430,7 @@ type ConferenceListRequest struct {
 func (x *ConferenceListRequest) Reset() {
 	*x = ConferenceListRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[83]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[84]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7370,7 +7443,7 @@ func (x *ConferenceListRequest) String() string {
 func (*ConferenceListRequest) ProtoMessage() {}
 
 func (x *ConferenceListRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[83]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[84]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7383,7 +7456,7 @@ func (x *ConferenceListRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConferenceListRequest.ProtoReflect.Descriptor instead.
 func (*ConferenceListRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{83}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{84}
 }
 
 func (x *ConferenceListRequest) GetCtrlUuid() string {
@@ -7414,7 +7487,7 @@ type ConferenceListResponse struct {
 func (x *ConferenceListResponse) Reset() {
 	*x = ConferenceListResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[84]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[85]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7427,7 +7500,7 @@ func (x *ConferenceListResponse) String() string {
 func (*ConferenceListResponse) ProtoMessage() {}
 
 func (x *ConferenceListResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[84]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[85]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7440,7 +7513,7 @@ func (x *ConferenceListResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConferenceListResponse.ProtoReflect.Descriptor instead.
 func (*ConferenceListResponse) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{84}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{85}
 }
 
 func (x *ConferenceListResponse) GetCode() int32 {
@@ -7487,7 +7560,7 @@ type FIFORequest struct {
 func (x *FIFORequest) Reset() {
 	*x = FIFORequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[85]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[86]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7500,7 +7573,7 @@ func (x *FIFORequest) String() string {
 func (*FIFORequest) ProtoMessage() {}
 
 func (x *FIFORequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[85]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[86]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7513,7 +7586,7 @@ func (x *FIFORequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FIFORequest.ProtoReflect.Descriptor instead.
 func (*FIFORequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{85}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{86}
 }
 
 func (x *FIFORequest) GetUuid() string {
@@ -7572,7 +7645,7 @@ type FIFOResponse struct {
 func (x *FIFOResponse) Reset() {
 	*x = FIFOResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[86]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[87]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7585,7 +7658,7 @@ func (x *FIFOResponse) String() string {
 func (*FIFOResponse) ProtoMessage() {}
 
 func (x *FIFOResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[86]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[87]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7598,7 +7671,7 @@ func (x *FIFOResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FIFOResponse.ProtoReflect.Descriptor instead.
 func (*FIFOResponse) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{86}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{87}
 }
 
 func (x *FIFOResponse) GetCode() int32 {
@@ -7641,7 +7714,7 @@ type CallcenterRequest struct {
 func (x *CallcenterRequest) Reset() {
 	*x = CallcenterRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[87]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[88]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7654,7 +7727,7 @@ func (x *CallcenterRequest) String() string {
 func (*CallcenterRequest) ProtoMessage() {}
 
 func (x *CallcenterRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[87]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[88]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7667,7 +7740,7 @@ func (x *CallcenterRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CallcenterRequest.ProtoReflect.Descriptor instead.
 func (*CallcenterRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{87}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{88}
 }
 
 func (x *CallcenterRequest) GetUuid() string {
@@ -7698,7 +7771,7 @@ type CallcenterResponse struct {
 func (x *CallcenterResponse) Reset() {
 	*x = CallcenterResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[88]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[89]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7711,7 +7784,7 @@ func (x *CallcenterResponse) String() string {
 func (*CallcenterResponse) ProtoMessage() {}
 
 func (x *CallcenterResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[88]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[89]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7724,7 +7797,7 @@ func (x *CallcenterResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CallcenterResponse.ProtoReflect.Descriptor instead.
 func (*CallcenterResponse) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{88}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{89}
 }
 
 func (x *CallcenterResponse) GetCode() int32 {
@@ -7769,7 +7842,7 @@ type ConferenceRequest struct {
 func (x *ConferenceRequest) Reset() {
 	*x = ConferenceRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[89]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[90]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7782,7 +7855,7 @@ func (x *ConferenceRequest) String() string {
 func (*ConferenceRequest) ProtoMessage() {}
 
 func (x *ConferenceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[89]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[90]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7795,7 +7868,7 @@ func (x *ConferenceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConferenceRequest.ProtoReflect.Descriptor instead.
 func (*ConferenceRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{89}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{90}
 }
 
 func (x *ConferenceRequest) GetUuid() string {
@@ -7840,7 +7913,7 @@ type ConferenceResponse struct {
 func (x *ConferenceResponse) Reset() {
 	*x = ConferenceResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[90]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[91]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7853,7 +7926,7 @@ func (x *ConferenceResponse) String() string {
 func (*ConferenceResponse) ProtoMessage() {}
 
 func (x *ConferenceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[90]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[91]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7866,7 +7939,7 @@ func (x *ConferenceResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConferenceResponse.ProtoReflect.Descriptor instead.
 func (*ConferenceResponse) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{90}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{91}
 }
 
 func (x *ConferenceResponse) GetCode() int32 {
@@ -7910,7 +7983,7 @@ type AIRequest struct {
 func (x *AIRequest) Reset() {
 	*x = AIRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[91]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[92]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7923,7 +7996,7 @@ func (x *AIRequest) String() string {
 func (*AIRequest) ProtoMessage() {}
 
 func (x *AIRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[91]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[92]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7936,7 +8009,7 @@ func (x *AIRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AIRequest.ProtoReflect.Descriptor instead.
 func (*AIRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{91}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{92}
 }
 
 func (x *AIRequest) GetUuid() string {
@@ -7974,7 +8047,7 @@ type AIResponse struct {
 func (x *AIResponse) Reset() {
 	*x = AIResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[92]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[93]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7987,7 +8060,7 @@ func (x *AIResponse) String() string {
 func (*AIResponse) ProtoMessage() {}
 
 func (x *AIResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[92]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[93]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8000,7 +8073,7 @@ func (x *AIResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AIResponse.ProtoReflect.Descriptor instead.
 func (*AIResponse) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{92}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{93}
 }
 
 func (x *AIResponse) GetCode() int32 {
@@ -8044,7 +8117,7 @@ type HttAPIRequest struct {
 func (x *HttAPIRequest) Reset() {
 	*x = HttAPIRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[93]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[94]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8057,7 +8130,7 @@ func (x *HttAPIRequest) String() string {
 func (*HttAPIRequest) ProtoMessage() {}
 
 func (x *HttAPIRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[93]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[94]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8070,7 +8143,7 @@ func (x *HttAPIRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HttAPIRequest.ProtoReflect.Descriptor instead.
 func (*HttAPIRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{93}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{94}
 }
 
 func (x *HttAPIRequest) GetUuid() string {
@@ -8108,7 +8181,7 @@ type HttAPIResponse struct {
 func (x *HttAPIResponse) Reset() {
 	*x = HttAPIResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[94]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[95]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8121,7 +8194,7 @@ func (x *HttAPIResponse) String() string {
 func (*HttAPIResponse) ProtoMessage() {}
 
 func (x *HttAPIResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[94]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[95]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8134,7 +8207,7 @@ func (x *HttAPIResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HttAPIResponse.ProtoReflect.Descriptor instead.
 func (*HttAPIResponse) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{94}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{95}
 }
 
 func (x *HttAPIResponse) GetCode() int32 {
@@ -8177,7 +8250,7 @@ type LuaRequest struct {
 func (x *LuaRequest) Reset() {
 	*x = LuaRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[95]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[96]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8190,7 +8263,7 @@ func (x *LuaRequest) String() string {
 func (*LuaRequest) ProtoMessage() {}
 
 func (x *LuaRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[95]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[96]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8203,7 +8276,7 @@ func (x *LuaRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LuaRequest.ProtoReflect.Descriptor instead.
 func (*LuaRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{95}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{96}
 }
 
 func (x *LuaRequest) GetUuid() string {
@@ -8234,7 +8307,7 @@ type LuaResponse struct {
 func (x *LuaResponse) Reset() {
 	*x = LuaResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[96]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[97]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8247,7 +8320,7 @@ func (x *LuaResponse) String() string {
 func (*LuaResponse) ProtoMessage() {}
 
 func (x *LuaResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[96]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[97]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8260,7 +8333,7 @@ func (x *LuaResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LuaResponse.ProtoReflect.Descriptor instead.
 func (*LuaResponse) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{96}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{97}
 }
 
 func (x *LuaResponse) GetCode() int32 {
@@ -8302,7 +8375,7 @@ type CtrlStartUpRequest struct {
 func (x *CtrlStartUpRequest) Reset() {
 	*x = CtrlStartUpRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[97]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[98]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8315,7 +8388,7 @@ func (x *CtrlStartUpRequest) String() string {
 func (*CtrlStartUpRequest) ProtoMessage() {}
 
 func (x *CtrlStartUpRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[97]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[98]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8328,12 +8401,59 @@ func (x *CtrlStartUpRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CtrlStartUpRequest.ProtoReflect.Descriptor instead.
 func (*CtrlStartUpRequest) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{97}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{98}
 }
 
 func (x *CtrlStartUpRequest) GetCtrlUuid() string {
 	if x != nil {
 		return x.CtrlUuid
+	}
+	return ""
+}
+
+type NodeShutDownRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	NodeUuid string `protobuf:"bytes,1,opt,name=node_uuid,json=nodeUuid,proto3" json:"node_uuid,omitempty"`
+}
+
+func (x *NodeShutDownRequest) Reset() {
+	*x = NodeShutDownRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[99]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *NodeShutDownRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*NodeShutDownRequest) ProtoMessage() {}
+
+func (x *NodeShutDownRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[99]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use NodeShutDownRequest.ProtoReflect.Descriptor instead.
+func (*NodeShutDownRequest) Descriptor() ([]byte, []int) {
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{99}
+}
+
+func (x *NodeShutDownRequest) GetNodeUuid() string {
+	if x != nil {
+		return x.NodeUuid
 	}
 	return ""
 }
@@ -8350,7 +8470,7 @@ type JStatusRequest_JStatusData struct {
 func (x *JStatusRequest_JStatusData) Reset() {
 	*x = JStatusRequest_JStatusData{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_xctrl_xctrl_proto_msgTypes[106]
+		mi := &file_proto_xctrl_xctrl_proto_msgTypes[108]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8363,7 +8483,7 @@ func (x *JStatusRequest_JStatusData) String() string {
 func (*JStatusRequest_JStatusData) ProtoMessage() {}
 
 func (x *JStatusRequest_JStatusData) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_xctrl_xctrl_proto_msgTypes[106]
+	mi := &file_proto_xctrl_xctrl_proto_msgTypes[108]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8376,7 +8496,7 @@ func (x *JStatusRequest_JStatusData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use JStatusRequest_JStatusData.ProtoReflect.Descriptor instead.
 func (*JStatusRequest_JStatusData) Descriptor() ([]byte, []int) {
-	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{64, 0}
+	return file_proto_xctrl_xctrl_proto_rawDescGZIP(), []int{65, 0}
 }
 
 func (x *JStatusRequest_JStatusData) GetCommand() string {
@@ -8520,15 +8640,22 @@ var file_proto_xctrl_xctrl_proto_rawDesc = []byte{
 	0x0b, 0x53, 0x74, 0x6f, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1b, 0x0a, 0x09,
 	0x63, 0x74, 0x72, 0x6c, 0x5f, 0x75, 0x75, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
 	0x08, 0x63, 0x74, 0x72, 0x6c, 0x55, 0x75, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x75, 0x75, 0x69,
-	0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x75, 0x75, 0x69, 0x64, 0x22, 0x7f, 0x0a,
-	0x10, 0x42, 0x72, 0x6f, 0x61, 0x64, 0x63, 0x61, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x12, 0x1b, 0x0a, 0x09, 0x63, 0x74, 0x72, 0x6c, 0x5f, 0x75, 0x75, 0x69, 0x64, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x63, 0x74, 0x72, 0x6c, 0x55, 0x75, 0x69, 0x64, 0x12, 0x12,
-	0x0a, 0x04, 0x75, 0x75, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x75, 0x75,
-	0x69, 0x64, 0x12, 0x22, 0x0a, 0x05, 0x6d, 0x65, 0x64, 0x69, 0x61, 0x18, 0x03, 0x20, 0x01, 0x28,
-	0x0b, 0x32, 0x0c, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x4d, 0x65, 0x64, 0x69, 0x61, 0x52,
-	0x05, 0x6d, 0x65, 0x64, 0x69, 0x61, 0x12, 0x16, 0x0a, 0x06, 0x6f, 0x70, 0x74, 0x69, 0x6f, 0x6e,
-	0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x6f, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x86,
+	0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x75, 0x75, 0x69, 0x64, 0x22, 0x30, 0x0a,
+	0x08, 0x41, 0x70, 0x70, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x12, 0x10, 0x0a, 0x03, 0x61, 0x70, 0x70,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x61, 0x70, 0x70, 0x12, 0x12, 0x0a, 0x04, 0x64,
+	0x61, 0x74, 0x61, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x64, 0x61, 0x74, 0x61, 0x22,
+	0xbc, 0x01, 0x0a, 0x10, 0x42, 0x72, 0x6f, 0x61, 0x64, 0x63, 0x61, 0x73, 0x74, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x1b, 0x0a, 0x09, 0x63, 0x74, 0x72, 0x6c, 0x5f, 0x75, 0x75, 0x69,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x63, 0x74, 0x72, 0x6c, 0x55, 0x75, 0x69,
+	0x64, 0x12, 0x12, 0x0a, 0x04, 0x75, 0x75, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x04, 0x75, 0x75, 0x69, 0x64, 0x12, 0x22, 0x0a, 0x05, 0x6d, 0x65, 0x64, 0x69, 0x61, 0x18, 0x03,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x0c, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x4d, 0x65, 0x64,
+	0x69, 0x61, 0x52, 0x05, 0x6d, 0x65, 0x64, 0x69, 0x61, 0x12, 0x16, 0x0a, 0x06, 0x6f, 0x70, 0x74,
+	0x69, 0x6f, 0x6e, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x6f, 0x70, 0x74, 0x69, 0x6f,
+	0x6e, 0x12, 0x16, 0x0a, 0x06, 0x72, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x18, 0x05, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x06, 0x72, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x12, 0x23, 0x0a, 0x04, 0x61, 0x70, 0x70,
+	0x73, 0x18, 0x06, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e,
+	0x41, 0x70, 0x70, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x52, 0x04, 0x61, 0x70, 0x70, 0x73, 0x22, 0x86,
 	0x01, 0x0a, 0x0b, 0x4d, 0x75, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1b,
 	0x0a, 0x09, 0x63, 0x74, 0x72, 0x6c, 0x5f, 0x75, 0x75, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
 	0x09, 0x52, 0x08, 0x63, 0x74, 0x72, 0x6c, 0x55, 0x75, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x75,
@@ -9520,184 +9647,191 @@ var file_proto_xctrl_xctrl_proto_rawDesc = []byte{
 	0x22, 0x31, 0x0a, 0x12, 0x43, 0x74, 0x72, 0x6c, 0x53, 0x74, 0x61, 0x72, 0x74, 0x55, 0x70, 0x52,
 	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1b, 0x0a, 0x09, 0x63, 0x74, 0x72, 0x6c, 0x5f, 0x75,
 	0x75, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x63, 0x74, 0x72, 0x6c, 0x55,
-	0x75, 0x69, 0x64, 0x2a, 0x29, 0x0a, 0x09, 0x4d, 0x65, 0x64, 0x69, 0x61, 0x54, 0x79, 0x70, 0x65,
-	0x12, 0x08, 0x0a, 0x04, 0x46, 0x49, 0x4c, 0x45, 0x10, 0x00, 0x12, 0x08, 0x0a, 0x04, 0x54, 0x45,
-	0x58, 0x54, 0x10, 0x01, 0x12, 0x08, 0x0a, 0x04, 0x53, 0x53, 0x4d, 0x4c, 0x10, 0x02, 0x2a, 0xea,
-	0x01, 0x0a, 0x0b, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x12, 0x0b,
-	0x0a, 0x07, 0x49, 0x6e, 0x76, 0x61, 0x6c, 0x69, 0x64, 0x10, 0x00, 0x12, 0x10, 0x0a, 0x0c, 0x4e,
-	0x6f, 0x64, 0x65, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x10, 0x01, 0x12, 0x12, 0x0a,
-	0x0e, 0x4e, 0x6f, 0x64, 0x65, 0x55, 0x6e, 0x72, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x10,
-	0x02, 0x12, 0x0e, 0x0a, 0x0a, 0x4e, 0x6f, 0x64, 0x65, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x10,
-	0x03, 0x12, 0x0b, 0x0a, 0x07, 0x43, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x10, 0x04, 0x12, 0x0a,
-	0x0a, 0x06, 0x4e, 0x61, 0x74, 0x69, 0x76, 0x65, 0x10, 0x05, 0x12, 0x07, 0x0a, 0x03, 0x56, 0x63,
-	0x63, 0x10, 0x06, 0x12, 0x0a, 0x0a, 0x06, 0x52, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x10, 0x07, 0x12,
-	0x0e, 0x0a, 0x0a, 0x44, 0x69, 0x61, 0x6c, 0x52, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x10, 0x08, 0x12,
-	0x10, 0x0a, 0x0c, 0x4e, 0x61, 0x74, 0x69, 0x76, 0x65, 0x52, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x10,
-	0x09, 0x12, 0x0c, 0x0a, 0x08, 0x46, 0x65, 0x74, 0x63, 0x68, 0x58, 0x4d, 0x4c, 0x10, 0x0a, 0x12,
-	0x0c, 0x0a, 0x08, 0x44, 0x69, 0x61, 0x6c, 0x70, 0x6c, 0x61, 0x6e, 0x10, 0x0b, 0x12, 0x0f, 0x0a,
-	0x0b, 0x4e, 0x61, 0x74, 0x69, 0x76, 0x65, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x10, 0x0c, 0x12, 0x07,
-	0x0a, 0x03, 0x43, 0x44, 0x52, 0x10, 0x0d, 0x12, 0x12, 0x0a, 0x0e, 0x44, 0x65, 0x74, 0x65, 0x63,
-	0x74, 0x65, 0x64, 0x53, 0x70, 0x65, 0x65, 0x63, 0x68, 0x10, 0x0e, 0x32, 0xd7, 0x13, 0x0a, 0x05,
-	0x58, 0x4e, 0x6f, 0x64, 0x65, 0x12, 0x31, 0x0a, 0x04, 0x44, 0x69, 0x61, 0x6c, 0x12, 0x12, 0x2e,
-	0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x44, 0x69, 0x61, 0x6c, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x13, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x44, 0x69, 0x61, 0x6c, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x31, 0x0a, 0x06, 0x41, 0x6e, 0x73, 0x77,
-	0x65, 0x72, 0x12, 0x14, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x41, 0x6e, 0x73, 0x77, 0x65,
-	0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c,
-	0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x31, 0x0a, 0x06, 0x41,
-	0x63, 0x63, 0x65, 0x70, 0x74, 0x12, 0x14, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x41, 0x63,
-	0x63, 0x65, 0x70, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63,
-	0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x2d,
-	0x0a, 0x04, 0x50, 0x6c, 0x61, 0x79, 0x12, 0x12, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x50,
-	0x6c, 0x61, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74,
-	0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x2d, 0x0a,
-	0x04, 0x53, 0x74, 0x6f, 0x70, 0x12, 0x12, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x53, 0x74,
-	0x6f, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72,
-	0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x37, 0x0a, 0x09,
-	0x42, 0x72, 0x6f, 0x61, 0x64, 0x63, 0x61, 0x73, 0x74, 0x12, 0x17, 0x2e, 0x78, 0x63, 0x74, 0x72,
-	0x6c, 0x2e, 0x42, 0x72, 0x6f, 0x61, 0x64, 0x63, 0x61, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x2d, 0x0a, 0x04, 0x4d, 0x75, 0x74, 0x65, 0x12, 0x12, 0x2e,
-	0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x4d, 0x75, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x22, 0x00, 0x12, 0x37, 0x0a, 0x06, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x12, 0x14,
-	0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x1a, 0x15, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x63,
-	0x6f, 0x72, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x31, 0x0a,
-	0x06, 0x48, 0x61, 0x6e, 0x67, 0x75, 0x70, 0x12, 0x14, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e,
-	0x48, 0x61, 0x6e, 0x67, 0x75, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e,
-	0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
-	0x12, 0x31, 0x0a, 0x06, 0x42, 0x72, 0x69, 0x64, 0x67, 0x65, 0x12, 0x14, 0x2e, 0x78, 0x63, 0x74,
-	0x72, 0x6c, 0x2e, 0x42, 0x72, 0x69, 0x64, 0x67, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x22, 0x00, 0x12, 0x3f, 0x0a, 0x0d, 0x43, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x42, 0x72,
-	0x69, 0x64, 0x67, 0x65, 0x12, 0x1b, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x43, 0x68, 0x61,
-	0x6e, 0x6e, 0x65, 0x6c, 0x42, 0x72, 0x69, 0x64, 0x67, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x22, 0x00, 0x12, 0x2d, 0x0a, 0x08, 0x55, 0x6e, 0x42, 0x72, 0x69, 0x64, 0x67, 0x65,
-	0x12, 0x0e, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x22, 0x00, 0x12, 0x2e, 0x0a, 0x09, 0x55, 0x6e, 0x42, 0x72, 0x69, 0x64, 0x67, 0x65, 0x32,
-	0x12, 0x0e, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x22, 0x00, 0x12, 0x2d, 0x0a, 0x04, 0x48, 0x6f, 0x6c, 0x64, 0x12, 0x12, 0x2e, 0x78, 0x63,
-	0x74, 0x72, 0x6c, 0x2e, 0x48, 0x6f, 0x6c, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x75, 0x69, 0x64, 0x22, 0x32, 0x0a, 0x13, 0x4e, 0x6f, 0x64, 0x65, 0x53, 0x68, 0x75, 0x74, 0x44,
+	0x6f, 0x77, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1b, 0x0a, 0x09, 0x6e, 0x6f,
+	0x64, 0x65, 0x5f, 0x75, 0x75, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x6e,
+	0x6f, 0x64, 0x65, 0x55, 0x75, 0x69, 0x64, 0x2a, 0x29, 0x0a, 0x09, 0x4d, 0x65, 0x64, 0x69, 0x61,
+	0x54, 0x79, 0x70, 0x65, 0x12, 0x08, 0x0a, 0x04, 0x46, 0x49, 0x4c, 0x45, 0x10, 0x00, 0x12, 0x08,
+	0x0a, 0x04, 0x54, 0x45, 0x58, 0x54, 0x10, 0x01, 0x12, 0x08, 0x0a, 0x04, 0x53, 0x53, 0x4d, 0x4c,
+	0x10, 0x02, 0x2a, 0xea, 0x01, 0x0a, 0x0b, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x4d, 0x65, 0x74, 0x68,
+	0x6f, 0x64, 0x12, 0x0b, 0x0a, 0x07, 0x49, 0x6e, 0x76, 0x61, 0x6c, 0x69, 0x64, 0x10, 0x00, 0x12,
+	0x10, 0x0a, 0x0c, 0x4e, 0x6f, 0x64, 0x65, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x10,
+	0x01, 0x12, 0x12, 0x0a, 0x0e, 0x4e, 0x6f, 0x64, 0x65, 0x55, 0x6e, 0x72, 0x65, 0x67, 0x69, 0x73,
+	0x74, 0x65, 0x72, 0x10, 0x02, 0x12, 0x0e, 0x0a, 0x0a, 0x4e, 0x6f, 0x64, 0x65, 0x55, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x10, 0x03, 0x12, 0x0b, 0x0a, 0x07, 0x43, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c,
+	0x10, 0x04, 0x12, 0x0a, 0x0a, 0x06, 0x4e, 0x61, 0x74, 0x69, 0x76, 0x65, 0x10, 0x05, 0x12, 0x07,
+	0x0a, 0x03, 0x56, 0x63, 0x63, 0x10, 0x06, 0x12, 0x0a, 0x0a, 0x06, 0x52, 0x65, 0x73, 0x75, 0x6c,
+	0x74, 0x10, 0x07, 0x12, 0x0e, 0x0a, 0x0a, 0x44, 0x69, 0x61, 0x6c, 0x52, 0x65, 0x73, 0x75, 0x6c,
+	0x74, 0x10, 0x08, 0x12, 0x10, 0x0a, 0x0c, 0x4e, 0x61, 0x74, 0x69, 0x76, 0x65, 0x52, 0x65, 0x73,
+	0x75, 0x6c, 0x74, 0x10, 0x09, 0x12, 0x0c, 0x0a, 0x08, 0x46, 0x65, 0x74, 0x63, 0x68, 0x58, 0x4d,
+	0x4c, 0x10, 0x0a, 0x12, 0x0c, 0x0a, 0x08, 0x44, 0x69, 0x61, 0x6c, 0x70, 0x6c, 0x61, 0x6e, 0x10,
+	0x0b, 0x12, 0x0f, 0x0a, 0x0b, 0x4e, 0x61, 0x74, 0x69, 0x76, 0x65, 0x45, 0x76, 0x65, 0x6e, 0x74,
+	0x10, 0x0c, 0x12, 0x07, 0x0a, 0x03, 0x43, 0x44, 0x52, 0x10, 0x0d, 0x12, 0x12, 0x0a, 0x0e, 0x44,
+	0x65, 0x74, 0x65, 0x63, 0x74, 0x65, 0x64, 0x53, 0x70, 0x65, 0x65, 0x63, 0x68, 0x10, 0x0e, 0x32,
+	0x92, 0x14, 0x0a, 0x05, 0x58, 0x4e, 0x6f, 0x64, 0x65, 0x12, 0x31, 0x0a, 0x04, 0x44, 0x69, 0x61,
+	0x6c, 0x12, 0x12, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x44, 0x69, 0x61, 0x6c, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x13, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x44, 0x69,
+	0x61, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x31, 0x0a, 0x06,
+	0x41, 0x6e, 0x73, 0x77, 0x65, 0x72, 0x12, 0x14, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x41,
+	0x6e, 0x73, 0x77, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x78,
+	0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12,
+	0x31, 0x0a, 0x06, 0x41, 0x63, 0x63, 0x65, 0x70, 0x74, 0x12, 0x14, 0x2e, 0x78, 0x63, 0x74, 0x72,
+	0x6c, 0x2e, 0x41, 0x63, 0x63, 0x65, 0x70, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
 	0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x22, 0x00, 0x12, 0x35, 0x0a, 0x08, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x66, 0x65, 0x72, 0x12, 0x16,
-	0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x66, 0x65, 0x72, 0x52,
+	0x22, 0x00, 0x12, 0x2d, 0x0a, 0x04, 0x50, 0x6c, 0x61, 0x79, 0x12, 0x12, 0x2e, 0x78, 0x63, 0x74,
+	0x72, 0x6c, 0x2e, 0x50, 0x6c, 0x61, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f,
+	0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x00, 0x12, 0x2d, 0x0a, 0x04, 0x53, 0x74, 0x6f, 0x70, 0x12, 0x12, 0x2e, 0x78, 0x63, 0x74, 0x72,
+	0x6c, 0x2e, 0x53, 0x74, 0x6f, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e,
+	0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
+	0x12, 0x37, 0x0a, 0x09, 0x42, 0x72, 0x6f, 0x61, 0x64, 0x63, 0x61, 0x73, 0x74, 0x12, 0x17, 0x2e,
+	0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x42, 0x72, 0x6f, 0x61, 0x64, 0x63, 0x61, 0x73, 0x74, 0x52,
 	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x35, 0x0a, 0x08, 0x54, 0x68, 0x72,
-	0x65, 0x65, 0x57, 0x61, 0x79, 0x12, 0x16, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x54, 0x68,
-	0x72, 0x65, 0x65, 0x57, 0x61, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e,
-	0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
-	0x12, 0x2f, 0x0a, 0x05, 0x45, 0x63, 0x68, 0x6f, 0x32, 0x12, 0x13, 0x2e, 0x78, 0x63, 0x74, 0x72,
-	0x6c, 0x2e, 0x45, 0x63, 0x68, 0x6f, 0x32, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f,
-	0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
-	0x00, 0x12, 0x37, 0x0a, 0x09, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x65, 0x70, 0x74, 0x12, 0x17,
-	0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x65, 0x70, 0x74,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x33, 0x0a, 0x07, 0x43, 0x6f,
-	0x6e, 0x73, 0x75, 0x6c, 0x74, 0x12, 0x15, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x43, 0x6f,
-	0x6e, 0x73, 0x75, 0x6c, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x78,
-	0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12,
-	0x31, 0x0a, 0x06, 0x53, 0x65, 0x74, 0x56, 0x61, 0x72, 0x12, 0x14, 0x2e, 0x78, 0x63, 0x74, 0x72,
-	0x6c, 0x2e, 0x53, 0x65, 0x74, 0x56, 0x61, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
-	0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x22, 0x00, 0x12, 0x34, 0x0a, 0x06, 0x47, 0x65, 0x74, 0x56, 0x61, 0x72, 0x12, 0x14, 0x2e, 0x78,
-	0x63, 0x74, 0x72, 0x6c, 0x2e, 0x47, 0x65, 0x74, 0x56, 0x61, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x1a, 0x12, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x56, 0x61, 0x72, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x3a, 0x0a, 0x08, 0x47, 0x65, 0x74, 0x53,
-	0x74, 0x61, 0x74, 0x65, 0x12, 0x16, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x47, 0x65, 0x74,
-	0x53, 0x74, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x14, 0x2e, 0x78,
-	0x63, 0x74, 0x72, 0x6c, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x22, 0x00, 0x12, 0x4c, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x43, 0x68, 0x61, 0x6e, 0x6e,
-	0x65, 0x6c, 0x44, 0x61, 0x74, 0x61, 0x12, 0x1c, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x47,
-	0x65, 0x74, 0x43, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x44, 0x61, 0x74, 0x61, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x43, 0x68, 0x61,
-	0x6e, 0x6e, 0x65, 0x6c, 0x44, 0x61, 0x74, 0x61, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x22, 0x00, 0x12, 0x35, 0x0a, 0x08, 0x52, 0x65, 0x61, 0x64, 0x44, 0x54, 0x4d, 0x46, 0x12, 0x12,
-	0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x44, 0x54, 0x4d, 0x46, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x1a, 0x13, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x44, 0x54, 0x4d, 0x46, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x3b, 0x0a, 0x0a, 0x52, 0x65, 0x61,
-	0x64, 0x44, 0x69, 0x67, 0x69, 0x74, 0x73, 0x12, 0x14, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e,
-	0x44, 0x69, 0x67, 0x69, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x15, 0x2e,
-	0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x44, 0x69, 0x67, 0x69, 0x74, 0x73, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x3d, 0x0a, 0x0c, 0x44, 0x65, 0x74, 0x65, 0x63, 0x74,
-	0x53, 0x70, 0x65, 0x65, 0x63, 0x68, 0x12, 0x14, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x44,
-	0x65, 0x74, 0x65, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x15, 0x2e, 0x78,
-	0x63, 0x74, 0x72, 0x6c, 0x2e, 0x44, 0x65, 0x74, 0x65, 0x63, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x3f, 0x0a, 0x10, 0x53, 0x74, 0x6f, 0x70, 0x44, 0x65, 0x74,
-	0x65, 0x63, 0x74, 0x53, 0x70, 0x65, 0x65, 0x63, 0x68, 0x12, 0x18, 0x2e, 0x78, 0x63, 0x74, 0x72,
-	0x6c, 0x2e, 0x53, 0x74, 0x6f, 0x70, 0x44, 0x65, 0x74, 0x65, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x47, 0x0a, 0x11, 0x52, 0x69, 0x6e, 0x67, 0x42, 0x61,
-	0x63, 0x6b, 0x44, 0x65, 0x74, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x1f, 0x2e, 0x78, 0x63,
-	0x74, 0x72, 0x6c, 0x2e, 0x52, 0x69, 0x6e, 0x67, 0x42, 0x61, 0x63, 0x6b, 0x44, 0x65, 0x74, 0x65,
-	0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x78,
-	0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12,
-	0x39, 0x0a, 0x0a, 0x44, 0x65, 0x74, 0x65, 0x63, 0x74, 0x46, 0x61, 0x63, 0x65, 0x12, 0x18, 0x2e,
-	0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x44, 0x65, 0x74, 0x65, 0x63, 0x74, 0x46, 0x61, 0x63, 0x65,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x35, 0x0a, 0x08, 0x53, 0x65,
-	0x6e, 0x64, 0x44, 0x54, 0x4d, 0x46, 0x12, 0x16, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x53,
-	0x65, 0x6e, 0x64, 0x44, 0x54, 0x4d, 0x46, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f,
-	0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
-	0x00, 0x12, 0x35, 0x0a, 0x08, 0x53, 0x65, 0x6e, 0x64, 0x49, 0x4e, 0x46, 0x4f, 0x12, 0x16, 0x2e,
-	0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x53, 0x65, 0x6e, 0x64, 0x49, 0x4e, 0x46, 0x4f, 0x52, 0x65,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x2d, 0x0a, 0x04, 0x4d, 0x75, 0x74,
+	0x65, 0x12, 0x12, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x4d, 0x75, 0x74, 0x65, 0x52, 0x65,
 	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x3a, 0x0a, 0x09, 0x4e, 0x61, 0x74, 0x69,
-	0x76, 0x65, 0x41, 0x70, 0x70, 0x12, 0x14, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x4e, 0x61,
-	0x74, 0x69, 0x76, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x15, 0x2e, 0x78, 0x63,
-	0x74, 0x72, 0x6c, 0x2e, 0x4e, 0x61, 0x74, 0x69, 0x76, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x22, 0x00, 0x12, 0x3d, 0x0a, 0x09, 0x4e, 0x61, 0x74, 0x69, 0x76, 0x65, 0x41, 0x50,
-	0x49, 0x12, 0x17, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x4e, 0x61, 0x74, 0x69, 0x76, 0x65,
-	0x41, 0x50, 0x49, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x15, 0x2e, 0x78, 0x63, 0x74,
-	0x72, 0x6c, 0x2e, 0x4e, 0x61, 0x74, 0x69, 0x76, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x22, 0x00, 0x12, 0x40, 0x0a, 0x0b, 0x4e, 0x61, 0x74, 0x69, 0x76, 0x65, 0x4a, 0x53, 0x41,
-	0x50, 0x49, 0x12, 0x16, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x4e, 0x61, 0x74, 0x69, 0x76,
-	0x65, 0x4a, 0x53, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x17, 0x2e, 0x78, 0x63, 0x74,
-	0x72, 0x6c, 0x2e, 0x4e, 0x61, 0x74, 0x69, 0x76, 0x65, 0x4a, 0x53, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x3a, 0x0a, 0x07, 0x4a, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73,
-	0x12, 0x15, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x4a, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e,
-	0x4a, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
-	0x00, 0x12, 0x4f, 0x0a, 0x0e, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x49,
-	0x6e, 0x66, 0x6f, 0x12, 0x1c, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x43, 0x6f, 0x6e, 0x66,
-	0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x1d, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72,
-	0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x22, 0x00, 0x12, 0x4f, 0x0a, 0x0e, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65,
-	0x4c, 0x69, 0x73, 0x74, 0x12, 0x1c, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x43, 0x6f, 0x6e,
-	0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x1a, 0x1d, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x43, 0x6f, 0x6e, 0x66, 0x65,
-	0x72, 0x65, 0x6e, 0x63, 0x65, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x22, 0x00, 0x12, 0x31, 0x0a, 0x04, 0x46, 0x49, 0x46, 0x4f, 0x12, 0x12, 0x2e, 0x78, 0x63,
-	0x74, 0x72, 0x6c, 0x2e, 0x46, 0x49, 0x46, 0x4f, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
-	0x13, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x46, 0x49, 0x46, 0x4f, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x43, 0x0a, 0x0a, 0x43, 0x61, 0x6c, 0x6c, 0x63, 0x65,
-	0x6e, 0x74, 0x65, 0x72, 0x12, 0x18, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x43, 0x61, 0x6c,
-	0x6c, 0x63, 0x65, 0x6e, 0x74, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x19,
-	0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x43, 0x61, 0x6c, 0x6c, 0x63, 0x65, 0x6e, 0x74, 0x65,
-	0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x43, 0x0a, 0x0a, 0x43,
-	0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x12, 0x18, 0x2e, 0x78, 0x63, 0x74, 0x72,
-	0x6c, 0x2e, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x1a, 0x19, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x43, 0x6f, 0x6e, 0x66,
-	0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
-	0x12, 0x2b, 0x0a, 0x02, 0x41, 0x49, 0x12, 0x10, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x41,
-	0x49, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x11, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c,
-	0x2e, 0x41, 0x49, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x37, 0x0a,
-	0x06, 0x48, 0x74, 0x74, 0x41, 0x50, 0x49, 0x12, 0x14, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e,
-	0x48, 0x74, 0x74, 0x41, 0x50, 0x49, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x15, 0x2e,
-	0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x48, 0x74, 0x74, 0x41, 0x50, 0x49, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x2e, 0x0a, 0x03, 0x4c, 0x75, 0x61, 0x12, 0x11, 0x2e,
-	0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x4c, 0x75, 0x61, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x1a, 0x12, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x4c, 0x75, 0x61, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x2d, 0x0a, 0x08, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74,
-	0x65, 0x72, 0x12, 0x0e, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x37, 0x0a, 0x06, 0x52, 0x65, 0x63, 0x6f,
+	0x72, 0x64, 0x12, 0x14, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x63, 0x6f, 0x72,
+	0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x15, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c,
+	0x2e, 0x52, 0x65, 0x63, 0x6f, 0x72, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x00, 0x12, 0x31, 0x0a, 0x06, 0x48, 0x61, 0x6e, 0x67, 0x75, 0x70, 0x12, 0x14, 0x2e, 0x78, 0x63,
+	0x74, 0x72, 0x6c, 0x2e, 0x48, 0x61, 0x6e, 0x67, 0x75, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x22, 0x00, 0x12, 0x31, 0x0a, 0x06, 0x42, 0x72, 0x69, 0x64, 0x67, 0x65, 0x12, 0x14,
+	0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x42, 0x72, 0x69, 0x64, 0x67, 0x65, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x3f, 0x0a, 0x0d, 0x43, 0x68, 0x61, 0x6e, 0x6e,
+	0x65, 0x6c, 0x42, 0x72, 0x69, 0x64, 0x67, 0x65, 0x12, 0x1b, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c,
+	0x2e, 0x43, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x42, 0x72, 0x69, 0x64, 0x67, 0x65, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x2d, 0x0a, 0x08, 0x55, 0x6e, 0x42, 0x72,
+	0x69, 0x64, 0x67, 0x65, 0x12, 0x0e, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x2e, 0x0a, 0x09, 0x55, 0x6e, 0x42, 0x72, 0x69,
+	0x64, 0x67, 0x65, 0x32, 0x12, 0x0e, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x2d, 0x0a, 0x04, 0x48, 0x6f, 0x6c, 0x64, 0x12,
+	0x12, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x48, 0x6f, 0x6c, 0x64, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x35, 0x0a, 0x08, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x66,
+	0x65, 0x72, 0x12, 0x16, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x54, 0x72, 0x61, 0x6e, 0x73,
+	0x66, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74,
+	0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x35, 0x0a,
+	0x08, 0x54, 0x68, 0x72, 0x65, 0x65, 0x57, 0x61, 0x79, 0x12, 0x16, 0x2e, 0x78, 0x63, 0x74, 0x72,
+	0x6c, 0x2e, 0x54, 0x68, 0x72, 0x65, 0x65, 0x57, 0x61, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x22, 0x00, 0x12, 0x2f, 0x0a, 0x05, 0x45, 0x63, 0x68, 0x6f, 0x32, 0x12, 0x13, 0x2e,
+	0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x45, 0x63, 0x68, 0x6f, 0x32, 0x52, 0x65, 0x71, 0x75, 0x65,
 	0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x14, 0x42, 0x05, 0x58, 0x43, 0x74, 0x72, 0x6c, 0x5a, 0x0b,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x62, 0x06, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x33,
+	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x37, 0x0a, 0x09, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x65,
+	0x70, 0x74, 0x12, 0x17, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72,
+	0x63, 0x65, 0x70, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63,
+	0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x33,
+	0x0a, 0x07, 0x43, 0x6f, 0x6e, 0x73, 0x75, 0x6c, 0x74, 0x12, 0x15, 0x2e, 0x78, 0x63, 0x74, 0x72,
+	0x6c, 0x2e, 0x43, 0x6f, 0x6e, 0x73, 0x75, 0x6c, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x00, 0x12, 0x31, 0x0a, 0x06, 0x53, 0x65, 0x74, 0x56, 0x61, 0x72, 0x12, 0x14, 0x2e,
+	0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x53, 0x65, 0x74, 0x56, 0x61, 0x72, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x34, 0x0a, 0x06, 0x47, 0x65, 0x74, 0x56, 0x61, 0x72,
+	0x12, 0x14, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x47, 0x65, 0x74, 0x56, 0x61, 0x72, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x12, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x56,
+	0x61, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x3a, 0x0a, 0x08,
+	0x47, 0x65, 0x74, 0x53, 0x74, 0x61, 0x74, 0x65, 0x12, 0x16, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c,
+	0x2e, 0x47, 0x65, 0x74, 0x53, 0x74, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x14, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x65, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x4c, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x43,
+	0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x44, 0x61, 0x74, 0x61, 0x12, 0x1c, 0x2e, 0x78, 0x63, 0x74,
+	0x72, 0x6c, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x44, 0x61, 0x74,
+	0x61, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c,
+	0x2e, 0x43, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x44, 0x61, 0x74, 0x61, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x35, 0x0a, 0x08, 0x52, 0x65, 0x61, 0x64, 0x44, 0x54,
+	0x4d, 0x46, 0x12, 0x12, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x44, 0x54, 0x4d, 0x46, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x13, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x44,
+	0x54, 0x4d, 0x46, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x3b, 0x0a,
+	0x0a, 0x52, 0x65, 0x61, 0x64, 0x44, 0x69, 0x67, 0x69, 0x74, 0x73, 0x12, 0x14, 0x2e, 0x78, 0x63,
+	0x74, 0x72, 0x6c, 0x2e, 0x44, 0x69, 0x67, 0x69, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x15, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x44, 0x69, 0x67, 0x69, 0x74, 0x73,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x3d, 0x0a, 0x0c, 0x44, 0x65,
+	0x74, 0x65, 0x63, 0x74, 0x53, 0x70, 0x65, 0x65, 0x63, 0x68, 0x12, 0x14, 0x2e, 0x78, 0x63, 0x74,
+	0x72, 0x6c, 0x2e, 0x44, 0x65, 0x74, 0x65, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x15, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x44, 0x65, 0x74, 0x65, 0x63, 0x74, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x3f, 0x0a, 0x10, 0x53, 0x74, 0x6f,
+	0x70, 0x44, 0x65, 0x74, 0x65, 0x63, 0x74, 0x53, 0x70, 0x65, 0x65, 0x63, 0x68, 0x12, 0x18, 0x2e,
+	0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x53, 0x74, 0x6f, 0x70, 0x44, 0x65, 0x74, 0x65, 0x63, 0x74,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x47, 0x0a, 0x11, 0x52, 0x69,
+	0x6e, 0x67, 0x42, 0x61, 0x63, 0x6b, 0x44, 0x65, 0x74, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x12,
+	0x1f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x69, 0x6e, 0x67, 0x42, 0x61, 0x63, 0x6b,
+	0x44, 0x65, 0x74, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x00, 0x12, 0x39, 0x0a, 0x0a, 0x44, 0x65, 0x74, 0x65, 0x63, 0x74, 0x46, 0x61, 0x63,
+	0x65, 0x12, 0x18, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x44, 0x65, 0x74, 0x65, 0x63, 0x74,
+	0x46, 0x61, 0x63, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63,
+	0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x35,
+	0x0a, 0x08, 0x53, 0x65, 0x6e, 0x64, 0x44, 0x54, 0x4d, 0x46, 0x12, 0x16, 0x2e, 0x78, 0x63, 0x74,
+	0x72, 0x6c, 0x2e, 0x53, 0x65, 0x6e, 0x64, 0x44, 0x54, 0x4d, 0x46, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x35, 0x0a, 0x08, 0x53, 0x65, 0x6e, 0x64, 0x49, 0x4e, 0x46,
+	0x4f, 0x12, 0x16, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x53, 0x65, 0x6e, 0x64, 0x49, 0x4e,
+	0x46, 0x4f, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72,
+	0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x3a, 0x0a, 0x09,
+	0x4e, 0x61, 0x74, 0x69, 0x76, 0x65, 0x41, 0x70, 0x70, 0x12, 0x14, 0x2e, 0x78, 0x63, 0x74, 0x72,
+	0x6c, 0x2e, 0x4e, 0x61, 0x74, 0x69, 0x76, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x15, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x4e, 0x61, 0x74, 0x69, 0x76, 0x65, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x3d, 0x0a, 0x09, 0x4e, 0x61, 0x74, 0x69,
+	0x76, 0x65, 0x41, 0x50, 0x49, 0x12, 0x17, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x4e, 0x61,
+	0x74, 0x69, 0x76, 0x65, 0x41, 0x50, 0x49, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x15,
+	0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x4e, 0x61, 0x74, 0x69, 0x76, 0x65, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x40, 0x0a, 0x0b, 0x4e, 0x61, 0x74, 0x69, 0x76,
+	0x65, 0x4a, 0x53, 0x41, 0x50, 0x49, 0x12, 0x16, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x4e,
+	0x61, 0x74, 0x69, 0x76, 0x65, 0x4a, 0x53, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x17,
+	0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x4e, 0x61, 0x74, 0x69, 0x76, 0x65, 0x4a, 0x53, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x3a, 0x0a, 0x07, 0x4a, 0x53, 0x74,
+	0x61, 0x74, 0x75, 0x73, 0x12, 0x15, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x4a, 0x53, 0x74,
+	0x61, 0x74, 0x75, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x78, 0x63,
+	0x74, 0x72, 0x6c, 0x2e, 0x4a, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x4f, 0x0a, 0x0e, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65,
+	0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x1c, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e,
+	0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1d, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x43, 0x6f,
+	0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x4f, 0x0a, 0x0e, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72,
+	0x65, 0x6e, 0x63, 0x65, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x1c, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c,
+	0x2e, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x4c, 0x69, 0x73, 0x74, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1d, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x43,
+	0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x31, 0x0a, 0x04, 0x46, 0x49, 0x46, 0x4f, 0x12,
+	0x12, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x46, 0x49, 0x46, 0x4f, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x13, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x46, 0x49, 0x46, 0x4f,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x43, 0x0a, 0x0a, 0x43, 0x61,
+	0x6c, 0x6c, 0x63, 0x65, 0x6e, 0x74, 0x65, 0x72, 0x12, 0x18, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c,
+	0x2e, 0x43, 0x61, 0x6c, 0x6c, 0x63, 0x65, 0x6e, 0x74, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x19, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x43, 0x61, 0x6c, 0x6c, 0x63,
+	0x65, 0x6e, 0x74, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12,
+	0x43, 0x0a, 0x0a, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x12, 0x18, 0x2e,
+	0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x19, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e,
+	0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x22, 0x00, 0x12, 0x2b, 0x0a, 0x02, 0x41, 0x49, 0x12, 0x10, 0x2e, 0x78, 0x63, 0x74,
+	0x72, 0x6c, 0x2e, 0x41, 0x49, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x11, 0x2e, 0x78,
+	0x63, 0x74, 0x72, 0x6c, 0x2e, 0x41, 0x49, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x00, 0x12, 0x37, 0x0a, 0x06, 0x48, 0x74, 0x74, 0x41, 0x50, 0x49, 0x12, 0x14, 0x2e, 0x78, 0x63,
+	0x74, 0x72, 0x6c, 0x2e, 0x48, 0x74, 0x74, 0x41, 0x50, 0x49, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x15, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x48, 0x74, 0x74, 0x41, 0x50, 0x49,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x2e, 0x0a, 0x03, 0x4c, 0x75,
+	0x61, 0x12, 0x11, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x4c, 0x75, 0x61, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x1a, 0x12, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x4c, 0x75, 0x61,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x2d, 0x0a, 0x08, 0x52, 0x65,
+	0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x12, 0x0e, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x39, 0x0a, 0x08, 0x53, 0x68, 0x75,
+	0x74, 0x64, 0x6f, 0x77, 0x6e, 0x12, 0x1a, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x4e, 0x6f,
+	0x64, 0x65, 0x53, 0x68, 0x75, 0x74, 0x44, 0x6f, 0x77, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x0f, 0x2e, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x22, 0x00, 0x42, 0x14, 0x42, 0x05, 0x58, 0x43, 0x74, 0x72, 0x6c, 0x5a, 0x0b, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x78, 0x63, 0x74, 0x72, 0x6c, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x33,
 }
 
 var (
@@ -9713,7 +9847,7 @@ func file_proto_xctrl_xctrl_proto_rawDescGZIP() []byte {
 }
 
 var file_proto_xctrl_xctrl_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
-var file_proto_xctrl_xctrl_proto_msgTypes = make([]protoimpl.MessageInfo, 109)
+var file_proto_xctrl_xctrl_proto_msgTypes = make([]protoimpl.MessageInfo, 111)
 var file_proto_xctrl_xctrl_proto_goTypes = []interface{}{
 	(MediaType)(0),                          // 0: xctrl.MediaType
 	(EventMethod)(0),                        // 1: xctrl.EventMethod
@@ -9736,245 +9870,250 @@ var file_proto_xctrl_xctrl_proto_goTypes = []interface{}{
 	(*Media)(nil),                           // 18: xctrl.Media
 	(*PlayRequest)(nil),                     // 19: xctrl.PlayRequest
 	(*StopRequest)(nil),                     // 20: xctrl.StopRequest
-	(*BroadcastRequest)(nil),                // 21: xctrl.BroadcastRequest
-	(*MuteRequest)(nil),                     // 22: xctrl.MuteRequest
-	(*RecordRequest)(nil),                   // 23: xctrl.RecordRequest
-	(*RecordResponse)(nil),                  // 24: xctrl.RecordResponse
-	(*HangupRequest)(nil),                   // 25: xctrl.HangupRequest
-	(*TransferRequest)(nil),                 // 26: xctrl.TransferRequest
-	(*ThreeWayRequest)(nil),                 // 27: xctrl.ThreeWayRequest
-	(*Echo2Request)(nil),                    // 28: xctrl.Echo2Request
-	(*InterceptRequest)(nil),                // 29: xctrl.InterceptRequest
-	(*ConsultRequest)(nil),                  // 30: xctrl.ConsultRequest
-	(*RecordEvent)(nil),                     // 31: xctrl.RecordEvent
-	(*Node)(nil),                            // 32: xctrl.Node
-	(*SipProfile)(nil),                      // 33: xctrl.SipProfile
-	(*Ctrl)(nil),                            // 34: xctrl.Ctrl
-	(*ChannelEvent)(nil),                    // 35: xctrl.ChannelEvent
-	(*DTMFEvent)(nil),                       // 36: xctrl.DTMFEvent
-	(*CallParam)(nil),                       // 37: xctrl.CallParam
-	(*Destination)(nil),                     // 38: xctrl.Destination
-	(*SetVarRequest)(nil),                   // 39: xctrl.SetVarRequest
-	(*GetVarRequest)(nil),                   // 40: xctrl.GetVarRequest
-	(*VarResponse)(nil),                     // 41: xctrl.VarResponse
-	(*GetStateRequest)(nil),                 // 42: xctrl.GetStateRequest
-	(*StateResponse)(nil),                   // 43: xctrl.StateResponse
-	(*GetChannelDataRequest)(nil),           // 44: xctrl.GetChannelDataRequest
-	(*ChannelDataResponse)(nil),             // 45: xctrl.ChannelDataResponse
-	(*ChannelData)(nil),                     // 46: xctrl.ChannelData
-	(*DTMFRequest)(nil),                     // 47: xctrl.DTMFRequest
-	(*DTMFResponse)(nil),                    // 48: xctrl.DTMFResponse
-	(*DigitsRequest)(nil),                   // 49: xctrl.DigitsRequest
-	(*DigitsResponse)(nil),                  // 50: xctrl.DigitsResponse
-	(*SpeechRequest)(nil),                   // 51: xctrl.SpeechRequest
-	(*DetectRequest)(nil),                   // 52: xctrl.DetectRequest
-	(*DetectedData)(nil),                    // 53: xctrl.DetectedData
-	(*EngineData)(nil),                      // 54: xctrl.EngineData
-	(*Header)(nil),                          // 55: xctrl.Header
-	(*Payload)(nil),                         // 56: xctrl.Payload
-	(*StashResult)(nil),                     // 57: xctrl.StashResult
-	(*DetectResponse)(nil),                  // 58: xctrl.DetectResponse
-	(*StopDetectRequest)(nil),               // 59: xctrl.StopDetectRequest
-	(*RingBackDetectionRequest)(nil),        // 60: xctrl.RingBackDetectionRequest
-	(*Action)(nil),                          // 61: xctrl.Action
-	(*DetectFaceRequest)(nil),               // 62: xctrl.DetectFaceRequest
-	(*DetectedFaceEvent)(nil),               // 63: xctrl.DetectedFaceEvent
-	(*SendDTMFRequest)(nil),                 // 64: xctrl.SendDTMFRequest
-	(*SendINFORequest)(nil),                 // 65: xctrl.SendINFORequest
-	(*HoldRequest)(nil),                     // 66: xctrl.HoldRequest
-	(*VideoResizeEvent)(nil),                // 67: xctrl.VideoResizeEvent
-	(*JStatusRequest)(nil),                  // 68: xctrl.JStatusRequest
-	(*JStatusUptime)(nil),                   // 69: xctrl.JStatusUptime
-	(*JStatusSessionsCount)(nil),            // 70: xctrl.JStatusSessionsCount
-	(*JStatusSessionsRate)(nil),             // 71: xctrl.JStatusSessionsRate
-	(*JStatusSessions)(nil),                 // 72: xctrl.JStatusSessions
-	(*JStatusIdleCPU)(nil),                  // 73: xctrl.JStatusIdleCPU
-	(*JStatusStackSize)(nil),                // 74: xctrl.JStatusStackSize
-	(*JStatusResponse)(nil),                 // 75: xctrl.JStatusResponse
-	(*JStatusResponseData)(nil),             // 76: xctrl.JStatusResponseData
-	(*ConferenceInfoRequestDataData)(nil),   // 77: xctrl.ConferenceInfoRequestDataData
-	(*ConferenceInfoRequestData)(nil),       // 78: xctrl.ConferenceInfoRequestData
-	(*ConferenceInfoRequest)(nil),           // 79: xctrl.ConferenceInfoRequest
-	(*ConferenceInfoResponse)(nil),          // 80: xctrl.ConferenceInfoResponse
-	(*ConferenceInfo)(nil),                  // 81: xctrl.ConferenceInfo
-	(*ConferenceInfoResponseVariables)(nil), // 82: xctrl.ConferenceInfoResponseVariables
-	(*ConferenceInfoResponseMembers)(nil),   // 83: xctrl.ConferenceInfoResponseMembers
-	(*ConferenceInfoResponseFlags)(nil),     // 84: xctrl.ConferenceInfoResponseFlags
-	(*ConferenceListRequestDataData)(nil),   // 85: xctrl.ConferenceListRequestDataData
-	(*ConferenceListRequestData)(nil),       // 86: xctrl.ConferenceListRequestData
-	(*ConferenceListRequest)(nil),           // 87: xctrl.ConferenceListRequest
-	(*ConferenceListResponse)(nil),          // 88: xctrl.ConferenceListResponse
-	(*FIFORequest)(nil),                     // 89: xctrl.FIFORequest
-	(*FIFOResponse)(nil),                    // 90: xctrl.FIFOResponse
-	(*CallcenterRequest)(nil),               // 91: xctrl.CallcenterRequest
-	(*CallcenterResponse)(nil),              // 92: xctrl.CallcenterResponse
-	(*ConferenceRequest)(nil),               // 93: xctrl.ConferenceRequest
-	(*ConferenceResponse)(nil),              // 94: xctrl.ConferenceResponse
-	(*AIRequest)(nil),                       // 95: xctrl.AIRequest
-	(*AIResponse)(nil),                      // 96: xctrl.AIResponse
-	(*HttAPIRequest)(nil),                   // 97: xctrl.HttAPIRequest
-	(*HttAPIResponse)(nil),                  // 98: xctrl.HttAPIResponse
-	(*LuaRequest)(nil),                      // 99: xctrl.LuaRequest
-	(*LuaResponse)(nil),                     // 100: xctrl.LuaResponse
-	(*CtrlStartUpRequest)(nil),              // 101: xctrl.CtrlStartUpRequest
-	nil,                                     // 102: xctrl.Request.ParamsEntry
-	nil,                                     // 103: xctrl.HangupRequest.DataEntry
-	nil,                                     // 104: xctrl.ChannelEvent.ParamsEntry
-	nil,                                     // 105: xctrl.CallParam.ParamsEntry
-	nil,                                     // 106: xctrl.Destination.GlobalParamsEntry
-	nil,                                     // 107: xctrl.SetVarRequest.DataEntry
-	nil,                                     // 108: xctrl.VarResponse.DataEntry
-	nil,                                     // 109: xctrl.SpeechRequest.ParamsEntry
-	(*JStatusRequest_JStatusData)(nil),      // 110: xctrl.JStatusRequest.JStatusData
-	nil,                                     // 111: xctrl.AIRequest.DataEntry
-	nil,                                     // 112: xctrl.HttAPIRequest.DataEntry
-	(*structpb.ListValue)(nil),              // 113: google.protobuf.ListValue
+	(*AppParam)(nil),                        // 21: xctrl.AppParam
+	(*BroadcastRequest)(nil),                // 22: xctrl.BroadcastRequest
+	(*MuteRequest)(nil),                     // 23: xctrl.MuteRequest
+	(*RecordRequest)(nil),                   // 24: xctrl.RecordRequest
+	(*RecordResponse)(nil),                  // 25: xctrl.RecordResponse
+	(*HangupRequest)(nil),                   // 26: xctrl.HangupRequest
+	(*TransferRequest)(nil),                 // 27: xctrl.TransferRequest
+	(*ThreeWayRequest)(nil),                 // 28: xctrl.ThreeWayRequest
+	(*Echo2Request)(nil),                    // 29: xctrl.Echo2Request
+	(*InterceptRequest)(nil),                // 30: xctrl.InterceptRequest
+	(*ConsultRequest)(nil),                  // 31: xctrl.ConsultRequest
+	(*RecordEvent)(nil),                     // 32: xctrl.RecordEvent
+	(*Node)(nil),                            // 33: xctrl.Node
+	(*SipProfile)(nil),                      // 34: xctrl.SipProfile
+	(*Ctrl)(nil),                            // 35: xctrl.Ctrl
+	(*ChannelEvent)(nil),                    // 36: xctrl.ChannelEvent
+	(*DTMFEvent)(nil),                       // 37: xctrl.DTMFEvent
+	(*CallParam)(nil),                       // 38: xctrl.CallParam
+	(*Destination)(nil),                     // 39: xctrl.Destination
+	(*SetVarRequest)(nil),                   // 40: xctrl.SetVarRequest
+	(*GetVarRequest)(nil),                   // 41: xctrl.GetVarRequest
+	(*VarResponse)(nil),                     // 42: xctrl.VarResponse
+	(*GetStateRequest)(nil),                 // 43: xctrl.GetStateRequest
+	(*StateResponse)(nil),                   // 44: xctrl.StateResponse
+	(*GetChannelDataRequest)(nil),           // 45: xctrl.GetChannelDataRequest
+	(*ChannelDataResponse)(nil),             // 46: xctrl.ChannelDataResponse
+	(*ChannelData)(nil),                     // 47: xctrl.ChannelData
+	(*DTMFRequest)(nil),                     // 48: xctrl.DTMFRequest
+	(*DTMFResponse)(nil),                    // 49: xctrl.DTMFResponse
+	(*DigitsRequest)(nil),                   // 50: xctrl.DigitsRequest
+	(*DigitsResponse)(nil),                  // 51: xctrl.DigitsResponse
+	(*SpeechRequest)(nil),                   // 52: xctrl.SpeechRequest
+	(*DetectRequest)(nil),                   // 53: xctrl.DetectRequest
+	(*DetectedData)(nil),                    // 54: xctrl.DetectedData
+	(*EngineData)(nil),                      // 55: xctrl.EngineData
+	(*Header)(nil),                          // 56: xctrl.Header
+	(*Payload)(nil),                         // 57: xctrl.Payload
+	(*StashResult)(nil),                     // 58: xctrl.StashResult
+	(*DetectResponse)(nil),                  // 59: xctrl.DetectResponse
+	(*StopDetectRequest)(nil),               // 60: xctrl.StopDetectRequest
+	(*RingBackDetectionRequest)(nil),        // 61: xctrl.RingBackDetectionRequest
+	(*Action)(nil),                          // 62: xctrl.Action
+	(*DetectFaceRequest)(nil),               // 63: xctrl.DetectFaceRequest
+	(*DetectedFaceEvent)(nil),               // 64: xctrl.DetectedFaceEvent
+	(*SendDTMFRequest)(nil),                 // 65: xctrl.SendDTMFRequest
+	(*SendINFORequest)(nil),                 // 66: xctrl.SendINFORequest
+	(*HoldRequest)(nil),                     // 67: xctrl.HoldRequest
+	(*VideoResizeEvent)(nil),                // 68: xctrl.VideoResizeEvent
+	(*JStatusRequest)(nil),                  // 69: xctrl.JStatusRequest
+	(*JStatusUptime)(nil),                   // 70: xctrl.JStatusUptime
+	(*JStatusSessionsCount)(nil),            // 71: xctrl.JStatusSessionsCount
+	(*JStatusSessionsRate)(nil),             // 72: xctrl.JStatusSessionsRate
+	(*JStatusSessions)(nil),                 // 73: xctrl.JStatusSessions
+	(*JStatusIdleCPU)(nil),                  // 74: xctrl.JStatusIdleCPU
+	(*JStatusStackSize)(nil),                // 75: xctrl.JStatusStackSize
+	(*JStatusResponse)(nil),                 // 76: xctrl.JStatusResponse
+	(*JStatusResponseData)(nil),             // 77: xctrl.JStatusResponseData
+	(*ConferenceInfoRequestDataData)(nil),   // 78: xctrl.ConferenceInfoRequestDataData
+	(*ConferenceInfoRequestData)(nil),       // 79: xctrl.ConferenceInfoRequestData
+	(*ConferenceInfoRequest)(nil),           // 80: xctrl.ConferenceInfoRequest
+	(*ConferenceInfoResponse)(nil),          // 81: xctrl.ConferenceInfoResponse
+	(*ConferenceInfo)(nil),                  // 82: xctrl.ConferenceInfo
+	(*ConferenceInfoResponseVariables)(nil), // 83: xctrl.ConferenceInfoResponseVariables
+	(*ConferenceInfoResponseMembers)(nil),   // 84: xctrl.ConferenceInfoResponseMembers
+	(*ConferenceInfoResponseFlags)(nil),     // 85: xctrl.ConferenceInfoResponseFlags
+	(*ConferenceListRequestDataData)(nil),   // 86: xctrl.ConferenceListRequestDataData
+	(*ConferenceListRequestData)(nil),       // 87: xctrl.ConferenceListRequestData
+	(*ConferenceListRequest)(nil),           // 88: xctrl.ConferenceListRequest
+	(*ConferenceListResponse)(nil),          // 89: xctrl.ConferenceListResponse
+	(*FIFORequest)(nil),                     // 90: xctrl.FIFORequest
+	(*FIFOResponse)(nil),                    // 91: xctrl.FIFOResponse
+	(*CallcenterRequest)(nil),               // 92: xctrl.CallcenterRequest
+	(*CallcenterResponse)(nil),              // 93: xctrl.CallcenterResponse
+	(*ConferenceRequest)(nil),               // 94: xctrl.ConferenceRequest
+	(*ConferenceResponse)(nil),              // 95: xctrl.ConferenceResponse
+	(*AIRequest)(nil),                       // 96: xctrl.AIRequest
+	(*AIResponse)(nil),                      // 97: xctrl.AIResponse
+	(*HttAPIRequest)(nil),                   // 98: xctrl.HttAPIRequest
+	(*HttAPIResponse)(nil),                  // 99: xctrl.HttAPIResponse
+	(*LuaRequest)(nil),                      // 100: xctrl.LuaRequest
+	(*LuaResponse)(nil),                     // 101: xctrl.LuaResponse
+	(*CtrlStartUpRequest)(nil),              // 102: xctrl.CtrlStartUpRequest
+	(*NodeShutDownRequest)(nil),             // 103: xctrl.NodeShutDownRequest
+	nil,                                     // 104: xctrl.Request.ParamsEntry
+	nil,                                     // 105: xctrl.HangupRequest.DataEntry
+	nil,                                     // 106: xctrl.ChannelEvent.ParamsEntry
+	nil,                                     // 107: xctrl.CallParam.ParamsEntry
+	nil,                                     // 108: xctrl.Destination.GlobalParamsEntry
+	nil,                                     // 109: xctrl.SetVarRequest.DataEntry
+	nil,                                     // 110: xctrl.VarResponse.DataEntry
+	nil,                                     // 111: xctrl.SpeechRequest.ParamsEntry
+	(*JStatusRequest_JStatusData)(nil),      // 112: xctrl.JStatusRequest.JStatusData
+	nil,                                     // 113: xctrl.AIRequest.DataEntry
+	nil,                                     // 114: xctrl.HttAPIRequest.DataEntry
+	(*structpb.ListValue)(nil),              // 115: google.protobuf.ListValue
 }
 var file_proto_xctrl_xctrl_proto_depIdxs = []int32{
-	102, // 0: xctrl.Request.params:type_name -> xctrl.Request.ParamsEntry
-	38,  // 1: xctrl.DialRequest.destination:type_name -> xctrl.Destination
+	104, // 0: xctrl.Request.params:type_name -> xctrl.Request.ParamsEntry
+	39,  // 1: xctrl.DialRequest.destination:type_name -> xctrl.Destination
 	13,  // 2: xctrl.DialRequest.apps:type_name -> xctrl.Application
-	38,  // 3: xctrl.BridgeRequest.destination:type_name -> xctrl.Destination
+	39,  // 3: xctrl.BridgeRequest.destination:type_name -> xctrl.Destination
 	18,  // 4: xctrl.PlayRequest.media:type_name -> xctrl.Media
 	18,  // 5: xctrl.BroadcastRequest.media:type_name -> xctrl.Media
-	3,   // 6: xctrl.HangupRequest.flag:type_name -> xctrl.HangupRequest.HangupFlag
-	103, // 7: xctrl.HangupRequest.data:type_name -> xctrl.HangupRequest.DataEntry
-	38,  // 8: xctrl.ConsultRequest.destination:type_name -> xctrl.Destination
-	33,  // 9: xctrl.Node.sip_profiles:type_name -> xctrl.SipProfile
-	104, // 10: xctrl.ChannelEvent.params:type_name -> xctrl.ChannelEvent.ParamsEntry
-	105, // 11: xctrl.CallParam.params:type_name -> xctrl.CallParam.ParamsEntry
-	106, // 12: xctrl.Destination.global_params:type_name -> xctrl.Destination.GlobalParamsEntry
-	37,  // 13: xctrl.Destination.call_params:type_name -> xctrl.CallParam
-	107, // 14: xctrl.SetVarRequest.data:type_name -> xctrl.SetVarRequest.DataEntry
-	108, // 15: xctrl.VarResponse.data:type_name -> xctrl.VarResponse.DataEntry
-	46,  // 16: xctrl.ChannelDataResponse.data:type_name -> xctrl.ChannelData
-	18,  // 17: xctrl.DTMFRequest.media:type_name -> xctrl.Media
-	18,  // 18: xctrl.DTMFRequest.media_invalid:type_name -> xctrl.Media
-	18,  // 19: xctrl.DigitsRequest.media:type_name -> xctrl.Media
-	18,  // 20: xctrl.DigitsRequest.media_invalid:type_name -> xctrl.Media
-	109, // 21: xctrl.SpeechRequest.params:type_name -> xctrl.SpeechRequest.ParamsEntry
-	18,  // 22: xctrl.DetectRequest.media:type_name -> xctrl.Media
-	47,  // 23: xctrl.DetectRequest.dtmf:type_name -> xctrl.DTMFRequest
-	51,  // 24: xctrl.DetectRequest.speech:type_name -> xctrl.SpeechRequest
-	54,  // 25: xctrl.DetectedData.engine_data:type_name -> xctrl.EngineData
-	55,  // 26: xctrl.EngineData.header:type_name -> xctrl.Header
-	56,  // 27: xctrl.EngineData.payload:type_name -> xctrl.Payload
-	57,  // 28: xctrl.Payload.stash_result:type_name -> xctrl.StashResult
-	53,  // 29: xctrl.DetectResponse.data:type_name -> xctrl.DetectedData
-	37,  // 30: xctrl.Action.param:type_name -> xctrl.CallParam
-	110, // 31: xctrl.JStatusRequest.data:type_name -> xctrl.JStatusRequest.JStatusData
-	70,  // 32: xctrl.JStatusSessions.count:type_name -> xctrl.JStatusSessionsCount
-	71,  // 33: xctrl.JStatusSessions.rate:type_name -> xctrl.JStatusSessionsRate
-	76,  // 34: xctrl.JStatusResponse.data:type_name -> xctrl.JStatusResponseData
-	69,  // 35: xctrl.JStatusResponseData.uptime:type_name -> xctrl.JStatusUptime
-	72,  // 36: xctrl.JStatusResponseData.sessions:type_name -> xctrl.JStatusSessions
-	73,  // 37: xctrl.JStatusResponseData.idleCPU:type_name -> xctrl.JStatusIdleCPU
-	74,  // 38: xctrl.JStatusResponseData.stackSizeKB:type_name -> xctrl.JStatusStackSize
-	113, // 39: xctrl.ConferenceInfoRequestDataData.memberFilters:type_name -> google.protobuf.ListValue
-	77,  // 40: xctrl.ConferenceInfoRequestData.data:type_name -> xctrl.ConferenceInfoRequestDataData
-	78,  // 41: xctrl.ConferenceInfoRequest.data:type_name -> xctrl.ConferenceInfoRequestData
-	81,  // 42: xctrl.ConferenceInfoResponse.data:type_name -> xctrl.ConferenceInfo
-	82,  // 43: xctrl.ConferenceInfo.variables:type_name -> xctrl.ConferenceInfoResponseVariables
-	83,  // 44: xctrl.ConferenceInfo.members:type_name -> xctrl.ConferenceInfoResponseMembers
-	84,  // 45: xctrl.ConferenceInfoResponseMembers.flags:type_name -> xctrl.ConferenceInfoResponseFlags
-	85,  // 46: xctrl.ConferenceListRequestData.data:type_name -> xctrl.ConferenceListRequestDataData
-	86,  // 47: xctrl.ConferenceListRequest.data:type_name -> xctrl.ConferenceListRequestData
-	81,  // 48: xctrl.ConferenceListResponse.data:type_name -> xctrl.ConferenceInfo
-	111, // 49: xctrl.AIRequest.data:type_name -> xctrl.AIRequest.DataEntry
-	112, // 50: xctrl.HttAPIRequest.data:type_name -> xctrl.HttAPIRequest.DataEntry
-	14,  // 51: xctrl.XNode.Dial:input_type -> xctrl.DialRequest
-	11,  // 52: xctrl.XNode.Answer:input_type -> xctrl.AnswerRequest
-	4,   // 53: xctrl.XNode.Accept:input_type -> xctrl.AcceptRequest
-	19,  // 54: xctrl.XNode.Play:input_type -> xctrl.PlayRequest
-	20,  // 55: xctrl.XNode.Stop:input_type -> xctrl.StopRequest
-	21,  // 56: xctrl.XNode.Broadcast:input_type -> xctrl.BroadcastRequest
-	22,  // 57: xctrl.XNode.Mute:input_type -> xctrl.MuteRequest
-	23,  // 58: xctrl.XNode.Record:input_type -> xctrl.RecordRequest
-	25,  // 59: xctrl.XNode.Hangup:input_type -> xctrl.HangupRequest
-	16,  // 60: xctrl.XNode.Bridge:input_type -> xctrl.BridgeRequest
-	17,  // 61: xctrl.XNode.ChannelBridge:input_type -> xctrl.ChannelBridgeRequest
-	10,  // 62: xctrl.XNode.UnBridge:input_type -> xctrl.Request
-	10,  // 63: xctrl.XNode.UnBridge2:input_type -> xctrl.Request
-	66,  // 64: xctrl.XNode.Hold:input_type -> xctrl.HoldRequest
-	26,  // 65: xctrl.XNode.Transfer:input_type -> xctrl.TransferRequest
-	27,  // 66: xctrl.XNode.ThreeWay:input_type -> xctrl.ThreeWayRequest
-	28,  // 67: xctrl.XNode.Echo2:input_type -> xctrl.Echo2Request
-	29,  // 68: xctrl.XNode.Intercept:input_type -> xctrl.InterceptRequest
-	30,  // 69: xctrl.XNode.Consult:input_type -> xctrl.ConsultRequest
-	39,  // 70: xctrl.XNode.SetVar:input_type -> xctrl.SetVarRequest
-	40,  // 71: xctrl.XNode.GetVar:input_type -> xctrl.GetVarRequest
-	42,  // 72: xctrl.XNode.GetState:input_type -> xctrl.GetStateRequest
-	44,  // 73: xctrl.XNode.GetChannelData:input_type -> xctrl.GetChannelDataRequest
-	47,  // 74: xctrl.XNode.ReadDTMF:input_type -> xctrl.DTMFRequest
-	49,  // 75: xctrl.XNode.ReadDigits:input_type -> xctrl.DigitsRequest
-	52,  // 76: xctrl.XNode.DetectSpeech:input_type -> xctrl.DetectRequest
-	59,  // 77: xctrl.XNode.StopDetectSpeech:input_type -> xctrl.StopDetectRequest
-	60,  // 78: xctrl.XNode.RingBackDetection:input_type -> xctrl.RingBackDetectionRequest
-	62,  // 79: xctrl.XNode.DetectFace:input_type -> xctrl.DetectFaceRequest
-	64,  // 80: xctrl.XNode.SendDTMF:input_type -> xctrl.SendDTMFRequest
-	65,  // 81: xctrl.XNode.SendINFO:input_type -> xctrl.SendINFORequest
-	5,   // 82: xctrl.XNode.NativeApp:input_type -> xctrl.NativeRequest
-	6,   // 83: xctrl.XNode.NativeAPI:input_type -> xctrl.NativeAPIRequest
-	8,   // 84: xctrl.XNode.NativeJSAPI:input_type -> xctrl.NativeJSRequest
-	68,  // 85: xctrl.XNode.JStatus:input_type -> xctrl.JStatusRequest
-	79,  // 86: xctrl.XNode.ConferenceInfo:input_type -> xctrl.ConferenceInfoRequest
-	87,  // 87: xctrl.XNode.ConferenceList:input_type -> xctrl.ConferenceListRequest
-	89,  // 88: xctrl.XNode.FIFO:input_type -> xctrl.FIFORequest
-	91,  // 89: xctrl.XNode.Callcenter:input_type -> xctrl.CallcenterRequest
-	93,  // 90: xctrl.XNode.Conference:input_type -> xctrl.ConferenceRequest
-	95,  // 91: xctrl.XNode.AI:input_type -> xctrl.AIRequest
-	97,  // 92: xctrl.XNode.HttAPI:input_type -> xctrl.HttAPIRequest
-	99,  // 93: xctrl.XNode.Lua:input_type -> xctrl.LuaRequest
-	10,  // 94: xctrl.XNode.Register:input_type -> xctrl.Request
-	15,  // 95: xctrl.XNode.Dial:output_type -> xctrl.DialResponse
-	12,  // 96: xctrl.XNode.Answer:output_type -> xctrl.Response
-	12,  // 97: xctrl.XNode.Accept:output_type -> xctrl.Response
-	12,  // 98: xctrl.XNode.Play:output_type -> xctrl.Response
-	12,  // 99: xctrl.XNode.Stop:output_type -> xctrl.Response
-	12,  // 100: xctrl.XNode.Broadcast:output_type -> xctrl.Response
-	12,  // 101: xctrl.XNode.Mute:output_type -> xctrl.Response
-	24,  // 102: xctrl.XNode.Record:output_type -> xctrl.RecordResponse
-	12,  // 103: xctrl.XNode.Hangup:output_type -> xctrl.Response
-	12,  // 104: xctrl.XNode.Bridge:output_type -> xctrl.Response
-	12,  // 105: xctrl.XNode.ChannelBridge:output_type -> xctrl.Response
-	12,  // 106: xctrl.XNode.UnBridge:output_type -> xctrl.Response
-	12,  // 107: xctrl.XNode.UnBridge2:output_type -> xctrl.Response
-	12,  // 108: xctrl.XNode.Hold:output_type -> xctrl.Response
-	12,  // 109: xctrl.XNode.Transfer:output_type -> xctrl.Response
-	12,  // 110: xctrl.XNode.ThreeWay:output_type -> xctrl.Response
-	12,  // 111: xctrl.XNode.Echo2:output_type -> xctrl.Response
-	12,  // 112: xctrl.XNode.Intercept:output_type -> xctrl.Response
-	12,  // 113: xctrl.XNode.Consult:output_type -> xctrl.Response
-	12,  // 114: xctrl.XNode.SetVar:output_type -> xctrl.Response
-	41,  // 115: xctrl.XNode.GetVar:output_type -> xctrl.VarResponse
-	43,  // 116: xctrl.XNode.GetState:output_type -> xctrl.StateResponse
-	45,  // 117: xctrl.XNode.GetChannelData:output_type -> xctrl.ChannelDataResponse
-	48,  // 118: xctrl.XNode.ReadDTMF:output_type -> xctrl.DTMFResponse
-	50,  // 119: xctrl.XNode.ReadDigits:output_type -> xctrl.DigitsResponse
-	58,  // 120: xctrl.XNode.DetectSpeech:output_type -> xctrl.DetectResponse
-	12,  // 121: xctrl.XNode.StopDetectSpeech:output_type -> xctrl.Response
-	12,  // 122: xctrl.XNode.RingBackDetection:output_type -> xctrl.Response
-	12,  // 123: xctrl.XNode.DetectFace:output_type -> xctrl.Response
-	12,  // 124: xctrl.XNode.SendDTMF:output_type -> xctrl.Response
-	12,  // 125: xctrl.XNode.SendINFO:output_type -> xctrl.Response
-	7,   // 126: xctrl.XNode.NativeApp:output_type -> xctrl.NativeResponse
-	7,   // 127: xctrl.XNode.NativeAPI:output_type -> xctrl.NativeResponse
-	9,   // 128: xctrl.XNode.NativeJSAPI:output_type -> xctrl.NativeJSResponse
-	75,  // 129: xctrl.XNode.JStatus:output_type -> xctrl.JStatusResponse
-	80,  // 130: xctrl.XNode.ConferenceInfo:output_type -> xctrl.ConferenceInfoResponse
-	88,  // 131: xctrl.XNode.ConferenceList:output_type -> xctrl.ConferenceListResponse
-	90,  // 132: xctrl.XNode.FIFO:output_type -> xctrl.FIFOResponse
-	92,  // 133: xctrl.XNode.Callcenter:output_type -> xctrl.CallcenterResponse
-	94,  // 134: xctrl.XNode.Conference:output_type -> xctrl.ConferenceResponse
-	96,  // 135: xctrl.XNode.AI:output_type -> xctrl.AIResponse
-	98,  // 136: xctrl.XNode.HttAPI:output_type -> xctrl.HttAPIResponse
-	100, // 137: xctrl.XNode.Lua:output_type -> xctrl.LuaResponse
-	12,  // 138: xctrl.XNode.Register:output_type -> xctrl.Response
-	95,  // [95:139] is the sub-list for method output_type
-	51,  // [51:95] is the sub-list for method input_type
-	51,  // [51:51] is the sub-list for extension type_name
-	51,  // [51:51] is the sub-list for extension extendee
-	0,   // [0:51] is the sub-list for field type_name
+	21,  // 6: xctrl.BroadcastRequest.apps:type_name -> xctrl.AppParam
+	3,   // 7: xctrl.HangupRequest.flag:type_name -> xctrl.HangupRequest.HangupFlag
+	105, // 8: xctrl.HangupRequest.data:type_name -> xctrl.HangupRequest.DataEntry
+	39,  // 9: xctrl.ConsultRequest.destination:type_name -> xctrl.Destination
+	34,  // 10: xctrl.Node.sip_profiles:type_name -> xctrl.SipProfile
+	106, // 11: xctrl.ChannelEvent.params:type_name -> xctrl.ChannelEvent.ParamsEntry
+	107, // 12: xctrl.CallParam.params:type_name -> xctrl.CallParam.ParamsEntry
+	108, // 13: xctrl.Destination.global_params:type_name -> xctrl.Destination.GlobalParamsEntry
+	38,  // 14: xctrl.Destination.call_params:type_name -> xctrl.CallParam
+	109, // 15: xctrl.SetVarRequest.data:type_name -> xctrl.SetVarRequest.DataEntry
+	110, // 16: xctrl.VarResponse.data:type_name -> xctrl.VarResponse.DataEntry
+	47,  // 17: xctrl.ChannelDataResponse.data:type_name -> xctrl.ChannelData
+	18,  // 18: xctrl.DTMFRequest.media:type_name -> xctrl.Media
+	18,  // 19: xctrl.DTMFRequest.media_invalid:type_name -> xctrl.Media
+	18,  // 20: xctrl.DigitsRequest.media:type_name -> xctrl.Media
+	18,  // 21: xctrl.DigitsRequest.media_invalid:type_name -> xctrl.Media
+	111, // 22: xctrl.SpeechRequest.params:type_name -> xctrl.SpeechRequest.ParamsEntry
+	18,  // 23: xctrl.DetectRequest.media:type_name -> xctrl.Media
+	48,  // 24: xctrl.DetectRequest.dtmf:type_name -> xctrl.DTMFRequest
+	52,  // 25: xctrl.DetectRequest.speech:type_name -> xctrl.SpeechRequest
+	55,  // 26: xctrl.DetectedData.engine_data:type_name -> xctrl.EngineData
+	56,  // 27: xctrl.EngineData.header:type_name -> xctrl.Header
+	57,  // 28: xctrl.EngineData.payload:type_name -> xctrl.Payload
+	58,  // 29: xctrl.Payload.stash_result:type_name -> xctrl.StashResult
+	54,  // 30: xctrl.DetectResponse.data:type_name -> xctrl.DetectedData
+	38,  // 31: xctrl.Action.param:type_name -> xctrl.CallParam
+	112, // 32: xctrl.JStatusRequest.data:type_name -> xctrl.JStatusRequest.JStatusData
+	71,  // 33: xctrl.JStatusSessions.count:type_name -> xctrl.JStatusSessionsCount
+	72,  // 34: xctrl.JStatusSessions.rate:type_name -> xctrl.JStatusSessionsRate
+	77,  // 35: xctrl.JStatusResponse.data:type_name -> xctrl.JStatusResponseData
+	70,  // 36: xctrl.JStatusResponseData.uptime:type_name -> xctrl.JStatusUptime
+	73,  // 37: xctrl.JStatusResponseData.sessions:type_name -> xctrl.JStatusSessions
+	74,  // 38: xctrl.JStatusResponseData.idleCPU:type_name -> xctrl.JStatusIdleCPU
+	75,  // 39: xctrl.JStatusResponseData.stackSizeKB:type_name -> xctrl.JStatusStackSize
+	115, // 40: xctrl.ConferenceInfoRequestDataData.memberFilters:type_name -> google.protobuf.ListValue
+	78,  // 41: xctrl.ConferenceInfoRequestData.data:type_name -> xctrl.ConferenceInfoRequestDataData
+	79,  // 42: xctrl.ConferenceInfoRequest.data:type_name -> xctrl.ConferenceInfoRequestData
+	82,  // 43: xctrl.ConferenceInfoResponse.data:type_name -> xctrl.ConferenceInfo
+	83,  // 44: xctrl.ConferenceInfo.variables:type_name -> xctrl.ConferenceInfoResponseVariables
+	84,  // 45: xctrl.ConferenceInfo.members:type_name -> xctrl.ConferenceInfoResponseMembers
+	85,  // 46: xctrl.ConferenceInfoResponseMembers.flags:type_name -> xctrl.ConferenceInfoResponseFlags
+	86,  // 47: xctrl.ConferenceListRequestData.data:type_name -> xctrl.ConferenceListRequestDataData
+	87,  // 48: xctrl.ConferenceListRequest.data:type_name -> xctrl.ConferenceListRequestData
+	82,  // 49: xctrl.ConferenceListResponse.data:type_name -> xctrl.ConferenceInfo
+	113, // 50: xctrl.AIRequest.data:type_name -> xctrl.AIRequest.DataEntry
+	114, // 51: xctrl.HttAPIRequest.data:type_name -> xctrl.HttAPIRequest.DataEntry
+	14,  // 52: xctrl.XNode.Dial:input_type -> xctrl.DialRequest
+	11,  // 53: xctrl.XNode.Answer:input_type -> xctrl.AnswerRequest
+	4,   // 54: xctrl.XNode.Accept:input_type -> xctrl.AcceptRequest
+	19,  // 55: xctrl.XNode.Play:input_type -> xctrl.PlayRequest
+	20,  // 56: xctrl.XNode.Stop:input_type -> xctrl.StopRequest
+	22,  // 57: xctrl.XNode.Broadcast:input_type -> xctrl.BroadcastRequest
+	23,  // 58: xctrl.XNode.Mute:input_type -> xctrl.MuteRequest
+	24,  // 59: xctrl.XNode.Record:input_type -> xctrl.RecordRequest
+	26,  // 60: xctrl.XNode.Hangup:input_type -> xctrl.HangupRequest
+	16,  // 61: xctrl.XNode.Bridge:input_type -> xctrl.BridgeRequest
+	17,  // 62: xctrl.XNode.ChannelBridge:input_type -> xctrl.ChannelBridgeRequest
+	10,  // 63: xctrl.XNode.UnBridge:input_type -> xctrl.Request
+	10,  // 64: xctrl.XNode.UnBridge2:input_type -> xctrl.Request
+	67,  // 65: xctrl.XNode.Hold:input_type -> xctrl.HoldRequest
+	27,  // 66: xctrl.XNode.Transfer:input_type -> xctrl.TransferRequest
+	28,  // 67: xctrl.XNode.ThreeWay:input_type -> xctrl.ThreeWayRequest
+	29,  // 68: xctrl.XNode.Echo2:input_type -> xctrl.Echo2Request
+	30,  // 69: xctrl.XNode.Intercept:input_type -> xctrl.InterceptRequest
+	31,  // 70: xctrl.XNode.Consult:input_type -> xctrl.ConsultRequest
+	40,  // 71: xctrl.XNode.SetVar:input_type -> xctrl.SetVarRequest
+	41,  // 72: xctrl.XNode.GetVar:input_type -> xctrl.GetVarRequest
+	43,  // 73: xctrl.XNode.GetState:input_type -> xctrl.GetStateRequest
+	45,  // 74: xctrl.XNode.GetChannelData:input_type -> xctrl.GetChannelDataRequest
+	48,  // 75: xctrl.XNode.ReadDTMF:input_type -> xctrl.DTMFRequest
+	50,  // 76: xctrl.XNode.ReadDigits:input_type -> xctrl.DigitsRequest
+	53,  // 77: xctrl.XNode.DetectSpeech:input_type -> xctrl.DetectRequest
+	60,  // 78: xctrl.XNode.StopDetectSpeech:input_type -> xctrl.StopDetectRequest
+	61,  // 79: xctrl.XNode.RingBackDetection:input_type -> xctrl.RingBackDetectionRequest
+	63,  // 80: xctrl.XNode.DetectFace:input_type -> xctrl.DetectFaceRequest
+	65,  // 81: xctrl.XNode.SendDTMF:input_type -> xctrl.SendDTMFRequest
+	66,  // 82: xctrl.XNode.SendINFO:input_type -> xctrl.SendINFORequest
+	5,   // 83: xctrl.XNode.NativeApp:input_type -> xctrl.NativeRequest
+	6,   // 84: xctrl.XNode.NativeAPI:input_type -> xctrl.NativeAPIRequest
+	8,   // 85: xctrl.XNode.NativeJSAPI:input_type -> xctrl.NativeJSRequest
+	69,  // 86: xctrl.XNode.JStatus:input_type -> xctrl.JStatusRequest
+	80,  // 87: xctrl.XNode.ConferenceInfo:input_type -> xctrl.ConferenceInfoRequest
+	88,  // 88: xctrl.XNode.ConferenceList:input_type -> xctrl.ConferenceListRequest
+	90,  // 89: xctrl.XNode.FIFO:input_type -> xctrl.FIFORequest
+	92,  // 90: xctrl.XNode.Callcenter:input_type -> xctrl.CallcenterRequest
+	94,  // 91: xctrl.XNode.Conference:input_type -> xctrl.ConferenceRequest
+	96,  // 92: xctrl.XNode.AI:input_type -> xctrl.AIRequest
+	98,  // 93: xctrl.XNode.HttAPI:input_type -> xctrl.HttAPIRequest
+	100, // 94: xctrl.XNode.Lua:input_type -> xctrl.LuaRequest
+	10,  // 95: xctrl.XNode.Register:input_type -> xctrl.Request
+	103, // 96: xctrl.XNode.Shutdown:input_type -> xctrl.NodeShutDownRequest
+	15,  // 97: xctrl.XNode.Dial:output_type -> xctrl.DialResponse
+	12,  // 98: xctrl.XNode.Answer:output_type -> xctrl.Response
+	12,  // 99: xctrl.XNode.Accept:output_type -> xctrl.Response
+	12,  // 100: xctrl.XNode.Play:output_type -> xctrl.Response
+	12,  // 101: xctrl.XNode.Stop:output_type -> xctrl.Response
+	12,  // 102: xctrl.XNode.Broadcast:output_type -> xctrl.Response
+	12,  // 103: xctrl.XNode.Mute:output_type -> xctrl.Response
+	25,  // 104: xctrl.XNode.Record:output_type -> xctrl.RecordResponse
+	12,  // 105: xctrl.XNode.Hangup:output_type -> xctrl.Response
+	12,  // 106: xctrl.XNode.Bridge:output_type -> xctrl.Response
+	12,  // 107: xctrl.XNode.ChannelBridge:output_type -> xctrl.Response
+	12,  // 108: xctrl.XNode.UnBridge:output_type -> xctrl.Response
+	12,  // 109: xctrl.XNode.UnBridge2:output_type -> xctrl.Response
+	12,  // 110: xctrl.XNode.Hold:output_type -> xctrl.Response
+	12,  // 111: xctrl.XNode.Transfer:output_type -> xctrl.Response
+	12,  // 112: xctrl.XNode.ThreeWay:output_type -> xctrl.Response
+	12,  // 113: xctrl.XNode.Echo2:output_type -> xctrl.Response
+	12,  // 114: xctrl.XNode.Intercept:output_type -> xctrl.Response
+	12,  // 115: xctrl.XNode.Consult:output_type -> xctrl.Response
+	12,  // 116: xctrl.XNode.SetVar:output_type -> xctrl.Response
+	42,  // 117: xctrl.XNode.GetVar:output_type -> xctrl.VarResponse
+	44,  // 118: xctrl.XNode.GetState:output_type -> xctrl.StateResponse
+	46,  // 119: xctrl.XNode.GetChannelData:output_type -> xctrl.ChannelDataResponse
+	49,  // 120: xctrl.XNode.ReadDTMF:output_type -> xctrl.DTMFResponse
+	51,  // 121: xctrl.XNode.ReadDigits:output_type -> xctrl.DigitsResponse
+	59,  // 122: xctrl.XNode.DetectSpeech:output_type -> xctrl.DetectResponse
+	12,  // 123: xctrl.XNode.StopDetectSpeech:output_type -> xctrl.Response
+	12,  // 124: xctrl.XNode.RingBackDetection:output_type -> xctrl.Response
+	12,  // 125: xctrl.XNode.DetectFace:output_type -> xctrl.Response
+	12,  // 126: xctrl.XNode.SendDTMF:output_type -> xctrl.Response
+	12,  // 127: xctrl.XNode.SendINFO:output_type -> xctrl.Response
+	7,   // 128: xctrl.XNode.NativeApp:output_type -> xctrl.NativeResponse
+	7,   // 129: xctrl.XNode.NativeAPI:output_type -> xctrl.NativeResponse
+	9,   // 130: xctrl.XNode.NativeJSAPI:output_type -> xctrl.NativeJSResponse
+	76,  // 131: xctrl.XNode.JStatus:output_type -> xctrl.JStatusResponse
+	81,  // 132: xctrl.XNode.ConferenceInfo:output_type -> xctrl.ConferenceInfoResponse
+	89,  // 133: xctrl.XNode.ConferenceList:output_type -> xctrl.ConferenceListResponse
+	91,  // 134: xctrl.XNode.FIFO:output_type -> xctrl.FIFOResponse
+	93,  // 135: xctrl.XNode.Callcenter:output_type -> xctrl.CallcenterResponse
+	95,  // 136: xctrl.XNode.Conference:output_type -> xctrl.ConferenceResponse
+	97,  // 137: xctrl.XNode.AI:output_type -> xctrl.AIResponse
+	99,  // 138: xctrl.XNode.HttAPI:output_type -> xctrl.HttAPIResponse
+	101, // 139: xctrl.XNode.Lua:output_type -> xctrl.LuaResponse
+	12,  // 140: xctrl.XNode.Register:output_type -> xctrl.Response
+	12,  // 141: xctrl.XNode.Shutdown:output_type -> xctrl.Response
+	97,  // [97:142] is the sub-list for method output_type
+	52,  // [52:97] is the sub-list for method input_type
+	52,  // [52:52] is the sub-list for extension type_name
+	52,  // [52:52] is the sub-list for extension extendee
+	0,   // [0:52] is the sub-list for field type_name
 }
 
 func init() { file_proto_xctrl_xctrl_proto_init() }
@@ -10188,7 +10327,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*BroadcastRequest); i {
+			switch v := v.(*AppParam); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10200,7 +10339,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MuteRequest); i {
+			switch v := v.(*BroadcastRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10212,7 +10351,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordRequest); i {
+			switch v := v.(*MuteRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10224,7 +10363,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordResponse); i {
+			switch v := v.(*RecordRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10236,7 +10375,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*HangupRequest); i {
+			switch v := v.(*RecordResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10248,7 +10387,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TransferRequest); i {
+			switch v := v.(*HangupRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10260,7 +10399,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ThreeWayRequest); i {
+			switch v := v.(*TransferRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10272,7 +10411,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Echo2Request); i {
+			switch v := v.(*ThreeWayRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10284,7 +10423,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*InterceptRequest); i {
+			switch v := v.(*Echo2Request); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10296,7 +10435,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ConsultRequest); i {
+			switch v := v.(*InterceptRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10308,7 +10447,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RecordEvent); i {
+			switch v := v.(*ConsultRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10320,7 +10459,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Node); i {
+			switch v := v.(*RecordEvent); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10332,7 +10471,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SipProfile); i {
+			switch v := v.(*Node); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10344,7 +10483,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Ctrl); i {
+			switch v := v.(*SipProfile); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10356,7 +10495,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ChannelEvent); i {
+			switch v := v.(*Ctrl); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10368,7 +10507,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DTMFEvent); i {
+			switch v := v.(*ChannelEvent); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10380,7 +10519,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CallParam); i {
+			switch v := v.(*DTMFEvent); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10392,7 +10531,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Destination); i {
+			switch v := v.(*CallParam); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10404,7 +10543,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SetVarRequest); i {
+			switch v := v.(*Destination); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10416,7 +10555,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[36].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetVarRequest); i {
+			switch v := v.(*SetVarRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10428,7 +10567,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[37].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*VarResponse); i {
+			switch v := v.(*GetVarRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10440,7 +10579,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[38].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetStateRequest); i {
+			switch v := v.(*VarResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10452,7 +10591,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[39].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*StateResponse); i {
+			switch v := v.(*GetStateRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10464,7 +10603,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[40].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetChannelDataRequest); i {
+			switch v := v.(*StateResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10476,7 +10615,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[41].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ChannelDataResponse); i {
+			switch v := v.(*GetChannelDataRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10488,7 +10627,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[42].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ChannelData); i {
+			switch v := v.(*ChannelDataResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10500,7 +10639,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[43].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DTMFRequest); i {
+			switch v := v.(*ChannelData); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10512,7 +10651,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[44].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DTMFResponse); i {
+			switch v := v.(*DTMFRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10524,7 +10663,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[45].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DigitsRequest); i {
+			switch v := v.(*DTMFResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10536,7 +10675,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[46].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DigitsResponse); i {
+			switch v := v.(*DigitsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10548,7 +10687,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[47].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SpeechRequest); i {
+			switch v := v.(*DigitsResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10560,7 +10699,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[48].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DetectRequest); i {
+			switch v := v.(*SpeechRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10572,7 +10711,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[49].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DetectedData); i {
+			switch v := v.(*DetectRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10584,7 +10723,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[50].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*EngineData); i {
+			switch v := v.(*DetectedData); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10596,7 +10735,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[51].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Header); i {
+			switch v := v.(*EngineData); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10608,7 +10747,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[52].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Payload); i {
+			switch v := v.(*Header); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10620,7 +10759,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[53].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*StashResult); i {
+			switch v := v.(*Payload); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10632,7 +10771,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[54].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DetectResponse); i {
+			switch v := v.(*StashResult); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10644,7 +10783,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[55].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*StopDetectRequest); i {
+			switch v := v.(*DetectResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10656,7 +10795,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[56].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RingBackDetectionRequest); i {
+			switch v := v.(*StopDetectRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10668,7 +10807,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[57].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Action); i {
+			switch v := v.(*RingBackDetectionRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10680,7 +10819,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[58].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DetectFaceRequest); i {
+			switch v := v.(*Action); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10692,7 +10831,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[59].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DetectedFaceEvent); i {
+			switch v := v.(*DetectFaceRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10704,7 +10843,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[60].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SendDTMFRequest); i {
+			switch v := v.(*DetectedFaceEvent); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10716,7 +10855,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[61].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SendINFORequest); i {
+			switch v := v.(*SendDTMFRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10728,7 +10867,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[62].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*HoldRequest); i {
+			switch v := v.(*SendINFORequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10740,7 +10879,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[63].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*VideoResizeEvent); i {
+			switch v := v.(*HoldRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10752,7 +10891,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[64].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*JStatusRequest); i {
+			switch v := v.(*VideoResizeEvent); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10764,7 +10903,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[65].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*JStatusUptime); i {
+			switch v := v.(*JStatusRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10776,7 +10915,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[66].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*JStatusSessionsCount); i {
+			switch v := v.(*JStatusUptime); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10788,7 +10927,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[67].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*JStatusSessionsRate); i {
+			switch v := v.(*JStatusSessionsCount); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10800,7 +10939,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[68].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*JStatusSessions); i {
+			switch v := v.(*JStatusSessionsRate); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10812,7 +10951,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[69].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*JStatusIdleCPU); i {
+			switch v := v.(*JStatusSessions); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10824,7 +10963,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[70].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*JStatusStackSize); i {
+			switch v := v.(*JStatusIdleCPU); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10836,7 +10975,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[71].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*JStatusResponse); i {
+			switch v := v.(*JStatusStackSize); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10848,7 +10987,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[72].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*JStatusResponseData); i {
+			switch v := v.(*JStatusResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10860,7 +10999,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[73].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ConferenceInfoRequestDataData); i {
+			switch v := v.(*JStatusResponseData); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10872,7 +11011,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[74].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ConferenceInfoRequestData); i {
+			switch v := v.(*ConferenceInfoRequestDataData); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10884,7 +11023,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[75].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ConferenceInfoRequest); i {
+			switch v := v.(*ConferenceInfoRequestData); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10896,7 +11035,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[76].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ConferenceInfoResponse); i {
+			switch v := v.(*ConferenceInfoRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10908,7 +11047,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[77].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ConferenceInfo); i {
+			switch v := v.(*ConferenceInfoResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10920,7 +11059,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[78].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ConferenceInfoResponseVariables); i {
+			switch v := v.(*ConferenceInfo); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10932,7 +11071,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[79].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ConferenceInfoResponseMembers); i {
+			switch v := v.(*ConferenceInfoResponseVariables); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10944,7 +11083,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[80].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ConferenceInfoResponseFlags); i {
+			switch v := v.(*ConferenceInfoResponseMembers); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10956,7 +11095,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[81].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ConferenceListRequestDataData); i {
+			switch v := v.(*ConferenceInfoResponseFlags); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10968,7 +11107,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[82].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ConferenceListRequestData); i {
+			switch v := v.(*ConferenceListRequestDataData); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10980,7 +11119,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[83].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ConferenceListRequest); i {
+			switch v := v.(*ConferenceListRequestData); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -10992,7 +11131,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[84].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ConferenceListResponse); i {
+			switch v := v.(*ConferenceListRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -11004,7 +11143,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[85].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FIFORequest); i {
+			switch v := v.(*ConferenceListResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -11016,7 +11155,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[86].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FIFOResponse); i {
+			switch v := v.(*FIFORequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -11028,7 +11167,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[87].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CallcenterRequest); i {
+			switch v := v.(*FIFOResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -11040,7 +11179,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[88].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CallcenterResponse); i {
+			switch v := v.(*CallcenterRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -11052,7 +11191,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[89].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ConferenceRequest); i {
+			switch v := v.(*CallcenterResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -11064,7 +11203,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[90].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ConferenceResponse); i {
+			switch v := v.(*ConferenceRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -11076,7 +11215,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[91].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AIRequest); i {
+			switch v := v.(*ConferenceResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -11088,7 +11227,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[92].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AIResponse); i {
+			switch v := v.(*AIRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -11100,7 +11239,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[93].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*HttAPIRequest); i {
+			switch v := v.(*AIResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -11112,7 +11251,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[94].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*HttAPIResponse); i {
+			switch v := v.(*HttAPIRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -11124,7 +11263,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[95].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LuaRequest); i {
+			switch v := v.(*HttAPIResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -11136,7 +11275,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[96].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LuaResponse); i {
+			switch v := v.(*LuaRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -11148,6 +11287,18 @@ func file_proto_xctrl_xctrl_proto_init() {
 			}
 		}
 		file_proto_xctrl_xctrl_proto_msgTypes[97].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*LuaResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_xctrl_xctrl_proto_msgTypes[98].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CtrlStartUpRequest); i {
 			case 0:
 				return &v.state
@@ -11159,7 +11310,19 @@ func file_proto_xctrl_xctrl_proto_init() {
 				return nil
 			}
 		}
-		file_proto_xctrl_xctrl_proto_msgTypes[106].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_xctrl_xctrl_proto_msgTypes[99].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*NodeShutDownRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_xctrl_xctrl_proto_msgTypes[108].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*JStatusRequest_JStatusData); i {
 			case 0:
 				return &v.state
@@ -11178,7 +11341,7 @@ func file_proto_xctrl_xctrl_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_xctrl_xctrl_proto_rawDesc,
 			NumEnums:      4,
-			NumMessages:   109,
+			NumMessages:   111,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
