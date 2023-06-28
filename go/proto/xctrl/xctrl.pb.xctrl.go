@@ -135,6 +135,8 @@ type XNodeService interface {
 	Lua(ctx context.Context, in *LuaRequest, opts ...client.CallOption) (*LuaResponse, error)
 	// Node Register
 	Register(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error)
+	// 停止接受新通话，等所有通话结束（默认最多等10分钟），停止fs节点
+	Shutdown(ctx context.Context, in *NodeShutDownRequest, opts ...client.CallOption) (*Response, error)
 }
 
 type xNodeService struct {
@@ -1609,6 +1611,16 @@ func (c *xNodeService) Register(ctx context.Context, in *Request, opts ...client
 	return out, nil
 }
 
+func (c *xNodeService) Shutdown(ctx context.Context, in *NodeShutDownRequest, opts ...client.CallOption) (*Response, error) {
+	req := c.c.NewRequest(c.name, "XNode.Shutdown", in)
+	out := new(Response)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // Server API for XNode service
 
 type XNodeHandler interface {
@@ -1700,6 +1712,8 @@ type XNodeHandler interface {
 	Lua(context.Context, *LuaRequest, *LuaResponse) error
 	// Node Register
 	Register(context.Context, *Request, *Response) error
+	// 停止接受新通话，等所有通话结束（默认最多等10分钟），停止fs节点
+	Shutdown(context.Context, *NodeShutDownRequest, *Response) error
 }
 
 func RegisterXNodeHandler(s server.Server, hdlr XNodeHandler, opts ...server.HandlerOption) error {
@@ -1748,6 +1762,7 @@ func RegisterXNodeHandler(s server.Server, hdlr XNodeHandler, opts ...server.Han
 		HttAPI(ctx context.Context, in *HttAPIRequest, out *HttAPIResponse) error
 		Lua(ctx context.Context, in *LuaRequest, out *LuaResponse) error
 		Register(ctx context.Context, in *Request, out *Response) error
+		Shutdown(ctx context.Context, in *NodeShutDownRequest, out *Response) error
 	}
 	type XNode struct {
 		xNode
@@ -1934,4 +1949,8 @@ func (h *xNodeHandler) Lua(ctx context.Context, in *LuaRequest, out *LuaResponse
 
 func (h *xNodeHandler) Register(ctx context.Context, in *Request, out *Response) error {
 	return h.XNodeHandler.Register(ctx, in, out)
+}
+
+func (h *xNodeHandler) Shutdown(ctx context.Context, in *NodeShutDownRequest, out *Response) error {
+	return h.XNodeHandler.Shutdown(ctx, in, out)
 }
