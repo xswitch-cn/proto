@@ -618,7 +618,8 @@ message ChannelData{
   string variable_cc_agent_session_uuid = 3;
   string variable_cc_member_uuid = 4;
   string variable_xcc_origin_dest_number = 5;
-
+  string variable_cc_member_session_uuid = 6;
+  string variable_bridge_uuid = 7;
 }
 
 message DTMFRequest {
