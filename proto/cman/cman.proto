@@ -59,7 +59,7 @@ message ConferenceInfoResponseConference{
   int32 size = 4;
   int32 member_count = 5;
   string states = 6;
-  repeated ConferenceInfoResponseConferenceMembers members = 7;
+  repeated ConferenceInfoResponseMembers members = 7;
 }
 
 message ConferenceInfoResponseConferenceNodes{
