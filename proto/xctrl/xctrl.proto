@@ -80,7 +80,6 @@ service XNode {
   rpc JStatus(JStatusRequest) returns (JStatusResponse) {}
   // 获取会议信息
   rpc ConferenceInfo(ConferenceInfoRequest) returns (ConferenceInfoResponse) {}
-  rpc ConferenceInfo2(ConferenceInfoRequest) returns (ConferenceInfoResponse2) {}
   // 获取全部会议信息
   rpc ConferenceList(ConferenceListRequest) returns (ConferenceListResponse) {}
   //呼叫中心FIFO队列（先入先出）
@@ -956,13 +955,6 @@ message ConferenceInfoResponse {
   ConferenceInfo data = 5;
 }
 
-message ConferenceInfoResponse2 {
-  int32 code = 1;
-  string message = 2;
-  string node_uuid = 3;
-  ConferenceInfo2 data = 5;
-}
-
 message ConferenceInfo {
   string conference_name = 1;
   int32 member_count = 2;
@@ -994,37 +986,6 @@ message ConferenceInfo {
   repeated ConferenceInfoResponseMembers members = 28;
 }
 
-message ConferenceInfo2 {
-  string conference_name = 1;
-  int32 member_count = 2;
-  int32 ghost_count = 3;
-  int32 rate = 4;
-  int32 run_time = 5;
-  string conference_uuid = 6;
-  int32 canvas_count = 7;
-  int32 max_bw_in = 8;
-  int32 force_bw_in = 9;
-  int32 video_floor_packets = 10;
-  bool locked = 11;
-  bool destruct = 12;
-  bool wait_mod = 13;
-  bool audio_always = 14;
-  bool running = 15;
-  bool answered = 16;
-  bool enforce_min = 17;
-  bool bridge_to = 18;
-  bool dynamic = 19;
-  bool exit_sound = 20;
-  bool enter_sound = 21;
-  bool recording = 22;
-  bool video_bridge = 23;
-  bool video_floor_only = 24;
-  bool video_rfc4579 = 25;
-  string domain = 26;
-  ConferenceInfoResponseVariables variables = 27;
-  repeated ConferenceInfoResponseConferenceMembers members = 28;
-}
-
 message ConferenceInfoResponseVariables {
 }
 
@@ -1042,6 +1003,24 @@ message ConferenceInfoResponseMembers {
   int32 output_volume = 11;
   int32 input_volume = 12;
   ConferenceInfoResponseFlags flags = 13;
+  string memberID = 14;
+  string cidNumber = 15;
+  string cidName = 16;
+  string codec = 17;
+  ConferenceInfoResponseConferenceMembersStatus status = 18;
+  string email = 19;
+  string nodeUUID = 20;
+  bool active = 21;
+  string groupID = 22;
+  string memberType = 23;
+  string nodeType = 24;
+  string domain = 25;
+  int32 canvasID = 26;
+  int32 watchingCanvasID = 27;
+  string roleID = 28;
+  int32 layerID = 29;
+  string reservationID = 30;
+  string channelName = 31;
 }
 
 message ConferenceInfoResponseConferenceMembers{

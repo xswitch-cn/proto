@@ -515,148 +515,6 @@ func (*ConferenceInfoResponseConferenceNodesNodeMembers) Descriptor() ([]byte, [
 	return file_proto_cman_cman_proto_rawDescGZIP(), []int{6}
 }
 
-type ConferenceInfoResponse2 struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Conference *ConferenceInfoResponse2Conference `protobuf:"bytes,1,opt,name=conference,proto3" json:"conference,omitempty"`
-}
-
-func (x *ConferenceInfoResponse2) Reset() {
-	*x = ConferenceInfoResponse2{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[7]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ConferenceInfoResponse2) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ConferenceInfoResponse2) ProtoMessage() {}
-
-func (x *ConferenceInfoResponse2) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[7]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ConferenceInfoResponse2.ProtoReflect.Descriptor instead.
-func (*ConferenceInfoResponse2) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{7}
-}
-
-func (x *ConferenceInfoResponse2) GetConference() *ConferenceInfoResponse2Conference {
-	if x != nil {
-		return x.Conference
-	}
-	return nil
-}
-
-type ConferenceInfoResponse2Conference struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Name        string                                     `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Domain      string                                     `protobuf:"bytes,2,opt,name=domain,proto3" json:"domain,omitempty"`
-	Nodes       []*ConferenceInfoResponseConferenceNodes   `protobuf:"bytes,3,rep,name=nodes,proto3" json:"nodes,omitempty"`
-	Size        int32                                      `protobuf:"varint,4,opt,name=size,proto3" json:"size,omitempty"`
-	MemberCount int32                                      `protobuf:"varint,5,opt,name=member_count,json=memberCount,proto3" json:"member_count,omitempty"`
-	States      string                                     `protobuf:"bytes,6,opt,name=states,proto3" json:"states,omitempty"`
-	Members     []*ConferenceInfoResponseConferenceMembers `protobuf:"bytes,7,rep,name=members,proto3" json:"members,omitempty"`
-}
-
-func (x *ConferenceInfoResponse2Conference) Reset() {
-	*x = ConferenceInfoResponse2Conference{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[8]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ConferenceInfoResponse2Conference) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ConferenceInfoResponse2Conference) ProtoMessage() {}
-
-func (x *ConferenceInfoResponse2Conference) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[8]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ConferenceInfoResponse2Conference.ProtoReflect.Descriptor instead.
-func (*ConferenceInfoResponse2Conference) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{8}
-}
-
-func (x *ConferenceInfoResponse2Conference) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *ConferenceInfoResponse2Conference) GetDomain() string {
-	if x != nil {
-		return x.Domain
-	}
-	return ""
-}
-
-func (x *ConferenceInfoResponse2Conference) GetNodes() []*ConferenceInfoResponseConferenceNodes {
-	if x != nil {
-		return x.Nodes
-	}
-	return nil
-}
-
-func (x *ConferenceInfoResponse2Conference) GetSize() int32 {
-	if x != nil {
-		return x.Size
-	}
-	return 0
-}
-
-func (x *ConferenceInfoResponse2Conference) GetMemberCount() int32 {
-	if x != nil {
-		return x.MemberCount
-	}
-	return 0
-}
-
-func (x *ConferenceInfoResponse2Conference) GetStates() string {
-	if x != nil {
-		return x.States
-	}
-	return ""
-}
-
-func (x *ConferenceInfoResponse2Conference) GetMembers() []*ConferenceInfoResponseConferenceMembers {
-	if x != nil {
-		return x.Members
-	}
-	return nil
-}
-
 type ConferenceInfoResponseConferenceMembers struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -686,7 +544,7 @@ type ConferenceInfoResponseConferenceMembers struct {
 func (x *ConferenceInfoResponseConferenceMembers) Reset() {
 	*x = ConferenceInfoResponseConferenceMembers{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[9]
+		mi := &file_proto_cman_cman_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -699,7 +557,7 @@ func (x *ConferenceInfoResponseConferenceMembers) String() string {
 func (*ConferenceInfoResponseConferenceMembers) ProtoMessage() {}
 
 func (x *ConferenceInfoResponseConferenceMembers) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[9]
+	mi := &file_proto_cman_cman_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -712,7 +570,7 @@ func (x *ConferenceInfoResponseConferenceMembers) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use ConferenceInfoResponseConferenceMembers.ProtoReflect.Descriptor instead.
 func (*ConferenceInfoResponseConferenceMembers) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{9}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ConferenceInfoResponseConferenceMembers) GetMemberID() string {
@@ -860,7 +718,7 @@ type ConferenceInfoResponseConferenceMembersStatus struct {
 func (x *ConferenceInfoResponseConferenceMembersStatus) Reset() {
 	*x = ConferenceInfoResponseConferenceMembersStatus{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[10]
+		mi := &file_proto_cman_cman_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -873,7 +731,7 @@ func (x *ConferenceInfoResponseConferenceMembersStatus) String() string {
 func (*ConferenceInfoResponseConferenceMembersStatus) ProtoMessage() {}
 
 func (x *ConferenceInfoResponseConferenceMembersStatus) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[10]
+	mi := &file_proto_cman_cman_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -886,7 +744,7 @@ func (x *ConferenceInfoResponseConferenceMembersStatus) ProtoReflect() protorefl
 
 // Deprecated: Use ConferenceInfoResponseConferenceMembersStatus.ProtoReflect.Descriptor instead.
 func (*ConferenceInfoResponseConferenceMembersStatus) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{10}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ConferenceInfoResponseConferenceMembersStatus) GetAudio() *ConferenceInfoResponseConferenceMembersStatusAudio {
@@ -919,7 +777,7 @@ type ConferenceInfoResponseConferenceMembersStatusAudio struct {
 func (x *ConferenceInfoResponseConferenceMembersStatusAudio) Reset() {
 	*x = ConferenceInfoResponseConferenceMembersStatusAudio{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[11]
+		mi := &file_proto_cman_cman_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -932,7 +790,7 @@ func (x *ConferenceInfoResponseConferenceMembersStatusAudio) String() string {
 func (*ConferenceInfoResponseConferenceMembersStatusAudio) ProtoMessage() {}
 
 func (x *ConferenceInfoResponseConferenceMembersStatusAudio) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[11]
+	mi := &file_proto_cman_cman_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -945,7 +803,7 @@ func (x *ConferenceInfoResponseConferenceMembersStatusAudio) ProtoReflect() prot
 
 // Deprecated: Use ConferenceInfoResponseConferenceMembersStatusAudio.ProtoReflect.Descriptor instead.
 func (*ConferenceInfoResponseConferenceMembersStatusAudio) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{11}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *ConferenceInfoResponseConferenceMembersStatusAudio) GetTalking() bool {
@@ -1012,7 +870,7 @@ type ConferenceInfoResponseConferenceMembersStatusVideo struct {
 func (x *ConferenceInfoResponseConferenceMembersStatusVideo) Reset() {
 	*x = ConferenceInfoResponseConferenceMembersStatusVideo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[12]
+		mi := &file_proto_cman_cman_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1025,7 +883,7 @@ func (x *ConferenceInfoResponseConferenceMembersStatusVideo) String() string {
 func (*ConferenceInfoResponseConferenceMembersStatusVideo) ProtoMessage() {}
 
 func (x *ConferenceInfoResponseConferenceMembersStatusVideo) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[12]
+	mi := &file_proto_cman_cman_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1038,7 +896,7 @@ func (x *ConferenceInfoResponseConferenceMembersStatusVideo) ProtoReflect() prot
 
 // Deprecated: Use ConferenceInfoResponseConferenceMembersStatusVideo.ProtoReflect.Descriptor instead.
 func (*ConferenceInfoResponseConferenceMembersStatusVideo) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{12}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *ConferenceInfoResponseConferenceMembersStatusVideo) GetVisible() bool {
@@ -1134,7 +992,7 @@ type ConferenceInfoResponseVariables struct {
 func (x *ConferenceInfoResponseVariables) Reset() {
 	*x = ConferenceInfoResponseVariables{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[13]
+		mi := &file_proto_cman_cman_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1147,7 +1005,7 @@ func (x *ConferenceInfoResponseVariables) String() string {
 func (*ConferenceInfoResponseVariables) ProtoMessage() {}
 
 func (x *ConferenceInfoResponseVariables) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[13]
+	mi := &file_proto_cman_cman_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1160,7 +1018,7 @@ func (x *ConferenceInfoResponseVariables) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConferenceInfoResponseVariables.ProtoReflect.Descriptor instead.
 func (*ConferenceInfoResponseVariables) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{13}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{11}
 }
 
 type ConferenceInfoResponseMembers struct {
@@ -1168,25 +1026,43 @@ type ConferenceInfoResponseMembers struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Type           string                       `protobuf:"bytes,1,opt,name=type,proto3" json:"type,omitempty"`
-	Id             int32                        `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
-	Uuid           string                       `protobuf:"bytes,3,opt,name=uuid,proto3" json:"uuid,omitempty"`
-	CallerIdName   string                       `protobuf:"bytes,4,opt,name=caller_id_name,json=callerIdName,proto3" json:"caller_id_name,omitempty"`
-	CallerIdNumber string                       `protobuf:"bytes,5,opt,name=caller_id_number,json=callerIdNumber,proto3" json:"caller_id_number,omitempty"`
-	JoinTime       int32                        `protobuf:"varint,6,opt,name=join_time,json=joinTime,proto3" json:"join_time,omitempty"`
-	LastTalking    int32                        `protobuf:"varint,7,opt,name=last_talking,json=lastTalking,proto3" json:"last_talking,omitempty"`
-	Energy         int32                        `protobuf:"varint,8,opt,name=energy,proto3" json:"energy,omitempty"`
-	VolumeIn       int32                        `protobuf:"varint,9,opt,name=volume_in,json=volumeIn,proto3" json:"volume_in,omitempty"`
-	VolumeOut      int32                        `protobuf:"varint,10,opt,name=volume_out,json=volumeOut,proto3" json:"volume_out,omitempty"`
-	OutputVolume   int32                        `protobuf:"varint,11,opt,name=output_volume,json=outputVolume,proto3" json:"output_volume,omitempty"`
-	InputVolume    int32                        `protobuf:"varint,12,opt,name=input_volume,json=inputVolume,proto3" json:"input_volume,omitempty"`
-	Flags          *ConferenceInfoResponseFlags `protobuf:"bytes,13,opt,name=flags,proto3" json:"flags,omitempty"`
+	Type             string                                         `protobuf:"bytes,1,opt,name=type,proto3" json:"type,omitempty"`
+	Id               int32                                          `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Uuid             string                                         `protobuf:"bytes,3,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	CallerIdName     string                                         `protobuf:"bytes,4,opt,name=caller_id_name,json=callerIdName,proto3" json:"caller_id_name,omitempty"`
+	CallerIdNumber   string                                         `protobuf:"bytes,5,opt,name=caller_id_number,json=callerIdNumber,proto3" json:"caller_id_number,omitempty"`
+	JoinTime         int32                                          `protobuf:"varint,6,opt,name=join_time,json=joinTime,proto3" json:"join_time,omitempty"`
+	LastTalking      int32                                          `protobuf:"varint,7,opt,name=last_talking,json=lastTalking,proto3" json:"last_talking,omitempty"`
+	Energy           int32                                          `protobuf:"varint,8,opt,name=energy,proto3" json:"energy,omitempty"`
+	VolumeIn         int32                                          `protobuf:"varint,9,opt,name=volume_in,json=volumeIn,proto3" json:"volume_in,omitempty"`
+	VolumeOut        int32                                          `protobuf:"varint,10,opt,name=volume_out,json=volumeOut,proto3" json:"volume_out,omitempty"`
+	OutputVolume     int32                                          `protobuf:"varint,11,opt,name=output_volume,json=outputVolume,proto3" json:"output_volume,omitempty"`
+	InputVolume      int32                                          `protobuf:"varint,12,opt,name=input_volume,json=inputVolume,proto3" json:"input_volume,omitempty"`
+	Flags            *ConferenceInfoResponseFlags                   `protobuf:"bytes,13,opt,name=flags,proto3" json:"flags,omitempty"`
+	MemberID         string                                         `protobuf:"bytes,14,opt,name=memberID,proto3" json:"memberID,omitempty"`
+	CidNumber        string                                         `protobuf:"bytes,15,opt,name=cidNumber,proto3" json:"cidNumber,omitempty"`
+	CidName          string                                         `protobuf:"bytes,16,opt,name=cidName,proto3" json:"cidName,omitempty"`
+	Codec            string                                         `protobuf:"bytes,17,opt,name=codec,proto3" json:"codec,omitempty"`
+	Status           *ConferenceInfoResponseConferenceMembersStatus `protobuf:"bytes,18,opt,name=status,proto3" json:"status,omitempty"`
+	Email            string                                         `protobuf:"bytes,19,opt,name=email,proto3" json:"email,omitempty"`
+	NodeUUID         string                                         `protobuf:"bytes,20,opt,name=nodeUUID,proto3" json:"nodeUUID,omitempty"`
+	Active           bool                                           `protobuf:"varint,21,opt,name=active,proto3" json:"active,omitempty"`
+	GroupID          string                                         `protobuf:"bytes,22,opt,name=groupID,proto3" json:"groupID,omitempty"`
+	MemberType       string                                         `protobuf:"bytes,23,opt,name=memberType,proto3" json:"memberType,omitempty"`
+	NodeType         string                                         `protobuf:"bytes,24,opt,name=nodeType,proto3" json:"nodeType,omitempty"`
+	Domain           string                                         `protobuf:"bytes,25,opt,name=domain,proto3" json:"domain,omitempty"`
+	CanvasID         int32                                          `protobuf:"varint,26,opt,name=canvasID,proto3" json:"canvasID,omitempty"`
+	WatchingCanvasID int32                                          `protobuf:"varint,27,opt,name=watchingCanvasID,proto3" json:"watchingCanvasID,omitempty"`
+	RoleID           string                                         `protobuf:"bytes,28,opt,name=roleID,proto3" json:"roleID,omitempty"`
+	LayerID          int32                                          `protobuf:"varint,29,opt,name=layerID,proto3" json:"layerID,omitempty"`
+	ReservationID    string                                         `protobuf:"bytes,30,opt,name=reservationID,proto3" json:"reservationID,omitempty"`
+	ChannelName      string                                         `protobuf:"bytes,31,opt,name=channelName,proto3" json:"channelName,omitempty"`
 }
 
 func (x *ConferenceInfoResponseMembers) Reset() {
 	*x = ConferenceInfoResponseMembers{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[14]
+		mi := &file_proto_cman_cman_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1199,7 +1075,7 @@ func (x *ConferenceInfoResponseMembers) String() string {
 func (*ConferenceInfoResponseMembers) ProtoMessage() {}
 
 func (x *ConferenceInfoResponseMembers) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[14]
+	mi := &file_proto_cman_cman_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1212,7 +1088,7 @@ func (x *ConferenceInfoResponseMembers) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConferenceInfoResponseMembers.ProtoReflect.Descriptor instead.
 func (*ConferenceInfoResponseMembers) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{14}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *ConferenceInfoResponseMembers) GetType() string {
@@ -1306,6 +1182,132 @@ func (x *ConferenceInfoResponseMembers) GetFlags() *ConferenceInfoResponseFlags 
 	return nil
 }
 
+func (x *ConferenceInfoResponseMembers) GetMemberID() string {
+	if x != nil {
+		return x.MemberID
+	}
+	return ""
+}
+
+func (x *ConferenceInfoResponseMembers) GetCidNumber() string {
+	if x != nil {
+		return x.CidNumber
+	}
+	return ""
+}
+
+func (x *ConferenceInfoResponseMembers) GetCidName() string {
+	if x != nil {
+		return x.CidName
+	}
+	return ""
+}
+
+func (x *ConferenceInfoResponseMembers) GetCodec() string {
+	if x != nil {
+		return x.Codec
+	}
+	return ""
+}
+
+func (x *ConferenceInfoResponseMembers) GetStatus() *ConferenceInfoResponseConferenceMembersStatus {
+	if x != nil {
+		return x.Status
+	}
+	return nil
+}
+
+func (x *ConferenceInfoResponseMembers) GetEmail() string {
+	if x != nil {
+		return x.Email
+	}
+	return ""
+}
+
+func (x *ConferenceInfoResponseMembers) GetNodeUUID() string {
+	if x != nil {
+		return x.NodeUUID
+	}
+	return ""
+}
+
+func (x *ConferenceInfoResponseMembers) GetActive() bool {
+	if x != nil {
+		return x.Active
+	}
+	return false
+}
+
+func (x *ConferenceInfoResponseMembers) GetGroupID() string {
+	if x != nil {
+		return x.GroupID
+	}
+	return ""
+}
+
+func (x *ConferenceInfoResponseMembers) GetMemberType() string {
+	if x != nil {
+		return x.MemberType
+	}
+	return ""
+}
+
+func (x *ConferenceInfoResponseMembers) GetNodeType() string {
+	if x != nil {
+		return x.NodeType
+	}
+	return ""
+}
+
+func (x *ConferenceInfoResponseMembers) GetDomain() string {
+	if x != nil {
+		return x.Domain
+	}
+	return ""
+}
+
+func (x *ConferenceInfoResponseMembers) GetCanvasID() int32 {
+	if x != nil {
+		return x.CanvasID
+	}
+	return 0
+}
+
+func (x *ConferenceInfoResponseMembers) GetWatchingCanvasID() int32 {
+	if x != nil {
+		return x.WatchingCanvasID
+	}
+	return 0
+}
+
+func (x *ConferenceInfoResponseMembers) GetRoleID() string {
+	if x != nil {
+		return x.RoleID
+	}
+	return ""
+}
+
+func (x *ConferenceInfoResponseMembers) GetLayerID() int32 {
+	if x != nil {
+		return x.LayerID
+	}
+	return 0
+}
+
+func (x *ConferenceInfoResponseMembers) GetReservationID() string {
+	if x != nil {
+		return x.ReservationID
+	}
+	return ""
+}
+
+func (x *ConferenceInfoResponseMembers) GetChannelName() string {
+	if x != nil {
+		return x.ChannelName
+	}
+	return ""
+}
+
 type ConferenceInfoResponseFlags struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1327,7 +1329,7 @@ type ConferenceInfoResponseFlags struct {
 func (x *ConferenceInfoResponseFlags) Reset() {
 	*x = ConferenceInfoResponseFlags{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[15]
+		mi := &file_proto_cman_cman_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1340,7 +1342,7 @@ func (x *ConferenceInfoResponseFlags) String() string {
 func (*ConferenceInfoResponseFlags) ProtoMessage() {}
 
 func (x *ConferenceInfoResponseFlags) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[15]
+	mi := &file_proto_cman_cman_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1353,7 +1355,7 @@ func (x *ConferenceInfoResponseFlags) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConferenceInfoResponseFlags.ProtoReflect.Descriptor instead.
 func (*ConferenceInfoResponseFlags) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{15}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *ConferenceInfoResponseFlags) GetCanHear() bool {
@@ -1442,7 +1444,7 @@ type GetConferenceListRequest struct {
 func (x *GetConferenceListRequest) Reset() {
 	*x = GetConferenceListRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[16]
+		mi := &file_proto_cman_cman_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1455,7 +1457,7 @@ func (x *GetConferenceListRequest) String() string {
 func (*GetConferenceListRequest) ProtoMessage() {}
 
 func (x *GetConferenceListRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[16]
+	mi := &file_proto_cman_cman_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1468,7 +1470,7 @@ func (x *GetConferenceListRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetConferenceListRequest.ProtoReflect.Descriptor instead.
 func (*GetConferenceListRequest) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{16}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{14}
 }
 
 type ConferenceObjectNodesGroupMembers struct {
@@ -1480,7 +1482,7 @@ type ConferenceObjectNodesGroupMembers struct {
 func (x *ConferenceObjectNodesGroupMembers) Reset() {
 	*x = ConferenceObjectNodesGroupMembers{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[17]
+		mi := &file_proto_cman_cman_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1493,7 +1495,7 @@ func (x *ConferenceObjectNodesGroupMembers) String() string {
 func (*ConferenceObjectNodesGroupMembers) ProtoMessage() {}
 
 func (x *ConferenceObjectNodesGroupMembers) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[17]
+	mi := &file_proto_cman_cman_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1506,7 +1508,7 @@ func (x *ConferenceObjectNodesGroupMembers) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use ConferenceObjectNodesGroupMembers.ProtoReflect.Descriptor instead.
 func (*ConferenceObjectNodesGroupMembers) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{17}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{15}
 }
 
 type ConferenceObjectNodesNodeMembers struct {
@@ -1518,7 +1520,7 @@ type ConferenceObjectNodesNodeMembers struct {
 func (x *ConferenceObjectNodesNodeMembers) Reset() {
 	*x = ConferenceObjectNodesNodeMembers{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[18]
+		mi := &file_proto_cman_cman_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1531,7 +1533,7 @@ func (x *ConferenceObjectNodesNodeMembers) String() string {
 func (*ConferenceObjectNodesNodeMembers) ProtoMessage() {}
 
 func (x *ConferenceObjectNodesNodeMembers) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[18]
+	mi := &file_proto_cman_cman_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1544,7 +1546,7 @@ func (x *ConferenceObjectNodesNodeMembers) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConferenceObjectNodesNodeMembers.ProtoReflect.Descriptor instead.
 func (*ConferenceObjectNodesNodeMembers) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{18}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{16}
 }
 
 type ConferenceObjectNodes struct {
@@ -1570,7 +1572,7 @@ type ConferenceObjectNodes struct {
 func (x *ConferenceObjectNodes) Reset() {
 	*x = ConferenceObjectNodes{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[19]
+		mi := &file_proto_cman_cman_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1583,7 +1585,7 @@ func (x *ConferenceObjectNodes) String() string {
 func (*ConferenceObjectNodes) ProtoMessage() {}
 
 func (x *ConferenceObjectNodes) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[19]
+	mi := &file_proto_cman_cman_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1596,7 +1598,7 @@ func (x *ConferenceObjectNodes) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConferenceObjectNodes.ProtoReflect.Descriptor instead.
 func (*ConferenceObjectNodes) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{19}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *ConferenceObjectNodes) GetNodeUUID() string {
@@ -1706,7 +1708,7 @@ type ConferenceObject struct {
 func (x *ConferenceObject) Reset() {
 	*x = ConferenceObject{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[20]
+		mi := &file_proto_cman_cman_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1719,7 +1721,7 @@ func (x *ConferenceObject) String() string {
 func (*ConferenceObject) ProtoMessage() {}
 
 func (x *ConferenceObject) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[20]
+	mi := &file_proto_cman_cman_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1732,7 +1734,7 @@ func (x *ConferenceObject) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConferenceObject.ProtoReflect.Descriptor instead.
 func (*ConferenceObject) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{20}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *ConferenceObject) GetName() string {
@@ -1788,7 +1790,7 @@ type GetConferenceListResponse struct {
 func (x *GetConferenceListResponse) Reset() {
 	*x = GetConferenceListResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[21]
+		mi := &file_proto_cman_cman_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1801,7 +1803,7 @@ func (x *GetConferenceListResponse) String() string {
 func (*GetConferenceListResponse) ProtoMessage() {}
 
 func (x *GetConferenceListResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[21]
+	mi := &file_proto_cman_cman_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1814,7 +1816,7 @@ func (x *GetConferenceListResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetConferenceListResponse.ProtoReflect.Descriptor instead.
 func (*GetConferenceListResponse) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{21}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *GetConferenceListResponse) GetConferences() []*ConferenceObject {
@@ -1837,7 +1839,7 @@ type BootstrapRequest struct {
 func (x *BootstrapRequest) Reset() {
 	*x = BootstrapRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[22]
+		mi := &file_proto_cman_cman_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1850,7 +1852,7 @@ func (x *BootstrapRequest) String() string {
 func (*BootstrapRequest) ProtoMessage() {}
 
 func (x *BootstrapRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[22]
+	mi := &file_proto_cman_cman_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1863,7 +1865,7 @@ func (x *BootstrapRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BootstrapRequest.ProtoReflect.Descriptor instead.
 func (*BootstrapRequest) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{22}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *BootstrapRequest) GetEventChannel() string {
@@ -1898,7 +1900,7 @@ type BootstrapRequestData struct {
 func (x *BootstrapRequestData) Reset() {
 	*x = BootstrapRequestData{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[23]
+		mi := &file_proto_cman_cman_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1911,7 +1913,7 @@ func (x *BootstrapRequestData) String() string {
 func (*BootstrapRequestData) ProtoMessage() {}
 
 func (x *BootstrapRequestData) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[23]
+	mi := &file_proto_cman_cman_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1924,7 +1926,7 @@ func (x *BootstrapRequestData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BootstrapRequestData.ProtoReflect.Descriptor instead.
 func (*BootstrapRequestData) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{23}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *BootstrapRequestData) GetLiveArray() *BootstrapRequestDataLiveArray {
@@ -1948,7 +1950,7 @@ type BootstrapRequestDataLiveArray struct {
 func (x *BootstrapRequestDataLiveArray) Reset() {
 	*x = BootstrapRequestDataLiveArray{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[24]
+		mi := &file_proto_cman_cman_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1961,7 +1963,7 @@ func (x *BootstrapRequestDataLiveArray) String() string {
 func (*BootstrapRequestDataLiveArray) ProtoMessage() {}
 
 func (x *BootstrapRequestDataLiveArray) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[24]
+	mi := &file_proto_cman_cman_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1974,7 +1976,7 @@ func (x *BootstrapRequestDataLiveArray) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BootstrapRequestDataLiveArray.ProtoReflect.Descriptor instead.
 func (*BootstrapRequestDataLiveArray) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{24}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *BootstrapRequestDataLiveArray) GetCommand() string {
@@ -2016,7 +2018,7 @@ type BootstrapRequestDataLiveArrayObj struct {
 func (x *BootstrapRequestDataLiveArrayObj) Reset() {
 	*x = BootstrapRequestDataLiveArrayObj{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[25]
+		mi := &file_proto_cman_cman_proto_msgTypes[23]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2029,7 +2031,7 @@ func (x *BootstrapRequestDataLiveArrayObj) String() string {
 func (*BootstrapRequestDataLiveArrayObj) ProtoMessage() {}
 
 func (x *BootstrapRequestDataLiveArrayObj) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[25]
+	mi := &file_proto_cman_cman_proto_msgTypes[23]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2042,7 +2044,7 @@ func (x *BootstrapRequestDataLiveArrayObj) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BootstrapRequestDataLiveArrayObj.ProtoReflect.Descriptor instead.
 func (*BootstrapRequestDataLiveArrayObj) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{25}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *BootstrapRequestDataLiveArrayObj) GetGroupID() string {
@@ -2065,7 +2067,7 @@ type BootstrapResponse struct {
 func (x *BootstrapResponse) Reset() {
 	*x = BootstrapResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[26]
+		mi := &file_proto_cman_cman_proto_msgTypes[24]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2078,7 +2080,7 @@ func (x *BootstrapResponse) String() string {
 func (*BootstrapResponse) ProtoMessage() {}
 
 func (x *BootstrapResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[26]
+	mi := &file_proto_cman_cman_proto_msgTypes[24]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2091,7 +2093,7 @@ func (x *BootstrapResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BootstrapResponse.ProtoReflect.Descriptor instead.
 func (*BootstrapResponse) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{26}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *BootstrapResponse) GetEventChannel() string {
@@ -2130,7 +2132,7 @@ type BootstrapResponseData struct {
 func (x *BootstrapResponseData) Reset() {
 	*x = BootstrapResponseData{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[27]
+		mi := &file_proto_cman_cman_proto_msgTypes[25]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2143,7 +2145,7 @@ func (x *BootstrapResponseData) String() string {
 func (*BootstrapResponseData) ProtoMessage() {}
 
 func (x *BootstrapResponseData) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[27]
+	mi := &file_proto_cman_cman_proto_msgTypes[25]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2156,7 +2158,7 @@ func (x *BootstrapResponseData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BootstrapResponseData.ProtoReflect.Descriptor instead.
 func (*BootstrapResponseData) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{27}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *BootstrapResponseData) GetAction() string {
@@ -2199,7 +2201,7 @@ type BootstrapResponseDataConfInfo struct {
 func (x *BootstrapResponseDataConfInfo) Reset() {
 	*x = BootstrapResponseDataConfInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[28]
+		mi := &file_proto_cman_cman_proto_msgTypes[26]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2212,7 +2214,7 @@ func (x *BootstrapResponseDataConfInfo) String() string {
 func (*BootstrapResponseDataConfInfo) ProtoMessage() {}
 
 func (x *BootstrapResponseDataConfInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[28]
+	mi := &file_proto_cman_cman_proto_msgTypes[26]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2225,7 +2227,7 @@ func (x *BootstrapResponseDataConfInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BootstrapResponseDataConfInfo.ProtoReflect.Descriptor instead.
 func (*BootstrapResponseDataConfInfo) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{28}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *BootstrapResponseDataConfInfo) GetSize() int32 {
@@ -2253,7 +2255,7 @@ type GetNodeForConferenceRequest struct {
 func (x *GetNodeForConferenceRequest) Reset() {
 	*x = GetNodeForConferenceRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[29]
+		mi := &file_proto_cman_cman_proto_msgTypes[27]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2266,7 +2268,7 @@ func (x *GetNodeForConferenceRequest) String() string {
 func (*GetNodeForConferenceRequest) ProtoMessage() {}
 
 func (x *GetNodeForConferenceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[29]
+	mi := &file_proto_cman_cman_proto_msgTypes[27]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2279,7 +2281,7 @@ func (x *GetNodeForConferenceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetNodeForConferenceRequest.ProtoReflect.Descriptor instead.
 func (*GetNodeForConferenceRequest) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{29}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *GetNodeForConferenceRequest) GetName() string {
@@ -2300,7 +2302,7 @@ type GetNodeForConferenceResponse struct {
 func (x *GetNodeForConferenceResponse) Reset() {
 	*x = GetNodeForConferenceResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[30]
+		mi := &file_proto_cman_cman_proto_msgTypes[28]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2313,7 +2315,7 @@ func (x *GetNodeForConferenceResponse) String() string {
 func (*GetNodeForConferenceResponse) ProtoMessage() {}
 
 func (x *GetNodeForConferenceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[30]
+	mi := &file_proto_cman_cman_proto_msgTypes[28]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2326,7 +2328,7 @@ func (x *GetNodeForConferenceResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetNodeForConferenceResponse.ProtoReflect.Descriptor instead.
 func (*GetNodeForConferenceResponse) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{30}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *GetNodeForConferenceResponse) GetNodeUUID() string {
@@ -2351,7 +2353,7 @@ type ConfControlRequest struct {
 func (x *ConfControlRequest) Reset() {
 	*x = ConfControlRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[31]
+		mi := &file_proto_cman_cman_proto_msgTypes[29]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2364,7 +2366,7 @@ func (x *ConfControlRequest) String() string {
 func (*ConfControlRequest) ProtoMessage() {}
 
 func (x *ConfControlRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[31]
+	mi := &file_proto_cman_cman_proto_msgTypes[29]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2377,7 +2379,7 @@ func (x *ConfControlRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfControlRequest.ProtoReflect.Descriptor instead.
 func (*ConfControlRequest) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{31}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *ConfControlRequest) GetCommand() string {
@@ -2424,7 +2426,7 @@ type ConfControlResponse struct {
 func (x *ConfControlResponse) Reset() {
 	*x = ConfControlResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[32]
+		mi := &file_proto_cman_cman_proto_msgTypes[30]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2437,7 +2439,7 @@ func (x *ConfControlResponse) String() string {
 func (*ConfControlResponse) ProtoMessage() {}
 
 func (x *ConfControlResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[32]
+	mi := &file_proto_cman_cman_proto_msgTypes[30]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2450,7 +2452,7 @@ func (x *ConfControlResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfControlResponse.ProtoReflect.Descriptor instead.
 func (*ConfControlResponse) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{32}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{30}
 }
 
 type PushMainRequest struct {
@@ -2467,7 +2469,7 @@ type PushMainRequest struct {
 func (x *PushMainRequest) Reset() {
 	*x = PushMainRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[33]
+		mi := &file_proto_cman_cman_proto_msgTypes[31]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2480,7 +2482,7 @@ func (x *PushMainRequest) String() string {
 func (*PushMainRequest) ProtoMessage() {}
 
 func (x *PushMainRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[33]
+	mi := &file_proto_cman_cman_proto_msgTypes[31]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2493,7 +2495,7 @@ func (x *PushMainRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PushMainRequest.ProtoReflect.Descriptor instead.
 func (*PushMainRequest) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{33}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{31}
 }
 
 func (x *PushMainRequest) GetCommand() string {
@@ -2533,7 +2535,7 @@ type PushMainResponse struct {
 func (x *PushMainResponse) Reset() {
 	*x = PushMainResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[34]
+		mi := &file_proto_cman_cman_proto_msgTypes[32]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2546,7 +2548,7 @@ func (x *PushMainResponse) String() string {
 func (*PushMainResponse) ProtoMessage() {}
 
 func (x *PushMainResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[34]
+	mi := &file_proto_cman_cman_proto_msgTypes[32]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2559,7 +2561,7 @@ func (x *PushMainResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PushMainResponse.ProtoReflect.Descriptor instead.
 func (*PushMainResponse) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{34}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{32}
 }
 
 type PushSubCanvasRequest struct {
@@ -2577,7 +2579,7 @@ type PushSubCanvasRequest struct {
 func (x *PushSubCanvasRequest) Reset() {
 	*x = PushSubCanvasRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[35]
+		mi := &file_proto_cman_cman_proto_msgTypes[33]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2590,7 +2592,7 @@ func (x *PushSubCanvasRequest) String() string {
 func (*PushSubCanvasRequest) ProtoMessage() {}
 
 func (x *PushSubCanvasRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[35]
+	mi := &file_proto_cman_cman_proto_msgTypes[33]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2603,7 +2605,7 @@ func (x *PushSubCanvasRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PushSubCanvasRequest.ProtoReflect.Descriptor instead.
 func (*PushSubCanvasRequest) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{35}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{33}
 }
 
 func (x *PushSubCanvasRequest) GetCommand() string {
@@ -2654,7 +2656,7 @@ type PushSubCanvasRequestMembers struct {
 func (x *PushSubCanvasRequestMembers) Reset() {
 	*x = PushSubCanvasRequestMembers{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[36]
+		mi := &file_proto_cman_cman_proto_msgTypes[34]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2667,7 +2669,7 @@ func (x *PushSubCanvasRequestMembers) String() string {
 func (*PushSubCanvasRequestMembers) ProtoMessage() {}
 
 func (x *PushSubCanvasRequestMembers) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[36]
+	mi := &file_proto_cman_cman_proto_msgTypes[34]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2680,7 +2682,7 @@ func (x *PushSubCanvasRequestMembers) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PushSubCanvasRequestMembers.ProtoReflect.Descriptor instead.
 func (*PushSubCanvasRequestMembers) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{36}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{34}
 }
 
 func (x *PushSubCanvasRequestMembers) GetMemberID() string {
@@ -2713,7 +2715,7 @@ type PushSubCanvasResponse struct {
 func (x *PushSubCanvasResponse) Reset() {
 	*x = PushSubCanvasResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[37]
+		mi := &file_proto_cman_cman_proto_msgTypes[35]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2726,7 +2728,7 @@ func (x *PushSubCanvasResponse) String() string {
 func (*PushSubCanvasResponse) ProtoMessage() {}
 
 func (x *PushSubCanvasResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[37]
+	mi := &file_proto_cman_cman_proto_msgTypes[35]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2739,7 +2741,7 @@ func (x *PushSubCanvasResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PushSubCanvasResponse.ProtoReflect.Descriptor instead.
 func (*PushSubCanvasResponse) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{37}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{35}
 }
 
 type PushMainSubCanvasRequest struct {
@@ -2757,7 +2759,7 @@ type PushMainSubCanvasRequest struct {
 func (x *PushMainSubCanvasRequest) Reset() {
 	*x = PushMainSubCanvasRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[38]
+		mi := &file_proto_cman_cman_proto_msgTypes[36]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2770,7 +2772,7 @@ func (x *PushMainSubCanvasRequest) String() string {
 func (*PushMainSubCanvasRequest) ProtoMessage() {}
 
 func (x *PushMainSubCanvasRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[38]
+	mi := &file_proto_cman_cman_proto_msgTypes[36]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2783,7 +2785,7 @@ func (x *PushMainSubCanvasRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PushMainSubCanvasRequest.ProtoReflect.Descriptor instead.
 func (*PushMainSubCanvasRequest) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{38}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{36}
 }
 
 func (x *PushMainSubCanvasRequest) GetCommand() string {
@@ -2834,7 +2836,7 @@ type PushMainSubCanvasRequestMembers struct {
 func (x *PushMainSubCanvasRequestMembers) Reset() {
 	*x = PushMainSubCanvasRequestMembers{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[39]
+		mi := &file_proto_cman_cman_proto_msgTypes[37]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2847,7 +2849,7 @@ func (x *PushMainSubCanvasRequestMembers) String() string {
 func (*PushMainSubCanvasRequestMembers) ProtoMessage() {}
 
 func (x *PushMainSubCanvasRequestMembers) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[39]
+	mi := &file_proto_cman_cman_proto_msgTypes[37]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2860,7 +2862,7 @@ func (x *PushMainSubCanvasRequestMembers) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PushMainSubCanvasRequestMembers.ProtoReflect.Descriptor instead.
 func (*PushMainSubCanvasRequestMembers) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{39}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{37}
 }
 
 func (x *PushMainSubCanvasRequestMembers) GetMemberID() string {
@@ -2893,7 +2895,7 @@ type PushMainSubCanvasResponse struct {
 func (x *PushMainSubCanvasResponse) Reset() {
 	*x = PushMainSubCanvasResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[40]
+		mi := &file_proto_cman_cman_proto_msgTypes[38]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2906,7 +2908,7 @@ func (x *PushMainSubCanvasResponse) String() string {
 func (*PushMainSubCanvasResponse) ProtoMessage() {}
 
 func (x *PushMainSubCanvasResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[40]
+	mi := &file_proto_cman_cman_proto_msgTypes[38]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2919,7 +2921,7 @@ func (x *PushMainSubCanvasResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PushMainSubCanvasResponse.ProtoReflect.Descriptor instead.
 func (*PushMainSubCanvasResponse) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{40}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{38}
 }
 
 type PushWholeRequest struct {
@@ -2937,7 +2939,7 @@ type PushWholeRequest struct {
 func (x *PushWholeRequest) Reset() {
 	*x = PushWholeRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[41]
+		mi := &file_proto_cman_cman_proto_msgTypes[39]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2950,7 +2952,7 @@ func (x *PushWholeRequest) String() string {
 func (*PushWholeRequest) ProtoMessage() {}
 
 func (x *PushWholeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[41]
+	mi := &file_proto_cman_cman_proto_msgTypes[39]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2963,7 +2965,7 @@ func (x *PushWholeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PushWholeRequest.ProtoReflect.Descriptor instead.
 func (*PushWholeRequest) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{41}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{39}
 }
 
 func (x *PushWholeRequest) GetCommand() string {
@@ -3014,7 +3016,7 @@ type PushWholeRequestMembers struct {
 func (x *PushWholeRequestMembers) Reset() {
 	*x = PushWholeRequestMembers{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[42]
+		mi := &file_proto_cman_cman_proto_msgTypes[40]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3027,7 +3029,7 @@ func (x *PushWholeRequestMembers) String() string {
 func (*PushWholeRequestMembers) ProtoMessage() {}
 
 func (x *PushWholeRequestMembers) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[42]
+	mi := &file_proto_cman_cman_proto_msgTypes[40]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3040,7 +3042,7 @@ func (x *PushWholeRequestMembers) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PushWholeRequestMembers.ProtoReflect.Descriptor instead.
 func (*PushWholeRequestMembers) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{42}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{40}
 }
 
 func (x *PushWholeRequestMembers) GetMemberID() string {
@@ -3073,7 +3075,7 @@ type PushWholeResponse struct {
 func (x *PushWholeResponse) Reset() {
 	*x = PushWholeResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[43]
+		mi := &file_proto_cman_cman_proto_msgTypes[41]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3086,7 +3088,7 @@ func (x *PushWholeResponse) String() string {
 func (*PushWholeResponse) ProtoMessage() {}
 
 func (x *PushWholeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[43]
+	mi := &file_proto_cman_cman_proto_msgTypes[41]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3099,7 +3101,7 @@ func (x *PushWholeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PushWholeResponse.ProtoReflect.Descriptor instead.
 func (*PushWholeResponse) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{43}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{41}
 }
 
 type LoopSomeRequest struct {
@@ -3117,7 +3119,7 @@ type LoopSomeRequest struct {
 func (x *LoopSomeRequest) Reset() {
 	*x = LoopSomeRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[44]
+		mi := &file_proto_cman_cman_proto_msgTypes[42]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3130,7 +3132,7 @@ func (x *LoopSomeRequest) String() string {
 func (*LoopSomeRequest) ProtoMessage() {}
 
 func (x *LoopSomeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[44]
+	mi := &file_proto_cman_cman_proto_msgTypes[42]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3143,7 +3145,7 @@ func (x *LoopSomeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LoopSomeRequest.ProtoReflect.Descriptor instead.
 func (*LoopSomeRequest) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{44}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{42}
 }
 
 func (x *LoopSomeRequest) GetCommand() string {
@@ -3193,7 +3195,7 @@ type LoopSomeRequestMembers struct {
 func (x *LoopSomeRequestMembers) Reset() {
 	*x = LoopSomeRequestMembers{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[45]
+		mi := &file_proto_cman_cman_proto_msgTypes[43]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3206,7 +3208,7 @@ func (x *LoopSomeRequestMembers) String() string {
 func (*LoopSomeRequestMembers) ProtoMessage() {}
 
 func (x *LoopSomeRequestMembers) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[45]
+	mi := &file_proto_cman_cman_proto_msgTypes[43]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3219,7 +3221,7 @@ func (x *LoopSomeRequestMembers) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LoopSomeRequestMembers.ProtoReflect.Descriptor instead.
 func (*LoopSomeRequestMembers) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{45}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{43}
 }
 
 func (x *LoopSomeRequestMembers) GetMemberID() string {
@@ -3245,7 +3247,7 @@ type LoopSomeResponse struct {
 func (x *LoopSomeResponse) Reset() {
 	*x = LoopSomeResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[46]
+		mi := &file_proto_cman_cman_proto_msgTypes[44]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3258,7 +3260,7 @@ func (x *LoopSomeResponse) String() string {
 func (*LoopSomeResponse) ProtoMessage() {}
 
 func (x *LoopSomeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[46]
+	mi := &file_proto_cman_cman_proto_msgTypes[44]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3271,7 +3273,7 @@ func (x *LoopSomeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LoopSomeResponse.ProtoReflect.Descriptor instead.
 func (*LoopSomeResponse) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{46}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{44}
 }
 
 type GetJWTRequest struct {
@@ -3286,7 +3288,7 @@ type GetJWTRequest struct {
 func (x *GetJWTRequest) Reset() {
 	*x = GetJWTRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[47]
+		mi := &file_proto_cman_cman_proto_msgTypes[45]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3299,7 +3301,7 @@ func (x *GetJWTRequest) String() string {
 func (*GetJWTRequest) ProtoMessage() {}
 
 func (x *GetJWTRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[47]
+	mi := &file_proto_cman_cman_proto_msgTypes[45]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3312,7 +3314,7 @@ func (x *GetJWTRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetJWTRequest.ProtoReflect.Descriptor instead.
 func (*GetJWTRequest) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{47}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{45}
 }
 
 func (x *GetJWTRequest) GetAuth() string {
@@ -3345,7 +3347,7 @@ type GetJWTRequestClaims struct {
 func (x *GetJWTRequestClaims) Reset() {
 	*x = GetJWTRequestClaims{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[48]
+		mi := &file_proto_cman_cman_proto_msgTypes[46]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3358,7 +3360,7 @@ func (x *GetJWTRequestClaims) String() string {
 func (*GetJWTRequestClaims) ProtoMessage() {}
 
 func (x *GetJWTRequestClaims) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[48]
+	mi := &file_proto_cman_cman_proto_msgTypes[46]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3371,7 +3373,7 @@ func (x *GetJWTRequestClaims) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetJWTRequestClaims.ProtoReflect.Descriptor instead.
 func (*GetJWTRequestClaims) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{48}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{46}
 }
 
 func (x *GetJWTRequestClaims) GetUserId() string {
@@ -3427,7 +3429,7 @@ type GetJWTResponse struct {
 func (x *GetJWTResponse) Reset() {
 	*x = GetJWTResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[49]
+		mi := &file_proto_cman_cman_proto_msgTypes[47]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3440,7 +3442,7 @@ func (x *GetJWTResponse) String() string {
 func (*GetJWTResponse) ProtoMessage() {}
 
 func (x *GetJWTResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[49]
+	mi := &file_proto_cman_cman_proto_msgTypes[47]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3453,7 +3455,7 @@ func (x *GetJWTResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetJWTResponse.ProtoReflect.Descriptor instead.
 func (*GetJWTResponse) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{49}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{47}
 }
 
 func (x *GetJWTResponse) GetToken() string {
@@ -3475,7 +3477,7 @@ type GetCManInfoRequest struct {
 func (x *GetCManInfoRequest) Reset() {
 	*x = GetCManInfoRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[50]
+		mi := &file_proto_cman_cman_proto_msgTypes[48]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3488,7 +3490,7 @@ func (x *GetCManInfoRequest) String() string {
 func (*GetCManInfoRequest) ProtoMessage() {}
 
 func (x *GetCManInfoRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[50]
+	mi := &file_proto_cman_cman_proto_msgTypes[48]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3501,7 +3503,7 @@ func (x *GetCManInfoRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCManInfoRequest.ProtoReflect.Descriptor instead.
 func (*GetCManInfoRequest) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{50}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{48}
 }
 
 func (x *GetCManInfoRequest) GetReply() string {
@@ -3527,7 +3529,7 @@ type GetCManInfoResponse struct {
 func (x *GetCManInfoResponse) Reset() {
 	*x = GetCManInfoResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[51]
+		mi := &file_proto_cman_cman_proto_msgTypes[49]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3540,7 +3542,7 @@ func (x *GetCManInfoResponse) String() string {
 func (*GetCManInfoResponse) ProtoMessage() {}
 
 func (x *GetCManInfoResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[51]
+	mi := &file_proto_cman_cman_proto_msgTypes[49]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3553,7 +3555,7 @@ func (x *GetCManInfoResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCManInfoResponse.ProtoReflect.Descriptor instead.
 func (*GetCManInfoResponse) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{51}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{49}
 }
 
 func (x *GetCManInfoResponse) GetUuid() string {
@@ -3590,7 +3592,7 @@ type ChangeLeaderRequest struct {
 func (x *ChangeLeaderRequest) Reset() {
 	*x = ChangeLeaderRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[52]
+		mi := &file_proto_cman_cman_proto_msgTypes[50]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3603,7 +3605,7 @@ func (x *ChangeLeaderRequest) String() string {
 func (*ChangeLeaderRequest) ProtoMessage() {}
 
 func (x *ChangeLeaderRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[52]
+	mi := &file_proto_cman_cman_proto_msgTypes[50]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3616,7 +3618,7 @@ func (x *ChangeLeaderRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChangeLeaderRequest.ProtoReflect.Descriptor instead.
 func (*ChangeLeaderRequest) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{52}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{50}
 }
 
 func (x *ChangeLeaderRequest) GetUuid() string {
@@ -3649,7 +3651,7 @@ type ChangeLeaderResponse struct {
 func (x *ChangeLeaderResponse) Reset() {
 	*x = ChangeLeaderResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_cman_cman_proto_msgTypes[53]
+		mi := &file_proto_cman_cman_proto_msgTypes[51]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3662,7 +3664,7 @@ func (x *ChangeLeaderResponse) String() string {
 func (*ChangeLeaderResponse) ProtoMessage() {}
 
 func (x *ChangeLeaderResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_cman_cman_proto_msgTypes[53]
+	mi := &file_proto_cman_cman_proto_msgTypes[51]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3675,7 +3677,7 @@ func (x *ChangeLeaderResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChangeLeaderResponse.ProtoReflect.Descriptor instead.
 func (*ChangeLeaderResponse) Descriptor() ([]byte, []int) {
-	return file_proto_cman_cman_proto_rawDescGZIP(), []int{53}
+	return file_proto_cman_cman_proto_rawDescGZIP(), []int{51}
 }
 
 func (x *ChangeLeaderResponse) GetUuid() string {
@@ -3791,153 +3793,163 @@ var file_proto_cman_cman_proto_rawDesc = []byte{
 	0x75, 0x6e, 0x74, 0x22, 0x32, 0x0a, 0x30, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63,
 	0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x43, 0x6f, 0x6e,
 	0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x4e, 0x6f, 0x64, 0x65, 0x73, 0x4e, 0x6f, 0x64, 0x65,
-	0x4d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x22, 0x62, 0x0a, 0x17, 0x43, 0x6f, 0x6e, 0x66, 0x65,
-	0x72, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x32, 0x12, 0x47, 0x0a, 0x0a, 0x63, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x27, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x43, 0x6f,
-	0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x32, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x52,
-	0x0a, 0x63, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x22, 0xaa, 0x02, 0x0a, 0x21,
-	0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x32, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63,
-	0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x6f, 0x6d, 0x61, 0x69, 0x6e, 0x18,
-	0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x64, 0x6f, 0x6d, 0x61, 0x69, 0x6e, 0x12, 0x41, 0x0a,
-	0x05, 0x6e, 0x6f, 0x64, 0x65, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2b, 0x2e, 0x63,
-	0x6d, 0x61, 0x6e, 0x2e, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e,
-	0x66, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72,
-	0x65, 0x6e, 0x63, 0x65, 0x4e, 0x6f, 0x64, 0x65, 0x73, 0x52, 0x05, 0x6e, 0x6f, 0x64, 0x65, 0x73,
-	0x12, 0x12, 0x0a, 0x04, 0x73, 0x69, 0x7a, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x05, 0x52, 0x04,
-	0x73, 0x69, 0x7a, 0x65, 0x12, 0x21, 0x0a, 0x0c, 0x6d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x5f, 0x63,
-	0x6f, 0x75, 0x6e, 0x74, 0x18, 0x05, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0b, 0x6d, 0x65, 0x6d, 0x62,
-	0x65, 0x72, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x16, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x65,
-	0x73, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x65, 0x73, 0x12,
-	0x47, 0x0a, 0x07, 0x6d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x18, 0x07, 0x20, 0x03, 0x28, 0x0b,
-	0x32, 0x2d, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e,
-	0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x43, 0x6f,
-	0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x4d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x52,
-	0x07, 0x6d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x22, 0xee, 0x04, 0x0a, 0x27, 0x43, 0x6f, 0x6e,
+	0x4d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x22, 0xee, 0x04, 0x0a, 0x27, 0x43, 0x6f, 0x6e, 0x66,
+	0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x4d, 0x65, 0x6d, 0x62,
+	0x65, 0x72, 0x73, 0x12, 0x1a, 0x0a, 0x08, 0x6d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x49, 0x44, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x6d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x49, 0x44, 0x12,
+	0x1c, 0x0a, 0x09, 0x63, 0x69, 0x64, 0x4e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x09, 0x63, 0x69, 0x64, 0x4e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x12, 0x18, 0x0a,
+	0x07, 0x63, 0x69, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07,
+	0x63, 0x69, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x6f, 0x64, 0x65, 0x63,
+	0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x63, 0x6f, 0x64, 0x65, 0x63, 0x12, 0x4b, 0x0a,
+	0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x33, 0x2e,
+	0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x49,
+	0x6e, 0x66, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x43, 0x6f, 0x6e, 0x66, 0x65,
+	0x72, 0x65, 0x6e, 0x63, 0x65, 0x4d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x53, 0x74, 0x61, 0x74,
+	0x75, 0x73, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x65, 0x6d,
+	0x61, 0x69, 0x6c, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x65, 0x6d, 0x61, 0x69, 0x6c,
+	0x12, 0x1a, 0x0a, 0x08, 0x6e, 0x6f, 0x64, 0x65, 0x55, 0x55, 0x49, 0x44, 0x18, 0x07, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x08, 0x6e, 0x6f, 0x64, 0x65, 0x55, 0x55, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06,
+	0x61, 0x63, 0x74, 0x69, 0x76, 0x65, 0x18, 0x08, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x61, 0x63,
+	0x74, 0x69, 0x76, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x75, 0x75, 0x69, 0x64, 0x18, 0x09, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x04, 0x75, 0x75, 0x69, 0x64, 0x12, 0x18, 0x0a, 0x07, 0x67, 0x72, 0x6f, 0x75,
+	0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x67, 0x72, 0x6f, 0x75, 0x70,
+	0x49, 0x44, 0x12, 0x1e, 0x0a, 0x0a, 0x6d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x54, 0x79, 0x70, 0x65,
+	0x18, 0x0b, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x6d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x54, 0x79,
+	0x70, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x6e, 0x6f, 0x64, 0x65, 0x54, 0x79, 0x70, 0x65, 0x18, 0x0c,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x6e, 0x6f, 0x64, 0x65, 0x54, 0x79, 0x70, 0x65, 0x12, 0x16,
+	0x0a, 0x06, 0x64, 0x6f, 0x6d, 0x61, 0x69, 0x6e, 0x18, 0x0d, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06,
+	0x64, 0x6f, 0x6d, 0x61, 0x69, 0x6e, 0x12, 0x1a, 0x0a, 0x08, 0x63, 0x61, 0x6e, 0x76, 0x61, 0x73,
+	0x49, 0x44, 0x18, 0x0e, 0x20, 0x01, 0x28, 0x05, 0x52, 0x08, 0x63, 0x61, 0x6e, 0x76, 0x61, 0x73,
+	0x49, 0x44, 0x12, 0x2a, 0x0a, 0x10, 0x77, 0x61, 0x74, 0x63, 0x68, 0x69, 0x6e, 0x67, 0x43, 0x61,
+	0x6e, 0x76, 0x61, 0x73, 0x49, 0x44, 0x18, 0x0f, 0x20, 0x01, 0x28, 0x05, 0x52, 0x10, 0x77, 0x61,
+	0x74, 0x63, 0x68, 0x69, 0x6e, 0x67, 0x43, 0x61, 0x6e, 0x76, 0x61, 0x73, 0x49, 0x44, 0x12, 0x16,
+	0x0a, 0x06, 0x72, 0x6f, 0x6c, 0x65, 0x49, 0x44, 0x18, 0x10, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06,
+	0x72, 0x6f, 0x6c, 0x65, 0x49, 0x44, 0x12, 0x18, 0x0a, 0x07, 0x6c, 0x61, 0x79, 0x65, 0x72, 0x49,
+	0x44, 0x18, 0x11, 0x20, 0x01, 0x28, 0x05, 0x52, 0x07, 0x6c, 0x61, 0x79, 0x65, 0x72, 0x49, 0x44,
+	0x12, 0x24, 0x0a, 0x0d, 0x72, 0x65, 0x73, 0x65, 0x72, 0x76, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49,
+	0x44, 0x18, 0x12, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x72, 0x65, 0x73, 0x65, 0x72, 0x76, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x49, 0x44, 0x12, 0x20, 0x0a, 0x0b, 0x63, 0x68, 0x61, 0x6e, 0x6e, 0x65,
+	0x6c, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x13, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x63, 0x68, 0x61,
+	0x6e, 0x6e, 0x65, 0x6c, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0xcf, 0x01, 0x0a, 0x2d, 0x43, 0x6f, 0x6e,
 	0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f,
 	0x6e, 0x73, 0x65, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x4d, 0x65, 0x6d,
-	0x62, 0x65, 0x72, 0x73, 0x12, 0x1a, 0x0a, 0x08, 0x6d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x49, 0x44,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x6d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x49, 0x44,
-	0x12, 0x1c, 0x0a, 0x09, 0x63, 0x69, 0x64, 0x4e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x18, 0x02, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x09, 0x63, 0x69, 0x64, 0x4e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x12, 0x18,
-	0x0a, 0x07, 0x63, 0x69, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x07, 0x63, 0x69, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x6f, 0x64, 0x65,
-	0x63, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x63, 0x6f, 0x64, 0x65, 0x63, 0x12, 0x4b,
-	0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x33,
-	0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65,
-	0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x43, 0x6f, 0x6e, 0x66,
-	0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x4d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x53, 0x74, 0x61,
-	0x74, 0x75, 0x73, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x65,
-	0x6d, 0x61, 0x69, 0x6c, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x65, 0x6d, 0x61, 0x69,
-	0x6c, 0x12, 0x1a, 0x0a, 0x08, 0x6e, 0x6f, 0x64, 0x65, 0x55, 0x55, 0x49, 0x44, 0x18, 0x07, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x08, 0x6e, 0x6f, 0x64, 0x65, 0x55, 0x55, 0x49, 0x44, 0x12, 0x16, 0x0a,
-	0x06, 0x61, 0x63, 0x74, 0x69, 0x76, 0x65, 0x18, 0x08, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x61,
-	0x63, 0x74, 0x69, 0x76, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x75, 0x75, 0x69, 0x64, 0x18, 0x09, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x04, 0x75, 0x75, 0x69, 0x64, 0x12, 0x18, 0x0a, 0x07, 0x67, 0x72, 0x6f,
-	0x75, 0x70, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x67, 0x72, 0x6f, 0x75,
-	0x70, 0x49, 0x44, 0x12, 0x1e, 0x0a, 0x0a, 0x6d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x54, 0x79, 0x70,
-	0x65, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x6d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x54,
-	0x79, 0x70, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x6e, 0x6f, 0x64, 0x65, 0x54, 0x79, 0x70, 0x65, 0x18,
-	0x0c, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x6e, 0x6f, 0x64, 0x65, 0x54, 0x79, 0x70, 0x65, 0x12,
-	0x16, 0x0a, 0x06, 0x64, 0x6f, 0x6d, 0x61, 0x69, 0x6e, 0x18, 0x0d, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x06, 0x64, 0x6f, 0x6d, 0x61, 0x69, 0x6e, 0x12, 0x1a, 0x0a, 0x08, 0x63, 0x61, 0x6e, 0x76, 0x61,
-	0x73, 0x49, 0x44, 0x18, 0x0e, 0x20, 0x01, 0x28, 0x05, 0x52, 0x08, 0x63, 0x61, 0x6e, 0x76, 0x61,
-	0x73, 0x49, 0x44, 0x12, 0x2a, 0x0a, 0x10, 0x77, 0x61, 0x74, 0x63, 0x68, 0x69, 0x6e, 0x67, 0x43,
-	0x61, 0x6e, 0x76, 0x61, 0x73, 0x49, 0x44, 0x18, 0x0f, 0x20, 0x01, 0x28, 0x05, 0x52, 0x10, 0x77,
-	0x61, 0x74, 0x63, 0x68, 0x69, 0x6e, 0x67, 0x43, 0x61, 0x6e, 0x76, 0x61, 0x73, 0x49, 0x44, 0x12,
-	0x16, 0x0a, 0x06, 0x72, 0x6f, 0x6c, 0x65, 0x49, 0x44, 0x18, 0x10, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x06, 0x72, 0x6f, 0x6c, 0x65, 0x49, 0x44, 0x12, 0x18, 0x0a, 0x07, 0x6c, 0x61, 0x79, 0x65, 0x72,
-	0x49, 0x44, 0x18, 0x11, 0x20, 0x01, 0x28, 0x05, 0x52, 0x07, 0x6c, 0x61, 0x79, 0x65, 0x72, 0x49,
-	0x44, 0x12, 0x24, 0x0a, 0x0d, 0x72, 0x65, 0x73, 0x65, 0x72, 0x76, 0x61, 0x74, 0x69, 0x6f, 0x6e,
-	0x49, 0x44, 0x18, 0x12, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x72, 0x65, 0x73, 0x65, 0x72, 0x76,
-	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x44, 0x12, 0x20, 0x0a, 0x0b, 0x63, 0x68, 0x61, 0x6e, 0x6e,
-	0x65, 0x6c, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x13, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x63, 0x68,
-	0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0xcf, 0x01, 0x0a, 0x2d, 0x43, 0x6f,
-	0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x4d, 0x65,
-	0x6d, 0x62, 0x65, 0x72, 0x73, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x4e, 0x0a, 0x05, 0x61,
-	0x75, 0x64, 0x69, 0x6f, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x38, 0x2e, 0x63, 0x6d, 0x61,
-	0x6e, 0x2e, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e,
-	0x63, 0x65, 0x4d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x41,
-	0x75, 0x64, 0x69, 0x6f, 0x52, 0x05, 0x61, 0x75, 0x64, 0x69, 0x6f, 0x12, 0x4e, 0x0a, 0x05, 0x76,
-	0x69, 0x64, 0x65, 0x6f, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x38, 0x2e, 0x63, 0x6d, 0x61,
-	0x6e, 0x2e, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e,
-	0x63, 0x65, 0x4d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x56,
-	0x69, 0x64, 0x65, 0x6f, 0x52, 0x05, 0x76, 0x69, 0x64, 0x65, 0x6f, 0x22, 0xc8, 0x01, 0x0a, 0x32,
+	0x62, 0x65, 0x72, 0x73, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x4e, 0x0a, 0x05, 0x61, 0x75,
+	0x64, 0x69, 0x6f, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x38, 0x2e, 0x63, 0x6d, 0x61, 0x6e,
+	0x2e, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63,
+	0x65, 0x4d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x41, 0x75,
+	0x64, 0x69, 0x6f, 0x52, 0x05, 0x61, 0x75, 0x64, 0x69, 0x6f, 0x12, 0x4e, 0x0a, 0x05, 0x76, 0x69,
+	0x64, 0x65, 0x6f, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x38, 0x2e, 0x63, 0x6d, 0x61, 0x6e,
+	0x2e, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63,
+	0x65, 0x4d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x56, 0x69,
+	0x64, 0x65, 0x6f, 0x52, 0x05, 0x76, 0x69, 0x64, 0x65, 0x6f, 0x22, 0xc8, 0x01, 0x0a, 0x32, 0x43,
+	0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x4d,
+	0x65, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x41, 0x75, 0x64, 0x69,
+	0x6f, 0x12, 0x18, 0x0a, 0x07, 0x74, 0x61, 0x6c, 0x6b, 0x69, 0x6e, 0x67, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x08, 0x52, 0x07, 0x74, 0x61, 0x6c, 0x6b, 0x69, 0x6e, 0x67, 0x12, 0x12, 0x0a, 0x04, 0x64,
+	0x65, 0x61, 0x66, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x04, 0x64, 0x65, 0x61, 0x66, 0x12,
+	0x14, 0x0a, 0x05, 0x6d, 0x75, 0x74, 0x65, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x08, 0x52, 0x05,
+	0x6d, 0x75, 0x74, 0x65, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x6f, 0x6e, 0x48, 0x6f, 0x6c, 0x64, 0x18,
+	0x04, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x6f, 0x6e, 0x48, 0x6f, 0x6c, 0x64, 0x12, 0x20, 0x0a,
+	0x0b, 0x65, 0x6e, 0x65, 0x72, 0x67, 0x79, 0x53, 0x63, 0x6f, 0x72, 0x65, 0x18, 0x05, 0x20, 0x01,
+	0x28, 0x05, 0x52, 0x0b, 0x65, 0x6e, 0x65, 0x72, 0x67, 0x79, 0x53, 0x63, 0x6f, 0x72, 0x65, 0x12,
+	0x14, 0x0a, 0x05, 0x66, 0x6c, 0x6f, 0x6f, 0x72, 0x18, 0x06, 0x20, 0x01, 0x28, 0x08, 0x52, 0x05,
+	0x66, 0x6c, 0x6f, 0x6f, 0x72, 0x22, 0xa0, 0x03, 0x0a, 0x32, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72,
+	0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x4d, 0x65, 0x6d, 0x62, 0x65, 0x72,
+	0x73, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x56, 0x69, 0x64, 0x65, 0x6f, 0x12, 0x18, 0x0a, 0x07,
+	0x76, 0x69, 0x73, 0x69, 0x62, 0x6c, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52, 0x07, 0x76,
+	0x69, 0x73, 0x69, 0x62, 0x6c, 0x65, 0x12, 0x1c, 0x0a, 0x09, 0x6e, 0x6f, 0x52, 0x65, 0x63, 0x6f,
+	0x76, 0x65, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x09, 0x6e, 0x6f, 0x52, 0x65, 0x63,
+	0x6f, 0x76, 0x65, 0x72, 0x12, 0x28, 0x0a, 0x0f, 0x61, 0x76, 0x61, 0x74, 0x61, 0x72, 0x50, 0x72,
+	0x65, 0x73, 0x65, 0x6e, 0x74, 0x65, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x08, 0x52, 0x0f, 0x61,
+	0x76, 0x61, 0x74, 0x61, 0x72, 0x50, 0x72, 0x65, 0x73, 0x65, 0x6e, 0x74, 0x65, 0x64, 0x12, 0x1c,
+	0x0a, 0x09, 0x6d, 0x65, 0x64, 0x69, 0x61, 0x46, 0x6c, 0x6f, 0x77, 0x18, 0x04, 0x20, 0x01, 0x28,
+	0x08, 0x52, 0x09, 0x6d, 0x65, 0x64, 0x69, 0x61, 0x46, 0x6c, 0x6f, 0x77, 0x12, 0x14, 0x0a, 0x05,
+	0x6d, 0x75, 0x74, 0x65, 0x64, 0x18, 0x05, 0x20, 0x01, 0x28, 0x08, 0x52, 0x05, 0x6d, 0x75, 0x74,
+	0x65, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x66, 0x6c, 0x6f, 0x6f, 0x72, 0x18, 0x06, 0x20, 0x01, 0x28,
+	0x08, 0x52, 0x05, 0x66, 0x6c, 0x6f, 0x6f, 0x72, 0x12, 0x24, 0x0a, 0x0d, 0x72, 0x65, 0x73, 0x65,
+	0x72, 0x76, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x44, 0x18, 0x07, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x0d, 0x72, 0x65, 0x73, 0x65, 0x72, 0x76, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x44, 0x12, 0x16,
+	0x0a, 0x06, 0x72, 0x6f, 0x6c, 0x65, 0x49, 0x44, 0x18, 0x08, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06,
+	0x72, 0x6f, 0x6c, 0x65, 0x49, 0x44, 0x12, 0x22, 0x0a, 0x0c, 0x76, 0x69, 0x64, 0x65, 0x6f, 0x4c,
+	0x61, 0x79, 0x65, 0x72, 0x49, 0x44, 0x18, 0x09, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0c, 0x76, 0x69,
+	0x64, 0x65, 0x6f, 0x4c, 0x61, 0x79, 0x65, 0x72, 0x49, 0x44, 0x12, 0x1a, 0x0a, 0x08, 0x63, 0x61,
+	0x6e, 0x76, 0x61, 0x73, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x05, 0x52, 0x08, 0x63, 0x61,
+	0x6e, 0x76, 0x61, 0x73, 0x49, 0x44, 0x12, 0x2a, 0x0a, 0x10, 0x77, 0x61, 0x74, 0x63, 0x68, 0x69,
+	0x6e, 0x67, 0x43, 0x61, 0x6e, 0x76, 0x61, 0x73, 0x49, 0x44, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x05,
+	0x52, 0x10, 0x77, 0x61, 0x74, 0x63, 0x68, 0x69, 0x6e, 0x67, 0x43, 0x61, 0x6e, 0x76, 0x61, 0x73,
+	0x49, 0x44, 0x12, 0x14, 0x0a, 0x05, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x18, 0x0c, 0x20, 0x01, 0x28,
+	0x05, 0x52, 0x05, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x22, 0x21, 0x0a, 0x1f, 0x43, 0x6f, 0x6e, 0x66,
+	0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x56, 0x61, 0x72, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x73, 0x22, 0xed, 0x07, 0x0a, 0x1d,
 	0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65,
-	0x4d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x41, 0x75, 0x64,
-	0x69, 0x6f, 0x12, 0x18, 0x0a, 0x07, 0x74, 0x61, 0x6c, 0x6b, 0x69, 0x6e, 0x67, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x08, 0x52, 0x07, 0x74, 0x61, 0x6c, 0x6b, 0x69, 0x6e, 0x67, 0x12, 0x12, 0x0a, 0x04,
-	0x64, 0x65, 0x61, 0x66, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x04, 0x64, 0x65, 0x61, 0x66,
-	0x12, 0x14, 0x0a, 0x05, 0x6d, 0x75, 0x74, 0x65, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x08, 0x52,
-	0x05, 0x6d, 0x75, 0x74, 0x65, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x6f, 0x6e, 0x48, 0x6f, 0x6c, 0x64,
-	0x18, 0x04, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x6f, 0x6e, 0x48, 0x6f, 0x6c, 0x64, 0x12, 0x20,
-	0x0a, 0x0b, 0x65, 0x6e, 0x65, 0x72, 0x67, 0x79, 0x53, 0x63, 0x6f, 0x72, 0x65, 0x18, 0x05, 0x20,
-	0x01, 0x28, 0x05, 0x52, 0x0b, 0x65, 0x6e, 0x65, 0x72, 0x67, 0x79, 0x53, 0x63, 0x6f, 0x72, 0x65,
-	0x12, 0x14, 0x0a, 0x05, 0x66, 0x6c, 0x6f, 0x6f, 0x72, 0x18, 0x06, 0x20, 0x01, 0x28, 0x08, 0x52,
-	0x05, 0x66, 0x6c, 0x6f, 0x6f, 0x72, 0x22, 0xa0, 0x03, 0x0a, 0x32, 0x43, 0x6f, 0x6e, 0x66, 0x65,
-	0x72, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x4d, 0x65, 0x6d, 0x62, 0x65,
-	0x72, 0x73, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x56, 0x69, 0x64, 0x65, 0x6f, 0x12, 0x18, 0x0a,
-	0x07, 0x76, 0x69, 0x73, 0x69, 0x62, 0x6c, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52, 0x07,
-	0x76, 0x69, 0x73, 0x69, 0x62, 0x6c, 0x65, 0x12, 0x1c, 0x0a, 0x09, 0x6e, 0x6f, 0x52, 0x65, 0x63,
-	0x6f, 0x76, 0x65, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x09, 0x6e, 0x6f, 0x52, 0x65,
-	0x63, 0x6f, 0x76, 0x65, 0x72, 0x12, 0x28, 0x0a, 0x0f, 0x61, 0x76, 0x61, 0x74, 0x61, 0x72, 0x50,
-	0x72, 0x65, 0x73, 0x65, 0x6e, 0x74, 0x65, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x08, 0x52, 0x0f,
-	0x61, 0x76, 0x61, 0x74, 0x61, 0x72, 0x50, 0x72, 0x65, 0x73, 0x65, 0x6e, 0x74, 0x65, 0x64, 0x12,
-	0x1c, 0x0a, 0x09, 0x6d, 0x65, 0x64, 0x69, 0x61, 0x46, 0x6c, 0x6f, 0x77, 0x18, 0x04, 0x20, 0x01,
-	0x28, 0x08, 0x52, 0x09, 0x6d, 0x65, 0x64, 0x69, 0x61, 0x46, 0x6c, 0x6f, 0x77, 0x12, 0x14, 0x0a,
-	0x05, 0x6d, 0x75, 0x74, 0x65, 0x64, 0x18, 0x05, 0x20, 0x01, 0x28, 0x08, 0x52, 0x05, 0x6d, 0x75,
-	0x74, 0x65, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x66, 0x6c, 0x6f, 0x6f, 0x72, 0x18, 0x06, 0x20, 0x01,
-	0x28, 0x08, 0x52, 0x05, 0x66, 0x6c, 0x6f, 0x6f, 0x72, 0x12, 0x24, 0x0a, 0x0d, 0x72, 0x65, 0x73,
-	0x65, 0x72, 0x76, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x44, 0x18, 0x07, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x0d, 0x72, 0x65, 0x73, 0x65, 0x72, 0x76, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x44, 0x12,
-	0x16, 0x0a, 0x06, 0x72, 0x6f, 0x6c, 0x65, 0x49, 0x44, 0x18, 0x08, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x06, 0x72, 0x6f, 0x6c, 0x65, 0x49, 0x44, 0x12, 0x22, 0x0a, 0x0c, 0x76, 0x69, 0x64, 0x65, 0x6f,
-	0x4c, 0x61, 0x79, 0x65, 0x72, 0x49, 0x44, 0x18, 0x09, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0c, 0x76,
-	0x69, 0x64, 0x65, 0x6f, 0x4c, 0x61, 0x79, 0x65, 0x72, 0x49, 0x44, 0x12, 0x1a, 0x0a, 0x08, 0x63,
-	0x61, 0x6e, 0x76, 0x61, 0x73, 0x49, 0x44, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x05, 0x52, 0x08, 0x63,
-	0x61, 0x6e, 0x76, 0x61, 0x73, 0x49, 0x44, 0x12, 0x2a, 0x0a, 0x10, 0x77, 0x61, 0x74, 0x63, 0x68,
-	0x69, 0x6e, 0x67, 0x43, 0x61, 0x6e, 0x76, 0x61, 0x73, 0x49, 0x44, 0x18, 0x0b, 0x20, 0x01, 0x28,
-	0x05, 0x52, 0x10, 0x77, 0x61, 0x74, 0x63, 0x68, 0x69, 0x6e, 0x67, 0x43, 0x61, 0x6e, 0x76, 0x61,
-	0x73, 0x49, 0x44, 0x12, 0x14, 0x0a, 0x05, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x18, 0x0c, 0x20, 0x01,
-	0x28, 0x05, 0x52, 0x05, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x22, 0x21, 0x0a, 0x1f, 0x43, 0x6f, 0x6e,
-	0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x56, 0x61, 0x72, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x73, 0x22, 0xbc, 0x03, 0x0a,
-	0x1d, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x4d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x12, 0x12,
-	0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x74, 0x79,
-	0x70, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x02,
-	0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x75, 0x75, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x04, 0x75, 0x75, 0x69, 0x64, 0x12, 0x24, 0x0a, 0x0e, 0x63, 0x61, 0x6c, 0x6c, 0x65, 0x72,
-	0x5f, 0x69, 0x64, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c,
-	0x63, 0x61, 0x6c, 0x6c, 0x65, 0x72, 0x49, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x28, 0x0a, 0x10,
-	0x63, 0x61, 0x6c, 0x6c, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x5f, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72,
-	0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e, 0x63, 0x61, 0x6c, 0x6c, 0x65, 0x72, 0x49, 0x64,
-	0x4e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x12, 0x1b, 0x0a, 0x09, 0x6a, 0x6f, 0x69, 0x6e, 0x5f, 0x74,
-	0x69, 0x6d, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28, 0x05, 0x52, 0x08, 0x6a, 0x6f, 0x69, 0x6e, 0x54,
-	0x69, 0x6d, 0x65, 0x12, 0x21, 0x0a, 0x0c, 0x6c, 0x61, 0x73, 0x74, 0x5f, 0x74, 0x61, 0x6c, 0x6b,
-	0x69, 0x6e, 0x67, 0x18, 0x07, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0b, 0x6c, 0x61, 0x73, 0x74, 0x54,
-	0x61, 0x6c, 0x6b, 0x69, 0x6e, 0x67, 0x12, 0x16, 0x0a, 0x06, 0x65, 0x6e, 0x65, 0x72, 0x67, 0x79,
-	0x18, 0x08, 0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x65, 0x6e, 0x65, 0x72, 0x67, 0x79, 0x12, 0x1b,
-	0x0a, 0x09, 0x76, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x5f, 0x69, 0x6e, 0x18, 0x09, 0x20, 0x01, 0x28,
-	0x05, 0x52, 0x08, 0x76, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x49, 0x6e, 0x12, 0x1d, 0x0a, 0x0a, 0x76,
-	0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x5f, 0x6f, 0x75, 0x74, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x05, 0x52,
-	0x09, 0x76, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x4f, 0x75, 0x74, 0x12, 0x23, 0x0a, 0x0d, 0x6f, 0x75,
-	0x74, 0x70, 0x75, 0x74, 0x5f, 0x76, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x18, 0x0b, 0x20, 0x01, 0x28,
-	0x05, 0x52, 0x0c, 0x6f, 0x75, 0x74, 0x70, 0x75, 0x74, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x12,
-	0x21, 0x0a, 0x0c, 0x69, 0x6e, 0x70, 0x75, 0x74, 0x5f, 0x76, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x18,
-	0x0c, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0b, 0x69, 0x6e, 0x70, 0x75, 0x74, 0x56, 0x6f, 0x6c, 0x75,
-	0x6d, 0x65, 0x12, 0x37, 0x0a, 0x05, 0x66, 0x6c, 0x61, 0x67, 0x73, 0x18, 0x0d, 0x20, 0x01, 0x28,
-	0x0b, 0x32, 0x21, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65,
-	0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x46,
-	0x6c, 0x61, 0x67, 0x73, 0x52, 0x05, 0x66, 0x6c, 0x61, 0x67, 0x73, 0x22, 0xe4, 0x02, 0x0a, 0x1b,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x4d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x12, 0x12, 0x0a,
+	0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x74, 0x79, 0x70,
+	0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x02, 0x69,
+	0x64, 0x12, 0x12, 0x0a, 0x04, 0x75, 0x75, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x04, 0x75, 0x75, 0x69, 0x64, 0x12, 0x24, 0x0a, 0x0e, 0x63, 0x61, 0x6c, 0x6c, 0x65, 0x72, 0x5f,
+	0x69, 0x64, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x63,
+	0x61, 0x6c, 0x6c, 0x65, 0x72, 0x49, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x28, 0x0a, 0x10, 0x63,
+	0x61, 0x6c, 0x6c, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x5f, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x18,
+	0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e, 0x63, 0x61, 0x6c, 0x6c, 0x65, 0x72, 0x49, 0x64, 0x4e,
+	0x75, 0x6d, 0x62, 0x65, 0x72, 0x12, 0x1b, 0x0a, 0x09, 0x6a, 0x6f, 0x69, 0x6e, 0x5f, 0x74, 0x69,
+	0x6d, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28, 0x05, 0x52, 0x08, 0x6a, 0x6f, 0x69, 0x6e, 0x54, 0x69,
+	0x6d, 0x65, 0x12, 0x21, 0x0a, 0x0c, 0x6c, 0x61, 0x73, 0x74, 0x5f, 0x74, 0x61, 0x6c, 0x6b, 0x69,
+	0x6e, 0x67, 0x18, 0x07, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0b, 0x6c, 0x61, 0x73, 0x74, 0x54, 0x61,
+	0x6c, 0x6b, 0x69, 0x6e, 0x67, 0x12, 0x16, 0x0a, 0x06, 0x65, 0x6e, 0x65, 0x72, 0x67, 0x79, 0x18,
+	0x08, 0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x65, 0x6e, 0x65, 0x72, 0x67, 0x79, 0x12, 0x1b, 0x0a,
+	0x09, 0x76, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x5f, 0x69, 0x6e, 0x18, 0x09, 0x20, 0x01, 0x28, 0x05,
+	0x52, 0x08, 0x76, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x49, 0x6e, 0x12, 0x1d, 0x0a, 0x0a, 0x76, 0x6f,
+	0x6c, 0x75, 0x6d, 0x65, 0x5f, 0x6f, 0x75, 0x74, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x05, 0x52, 0x09,
+	0x76, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x4f, 0x75, 0x74, 0x12, 0x23, 0x0a, 0x0d, 0x6f, 0x75, 0x74,
+	0x70, 0x75, 0x74, 0x5f, 0x76, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x05,
+	0x52, 0x0c, 0x6f, 0x75, 0x74, 0x70, 0x75, 0x74, 0x56, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x12, 0x21,
+	0x0a, 0x0c, 0x69, 0x6e, 0x70, 0x75, 0x74, 0x5f, 0x76, 0x6f, 0x6c, 0x75, 0x6d, 0x65, 0x18, 0x0c,
+	0x20, 0x01, 0x28, 0x05, 0x52, 0x0b, 0x69, 0x6e, 0x70, 0x75, 0x74, 0x56, 0x6f, 0x6c, 0x75, 0x6d,
+	0x65, 0x12, 0x37, 0x0a, 0x05, 0x66, 0x6c, 0x61, 0x67, 0x73, 0x18, 0x0d, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x21, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e,
+	0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x46, 0x6c,
+	0x61, 0x67, 0x73, 0x52, 0x05, 0x66, 0x6c, 0x61, 0x67, 0x73, 0x12, 0x1a, 0x0a, 0x08, 0x6d, 0x65,
+	0x6d, 0x62, 0x65, 0x72, 0x49, 0x44, 0x18, 0x0e, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x6d, 0x65,
+	0x6d, 0x62, 0x65, 0x72, 0x49, 0x44, 0x12, 0x1c, 0x0a, 0x09, 0x63, 0x69, 0x64, 0x4e, 0x75, 0x6d,
+	0x62, 0x65, 0x72, 0x18, 0x0f, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x63, 0x69, 0x64, 0x4e, 0x75,
+	0x6d, 0x62, 0x65, 0x72, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x69, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x18,
+	0x10, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x63, 0x69, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x14,
+	0x0a, 0x05, 0x63, 0x6f, 0x64, 0x65, 0x63, 0x18, 0x11, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x63,
+	0x6f, 0x64, 0x65, 0x63, 0x12, 0x4b, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x12,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x33, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x43, 0x6f, 0x6e, 0x66,
+	0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x4d, 0x65, 0x6d, 0x62,
+	0x65, 0x72, 0x73, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75,
+	0x73, 0x12, 0x14, 0x0a, 0x05, 0x65, 0x6d, 0x61, 0x69, 0x6c, 0x18, 0x13, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x05, 0x65, 0x6d, 0x61, 0x69, 0x6c, 0x12, 0x1a, 0x0a, 0x08, 0x6e, 0x6f, 0x64, 0x65, 0x55,
+	0x55, 0x49, 0x44, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x6e, 0x6f, 0x64, 0x65, 0x55,
+	0x55, 0x49, 0x44, 0x12, 0x16, 0x0a, 0x06, 0x61, 0x63, 0x74, 0x69, 0x76, 0x65, 0x18, 0x15, 0x20,
+	0x01, 0x28, 0x08, 0x52, 0x06, 0x61, 0x63, 0x74, 0x69, 0x76, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x67,
+	0x72, 0x6f, 0x75, 0x70, 0x49, 0x44, 0x18, 0x16, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x67, 0x72,
+	0x6f, 0x75, 0x70, 0x49, 0x44, 0x12, 0x1e, 0x0a, 0x0a, 0x6d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x54,
+	0x79, 0x70, 0x65, 0x18, 0x17, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x6d, 0x65, 0x6d, 0x62, 0x65,
+	0x72, 0x54, 0x79, 0x70, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x6e, 0x6f, 0x64, 0x65, 0x54, 0x79, 0x70,
+	0x65, 0x18, 0x18, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x6e, 0x6f, 0x64, 0x65, 0x54, 0x79, 0x70,
+	0x65, 0x12, 0x16, 0x0a, 0x06, 0x64, 0x6f, 0x6d, 0x61, 0x69, 0x6e, 0x18, 0x19, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x06, 0x64, 0x6f, 0x6d, 0x61, 0x69, 0x6e, 0x12, 0x1a, 0x0a, 0x08, 0x63, 0x61, 0x6e,
+	0x76, 0x61, 0x73, 0x49, 0x44, 0x18, 0x1a, 0x20, 0x01, 0x28, 0x05, 0x52, 0x08, 0x63, 0x61, 0x6e,
+	0x76, 0x61, 0x73, 0x49, 0x44, 0x12, 0x2a, 0x0a, 0x10, 0x77, 0x61, 0x74, 0x63, 0x68, 0x69, 0x6e,
+	0x67, 0x43, 0x61, 0x6e, 0x76, 0x61, 0x73, 0x49, 0x44, 0x18, 0x1b, 0x20, 0x01, 0x28, 0x05, 0x52,
+	0x10, 0x77, 0x61, 0x74, 0x63, 0x68, 0x69, 0x6e, 0x67, 0x43, 0x61, 0x6e, 0x76, 0x61, 0x73, 0x49,
+	0x44, 0x12, 0x16, 0x0a, 0x06, 0x72, 0x6f, 0x6c, 0x65, 0x49, 0x44, 0x18, 0x1c, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x06, 0x72, 0x6f, 0x6c, 0x65, 0x49, 0x44, 0x12, 0x18, 0x0a, 0x07, 0x6c, 0x61, 0x79,
+	0x65, 0x72, 0x49, 0x44, 0x18, 0x1d, 0x20, 0x01, 0x28, 0x05, 0x52, 0x07, 0x6c, 0x61, 0x79, 0x65,
+	0x72, 0x49, 0x44, 0x12, 0x24, 0x0a, 0x0d, 0x72, 0x65, 0x73, 0x65, 0x72, 0x76, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x49, 0x44, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x72, 0x65, 0x73, 0x65,
+	0x72, 0x76, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x44, 0x12, 0x20, 0x0a, 0x0b, 0x63, 0x68, 0x61,
+	0x6e, 0x6e, 0x65, 0x6c, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x1f, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b,
+	0x63, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0xe4, 0x02, 0x0a, 0x1b,
 	0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65,
 	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x46, 0x6c, 0x61, 0x67, 0x73, 0x12, 0x19, 0x0a, 0x08, 0x63,
 	0x61, 0x6e, 0x5f, 0x68, 0x65, 0x61, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52, 0x07, 0x63,
@@ -4225,7 +4237,7 @@ var file_proto_cman_cman_proto_rawDesc = []byte{
 	0x01, 0x28, 0x09, 0x52, 0x04, 0x75, 0x75, 0x69, 0x64, 0x12, 0x1b, 0x0a, 0x09, 0x69, 0x73, 0x5f,
 	0x6c, 0x65, 0x61, 0x64, 0x65, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x08, 0x69, 0x73,
 	0x4c, 0x65, 0x61, 0x64, 0x65, 0x72, 0x12, 0x12, 0x0a, 0x04, 0x6d, 0x6f, 0x64, 0x65, 0x18, 0x03,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6d, 0x6f, 0x64, 0x65, 0x32, 0x89, 0x08, 0x0a, 0x04, 0x63,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6d, 0x6f, 0x64, 0x65, 0x32, 0xb8, 0x07, 0x0a, 0x04, 0x63,
 	0x4d, 0x61, 0x6e, 0x12, 0x56, 0x0a, 0x11, 0x67, 0x65, 0x74, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72,
 	0x65, 0x6e, 0x63, 0x65, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x1e, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e,
 	0x47, 0x65, 0x74, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x4c, 0x69, 0x73,
@@ -4236,63 +4248,58 @@ var file_proto_cman_cman_proto_rawDesc = []byte{
 	0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x49,
 	0x6e, 0x66, 0x6f, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1c, 0x2e, 0x63, 0x6d, 0x61,
 	0x6e, 0x2e, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x4f, 0x0a, 0x0f, 0x63, 0x6f,
-	0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0x12, 0x1b, 0x2e,
-	0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x49,
-	0x6e, 0x66, 0x6f, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1d, 0x2e, 0x63, 0x6d, 0x61,
-	0x6e, 0x2e, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x32, 0x22, 0x00, 0x12, 0x3e, 0x0a, 0x09, 0x62,
-	0x6f, 0x6f, 0x74, 0x73, 0x74, 0x72, 0x61, 0x70, 0x12, 0x16, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e,
-	0x42, 0x6f, 0x6f, 0x74, 0x73, 0x74, 0x72, 0x61, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x1a, 0x17, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x42, 0x6f, 0x6f, 0x74, 0x73, 0x74, 0x72, 0x61,
-	0x70, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x5f, 0x0a, 0x14, 0x67,
-	0x65, 0x74, 0x4e, 0x6f, 0x64, 0x65, 0x46, 0x6f, 0x72, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65,
-	0x6e, 0x63, 0x65, 0x12, 0x21, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x67, 0x65, 0x74, 0x4e, 0x6f,
-	0x64, 0x65, 0x46, 0x6f, 0x72, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x22, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x67, 0x65,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x3e, 0x0a, 0x09, 0x62, 0x6f,
+	0x6f, 0x74, 0x73, 0x74, 0x72, 0x61, 0x70, 0x12, 0x16, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x42,
+	0x6f, 0x6f, 0x74, 0x73, 0x74, 0x72, 0x61, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x17, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x42, 0x6f, 0x6f, 0x74, 0x73, 0x74, 0x72, 0x61, 0x70,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x5f, 0x0a, 0x14, 0x67, 0x65,
 	0x74, 0x4e, 0x6f, 0x64, 0x65, 0x46, 0x6f, 0x72, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e,
-	0x63, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x44, 0x0a, 0x0b,
-	0x63, 0x6f, 0x6e, 0x66, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x12, 0x18, 0x2e, 0x63, 0x6d,
-	0x61, 0x6e, 0x2e, 0x63, 0x6f, 0x6e, 0x66, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x19, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x63, 0x6f, 0x6e,
-	0x66, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x22, 0x00, 0x12, 0x3b, 0x0a, 0x08, 0x70, 0x75, 0x73, 0x68, 0x4d, 0x61, 0x69, 0x6e, 0x12, 0x15,
-	0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x70, 0x75, 0x73, 0x68, 0x4d, 0x61, 0x69, 0x6e, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x70, 0x75, 0x73,
-	0x68, 0x4d, 0x61, 0x69, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12,
-	0x4a, 0x0a, 0x0d, 0x70, 0x75, 0x73, 0x68, 0x53, 0x75, 0x62, 0x43, 0x61, 0x6e, 0x76, 0x61, 0x73,
-	0x12, 0x1a, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x70, 0x75, 0x73, 0x68, 0x53, 0x75, 0x62, 0x43,
-	0x61, 0x6e, 0x76, 0x61, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1b, 0x2e, 0x63,
-	0x6d, 0x61, 0x6e, 0x2e, 0x70, 0x75, 0x73, 0x68, 0x53, 0x75, 0x62, 0x43, 0x61, 0x6e, 0x76, 0x61,
-	0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x56, 0x0a, 0x11, 0x70,
-	0x75, 0x73, 0x68, 0x4d, 0x61, 0x69, 0x6e, 0x53, 0x75, 0x62, 0x43, 0x61, 0x6e, 0x76, 0x61, 0x73,
-	0x12, 0x1e, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x70, 0x75, 0x73, 0x68, 0x4d, 0x61, 0x69, 0x6e,
-	0x53, 0x75, 0x62, 0x43, 0x61, 0x6e, 0x76, 0x61, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x1a, 0x1f, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x70, 0x75, 0x73, 0x68, 0x4d, 0x61, 0x69, 0x6e,
-	0x53, 0x75, 0x62, 0x43, 0x61, 0x6e, 0x76, 0x61, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x22, 0x00, 0x12, 0x3e, 0x0a, 0x09, 0x70, 0x75, 0x73, 0x68, 0x57, 0x68, 0x6f, 0x6c, 0x65,
-	0x12, 0x16, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x70, 0x75, 0x73, 0x68, 0x57, 0x68, 0x6f, 0x6c,
-	0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x17, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e,
-	0x70, 0x75, 0x73, 0x68, 0x57, 0x68, 0x6f, 0x6c, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x22, 0x00, 0x12, 0x3b, 0x0a, 0x08, 0x6c, 0x6f, 0x6f, 0x70, 0x53, 0x6f, 0x6d, 0x65, 0x12,
-	0x15, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x6c, 0x6f, 0x6f, 0x70, 0x53, 0x6f, 0x6d, 0x65, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x6c, 0x6f,
-	0x6f, 0x70, 0x53, 0x6f, 0x6d, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
-	0x12, 0x35, 0x0a, 0x06, 0x67, 0x65, 0x74, 0x4a, 0x57, 0x54, 0x12, 0x13, 0x2e, 0x63, 0x6d, 0x61,
-	0x6e, 0x2e, 0x67, 0x65, 0x74, 0x4a, 0x57, 0x54, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
-	0x14, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x67, 0x65, 0x74, 0x4a, 0x57, 0x54, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x44, 0x0a, 0x0b, 0x67, 0x65, 0x74, 0x43, 0x4d,
-	0x61, 0x6e, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x18, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x47, 0x65,
-	0x74, 0x43, 0x4d, 0x61, 0x6e, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x1a, 0x19, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x4d, 0x61, 0x6e, 0x49,
-	0x6e, 0x66, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x47, 0x0a,
-	0x0c, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x4c, 0x65, 0x61, 0x64, 0x65, 0x72, 0x12, 0x19, 0x2e,
-	0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x43, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x4c, 0x65, 0x61, 0x64, 0x65,
-	0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e,
-	0x43, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x4c, 0x65, 0x61, 0x64, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x17, 0x42, 0x09, 0x43, 0x4d, 0x61, 0x6e, 0x50, 0x72,
-	0x6f, 0x74, 0x6f, 0x5a, 0x0a, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x63, 0x6d, 0x61, 0x6e, 0x62,
-	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x63, 0x65, 0x12, 0x21, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x67, 0x65, 0x74, 0x4e, 0x6f, 0x64,
+	0x65, 0x46, 0x6f, 0x72, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x22, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x67, 0x65, 0x74,
+	0x4e, 0x6f, 0x64, 0x65, 0x46, 0x6f, 0x72, 0x43, 0x6f, 0x6e, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63,
+	0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x44, 0x0a, 0x0b, 0x63,
+	0x6f, 0x6e, 0x66, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x12, 0x18, 0x2e, 0x63, 0x6d, 0x61,
+	0x6e, 0x2e, 0x63, 0x6f, 0x6e, 0x66, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x1a, 0x19, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x63, 0x6f, 0x6e, 0x66,
+	0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x00, 0x12, 0x3b, 0x0a, 0x08, 0x70, 0x75, 0x73, 0x68, 0x4d, 0x61, 0x69, 0x6e, 0x12, 0x15, 0x2e,
+	0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x70, 0x75, 0x73, 0x68, 0x4d, 0x61, 0x69, 0x6e, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x70, 0x75, 0x73, 0x68,
+	0x4d, 0x61, 0x69, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x4a,
+	0x0a, 0x0d, 0x70, 0x75, 0x73, 0x68, 0x53, 0x75, 0x62, 0x43, 0x61, 0x6e, 0x76, 0x61, 0x73, 0x12,
+	0x1a, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x70, 0x75, 0x73, 0x68, 0x53, 0x75, 0x62, 0x43, 0x61,
+	0x6e, 0x76, 0x61, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1b, 0x2e, 0x63, 0x6d,
+	0x61, 0x6e, 0x2e, 0x70, 0x75, 0x73, 0x68, 0x53, 0x75, 0x62, 0x43, 0x61, 0x6e, 0x76, 0x61, 0x73,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x56, 0x0a, 0x11, 0x70, 0x75,
+	0x73, 0x68, 0x4d, 0x61, 0x69, 0x6e, 0x53, 0x75, 0x62, 0x43, 0x61, 0x6e, 0x76, 0x61, 0x73, 0x12,
+	0x1e, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x70, 0x75, 0x73, 0x68, 0x4d, 0x61, 0x69, 0x6e, 0x53,
+	0x75, 0x62, 0x43, 0x61, 0x6e, 0x76, 0x61, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x1f, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x70, 0x75, 0x73, 0x68, 0x4d, 0x61, 0x69, 0x6e, 0x53,
+	0x75, 0x62, 0x43, 0x61, 0x6e, 0x76, 0x61, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x22, 0x00, 0x12, 0x3e, 0x0a, 0x09, 0x70, 0x75, 0x73, 0x68, 0x57, 0x68, 0x6f, 0x6c, 0x65, 0x12,
+	0x16, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x70, 0x75, 0x73, 0x68, 0x57, 0x68, 0x6f, 0x6c, 0x65,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x17, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x70,
+	0x75, 0x73, 0x68, 0x57, 0x68, 0x6f, 0x6c, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x22, 0x00, 0x12, 0x3b, 0x0a, 0x08, 0x6c, 0x6f, 0x6f, 0x70, 0x53, 0x6f, 0x6d, 0x65, 0x12, 0x15,
+	0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x6c, 0x6f, 0x6f, 0x70, 0x53, 0x6f, 0x6d, 0x65, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x6c, 0x6f, 0x6f,
+	0x70, 0x53, 0x6f, 0x6d, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12,
+	0x35, 0x0a, 0x06, 0x67, 0x65, 0x74, 0x4a, 0x57, 0x54, 0x12, 0x13, 0x2e, 0x63, 0x6d, 0x61, 0x6e,
+	0x2e, 0x67, 0x65, 0x74, 0x4a, 0x57, 0x54, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x14,
+	0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x67, 0x65, 0x74, 0x4a, 0x57, 0x54, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x44, 0x0a, 0x0b, 0x67, 0x65, 0x74, 0x43, 0x4d, 0x61,
+	0x6e, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x18, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x47, 0x65, 0x74,
+	0x43, 0x4d, 0x61, 0x6e, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x19, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x4d, 0x61, 0x6e, 0x49, 0x6e,
+	0x66, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x47, 0x0a, 0x0c,
+	0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x4c, 0x65, 0x61, 0x64, 0x65, 0x72, 0x12, 0x19, 0x2e, 0x63,
+	0x6d, 0x61, 0x6e, 0x2e, 0x43, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x4c, 0x65, 0x61, 0x64, 0x65, 0x72,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x63, 0x6d, 0x61, 0x6e, 0x2e, 0x43,
+	0x68, 0x61, 0x6e, 0x67, 0x65, 0x4c, 0x65, 0x61, 0x64, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x17, 0x42, 0x09, 0x43, 0x4d, 0x61, 0x6e, 0x50, 0x72, 0x6f,
+	0x74, 0x6f, 0x5a, 0x0a, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x63, 0x6d, 0x61, 0x6e, 0x62, 0x06,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -4307,7 +4314,7 @@ func file_proto_cman_cman_proto_rawDescGZIP() []byte {
 	return file_proto_cman_cman_proto_rawDescData
 }
 
-var file_proto_cman_cman_proto_msgTypes = make([]protoimpl.MessageInfo, 56)
+var file_proto_cman_cman_proto_msgTypes = make([]protoimpl.MessageInfo, 54)
 var file_proto_cman_cman_proto_goTypes = []interface{}{
 	(*EmptyMessage)(nil),                                       // 0: cman.EmptyMessage
 	(*ConferenceInfoRequest)(nil),                              // 1: cman.ConferenceInfoRequest
@@ -4316,118 +4323,112 @@ var file_proto_cman_cman_proto_goTypes = []interface{}{
 	(*ConferenceInfoResponseConferenceNodes)(nil),              // 4: cman.ConferenceInfoResponseConferenceNodes
 	(*ConferenceInfoResponseConferenceNodesGroupMembers)(nil),  // 5: cman.ConferenceInfoResponseConferenceNodesGroupMembers
 	(*ConferenceInfoResponseConferenceNodesNodeMembers)(nil),   // 6: cman.ConferenceInfoResponseConferenceNodesNodeMembers
-	(*ConferenceInfoResponse2)(nil),                            // 7: cman.ConferenceInfoResponse2
-	(*ConferenceInfoResponse2Conference)(nil),                  // 8: cman.ConferenceInfoResponse2Conference
-	(*ConferenceInfoResponseConferenceMembers)(nil),            // 9: cman.ConferenceInfoResponseConferenceMembers
-	(*ConferenceInfoResponseConferenceMembersStatus)(nil),      // 10: cman.ConferenceInfoResponseConferenceMembersStatus
-	(*ConferenceInfoResponseConferenceMembersStatusAudio)(nil), // 11: cman.ConferenceInfoResponseConferenceMembersStatusAudio
-	(*ConferenceInfoResponseConferenceMembersStatusVideo)(nil), // 12: cman.ConferenceInfoResponseConferenceMembersStatusVideo
-	(*ConferenceInfoResponseVariables)(nil),                    // 13: cman.ConferenceInfoResponseVariables
-	(*ConferenceInfoResponseMembers)(nil),                      // 14: cman.ConferenceInfoResponseMembers
-	(*ConferenceInfoResponseFlags)(nil),                        // 15: cman.ConferenceInfoResponseFlags
-	(*GetConferenceListRequest)(nil),                           // 16: cman.GetConferenceListRequest
-	(*ConferenceObjectNodesGroupMembers)(nil),                  // 17: cman.ConferenceObjectNodesGroupMembers
-	(*ConferenceObjectNodesNodeMembers)(nil),                   // 18: cman.ConferenceObjectNodesNodeMembers
-	(*ConferenceObjectNodes)(nil),                              // 19: cman.ConferenceObjectNodes
-	(*ConferenceObject)(nil),                                   // 20: cman.ConferenceObject
-	(*GetConferenceListResponse)(nil),                          // 21: cman.GetConferenceListResponse
-	(*BootstrapRequest)(nil),                                   // 22: cman.BootstrapRequest
-	(*BootstrapRequestData)(nil),                               // 23: cman.BootstrapRequestData
-	(*BootstrapRequestDataLiveArray)(nil),                      // 24: cman.BootstrapRequestDataLiveArray
-	(*BootstrapRequestDataLiveArrayObj)(nil),                   // 25: cman.BootstrapRequestDataLiveArrayObj
-	(*BootstrapResponse)(nil),                                  // 26: cman.BootstrapResponse
-	(*BootstrapResponseData)(nil),                              // 27: cman.BootstrapResponseData
-	(*BootstrapResponseDataConfInfo)(nil),                      // 28: cman.BootstrapResponseDataConfInfo
-	(*GetNodeForConferenceRequest)(nil),                        // 29: cman.getNodeForConferenceRequest
-	(*GetNodeForConferenceResponse)(nil),                       // 30: cman.getNodeForConferenceResponse
-	(*ConfControlRequest)(nil),                                 // 31: cman.confControlRequest
-	(*ConfControlResponse)(nil),                                // 32: cman.confControlResponse
-	(*PushMainRequest)(nil),                                    // 33: cman.pushMainRequest
-	(*PushMainResponse)(nil),                                   // 34: cman.pushMainResponse
-	(*PushSubCanvasRequest)(nil),                               // 35: cman.pushSubCanvasRequest
-	(*PushSubCanvasRequestMembers)(nil),                        // 36: cman.pushSubCanvasRequestMembers
-	(*PushSubCanvasResponse)(nil),                              // 37: cman.pushSubCanvasResponse
-	(*PushMainSubCanvasRequest)(nil),                           // 38: cman.pushMainSubCanvasRequest
-	(*PushMainSubCanvasRequestMembers)(nil),                    // 39: cman.pushMainSubCanvasRequestMembers
-	(*PushMainSubCanvasResponse)(nil),                          // 40: cman.pushMainSubCanvasResponse
-	(*PushWholeRequest)(nil),                                   // 41: cman.pushWholeRequest
-	(*PushWholeRequestMembers)(nil),                            // 42: cman.pushWholeRequestMembers
-	(*PushWholeResponse)(nil),                                  // 43: cman.pushWholeResponse
-	(*LoopSomeRequest)(nil),                                    // 44: cman.loopSomeRequest
-	(*LoopSomeRequestMembers)(nil),                             // 45: cman.loopSomeRequestMembers
-	(*LoopSomeResponse)(nil),                                   // 46: cman.loopSomeResponse
-	(*GetJWTRequest)(nil),                                      // 47: cman.getJWTRequest
-	(*GetJWTRequestClaims)(nil),                                // 48: cman.getJWTRequestClaims
-	(*GetJWTResponse)(nil),                                     // 49: cman.getJWTResponse
-	(*GetCManInfoRequest)(nil),                                 // 50: cman.GetCManInfoRequest
-	(*GetCManInfoResponse)(nil),                                // 51: cman.GetCManInfoResponse
-	(*ChangeLeaderRequest)(nil),                                // 52: cman.ChangeLeaderRequest
-	(*ChangeLeaderResponse)(nil),                               // 53: cman.ChangeLeaderResponse
-	nil,                                                        // 54: cman.ConferenceInfoRequest.MemberFiltersEntry
-	nil,                                                        // 55: cman.BootstrapResponseDataConfInfo.GroupMembersEntry
+	(*ConferenceInfoResponseConferenceMembers)(nil),            // 7: cman.ConferenceInfoResponseConferenceMembers
+	(*ConferenceInfoResponseConferenceMembersStatus)(nil),      // 8: cman.ConferenceInfoResponseConferenceMembersStatus
+	(*ConferenceInfoResponseConferenceMembersStatusAudio)(nil), // 9: cman.ConferenceInfoResponseConferenceMembersStatusAudio
+	(*ConferenceInfoResponseConferenceMembersStatusVideo)(nil), // 10: cman.ConferenceInfoResponseConferenceMembersStatusVideo
+	(*ConferenceInfoResponseVariables)(nil),                    // 11: cman.ConferenceInfoResponseVariables
+	(*ConferenceInfoResponseMembers)(nil),                      // 12: cman.ConferenceInfoResponseMembers
+	(*ConferenceInfoResponseFlags)(nil),                        // 13: cman.ConferenceInfoResponseFlags
+	(*GetConferenceListRequest)(nil),                           // 14: cman.GetConferenceListRequest
+	(*ConferenceObjectNodesGroupMembers)(nil),                  // 15: cman.ConferenceObjectNodesGroupMembers
+	(*ConferenceObjectNodesNodeMembers)(nil),                   // 16: cman.ConferenceObjectNodesNodeMembers
+	(*ConferenceObjectNodes)(nil),                              // 17: cman.ConferenceObjectNodes
+	(*ConferenceObject)(nil),                                   // 18: cman.ConferenceObject
+	(*GetConferenceListResponse)(nil),                          // 19: cman.GetConferenceListResponse
+	(*BootstrapRequest)(nil),                                   // 20: cman.BootstrapRequest
+	(*BootstrapRequestData)(nil),                               // 21: cman.BootstrapRequestData
+	(*BootstrapRequestDataLiveArray)(nil),                      // 22: cman.BootstrapRequestDataLiveArray
+	(*BootstrapRequestDataLiveArrayObj)(nil),                   // 23: cman.BootstrapRequestDataLiveArrayObj
+	(*BootstrapResponse)(nil),                                  // 24: cman.BootstrapResponse
+	(*BootstrapResponseData)(nil),                              // 25: cman.BootstrapResponseData
+	(*BootstrapResponseDataConfInfo)(nil),                      // 26: cman.BootstrapResponseDataConfInfo
+	(*GetNodeForConferenceRequest)(nil),                        // 27: cman.getNodeForConferenceRequest
+	(*GetNodeForConferenceResponse)(nil),                       // 28: cman.getNodeForConferenceResponse
+	(*ConfControlRequest)(nil),                                 // 29: cman.confControlRequest
+	(*ConfControlResponse)(nil),                                // 30: cman.confControlResponse
+	(*PushMainRequest)(nil),                                    // 31: cman.pushMainRequest
+	(*PushMainResponse)(nil),                                   // 32: cman.pushMainResponse
+	(*PushSubCanvasRequest)(nil),                               // 33: cman.pushSubCanvasRequest
+	(*PushSubCanvasRequestMembers)(nil),                        // 34: cman.pushSubCanvasRequestMembers
+	(*PushSubCanvasResponse)(nil),                              // 35: cman.pushSubCanvasResponse
+	(*PushMainSubCanvasRequest)(nil),                           // 36: cman.pushMainSubCanvasRequest
+	(*PushMainSubCanvasRequestMembers)(nil),                    // 37: cman.pushMainSubCanvasRequestMembers
+	(*PushMainSubCanvasResponse)(nil),                          // 38: cman.pushMainSubCanvasResponse
+	(*PushWholeRequest)(nil),                                   // 39: cman.pushWholeRequest
+	(*PushWholeRequestMembers)(nil),                            // 40: cman.pushWholeRequestMembers
+	(*PushWholeResponse)(nil),                                  // 41: cman.pushWholeResponse
+	(*LoopSomeRequest)(nil),                                    // 42: cman.loopSomeRequest
+	(*LoopSomeRequestMembers)(nil),                             // 43: cman.loopSomeRequestMembers
+	(*LoopSomeResponse)(nil),                                   // 44: cman.loopSomeResponse
+	(*GetJWTRequest)(nil),                                      // 45: cman.getJWTRequest
+	(*GetJWTRequestClaims)(nil),                                // 46: cman.getJWTRequestClaims
+	(*GetJWTResponse)(nil),                                     // 47: cman.getJWTResponse
+	(*GetCManInfoRequest)(nil),                                 // 48: cman.GetCManInfoRequest
+	(*GetCManInfoResponse)(nil),                                // 49: cman.GetCManInfoResponse
+	(*ChangeLeaderRequest)(nil),                                // 50: cman.ChangeLeaderRequest
+	(*ChangeLeaderResponse)(nil),                               // 51: cman.ChangeLeaderResponse
+	nil,                                                        // 52: cman.ConferenceInfoRequest.MemberFiltersEntry
+	nil,                                                        // 53: cman.BootstrapResponseDataConfInfo.GroupMembersEntry
 }
 var file_proto_cman_cman_proto_depIdxs = []int32{
-	54, // 0: cman.ConferenceInfoRequest.memberFilters:type_name -> cman.ConferenceInfoRequest.MemberFiltersEntry
+	52, // 0: cman.ConferenceInfoRequest.memberFilters:type_name -> cman.ConferenceInfoRequest.MemberFiltersEntry
 	3,  // 1: cman.ConferenceInfoResponse.conference:type_name -> cman.ConferenceInfoResponseConference
 	4,  // 2: cman.ConferenceInfoResponseConference.nodes:type_name -> cman.ConferenceInfoResponseConferenceNodes
-	14, // 3: cman.ConferenceInfoResponseConference.members:type_name -> cman.ConferenceInfoResponseMembers
+	12, // 3: cman.ConferenceInfoResponseConference.members:type_name -> cman.ConferenceInfoResponseMembers
 	5,  // 4: cman.ConferenceInfoResponseConferenceNodes.GroupMembers:type_name -> cman.ConferenceInfoResponseConferenceNodesGroupMembers
 	6,  // 5: cman.ConferenceInfoResponseConferenceNodes.nodeMembers:type_name -> cman.ConferenceInfoResponseConferenceNodesNodeMembers
-	8,  // 6: cman.ConferenceInfoResponse2.conference:type_name -> cman.ConferenceInfoResponse2Conference
-	4,  // 7: cman.ConferenceInfoResponse2Conference.nodes:type_name -> cman.ConferenceInfoResponseConferenceNodes
-	9,  // 8: cman.ConferenceInfoResponse2Conference.members:type_name -> cman.ConferenceInfoResponseConferenceMembers
-	10, // 9: cman.ConferenceInfoResponseConferenceMembers.status:type_name -> cman.ConferenceInfoResponseConferenceMembersStatus
-	11, // 10: cman.ConferenceInfoResponseConferenceMembersStatus.audio:type_name -> cman.ConferenceInfoResponseConferenceMembersStatusAudio
-	12, // 11: cman.ConferenceInfoResponseConferenceMembersStatus.video:type_name -> cman.ConferenceInfoResponseConferenceMembersStatusVideo
-	15, // 12: cman.ConferenceInfoResponseMembers.flags:type_name -> cman.ConferenceInfoResponseFlags
-	17, // 13: cman.ConferenceObjectNodes.groupMembers:type_name -> cman.ConferenceObjectNodesGroupMembers
-	18, // 14: cman.ConferenceObjectNodes.nodeMembers:type_name -> cman.ConferenceObjectNodesNodeMembers
-	19, // 15: cman.ConferenceObject.nodes:type_name -> cman.ConferenceObjectNodes
-	20, // 16: cman.GetConferenceListResponse.conferences:type_name -> cman.ConferenceObject
-	23, // 17: cman.BootstrapRequest.Data:type_name -> cman.BootstrapRequestData
-	24, // 18: cman.BootstrapRequestData.liveArray:type_name -> cman.BootstrapRequestDataLiveArray
-	25, // 19: cman.BootstrapRequestDataLiveArray.obj:type_name -> cman.BootstrapRequestDataLiveArrayObj
-	27, // 20: cman.BootstrapResponse.data:type_name -> cman.BootstrapResponseData
-	28, // 21: cman.BootstrapResponseData.confInfo:type_name -> cman.BootstrapResponseDataConfInfo
-	55, // 22: cman.BootstrapResponseDataConfInfo.groupMembers:type_name -> cman.BootstrapResponseDataConfInfo.GroupMembersEntry
-	36, // 23: cman.pushSubCanvasRequest.members:type_name -> cman.pushSubCanvasRequestMembers
-	39, // 24: cman.pushMainSubCanvasRequest.members:type_name -> cman.pushMainSubCanvasRequestMembers
-	42, // 25: cman.pushWholeRequest.members:type_name -> cman.pushWholeRequestMembers
-	45, // 26: cman.loopSomeRequest.members:type_name -> cman.loopSomeRequestMembers
-	48, // 27: cman.getJWTRequest.claims:type_name -> cman.getJWTRequestClaims
-	16, // 28: cman.cMan.getConferenceList:input_type -> cman.GetConferenceListRequest
-	1,  // 29: cman.cMan.conferenceInfo:input_type -> cman.ConferenceInfoRequest
-	1,  // 30: cman.cMan.conferenceInfo2:input_type -> cman.ConferenceInfoRequest
-	22, // 31: cman.cMan.bootstrap:input_type -> cman.BootstrapRequest
-	29, // 32: cman.cMan.getNodeForConference:input_type -> cman.getNodeForConferenceRequest
-	31, // 33: cman.cMan.confControl:input_type -> cman.confControlRequest
-	33, // 34: cman.cMan.pushMain:input_type -> cman.pushMainRequest
-	35, // 35: cman.cMan.pushSubCanvas:input_type -> cman.pushSubCanvasRequest
-	38, // 36: cman.cMan.pushMainSubCanvas:input_type -> cman.pushMainSubCanvasRequest
-	41, // 37: cman.cMan.pushWhole:input_type -> cman.pushWholeRequest
-	44, // 38: cman.cMan.loopSome:input_type -> cman.loopSomeRequest
-	47, // 39: cman.cMan.getJWT:input_type -> cman.getJWTRequest
-	50, // 40: cman.cMan.getCManInfo:input_type -> cman.GetCManInfoRequest
-	52, // 41: cman.cMan.changeLeader:input_type -> cman.ChangeLeaderRequest
-	21, // 42: cman.cMan.getConferenceList:output_type -> cman.GetConferenceListResponse
-	2,  // 43: cman.cMan.conferenceInfo:output_type -> cman.ConferenceInfoResponse
-	7,  // 44: cman.cMan.conferenceInfo2:output_type -> cman.ConferenceInfoResponse2
-	26, // 45: cman.cMan.bootstrap:output_type -> cman.BootstrapResponse
-	30, // 46: cman.cMan.getNodeForConference:output_type -> cman.getNodeForConferenceResponse
-	32, // 47: cman.cMan.confControl:output_type -> cman.confControlResponse
-	34, // 48: cman.cMan.pushMain:output_type -> cman.pushMainResponse
-	37, // 49: cman.cMan.pushSubCanvas:output_type -> cman.pushSubCanvasResponse
-	40, // 50: cman.cMan.pushMainSubCanvas:output_type -> cman.pushMainSubCanvasResponse
-	43, // 51: cman.cMan.pushWhole:output_type -> cman.pushWholeResponse
-	46, // 52: cman.cMan.loopSome:output_type -> cman.loopSomeResponse
-	49, // 53: cman.cMan.getJWT:output_type -> cman.getJWTResponse
-	51, // 54: cman.cMan.getCManInfo:output_type -> cman.GetCManInfoResponse
-	53, // 55: cman.cMan.changeLeader:output_type -> cman.ChangeLeaderResponse
-	42, // [42:56] is the sub-list for method output_type
-	28, // [28:42] is the sub-list for method input_type
-	28, // [28:28] is the sub-list for extension type_name
-	28, // [28:28] is the sub-list for extension extendee
-	0,  // [0:28] is the sub-list for field type_name
+	8,  // 6: cman.ConferenceInfoResponseConferenceMembers.status:type_name -> cman.ConferenceInfoResponseConferenceMembersStatus
+	9,  // 7: cman.ConferenceInfoResponseConferenceMembersStatus.audio:type_name -> cman.ConferenceInfoResponseConferenceMembersStatusAudio
+	10, // 8: cman.ConferenceInfoResponseConferenceMembersStatus.video:type_name -> cman.ConferenceInfoResponseConferenceMembersStatusVideo
+	13, // 9: cman.ConferenceInfoResponseMembers.flags:type_name -> cman.ConferenceInfoResponseFlags
+	8,  // 10: cman.ConferenceInfoResponseMembers.status:type_name -> cman.ConferenceInfoResponseConferenceMembersStatus
+	15, // 11: cman.ConferenceObjectNodes.groupMembers:type_name -> cman.ConferenceObjectNodesGroupMembers
+	16, // 12: cman.ConferenceObjectNodes.nodeMembers:type_name -> cman.ConferenceObjectNodesNodeMembers
+	17, // 13: cman.ConferenceObject.nodes:type_name -> cman.ConferenceObjectNodes
+	18, // 14: cman.GetConferenceListResponse.conferences:type_name -> cman.ConferenceObject
+	21, // 15: cman.BootstrapRequest.Data:type_name -> cman.BootstrapRequestData
+	22, // 16: cman.BootstrapRequestData.liveArray:type_name -> cman.BootstrapRequestDataLiveArray
+	23, // 17: cman.BootstrapRequestDataLiveArray.obj:type_name -> cman.BootstrapRequestDataLiveArrayObj
+	25, // 18: cman.BootstrapResponse.data:type_name -> cman.BootstrapResponseData
+	26, // 19: cman.BootstrapResponseData.confInfo:type_name -> cman.BootstrapResponseDataConfInfo
+	53, // 20: cman.BootstrapResponseDataConfInfo.groupMembers:type_name -> cman.BootstrapResponseDataConfInfo.GroupMembersEntry
+	34, // 21: cman.pushSubCanvasRequest.members:type_name -> cman.pushSubCanvasRequestMembers
+	37, // 22: cman.pushMainSubCanvasRequest.members:type_name -> cman.pushMainSubCanvasRequestMembers
+	40, // 23: cman.pushWholeRequest.members:type_name -> cman.pushWholeRequestMembers
+	43, // 24: cman.loopSomeRequest.members:type_name -> cman.loopSomeRequestMembers
+	46, // 25: cman.getJWTRequest.claims:type_name -> cman.getJWTRequestClaims
+	14, // 26: cman.cMan.getConferenceList:input_type -> cman.GetConferenceListRequest
+	1,  // 27: cman.cMan.conferenceInfo:input_type -> cman.ConferenceInfoRequest
+	20, // 28: cman.cMan.bootstrap:input_type -> cman.BootstrapRequest
+	27, // 29: cman.cMan.getNodeForConference:input_type -> cman.getNodeForConferenceRequest
+	29, // 30: cman.cMan.confControl:input_type -> cman.confControlRequest
+	31, // 31: cman.cMan.pushMain:input_type -> cman.pushMainRequest
+	33, // 32: cman.cMan.pushSubCanvas:input_type -> cman.pushSubCanvasRequest
+	36, // 33: cman.cMan.pushMainSubCanvas:input_type -> cman.pushMainSubCanvasRequest
+	39, // 34: cman.cMan.pushWhole:input_type -> cman.pushWholeRequest
+	42, // 35: cman.cMan.loopSome:input_type -> cman.loopSomeRequest
+	45, // 36: cman.cMan.getJWT:input_type -> cman.getJWTRequest
+	48, // 37: cman.cMan.getCManInfo:input_type -> cman.GetCManInfoRequest
+	50, // 38: cman.cMan.changeLeader:input_type -> cman.ChangeLeaderRequest
+	19, // 39: cman.cMan.getConferenceList:output_type -> cman.GetConferenceListResponse
+	2,  // 40: cman.cMan.conferenceInfo:output_type -> cman.ConferenceInfoResponse
+	24, // 41: cman.cMan.bootstrap:output_type -> cman.BootstrapResponse
+	28, // 42: cman.cMan.getNodeForConference:output_type -> cman.getNodeForConferenceResponse
+	30, // 43: cman.cMan.confControl:output_type -> cman.confControlResponse
+	32, // 44: cman.cMan.pushMain:output_type -> cman.pushMainResponse
+	35, // 45: cman.cMan.pushSubCanvas:output_type -> cman.pushSubCanvasResponse
+	38, // 46: cman.cMan.pushMainSubCanvas:output_type -> cman.pushMainSubCanvasResponse
+	41, // 47: cman.cMan.pushWhole:output_type -> cman.pushWholeResponse
+	44, // 48: cman.cMan.loopSome:output_type -> cman.loopSomeResponse
+	47, // 49: cman.cMan.getJWT:output_type -> cman.getJWTResponse
+	49, // 50: cman.cMan.getCManInfo:output_type -> cman.GetCManInfoResponse
+	51, // 51: cman.cMan.changeLeader:output_type -> cman.ChangeLeaderResponse
+	39, // [39:52] is the sub-list for method output_type
+	26, // [26:39] is the sub-list for method input_type
+	26, // [26:26] is the sub-list for extension type_name
+	26, // [26:26] is the sub-list for extension extendee
+	0,  // [0:26] is the sub-list for field type_name
 }
 
 func init() { file_proto_cman_cman_proto_init() }
@@ -4521,30 +4522,6 @@ func file_proto_cman_cman_proto_init() {
 			}
 		}
 		file_proto_cman_cman_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ConferenceInfoResponse2); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_proto_cman_cman_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ConferenceInfoResponse2Conference); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_proto_cman_cman_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ConferenceInfoResponseConferenceMembers); i {
 			case 0:
 				return &v.state
@@ -4556,7 +4533,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ConferenceInfoResponseConferenceMembersStatus); i {
 			case 0:
 				return &v.state
@@ -4568,7 +4545,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ConferenceInfoResponseConferenceMembersStatusAudio); i {
 			case 0:
 				return &v.state
@@ -4580,7 +4557,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ConferenceInfoResponseConferenceMembersStatusVideo); i {
 			case 0:
 				return &v.state
@@ -4592,7 +4569,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ConferenceInfoResponseVariables); i {
 			case 0:
 				return &v.state
@@ -4604,7 +4581,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ConferenceInfoResponseMembers); i {
 			case 0:
 				return &v.state
@@ -4616,7 +4593,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ConferenceInfoResponseFlags); i {
 			case 0:
 				return &v.state
@@ -4628,7 +4605,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetConferenceListRequest); i {
 			case 0:
 				return &v.state
@@ -4640,7 +4617,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ConferenceObjectNodesGroupMembers); i {
 			case 0:
 				return &v.state
@@ -4652,7 +4629,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ConferenceObjectNodesNodeMembers); i {
 			case 0:
 				return &v.state
@@ -4664,7 +4641,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ConferenceObjectNodes); i {
 			case 0:
 				return &v.state
@@ -4676,7 +4653,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ConferenceObject); i {
 			case 0:
 				return &v.state
@@ -4688,7 +4665,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetConferenceListResponse); i {
 			case 0:
 				return &v.state
@@ -4700,7 +4677,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*BootstrapRequest); i {
 			case 0:
 				return &v.state
@@ -4712,7 +4689,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*BootstrapRequestData); i {
 			case 0:
 				return &v.state
@@ -4724,7 +4701,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*BootstrapRequestDataLiveArray); i {
 			case 0:
 				return &v.state
@@ -4736,7 +4713,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*BootstrapRequestDataLiveArrayObj); i {
 			case 0:
 				return &v.state
@@ -4748,7 +4725,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*BootstrapResponse); i {
 			case 0:
 				return &v.state
@@ -4760,7 +4737,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*BootstrapResponseData); i {
 			case 0:
 				return &v.state
@@ -4772,7 +4749,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*BootstrapResponseDataConfInfo); i {
 			case 0:
 				return &v.state
@@ -4784,7 +4761,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetNodeForConferenceRequest); i {
 			case 0:
 				return &v.state
@@ -4796,7 +4773,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetNodeForConferenceResponse); i {
 			case 0:
 				return &v.state
@@ -4808,7 +4785,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ConfControlRequest); i {
 			case 0:
 				return &v.state
@@ -4820,7 +4797,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ConfControlResponse); i {
 			case 0:
 				return &v.state
@@ -4832,7 +4809,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PushMainRequest); i {
 			case 0:
 				return &v.state
@@ -4844,7 +4821,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PushMainResponse); i {
 			case 0:
 				return &v.state
@@ -4856,7 +4833,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PushSubCanvasRequest); i {
 			case 0:
 				return &v.state
@@ -4868,7 +4845,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[36].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PushSubCanvasRequestMembers); i {
 			case 0:
 				return &v.state
@@ -4880,7 +4857,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[37].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PushSubCanvasResponse); i {
 			case 0:
 				return &v.state
@@ -4892,7 +4869,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[38].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[36].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PushMainSubCanvasRequest); i {
 			case 0:
 				return &v.state
@@ -4904,7 +4881,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[39].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[37].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PushMainSubCanvasRequestMembers); i {
 			case 0:
 				return &v.state
@@ -4916,7 +4893,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[40].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[38].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PushMainSubCanvasResponse); i {
 			case 0:
 				return &v.state
@@ -4928,7 +4905,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[41].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[39].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PushWholeRequest); i {
 			case 0:
 				return &v.state
@@ -4940,7 +4917,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[42].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[40].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PushWholeRequestMembers); i {
 			case 0:
 				return &v.state
@@ -4952,7 +4929,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[43].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[41].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PushWholeResponse); i {
 			case 0:
 				return &v.state
@@ -4964,7 +4941,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[44].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[42].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LoopSomeRequest); i {
 			case 0:
 				return &v.state
@@ -4976,7 +4953,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[45].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[43].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LoopSomeRequestMembers); i {
 			case 0:
 				return &v.state
@@ -4988,7 +4965,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[46].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[44].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LoopSomeResponse); i {
 			case 0:
 				return &v.state
@@ -5000,7 +4977,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[47].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[45].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetJWTRequest); i {
 			case 0:
 				return &v.state
@@ -5012,7 +4989,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[48].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[46].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetJWTRequestClaims); i {
 			case 0:
 				return &v.state
@@ -5024,7 +5001,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[49].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[47].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetJWTResponse); i {
 			case 0:
 				return &v.state
@@ -5036,7 +5013,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[50].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[48].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCManInfoRequest); i {
 			case 0:
 				return &v.state
@@ -5048,7 +5025,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[51].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[49].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetCManInfoResponse); i {
 			case 0:
 				return &v.state
@@ -5060,7 +5037,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[52].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[50].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ChangeLeaderRequest); i {
 			case 0:
 				return &v.state
@@ -5072,7 +5049,7 @@ func file_proto_cman_cman_proto_init() {
 				return nil
 			}
 		}
-		file_proto_cman_cman_proto_msgTypes[53].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_cman_cman_proto_msgTypes[51].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ChangeLeaderResponse); i {
 			case 0:
 				return &v.state
@@ -5091,7 +5068,7 @@ func file_proto_cman_cman_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_cman_cman_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   56,
+			NumMessages:   54,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

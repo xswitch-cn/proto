@@ -16,7 +16,6 @@ service cMan {
   rpc getConferenceList(GetConferenceListRequest) returns (GetConferenceListResponse) {}
   // 获取会议信息
   rpc conferenceInfo(ConferenceInfoRequest) returns (ConferenceInfoResponse) {}
-  rpc conferenceInfo2(ConferenceInfoRequest) returns (ConferenceInfoResponse2) {}
   // bootstrap 客户端侧冷启动时发送，刷新当前会议状态和成员列表
   rpc bootstrap(BootstrapRequest) returns (BootstrapResponse) {}
   // getNodeForConference 小会参会者入会前询问小会所在节点
@@ -89,20 +88,6 @@ message ConferenceInfoResponseConferenceNodesGroupMembers{
 message ConferenceInfoResponseConferenceNodesNodeMembers{
 }
 
-message ConferenceInfoResponse2 {
-  ConferenceInfoResponse2Conference conference = 1;
-}
-
-message ConferenceInfoResponse2Conference{
-  string name = 1;
-  string domain = 2;
-  repeated ConferenceInfoResponseConferenceNodes nodes = 3;
-  int32 size = 4;
-  int32 member_count = 5;
-  string states = 6;
-  repeated ConferenceInfoResponseConferenceMembers members = 7;
-}
-
 message ConferenceInfoResponseConferenceMembers{
   string memberID = 1;
   string cidNumber = 2;
@@ -171,6 +156,24 @@ message ConferenceInfoResponseMembers {
   int32 output_volume = 11;
   int32 input_volume = 12;
   ConferenceInfoResponseFlags flags = 13;
+  string memberID = 14;
+  string cidNumber = 15;
+  string cidName = 16;
+  string codec = 17;
+  ConferenceInfoResponseConferenceMembersStatus status = 18;
+  string email = 19;
+  string nodeUUID = 20;
+  bool active = 21;
+  string groupID = 22;
+  string memberType = 23;
+  string nodeType = 24;
+  string domain = 25;
+  int32 canvasID = 26;
+  int32 watchingCanvasID = 27;
+  string roleID = 28;
+  int32 layerID = 29;
+  string reservationID = 30;
+  string channelName = 31;
 }
 
 message ConferenceInfoResponseFlags {
