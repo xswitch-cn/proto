@@ -119,6 +119,7 @@ type XNodeService interface {
 	JStatus(ctx context.Context, in *JStatusRequest, opts ...client.CallOption) (*JStatusResponse, error)
 	// 获取会议信息
 	ConferenceInfo(ctx context.Context, in *ConferenceInfoRequest, opts ...client.CallOption) (*ConferenceInfoResponse, error)
+	ConferenceInfo2(ctx context.Context, in *ConferenceInfoRequest, opts ...client.CallOption) (*ConferenceInfoResponse2, error)
 	// 获取全部会议信息
 	ConferenceList(ctx context.Context, in *ConferenceListRequest, opts ...client.CallOption) (*ConferenceListResponse, error)
 	// 呼叫中心FIFO队列（先入先出）
@@ -1351,6 +1352,16 @@ func (c *xNodeService) ConferenceInfo(ctx context.Context, in *ConferenceInfoReq
 	return out, nil
 }
 
+func (c *xNodeService) ConferenceInfo2(ctx context.Context, in *ConferenceInfoRequest, opts ...client.CallOption) (*ConferenceInfoResponse2, error) {
+	req := c.c.NewRequest(c.name, "XNode.ConferenceInfo2", in)
+	out := new(ConferenceInfoResponse2)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *xNodeService) ConferenceList(ctx context.Context, in *ConferenceListRequest, opts ...client.CallOption) (*ConferenceListResponse, error) {
 	req := c.c.NewRequest(c.name, "XNode.ConferenceList", in)
 	out := new(ConferenceListResponse)
@@ -1696,6 +1707,7 @@ type XNodeHandler interface {
 	JStatus(context.Context, *JStatusRequest, *JStatusResponse) error
 	// 获取会议信息
 	ConferenceInfo(context.Context, *ConferenceInfoRequest, *ConferenceInfoResponse) error
+	ConferenceInfo2(context.Context, *ConferenceInfoRequest, *ConferenceInfoResponse2) error
 	// 获取全部会议信息
 	ConferenceList(context.Context, *ConferenceListRequest, *ConferenceListResponse) error
 	// 呼叫中心FIFO队列（先入先出）
@@ -1754,6 +1766,7 @@ func RegisterXNodeHandler(s server.Server, hdlr XNodeHandler, opts ...server.Han
 		NativeJSAPI(ctx context.Context, in *NativeJSRequest, out *NativeJSResponse) error
 		JStatus(ctx context.Context, in *JStatusRequest, out *JStatusResponse) error
 		ConferenceInfo(ctx context.Context, in *ConferenceInfoRequest, out *ConferenceInfoResponse) error
+		ConferenceInfo2(ctx context.Context, in *ConferenceInfoRequest, out *ConferenceInfoResponse2) error
 		ConferenceList(ctx context.Context, in *ConferenceListRequest, out *ConferenceListResponse) error
 		FIFO(ctx context.Context, in *FIFORequest, out *FIFOResponse) error
 		Callcenter(ctx context.Context, in *CallcenterRequest, out *CallcenterResponse) error
@@ -1917,6 +1930,10 @@ func (h *xNodeHandler) JStatus(ctx context.Context, in *JStatusRequest, out *JSt
 
 func (h *xNodeHandler) ConferenceInfo(ctx context.Context, in *ConferenceInfoRequest, out *ConferenceInfoResponse) error {
 	return h.XNodeHandler.ConferenceInfo(ctx, in, out)
+}
+
+func (h *xNodeHandler) ConferenceInfo2(ctx context.Context, in *ConferenceInfoRequest, out *ConferenceInfoResponse2) error {
+	return h.XNodeHandler.ConferenceInfo2(ctx, in, out)
 }
 
 func (h *xNodeHandler) ConferenceList(ctx context.Context, in *ConferenceListRequest, out *ConferenceListResponse) error {

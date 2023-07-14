@@ -16,6 +16,7 @@ service cMan {
   rpc getConferenceList(GetConferenceListRequest) returns (GetConferenceListResponse) {}
   // 获取会议信息
   rpc conferenceInfo(ConferenceInfoRequest) returns (ConferenceInfoResponse) {}
+  rpc conferenceInfo2(ConferenceInfoRequest) returns (ConferenceInfoResponse2) {}
   // bootstrap 客户端侧冷启动时发送，刷新当前会议状态和成员列表
   rpc bootstrap(BootstrapRequest) returns (BootstrapResponse) {}
   // getNodeForConference 小会参会者入会前询问小会所在节点
@@ -86,6 +87,20 @@ message ConferenceInfoResponseConferenceNodesGroupMembers{
 }
 
 message ConferenceInfoResponseConferenceNodesNodeMembers{
+}
+
+message ConferenceInfoResponse2 {
+  ConferenceInfoResponse2Conference conference = 1;
+}
+
+message ConferenceInfoResponse2Conference{
+  string name = 1;
+  string domain = 2;
+  repeated ConferenceInfoResponseConferenceNodes nodes = 3;
+  int32 size = 4;
+  int32 member_count = 5;
+  string states = 6;
+  repeated ConferenceInfoResponseConferenceMembers members = 7;
 }
 
 message ConferenceInfoResponseConferenceMembers{
