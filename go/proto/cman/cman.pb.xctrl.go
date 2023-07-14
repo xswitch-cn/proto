@@ -50,6 +50,8 @@ type CManService interface {
 	GetConferenceList(ctx context.Context, in *GetConferenceListRequest, opts ...client.CallOption) (*GetConferenceListResponse, error)
 	// 获取会议信息
 	ConferenceInfo(ctx context.Context, in *ConferenceInfoRequest, opts ...client.CallOption) (*ConferenceInfoResponse, error)
+	// 获取会议信息_Bootstrap
+	ConferenceInfo2(ctx context.Context, in *ConferenceInfoRequest, opts ...client.CallOption) (*ConferenceInfoResponse2, error)
 	// bootstrap 客户端侧冷启动时发送，刷新当前会议状态和成员列表
 	Bootstrap(ctx context.Context, in *BootstrapRequest, opts ...client.CallOption) (*BootstrapResponse, error)
 	// getNodeForConference 小会参会者入会前询问小会所在节点
@@ -98,6 +100,16 @@ func (c *cManService) GetConferenceList(ctx context.Context, in *GetConferenceLi
 func (c *cManService) ConferenceInfo(ctx context.Context, in *ConferenceInfoRequest, opts ...client.CallOption) (*ConferenceInfoResponse, error) {
 	req := c.c.NewRequest(c.name, "conferenceInfo", in)
 	out := new(ConferenceInfoResponse)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cManService) ConferenceInfo2(ctx context.Context, in *ConferenceInfoRequest, opts ...client.CallOption) (*ConferenceInfoResponse2, error) {
+	req := c.c.NewRequest(c.name, "conferenceInfo2", in)
+	out := new(ConferenceInfoResponse2)
 	err := c.c.Call(ctx, req, out, opts...)
 	if err != nil {
 		return nil, err
@@ -222,6 +234,8 @@ type CManHandler interface {
 	GetConferenceList(context.Context, *GetConferenceListRequest, *GetConferenceListResponse) error
 	// 获取会议信息
 	ConferenceInfo(context.Context, *ConferenceInfoRequest, *ConferenceInfoResponse) error
+	// 获取会议信息_Bootstrap
+	ConferenceInfo2(context.Context, *ConferenceInfoRequest, *ConferenceInfoResponse2) error
 	// bootstrap 客户端侧冷启动时发送，刷新当前会议状态和成员列表
 	Bootstrap(context.Context, *BootstrapRequest, *BootstrapResponse) error
 	// getNodeForConference 小会参会者入会前询问小会所在节点
@@ -249,6 +263,7 @@ func RegisterCManHandler(s server.Server, hdlr CManHandler, opts ...server.Handl
 	type cMan interface {
 		GetConferenceList(ctx context.Context, in *GetConferenceListRequest, out *GetConferenceListResponse) error
 		ConferenceInfo(ctx context.Context, in *ConferenceInfoRequest, out *ConferenceInfoResponse) error
+		ConferenceInfo2(ctx context.Context, in *ConferenceInfoRequest, out *ConferenceInfoResponse2) error
 		Bootstrap(ctx context.Context, in *BootstrapRequest, out *BootstrapResponse) error
 		GetNodeForConference(ctx context.Context, in *GetNodeForConferenceRequest, out *GetNodeForConferenceResponse) error
 		ConfControl(ctx context.Context, in *ConfControlRequest, out *ConfControlResponse) error
@@ -278,6 +293,10 @@ func (h *cManHandler) GetConferenceList(ctx context.Context, in *GetConferenceLi
 
 func (h *cManHandler) ConferenceInfo(ctx context.Context, in *ConferenceInfoRequest, out *ConferenceInfoResponse) error {
 	return h.CManHandler.ConferenceInfo(ctx, in, out)
+}
+
+func (h *cManHandler) ConferenceInfo2(ctx context.Context, in *ConferenceInfoRequest, out *ConferenceInfoResponse2) error {
+	return h.CManHandler.ConferenceInfo2(ctx, in, out)
 }
 
 func (h *cManHandler) Bootstrap(ctx context.Context, in *BootstrapRequest, out *BootstrapResponse) error {
