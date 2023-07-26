@@ -4,6 +4,7 @@ option go_package = "proto/cman";
 option java_outer_classname = "CManProto";
 
 package cman;
+import "google/protobuf/struct.proto";
 
 /*
     subject:
@@ -39,6 +40,8 @@ service cMan {
   // 获取cMan实例列表
   rpc getCManInfo(GetCManInfoRequest) returns (GetCManInfoResponse) {}
   rpc changeLeader(ChangeLeaderRequest) returns (ChangeLeaderResponse) {}
+  // 关闭会议
+  rpc closeConference(CloseConferenceRequest) returns (CloseConferenceResponse) {}
 }
 
 message EmptyMessage{
@@ -47,7 +50,7 @@ message EmptyMessage{
 message ConferenceInfoRequest {
   string name = 1;
   bool showMembers = 2;
-  map<string, string> memberFilters = 3;
+  google.protobuf.ListValue memberFilters = 3 [json_name="memberFilters"];
 }
 
 message ConferenceInfoResponse {
@@ -423,4 +426,12 @@ message ChangeLeaderResponse{
   // ACTIVE or STANDBY in HA,
   // LEADER, FOLLOWER, or CANDIDATE in RAFT
   string mode = 3;
+}
+
+message CloseConferenceRequest {
+  string conferencename = 1;
+}
+
+message CloseConferenceResponse {
+  string info = 1;
 }
