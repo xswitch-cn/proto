@@ -430,8 +430,9 @@ message ChangeLeaderResponse{
 
 message CloseConferenceRequest {
   string conferencename = 1;
+  string nodeUUID = 2;
 }
 
 message CloseConferenceResponse {
-  string info = 1;
+
 }
