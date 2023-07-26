@@ -6,6 +6,7 @@ package cman
 import (
 	fmt "fmt"
 	proto "github.com/golang/protobuf/proto"
+	_ "google.golang.org/protobuf/types/known/structpb"
 	math "math"
 )
 
@@ -73,6 +74,8 @@ type CManService interface {
 	// 获取cMan实例列表
 	GetCManInfo(ctx context.Context, in *GetCManInfoRequest, opts ...client.CallOption) (*GetCManInfoResponse, error)
 	ChangeLeader(ctx context.Context, in *ChangeLeaderRequest, opts ...client.CallOption) (*ChangeLeaderResponse, error)
+	// 关闭会议
+	CloseConference(ctx context.Context, in *CloseConferenceRequest, opts ...client.CallOption) (*CloseConferenceResponse, error)
 }
 
 type cManService struct {
@@ -227,6 +230,16 @@ func (c *cManService) ChangeLeader(ctx context.Context, in *ChangeLeaderRequest,
 	return out, nil
 }
 
+func (c *cManService) CloseConference(ctx context.Context, in *CloseConferenceRequest, opts ...client.CallOption) (*CloseConferenceResponse, error) {
+	req := c.c.NewRequest(c.name, "closeConference", in)
+	out := new(CloseConferenceResponse)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // Server API for CMan service
 
 type CManHandler interface {
@@ -257,6 +270,8 @@ type CManHandler interface {
 	// 获取cMan实例列表
 	GetCManInfo(context.Context, *GetCManInfoRequest, *GetCManInfoResponse) error
 	ChangeLeader(context.Context, *ChangeLeaderRequest, *ChangeLeaderResponse) error
+	// 关闭会议
+	CloseConference(context.Context, *CloseConferenceRequest, *CloseConferenceResponse) error
 }
 
 func RegisterCManHandler(s server.Server, hdlr CManHandler, opts ...server.HandlerOption) error {
@@ -275,6 +290,7 @@ func RegisterCManHandler(s server.Server, hdlr CManHandler, opts ...server.Handl
 		GetJWT(ctx context.Context, in *GetJWTRequest, out *GetJWTResponse) error
 		GetCManInfo(ctx context.Context, in *GetCManInfoRequest, out *GetCManInfoResponse) error
 		ChangeLeader(ctx context.Context, in *ChangeLeaderRequest, out *ChangeLeaderResponse) error
+		CloseConference(ctx context.Context, in *CloseConferenceRequest, out *CloseConferenceResponse) error
 	}
 	type CMan struct {
 		cMan
@@ -341,4 +357,8 @@ func (h *cManHandler) GetCManInfo(ctx context.Context, in *GetCManInfoRequest, o
 
 func (h *cManHandler) ChangeLeader(ctx context.Context, in *ChangeLeaderRequest, out *ChangeLeaderResponse) error {
 	return h.CManHandler.ChangeLeader(ctx, in, out)
+}
+
+func (h *cManHandler) CloseConference(ctx context.Context, in *CloseConferenceRequest, out *CloseConferenceResponse) error {
+	return h.CManHandler.CloseConference(ctx, in, out)
 }
