@@ -226,3 +226,6 @@ func (r *rkv) configure() error {
 	r.Client = redis.NewClient(redisOptions)
 	return nil
 }
+
+func (r *rkv) OnEvicted(f func(string, interface{})) {
+}

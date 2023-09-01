@@ -430,3 +430,6 @@ func (m *fileStore) List(opts ...store.ListOption) ([]string, error) {
 func (m *fileStore) String() string {
 	return "file"
 }
+
+func (m *fileStore) OnEvicted(f func(string, interface{})) {
+}

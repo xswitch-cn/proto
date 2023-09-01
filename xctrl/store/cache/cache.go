@@ -151,3 +151,6 @@ func (c *cache) List(opts ...store.ListOption) ([]string, error) {
 	// List only makes sense from the top level
 	return c.stores[len(c.stores)-1].List(opts...)
 }
+
+func (c *cache) OnEvicted(f func(string, interface{})) {
+}

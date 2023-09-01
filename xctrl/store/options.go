@@ -24,7 +24,8 @@ type Options struct {
 	// Context should contain all implementation specific options, using context.WithValue.
 	Context context.Context
 	// Client to use for RPC
-	Client client.Client
+	Client          client.Client
+	CleanupInterval time.Duration
 }
 
 // Option sets values in Options
@@ -78,6 +79,13 @@ func WithContext(c context.Context) Option {
 func WithClient(c client.Client) Option {
 	return func(o *Options) {
 		o.Client = c
+	}
+}
+
+// WithCleanupInterval sets the stores cleanup interval
+func WithCleanupInterval(t time.Duration) Option {
+	return func(o *Options) {
+		o.CleanupInterval = t
 	}
 }
 

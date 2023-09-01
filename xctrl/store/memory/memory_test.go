@@ -6,6 +6,8 @@ import (
 	"testing"
 	"time"
 
+	"github.com/patrickmn/go-cache"
+
 	"git.xswitch.cn/xswitch/proto/xctrl/store"
 	"github.com/kr/pretty"
 )
@@ -274,5 +276,34 @@ func basictest(s store.Store, t *testing.T) {
 		if len(results) != 5 {
 			t.Error("Expected 5 results, got ", len(results))
 		}
+	}
+}
+
+func TestOnEvicted(t *testing.T) {
+	s := &memoryStore{
+		options: store.Options{
+			Database: "micro",
+			Table:    "micro",
+		},
+		store: cache.New(cache.DefaultExpiration, 0),
+	}
+
+	if err := s.Write(&store.Record{
+		Key:    "foo",
+		Value:  []byte("World"),
+		Expiry: cache.DefaultExpiration,
+	}); err != nil {
+		t.Error(err)
+	}
+
+	work := false
+	s.OnEvicted(func(s string, i interface{}) {
+		t.Log("Delete node " + s)
+		work = true
+	})
+	s.Delete("foo")
+
+	if !work {
+		t.Error()
 	}
 }

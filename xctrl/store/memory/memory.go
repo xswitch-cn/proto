@@ -15,16 +15,22 @@ import (
 
 // NewStore returns a memory store
 func NewStore(opts ...store.Option) store.Store {
-	s := &memoryStore{
-		options: store.Options{
-			Database: "micro",
-			Table:    "micro",
-		},
-		store: cache.New(cache.NoExpiration, 5*time.Minute),
+	options := store.Options{
+		Database: "micro",
+		Table:    "micro",
 	}
 	for _, o := range opts {
-		o(&s.options)
+		o(&options)
 	}
+	cleanupInterval := 5 * time.Minute
+	if options.CleanupInterval > 0 {
+		cleanupInterval = options.CleanupInterval
+	}
+	s := &memoryStore{
+		options: options,
+		store:   cache.New(cache.NoExpiration, cleanupInterval),
+	}
+
 	return s
 }
 
@@ -32,6 +38,10 @@ type memoryStore struct {
 	options store.Options
 
 	store *cache.Cache
+}
+
+func (m *memoryStore) OnEvicted(f func(string, interface{})) {
+	m.store.OnEvicted(f)
 }
 
 type storeRecord struct {

@@ -237,3 +237,6 @@ func NewStore(opts ...store.Option) store.Store {
 	// return store
 	return s
 }
+
+func (s *sqlStore) OnEvicted(f func(string, interface{})) {
+}

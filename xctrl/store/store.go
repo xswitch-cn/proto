@@ -29,6 +29,7 @@ type Store interface {
 	Close() error
 	// String returns the name of the implementation.
 	String() string
+	OnEvicted(f func(string, interface{}))
 }
 
 // Record is an item stored or retrieved from a Store
