@@ -127,6 +127,7 @@ message ConferenceInfoResponseConferenceMembers{
   int32 layerID = 17;
   string reservationID = 18;
   string channelName = 19;
+  string sharing = 20;
 }
 
 message ConferenceInfoResponseConferenceMembersStatus{
