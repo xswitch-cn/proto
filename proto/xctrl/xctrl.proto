@@ -1021,7 +1021,7 @@ message ConferenceInfoResponseMembers {
   int32 layerID = 29;
   string reservationID = 30;
   string channelName = 31;
-  string sharing = 32;
+  bool sharing = 32;
 }
 
 message ConferenceInfoResponseConferenceMembers{
