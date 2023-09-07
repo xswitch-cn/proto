@@ -50,7 +50,7 @@ message EmptyMessage{
 message ConferenceInfoRequest {
   string name = 1;
   bool showMembers = 2;
-  google.protobuf.ListValue memberFilters = 3 [json_name="memberFilters"];
+  google.protobuf.ListValue memberFilters = 3 [json_name = "memberFilters"];
 }
 
 message ConferenceInfoResponse {
@@ -283,7 +283,7 @@ message BootstrapResponseData{
 
 message BootstrapResponseDataConfInfo{
   int32  size = 1;
-  map<string,int32> groupMembers = 2;
+  map<string, int32> groupMembers = 2;
 }
 
 message getNodeForConferenceRequest{
@@ -436,4 +436,13 @@ message CloseConferenceRequest {
 
 message CloseConferenceResponse {
 
+}
+
+message CManStatusEventParam{
+  string uuid = 1;
+  string name = 2;
+  string ip = 3;
+  string version = 4;
+  bool is_leader = 5;
+  int32 number_of_conference = 6;
 }
