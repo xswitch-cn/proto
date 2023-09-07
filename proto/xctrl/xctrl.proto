@@ -1021,6 +1021,7 @@ message ConferenceInfoResponseMembers {
   int32 layerID = 29;
   string reservationID = 30;
   string channelName = 31;
+  bool sharing = 32;
 }
 
 message ConferenceInfoResponseConferenceMembers{
@@ -1043,6 +1044,7 @@ message ConferenceInfoResponseConferenceMembers{
   int32 layerID = 17;
   string reservationID = 18;
   string channelName = 19;
+  bool sharing = 20;
 }
 
 message ConferenceInfoResponseConferenceMembersStatus{
