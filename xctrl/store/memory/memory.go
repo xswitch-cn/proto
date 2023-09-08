@@ -41,7 +41,11 @@ type memoryStore struct {
 }
 
 func (m *memoryStore) OnEvicted(f func(string, interface{})) {
-	m.store.OnEvicted(f)
+	wrapper := func(key string, value interface{}) {
+		r := value.(*storeRecord)
+		f(key, &r.metadata)
+	}
+	m.store.OnEvicted(wrapper)
 }
 
 type storeRecord struct {
