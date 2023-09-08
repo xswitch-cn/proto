@@ -29,7 +29,7 @@ doc-md:
 	rm docs/*.md-e
 
 doc-html:
-	protoc --doc_out=proto/xctrl/doc --doc_opt=template/default.html,xctrl.html proto/xctrl/xctrl.proto
+	protoc --doc_out=docs --doc_opt=html,xctrl.html proto/xctrl/xctrl.proto
 
 .PHONY: test
 test:
