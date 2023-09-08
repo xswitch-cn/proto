@@ -2,6 +2,7 @@
 package memory
 
 import (
+	"path"
 	"path/filepath"
 	"sort"
 	"strings"
@@ -43,7 +44,8 @@ type memoryStore struct {
 func (m *memoryStore) OnEvicted(f func(string, interface{})) {
 	wrapper := func(key string, value interface{}) {
 		r := value.(*storeRecord)
-		f(key, &r.metadata)
+		v := r.metadata[path.Base(key)]
+		f(key, v)
 	}
 	m.store.OnEvicted(wrapper)
 }
