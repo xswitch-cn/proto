@@ -9,6 +9,16 @@
 
 ## 目录
 
+- [struct.proto](#struct.proto)
+  - [ListValue](#google.protobuf.ListValue)
+  - [Struct](#google.protobuf.Struct)
+  - [Value](#google.protobuf.Value)
+
+  - [NullValue](#google.protobuf.NullValue)
+
+
+
+
 - [cman.proto](#cman.proto)
   - [BootstrapRequest](#cman.BootstrapRequest)
   - [BootstrapRequestData](#cman.BootstrapRequestData)
@@ -17,10 +27,15 @@
   - [BootstrapResponse](#cman.BootstrapResponse)
   - [BootstrapResponseData](#cman.BootstrapResponseData)
   - [BootstrapResponseDataConfInfo](#cman.BootstrapResponseDataConfInfo)
+  - [CManStatusEventParam](#cman.CManStatusEventParam)
   - [ChangeLeaderRequest](#cman.ChangeLeaderRequest)
   - [ChangeLeaderResponse](#cman.ChangeLeaderResponse)
+  - [CloseConferenceRequest](#cman.CloseConferenceRequest)
+  - [CloseConferenceResponse](#cman.CloseConferenceResponse)
   - [ConferenceInfoRequest](#cman.ConferenceInfoRequest)
   - [ConferenceInfoResponse](#cman.ConferenceInfoResponse)
+  - [ConferenceInfoResponse2](#cman.ConferenceInfoResponse2)
+  - [ConferenceInfoResponse2Conference](#cman.ConferenceInfoResponse2Conference)
   - [ConferenceInfoResponseConference](#cman.ConferenceInfoResponseConference)
   - [ConferenceInfoResponseConferenceMembers](#cman.ConferenceInfoResponseConferenceMembers)
   - [ConferenceInfoResponseConferenceMembersStatus](#cman.ConferenceInfoResponseConferenceMembersStatus)
@@ -69,6 +84,105 @@
 
 
 - [Scalar Value Types](#scalar-value-types)
+
+
+
+<a name="user-content-struct.proto"/>
+<a name="struct.proto"/>
+<p align="right"><a href="#top">Top</a></p>
+
+## struct.proto
+
+
+
+<a name="user-content-google.protobuf.ListValue"/>
+<a name="google.protobuf.ListValue"/>
+
+### ListValue
+`ListValue` is a wrapper around a repeated field of values.
+
+The JSON representation for `ListValue` is JSON array.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| values | [Value](#google.protobuf.Value) | repeated | Repeated field of dynamically typed values. |
+
+
+
+
+
+
+<a name="user-content-google.protobuf.Struct"/>
+<a name="google.protobuf.Struct"/>
+
+### Struct
+`Struct` represents a structured data value, consisting of fields
+which map to dynamically typed values. In some languages, `Struct`
+might be supported by a native representation. For example, in
+scripting languages like JS a struct is represented as an
+object. The details of that representation are described together
+with the proto support for the language.
+
+The JSON representation for `Struct` is JSON object.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| fields | [map<string, google.protobuf.Value>](#map<string, google.protobuf.Value>) |  | Unordered map of dynamically typed values. |
+
+
+
+
+
+
+<a name="user-content-google.protobuf.Value"/>
+<a name="google.protobuf.Value"/>
+
+### Value
+`Value` represents a dynamically typed value which can be either
+null, a number, a string, a boolean, a recursive struct value, or a
+list of values. A producer of value is expected to set one of these
+variants. Absence of any variant indicates an error.
+
+The JSON representation for `Value` is JSON value.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| null_value | [NullValue](#google.protobuf.NullValue) |  | Represents a null value. |
+| number_value | [double](#double) |  | Represents a double value. |
+| string_value | [string](#string) |  | Represents a string value. |
+| bool_value | [bool](#bool) |  | Represents a boolean value. |
+| struct_value | [Struct](#google.protobuf.Struct) |  | Represents a structured value. |
+| list_value | [ListValue](#google.protobuf.ListValue) |  | Represents a repeated `Value`. |
+
+
+
+
+
+ <!-- end messages -->
+
+
+<a name="user-content-google.protobuf.NullValue"/>
+<a name="google.protobuf.NullValue"/>
+
+### NullValue
+`NullValue` is a singleton enumeration to represent the null value for the
+`Value` type union.
+
+The JSON representation for `NullValue` is JSON `null`.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| NULL_VALUE | 0 | Null value. |
+
+
+ <!-- end enums -->
+
+ <!-- end HasExtensions -->
+
+ <!-- end services -->
 
 
 
@@ -203,6 +317,27 @@
 
 
 
+<a name="user-content-cman.CManStatusEventParam"/>
+<a name="cman.CManStatusEventParam"/>
+
+### CManStatusEventParam
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| uuid | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| ip | [string](#string) |  |  |
+| version | [string](#string) |  |  |
+| is_leader | [bool](#bool) |  |  |
+| number_of_conference | [int32](#int32) |  |  |
+
+
+
+
+
+
 <a name="user-content-cman.ChangeLeaderRequest"/>
 <a name="cman.ChangeLeaderRequest"/>
 
@@ -238,6 +373,34 @@
 
 
 
+<a name="user-content-cman.CloseConferenceRequest"/>
+<a name="cman.CloseConferenceRequest"/>
+
+### CloseConferenceRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| conferencename | [string](#string) |  |  |
+| nodeUUID | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="user-content-cman.CloseConferenceResponse"/>
+<a name="cman.CloseConferenceResponse"/>
+
+### CloseConferenceResponse
+
+
+
+
+
+
+
 <a name="user-content-cman.ConferenceInfoRequest"/>
 <a name="cman.ConferenceInfoRequest"/>
 
@@ -249,7 +412,7 @@
 | ----- | ---- | ----- | ----------- |
 | name | [string](#string) |  |  |
 | showMembers | [bool](#bool) |  |  |
-| memberFilters | [map<string, string>](#map-string-string) |  |  |
+| memberFilters | [.google.protobuf.ListValue](#cman..google.protobuf.ListValue) |  |  |
 
 
 
@@ -272,6 +435,44 @@
 
 
 
+<a name="user-content-cman.ConferenceInfoResponse2"/>
+<a name="cman.ConferenceInfoResponse2"/>
+
+### ConferenceInfoResponse2
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| conference | [ConferenceInfoResponse2Conference](#cman.ConferenceInfoResponse2Conference) |  |  |
+
+
+
+
+
+
+<a name="user-content-cman.ConferenceInfoResponse2Conference"/>
+<a name="cman.ConferenceInfoResponse2Conference"/>
+
+### ConferenceInfoResponse2Conference
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| domain | [string](#string) |  |  |
+| nodes | [ConferenceInfoResponseConferenceNodes](#cman.ConferenceInfoResponseConferenceNodes) | repeated |  |
+| size | [int32](#int32) |  |  |
+| member_count | [int32](#int32) |  |  |
+| states | [string](#string) |  |  |
+| members | [ConferenceInfoResponseConferenceMembers](#cman.ConferenceInfoResponseConferenceMembers) | repeated |  |
+
+
+
+
+
+
 <a name="user-content-cman.ConferenceInfoResponseConference"/>
 <a name="cman.ConferenceInfoResponseConference"/>
 
@@ -287,7 +488,7 @@
 | size | [int32](#int32) |  |  |
 | member_count | [int32](#int32) |  |  |
 | states | [string](#string) |  |  |
-| members | [ConferenceInfoResponseConferenceMembers](#cman.ConferenceInfoResponseConferenceMembers) | repeated |  |
+| members | [ConferenceInfoResponseMembers](#cman.ConferenceInfoResponseMembers) | repeated |  |
 
 
 
@@ -322,6 +523,7 @@
 | layerID | [int32](#int32) |  |  |
 | reservationID | [string](#string) |  |  |
 | channelName | [string](#string) |  |  |
+| sharing | [bool](#bool) |  |  |
 
 
 
@@ -499,6 +701,24 @@
 | output_volume | [int32](#int32) |  |  |
 | input_volume | [int32](#int32) |  |  |
 | flags | [ConferenceInfoResponseFlags](#cman.ConferenceInfoResponseFlags) |  |  |
+| memberID | [string](#string) |  |  |
+| cidNumber | [string](#string) |  |  |
+| cidName | [string](#string) |  |  |
+| codec | [string](#string) |  |  |
+| status | [ConferenceInfoResponseConferenceMembersStatus](#cman.ConferenceInfoResponseConferenceMembersStatus) |  |  |
+| email | [string](#string) |  |  |
+| nodeUUID | [string](#string) |  |  |
+| active | [bool](#bool) |  |  |
+| groupID | [string](#string) |  |  |
+| memberType | [string](#string) |  |  |
+| nodeType | [string](#string) |  |  |
+| domain | [string](#string) |  |  |
+| canvasID | [int32](#int32) |  |  |
+| watchingCanvasID | [int32](#int32) |  |  |
+| roleID | [string](#string) |  |  |
+| layerID | [int32](#int32) |  |  |
+| reservationID | [string](#string) |  |  |
+| channelName | [string](#string) |  |  |
 
 
 
@@ -1017,6 +1237,7 @@
 | ----------- | ------------ | ------------- | ------------|
 | getConferenceList | [GetConferenceListRequest](#cman.GetConferenceListRequest) | [GetConferenceListResponse](#cman.GetConferenceListRequest) | 获取会议列表 |
 | conferenceInfo | [ConferenceInfoRequest](#cman.ConferenceInfoRequest) | [ConferenceInfoResponse](#cman.ConferenceInfoRequest) | 获取会议信息 |
+| conferenceInfo2 | [ConferenceInfoRequest](#cman.ConferenceInfoRequest) | [ConferenceInfoResponse2](#cman.ConferenceInfoRequest) | 获取会议信息_Bootstrap |
 | bootstrap | [BootstrapRequest](#cman.BootstrapRequest) | [BootstrapResponse](#cman.BootstrapRequest) | bootstrap 客户端侧冷启动时发送，刷新当前会议状态和成员列表 |
 | getNodeForConference | [getNodeForConferenceRequest](#cman.getNodeForConferenceRequest) | [getNodeForConferenceResponse](#cman.getNodeForConferenceRequest) | getNodeForConference 小会参会者入会前询问小会所在节点 |
 | confControl | [confControlRequest](#cman.confControlRequest) | [confControlResponse](#cman.confControlRequest) | confControl 通用的会控接口 |
@@ -1028,6 +1249,7 @@
 | getJWT | [getJWTRequest](#cman.getJWTRequest) | [getJWTResponse](#cman.getJWTRequest) | 获取JWT Token |
 | getCManInfo | [GetCManInfoRequest](#cman.GetCManInfoRequest) | [GetCManInfoResponse](#cman.GetCManInfoRequest) | 获取cMan实例列表 |
 | changeLeader | [ChangeLeaderRequest](#cman.ChangeLeaderRequest) | [ChangeLeaderResponse](#cman.ChangeLeaderRequest) |  |
+| closeConference | [CloseConferenceRequest](#cman.CloseConferenceRequest) | [CloseConferenceResponse](#cman.CloseConferenceRequest) | 关闭会议 |
 
  <!-- end services -->
 
