@@ -42,6 +42,8 @@ service cMan {
   rpc changeLeader(ChangeLeaderRequest) returns (ChangeLeaderResponse) {}
   // 关闭会议
   rpc closeConference(CloseConferenceRequest) returns (CloseConferenceResponse) {}
+  // 获取NodeList
+  rpc getNodeList(EmptyMessage) returns (GetNodeListResponse) {}
 }
 
 message EmptyMessage{
@@ -445,4 +447,32 @@ message CManStatusEventParam{
   string version = 4;
   bool is_leader = 5;
   int32 number_of_conference = 6;
+}
+
+message GetNodeListResponse{
+  repeated GetNodeListResponseNodes nodes = 1;
+}
+
+message GetNodeListResponseNodes{
+  string uuid = 1;
+  string name = 2;
+  string ip = 3;
+  string version = 4;
+  int32 rack = 5;
+  string address = 6;
+  int32 uptime = 7;
+  int32 sessions = 8;
+  int32 sessions_max = 9;
+  int32 sps_max = 10;
+  int32 sps_last = 11;
+  int32 sps_last_5min = 12;
+  int32 sessions_since_startup = 13;
+  int32 session_peak_5min = 14;
+  int32 session_peak_max = 15;
+  repeated GetNodeListResponseNodessipProfiles SipProfiles = 16;
+}
+
+message GetNodeListResponseNodessipProfiles{
+  string name = 1;
+  int32 port = 2;
 }

@@ -76,6 +76,8 @@ type CManService interface {
 	ChangeLeader(ctx context.Context, in *ChangeLeaderRequest, opts ...client.CallOption) (*ChangeLeaderResponse, error)
 	// 关闭会议
 	CloseConference(ctx context.Context, in *CloseConferenceRequest, opts ...client.CallOption) (*CloseConferenceResponse, error)
+	// 获取NodeList
+	GetNodeList(ctx context.Context, in *EmptyMessage, opts ...client.CallOption) (*GetNodeListResponse, error)
 }
 
 type cManService struct {
@@ -240,6 +242,16 @@ func (c *cManService) CloseConference(ctx context.Context, in *CloseConferenceRe
 	return out, nil
 }
 
+func (c *cManService) GetNodeList(ctx context.Context, in *EmptyMessage, opts ...client.CallOption) (*GetNodeListResponse, error) {
+	req := c.c.NewRequest(c.name, "getNodeList", in)
+	out := new(GetNodeListResponse)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // Server API for CMan service
 
 type CManHandler interface {
@@ -272,6 +284,8 @@ type CManHandler interface {
 	ChangeLeader(context.Context, *ChangeLeaderRequest, *ChangeLeaderResponse) error
 	// 关闭会议
 	CloseConference(context.Context, *CloseConferenceRequest, *CloseConferenceResponse) error
+	// 获取NodeList
+	GetNodeList(context.Context, *EmptyMessage, *GetNodeListResponse) error
 }
 
 func RegisterCManHandler(s server.Server, hdlr CManHandler, opts ...server.HandlerOption) error {
@@ -291,6 +305,7 @@ func RegisterCManHandler(s server.Server, hdlr CManHandler, opts ...server.Handl
 		GetCManInfo(ctx context.Context, in *GetCManInfoRequest, out *GetCManInfoResponse) error
 		ChangeLeader(ctx context.Context, in *ChangeLeaderRequest, out *ChangeLeaderResponse) error
 		CloseConference(ctx context.Context, in *CloseConferenceRequest, out *CloseConferenceResponse) error
+		GetNodeList(ctx context.Context, in *EmptyMessage, out *GetNodeListResponse) error
 	}
 	type CMan struct {
 		cMan
@@ -361,4 +376,8 @@ func (h *cManHandler) ChangeLeader(ctx context.Context, in *ChangeLeaderRequest,
 
 func (h *cManHandler) CloseConference(ctx context.Context, in *CloseConferenceRequest, out *CloseConferenceResponse) error {
 	return h.CManHandler.CloseConference(ctx, in, out)
+}
+
+func (h *cManHandler) GetNodeList(ctx context.Context, in *EmptyMessage, out *GetNodeListResponse) error {
+	return h.CManHandler.GetNodeList(ctx, in, out)
 }
