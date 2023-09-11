@@ -25,6 +25,7 @@
   - [AcceptRequest](#xctrl.AcceptRequest)
   - [Action](#xctrl.Action)
   - [AnswerRequest](#xctrl.AnswerRequest)
+  - [AppParam](#xctrl.AppParam)
   - [Application](#xctrl.Application)
   - [BridgeRequest](#xctrl.BridgeRequest)
   - [BroadcastRequest](#xctrl.BroadcastRequest)
@@ -40,6 +41,10 @@
   - [ConferenceInfoRequestData](#xctrl.ConferenceInfoRequestData)
   - [ConferenceInfoRequestDataData](#xctrl.ConferenceInfoRequestDataData)
   - [ConferenceInfoResponse](#xctrl.ConferenceInfoResponse)
+  - [ConferenceInfoResponseConferenceMembers](#xctrl.ConferenceInfoResponseConferenceMembers)
+  - [ConferenceInfoResponseConferenceMembersStatus](#xctrl.ConferenceInfoResponseConferenceMembersStatus)
+  - [ConferenceInfoResponseConferenceMembersStatusAudio](#xctrl.ConferenceInfoResponseConferenceMembersStatusAudio)
+  - [ConferenceInfoResponseConferenceMembersStatusVideo](#xctrl.ConferenceInfoResponseConferenceMembersStatusVideo)
   - [ConferenceInfoResponseFlags](#xctrl.ConferenceInfoResponseFlags)
   - [ConferenceInfoResponseMembers](#xctrl.ConferenceInfoResponseMembers)
   - [ConferenceInfoResponseVariables](#xctrl.ConferenceInfoResponseVariables)
@@ -98,6 +103,7 @@
   - [NativeRequest](#xctrl.NativeRequest)
   - [NativeResponse](#xctrl.NativeResponse)
   - [Node](#xctrl.Node)
+  - [NodeShutDownRequest](#xctrl.NodeShutDownRequest)
   - [Payload](#xctrl.Payload)
   - [PlayRequest](#xctrl.PlayRequest)
   - [RecordEvent](#xctrl.RecordEvent)
@@ -333,6 +339,23 @@ The JSON representation for `NullValue` is JSON `null`.
 
 
 
+<a name="user-content-xctrl.AppParam"/>
+<a name="xctrl.AppParam"/>
+
+### AppParam
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| app | [string](#string) |  |  |
+| data | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="user-content-xctrl.Application"/>
 <a name="xctrl.Application"/>
 
@@ -384,6 +407,8 @@ The JSON representation for `NullValue` is JSON `null`.
 | uuid | [string](#string) |  |  |
 | media | [Media](#xctrl.Media) |  |  |
 | option | [string](#string) |  | BOTH, ALEG, BLEG, AHOLDB, BHOLDA |
+| record | [string](#string) |  | IGNORE_READ |
+| apps | [AppParam](#xctrl.AppParam) | repeated | apps |
 
 
 
@@ -483,6 +508,8 @@ The JSON representation for `NullValue` is JSON `null`.
 | variable_cc_agent_session_uuid | [string](#string) |  |  |
 | variable_cc_member_uuid | [string](#string) |  |  |
 | variable_xcc_origin_dest_number | [string](#string) |  |  |
+| variable_cc_member_session_uuid | [string](#string) |  |  |
+| variable_bridge_uuid | [string](#string) |  |  |
 
 
 
@@ -665,6 +692,106 @@ The JSON representation for `NullValue` is JSON `null`.
 
 
 
+<a name="user-content-xctrl.ConferenceInfoResponseConferenceMembers"/>
+<a name="xctrl.ConferenceInfoResponseConferenceMembers"/>
+
+### ConferenceInfoResponseConferenceMembers
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| memberID | [string](#string) |  |  |
+| cidNumber | [string](#string) |  |  |
+| cidName | [string](#string) |  |  |
+| codec | [string](#string) |  |  |
+| status | [ConferenceInfoResponseConferenceMembersStatus](#xctrl.ConferenceInfoResponseConferenceMembersStatus) |  |  |
+| email | [string](#string) |  |  |
+| nodeUUID | [string](#string) |  |  |
+| active | [bool](#bool) |  |  |
+| uuid | [string](#string) |  |  |
+| groupID | [string](#string) |  |  |
+| memberType | [string](#string) |  |  |
+| nodeType | [string](#string) |  |  |
+| domain | [string](#string) |  |  |
+| canvasID | [int32](#int32) |  |  |
+| watchingCanvasID | [int32](#int32) |  |  |
+| roleID | [string](#string) |  |  |
+| layerID | [int32](#int32) |  |  |
+| reservationID | [string](#string) |  |  |
+| channelName | [string](#string) |  |  |
+| sharing | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="user-content-xctrl.ConferenceInfoResponseConferenceMembersStatus"/>
+<a name="xctrl.ConferenceInfoResponseConferenceMembersStatus"/>
+
+### ConferenceInfoResponseConferenceMembersStatus
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| audio | [ConferenceInfoResponseConferenceMembersStatusAudio](#xctrl.ConferenceInfoResponseConferenceMembersStatusAudio) |  |  |
+| video | [ConferenceInfoResponseConferenceMembersStatusVideo](#xctrl.ConferenceInfoResponseConferenceMembersStatusVideo) |  |  |
+
+
+
+
+
+
+<a name="user-content-xctrl.ConferenceInfoResponseConferenceMembersStatusAudio"/>
+<a name="xctrl.ConferenceInfoResponseConferenceMembersStatusAudio"/>
+
+### ConferenceInfoResponseConferenceMembersStatusAudio
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| talking | [bool](#bool) |  |  |
+| deaf | [bool](#bool) |  |  |
+| muted | [bool](#bool) |  |  |
+| onHold | [bool](#bool) |  |  |
+| energyScore | [int32](#int32) |  |  |
+| floor | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="user-content-xctrl.ConferenceInfoResponseConferenceMembersStatusVideo"/>
+<a name="xctrl.ConferenceInfoResponseConferenceMembersStatusVideo"/>
+
+### ConferenceInfoResponseConferenceMembersStatusVideo
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| visible | [bool](#bool) |  |  |
+| noRecover | [bool](#bool) |  |  |
+| avatarPresented | [bool](#bool) |  |  |
+| mediaFlow | [bool](#bool) |  |  |
+| muted | [bool](#bool) |  |  |
+| floor | [bool](#bool) |  |  |
+| reservationID | [string](#string) |  |  |
+| roleID | [string](#string) |  |  |
+| videoLayerID | [int32](#int32) |  |  |
+| canvasID | [int32](#int32) |  |  |
+| watchingCanvasID | [int32](#int32) |  |  |
+| order | [int32](#int32) |  |  |
+
+
+
+
+
+
 <a name="user-content-xctrl.ConferenceInfoResponseFlags"/>
 <a name="xctrl.ConferenceInfoResponseFlags"/>
 
@@ -713,6 +840,25 @@ The JSON representation for `NullValue` is JSON `null`.
 | output_volume | [int32](#int32) |  |  |
 | input_volume | [int32](#int32) |  |  |
 | flags | [ConferenceInfoResponseFlags](#xctrl.ConferenceInfoResponseFlags) |  |  |
+| memberID | [string](#string) |  |  |
+| cidNumber | [string](#string) |  |  |
+| cidName | [string](#string) |  |  |
+| codec | [string](#string) |  |  |
+| status | [ConferenceInfoResponseConferenceMembersStatus](#xctrl.ConferenceInfoResponseConferenceMembersStatus) |  |  |
+| email | [string](#string) |  |  |
+| nodeUUID | [string](#string) |  |  |
+| active | [bool](#bool) |  |  |
+| groupID | [string](#string) |  |  |
+| memberType | [string](#string) |  |  |
+| nodeType | [string](#string) |  |  |
+| domain | [string](#string) |  |  |
+| canvasID | [int32](#int32) |  |  |
+| watchingCanvasID | [int32](#int32) |  |  |
+| roleID | [string](#string) |  |  |
+| layerID | [int32](#int32) |  |  |
+| reservationID | [string](#string) |  |  |
+| channelName | [string](#string) |  |  |
+| sharing | [bool](#bool) |  |  |
 
 
 
@@ -1321,6 +1467,7 @@ The JSON representation for `NullValue` is JSON `null`.
 | uuid | [string](#string) |  |  |
 | cause | [string](#string) |  | NORMAL_CLEARING USER_BUSY CALL_REJECTED ... |
 | flag | [HangupRequest.HangupFlag](#xctrl.HangupRequest.HangupFlag) |  |  |
+| data | [map<string, string>](#map-string-string) |  | set channel params |
 
 
 
@@ -1796,6 +1943,22 @@ placeholer type, do not use it, use XNativeJSResponse instead
 
 
 
+<a name="user-content-xctrl.NodeShutDownRequest"/>
+<a name="xctrl.NodeShutDownRequest"/>
+
+### NodeShutDownRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| node_uuid | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="user-content-xctrl.Payload"/>
 <a name="xctrl.Payload"/>
 
@@ -2017,6 +2180,7 @@ placeholer type, do not use it, use XNativeJSResponse instead
 | ctrl_uuid | [string](#string) |  |  |
 | uuid | [string](#string) |  |  |
 | data | [map<string, string>](#map-string-string) |  |  |
+| channel_params | [string](#string) | repeated | 变量获取设置 |
 
 
 
@@ -2360,6 +2524,7 @@ placeholer type, do not use it, use XNativeJSResponse instead
 | HttAPI | [HttAPIRequest](#xctrl.HttAPIRequest) | [HttAPIResponse](#xctrl.HttAPIRequest) | HttAPI |
 | Lua | [LuaRequest](#xctrl.LuaRequest) | [LuaResponse](#xctrl.LuaRequest) | Lua |
 | Register | [Request](#xctrl.Request) | [Response](#xctrl.Request) | Node Register |
+| Shutdown | [NodeShutDownRequest](#xctrl.NodeShutDownRequest) | [Response](#xctrl.NodeShutDownRequest) | 停止接受新通话，等所有通话结束（默认最多等10分钟），停止fs节点 |
 
  <!-- end services -->
 
