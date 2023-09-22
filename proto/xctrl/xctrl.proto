@@ -476,7 +476,9 @@ message ChannelEvent {
   string ai_robot_id = 27;
 
   // private vars, always at the last, don't use out of proto
+  // tenant id, should be set if found from incoming subject
   string pNATSTenantID = 10000;
+  // to prefix, should be set if ctrl has toPrefix set
   string pNATSToPrefix = 10001;
 }
 
