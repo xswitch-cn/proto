@@ -481,7 +481,7 @@ func (g *micro) generateClientMethod(reqServ, servName, serviceDescVar string, m
 			g.P("		opt(&cOpts)")
 			g.P("	}")
 			g.P("	if len(cOpts.Address) == 0 {")
-			g.P("		opts = append(opts, client.WithAddress(`cn.xswitch.node.` + c.GetNodeUuid()))")
+			g.P("		opts = append(opts, c.WithAddress())")
 			g.P("	}")
 			g.P("	if cOpts.RequestTimeout == 0 {")
 			g.P("		opts = append(opts, client.WithRequestTimeout(", timeoutSecond, "*time.Second))")

@@ -474,6 +474,10 @@ message ChannelEvent {
   string context = 25;
   string caller_source = 26;
   string ai_robot_id = 27;
+
+  // private vars, always at the last, don't use out of proto
+  string pNATSTenantID = 10000;
+  string pNATSToPrefix = 10001;
 }
 
 message DTMFEvent {

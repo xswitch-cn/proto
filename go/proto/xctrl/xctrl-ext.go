@@ -1,6 +1,10 @@
 package xctrl
 
-import "encoding/json"
+import (
+	client "git.xswitch.cn/xswitch/proto/xctrl/client"
+
+	"encoding/json"
+)
 
 type XNativeJSRequestData struct {
 	Command string          `json:"command,omitempty"`
@@ -29,4 +33,22 @@ func Service() XNodeService {
 
 func SetService(s *XNodeService) {
 	service = s
+}
+
+// build default NATS Node Address
+func (c *ChannelEvent) WithAddress() client.CallOption {
+	prefix := c.PNATSToPrefix + c.PNATSTenantID
+	if prefix != "" {
+		prefix += "."
+	}
+	subject := prefix + "cn.xswitch.node." + c.GetNodeUuid()
+	return client.WithAddress(subject)
+}
+
+func (c *ChannelEvent) SetToPrefix(prefix string) {
+	c.PNATSToPrefix = prefix
+}
+
+func (c *ChannelEvent) SetTenantID(tenant string) {
+	c.PNATSTenantID = tenant
 }
