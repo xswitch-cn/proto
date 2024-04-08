@@ -506,6 +506,8 @@ message CallParam {
   uint32 max_duration = 7;
   // More Params
   map<string, string> params = 8;
+  // 变量订阅设置
+  repeated string channel_params = 9;
 }
 
 message Destination {
