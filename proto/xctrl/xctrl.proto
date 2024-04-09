@@ -818,6 +818,7 @@ message Action {
   string owner_uid = 2;
   string node_uuid = 3;
   CallParam param = 4;
+  repeated string channel_params = 5;
 }
 
 message DetectFaceRequest {
