@@ -473,6 +473,7 @@ message ChannelEvent {
   bool bridged = 24;
   string context = 25;
   string caller_source = 26;
+  string ai_robot_id = 27;
 }
 
 message DTMFEvent {
