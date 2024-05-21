@@ -572,6 +572,8 @@ The JSON representation for `NullValue` is JSON `null`.
 | bridged | [bool](#bool) |  |  |
 | context | [string](#string) |  |  |
 | caller_source | [string](#string) |  |  |
+| pNATSTenantID | [string](#string) |  | private vars, always at the last, don't use out of prototenant id, should be set if found from incoming subject |
+| pNATSToPrefix | [string](#string) |  | to prefix, should be set if ctrl has toPrefix set |
 
 
 

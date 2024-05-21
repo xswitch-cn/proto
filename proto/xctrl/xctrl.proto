@@ -474,6 +474,12 @@ message ChannelEvent {
   string context = 25;
   string caller_source = 26;
   string ai_robot_id = 27;
+
+  // private vars, always at the last, don't use out of proto
+  // tenant id, should be set if found from incoming subject
+  string pNATSTenantID = 10000;
+  // to prefix, should be set if ctrl has toPrefix set
+  string pNATSToPrefix = 10001;
 }
 
 message DTMFEvent {
@@ -500,6 +506,8 @@ message CallParam {
   uint32 max_duration = 7;
   // More Params
   map<string, string> params = 8;
+  // 变量订阅设置
+  repeated string channel_params = 9;
 }
 
 message Destination {
@@ -810,6 +818,7 @@ message Action {
   string owner_uid = 2;
   string node_uuid = 3;
   CallParam param = 4;
+  repeated string channel_params = 5;
 }
 
 message DetectFaceRequest {

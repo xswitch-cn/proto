@@ -56,6 +56,9 @@
   - [GetCManInfoResponse](#cman.GetCManInfoResponse)
   - [GetConferenceListRequest](#cman.GetConferenceListRequest)
   - [GetConferenceListResponse](#cman.GetConferenceListResponse)
+  - [GetNodeListResponse](#cman.GetNodeListResponse)
+  - [GetNodeListResponseNodes](#cman.GetNodeListResponseNodes)
+  - [GetNodeListResponseNodessipProfiles](#cman.GetNodeListResponseNodessipProfiles)
   - [confControlRequest](#cman.confControlRequest)
   - [confControlResponse](#cman.confControlResponse)
   - [getJWTRequest](#cman.getJWTRequest)
@@ -879,6 +882,70 @@ The JSON representation for `NullValue` is JSON `null`.
 
 
 
+<a name="user-content-cman.GetNodeListResponse"/>
+<a name="cman.GetNodeListResponse"/>
+
+### GetNodeListResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| nodes | [GetNodeListResponseNodes](#cman.GetNodeListResponseNodes) | repeated |  |
+
+
+
+
+
+
+<a name="user-content-cman.GetNodeListResponseNodes"/>
+<a name="cman.GetNodeListResponseNodes"/>
+
+### GetNodeListResponseNodes
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| uuid | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| ip | [string](#string) |  |  |
+| version | [string](#string) |  |  |
+| rack | [int32](#int32) |  |  |
+| address | [string](#string) |  |  |
+| uptime | [int32](#int32) |  |  |
+| sessions | [int32](#int32) |  |  |
+| sessions_max | [int32](#int32) |  |  |
+| sps_max | [int32](#int32) |  |  |
+| sps_last | [int32](#int32) |  |  |
+| sps_last_5min | [int32](#int32) |  |  |
+| sessions_since_startup | [int32](#int32) |  |  |
+| session_peak_5min | [int32](#int32) |  |  |
+| session_peak_max | [int32](#int32) |  |  |
+| SipProfiles | [GetNodeListResponseNodessipProfiles](#cman.GetNodeListResponseNodessipProfiles) | repeated |  |
+
+
+
+
+
+
+<a name="user-content-cman.GetNodeListResponseNodessipProfiles"/>
+<a name="cman.GetNodeListResponseNodessipProfiles"/>
+
+### GetNodeListResponseNodessipProfiles
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| port | [int32](#int32) |  |  |
+
+
+
+
+
+
 <a name="user-content-cman.confControlRequest"/>
 <a name="cman.confControlRequest"/>
 
@@ -1250,6 +1317,7 @@ The JSON representation for `NullValue` is JSON `null`.
 | getCManInfo | [GetCManInfoRequest](#cman.GetCManInfoRequest) | [GetCManInfoResponse](#cman.GetCManInfoRequest) | 获取cMan实例列表 |
 | changeLeader | [ChangeLeaderRequest](#cman.ChangeLeaderRequest) | [ChangeLeaderResponse](#cman.ChangeLeaderRequest) |  |
 | closeConference | [CloseConferenceRequest](#cman.CloseConferenceRequest) | [CloseConferenceResponse](#cman.CloseConferenceRequest) | 关闭会议 |
+| getNodeList | [EmptyMessage](#cman.EmptyMessage) | [GetNodeListResponse](#cman.EmptyMessage) | 获取NodeList |
 
  <!-- end services -->
 
