@@ -1153,6 +1153,36 @@ func (c *xNodeService) DetectSpeechFeedTTS(ctx context.Context, in *DetectSpeech
 	return out, nil
 }
 
+func (c *ChannelEvent) DetectSpeechFeedTTS(in *DetectSpeechFeedTTSRequest, opts ...client.CallOption) *Response {
+	if c == nil {
+		return &Response{
+			Code:    500,
+			Message: `Channel is nil`,
+		}
+	}
+	if in.GetUuid() == `` {
+		in.Uuid = c.GetUuid()
+	}
+	cOpts := client.CallOptions{}
+	for _, opt := range opts {
+		opt(&cOpts)
+	}
+	if len(cOpts.Address) == 0 {
+		opts = append(opts, c.WithAddress())
+	}
+	if cOpts.RequestTimeout == 0 {
+		opts = append(opts, client.WithRequestTimeout(5*time.Second))
+	}
+	response, err := Service().DetectSpeechFeedTTS(context.TODO(), in, opts...)
+	if err != nil {
+		response = new(Response)
+		e := errors.Parse(err.Error())
+		response.Code = e.Code
+		response.Message = e.Detail
+	}
+	return response
+}
+
 func (c *xNodeService) RingBackDetection(ctx context.Context, in *RingBackDetectionRequest, opts ...client.CallOption) (*Response, error) {
 	req := c.c.NewRequest(c.name, "XNode.RingBackDetection", in)
 	out := new(Response)
