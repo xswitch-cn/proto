@@ -64,6 +64,7 @@
   - [DetectFaceRequest](#xctrl.DetectFaceRequest)
   - [DetectRequest](#xctrl.DetectRequest)
   - [DetectResponse](#xctrl.DetectResponse)
+  - [DetectSpeechFeedTTSRequest](#xctrl.DetectSpeechFeedTTSRequest)
   - [DetectedData](#xctrl.DetectedData)
   - [DetectedFaceEvent](#xctrl.DetectedFaceEvent)
   - [DialRequest](#xctrl.DialRequest)
@@ -315,6 +316,7 @@ The JSON representation for `NullValue` is JSON `null`.
 | owner_uid | [string](#string) |  |  |
 | node_uuid | [string](#string) |  |  |
 | param | [CallParam](#xctrl.CallParam) |  |  |
+| channel_params | [string](#string) | repeated |  |
 
 
 
@@ -432,6 +434,7 @@ The JSON representation for `NullValue` is JSON `null`.
 | timeout | [uint32](#uint32) |  | Timeout |
 | max_duration | [uint32](#uint32) |  | Max Duration |
 | params | [map<string, string>](#map-string-string) |  | More Params |
+| channel_params | [string](#string) | repeated | 变量订阅设置 |
 
 
 
@@ -572,6 +575,7 @@ The JSON representation for `NullValue` is JSON `null`.
 | bridged | [bool](#bool) |  |  |
 | context | [string](#string) |  |  |
 | caller_source | [string](#string) |  |  |
+| ai_robot_id | [string](#string) |  |  |
 | pNATSTenantID | [string](#string) |  | private vars, always at the last, don't use out of prototenant id, should be set if found from incoming subject |
 | pNATSToPrefix | [string](#string) |  | to prefix, should be set if ctrl has toPrefix set |
 
@@ -1184,6 +1188,26 @@ The JSON representation for `NullValue` is JSON `null`.
 | node_uuid | [string](#string) |  |  |
 | uuid | [string](#string) |  | optional |
 | data | [DetectedData](#xctrl.DetectedData) |  |  |
+
+
+
+
+
+
+<a name="user-content-xctrl.DetectSpeechFeedTTSRequest"/>
+<a name="xctrl.DetectSpeechFeedTTSRequest"/>
+
+### DetectSpeechFeedTTSRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ctrl_uuid | [string](#string) |  |  |
+| uuid | [string](#string) |  |  |
+| engine | [string](#string) |  |  |
+| voice | [string](#string) |  |  |
+| text | [string](#string) |  |  |
 
 
 
@@ -2509,6 +2533,7 @@ placeholer type, do not use it, use XNativeJSResponse instead
 | ReadDigits | [DigitsRequest](#xctrl.DigitsRequest) | [DigitsResponse](#xctrl.DigitsRequest) | 读取DTMF按键 |
 | DetectSpeech | [DetectRequest](#xctrl.DetectRequest) | [DetectResponse](#xctrl.DetectRequest) | 语音识别 |
 | StopDetectSpeech | [StopDetectRequest](#xctrl.StopDetectRequest) | [Response](#xctrl.StopDetectRequest) | 停止语音识别 |
+| DetectSpeechFeedTTS | [DetectSpeechFeedTTSRequest](#xctrl.DetectSpeechFeedTTSRequest) | [Response](#xctrl.DetectSpeechFeedTTSRequest) | 语音识别过程中异步补充TTS文本 |
 | RingBackDetection | [RingBackDetectionRequest](#xctrl.RingBackDetectionRequest) | [Response](#xctrl.RingBackDetectionRequest) | 回铃音检测 |
 | DetectFace | [DetectFaceRequest](#xctrl.DetectFaceRequest) | [Response](#xctrl.DetectFaceRequest) | 人脸识别 |
 | SendDTMF | [SendDTMFRequest](#xctrl.SendDTMFRequest) | [Response](#xctrl.SendDTMFRequest) | 发送DTMF |
