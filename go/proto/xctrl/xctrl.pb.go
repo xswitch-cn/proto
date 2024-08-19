@@ -7246,6 +7246,7 @@ type ConferenceInfoResponseMembers struct {
 	ReservationID    string                                         `protobuf:"bytes,30,opt,name=reservationID,proto3" json:"reservationID,omitempty"`
 	ChannelName      string                                         `protobuf:"bytes,31,opt,name=channelName,proto3" json:"channelName,omitempty"`
 	Sharing          bool                                           `protobuf:"varint,32,opt,name=sharing,proto3" json:"sharing,omitempty"`
+	AgoraID          string                                         `protobuf:"bytes,33,opt,name=agoraID,proto3" json:"agoraID,omitempty"`
 }
 
 func (x *ConferenceInfoResponseMembers) Reset() {
@@ -7502,6 +7503,13 @@ func (x *ConferenceInfoResponseMembers) GetSharing() bool {
 		return x.Sharing
 	}
 	return false
+}
+
+func (x *ConferenceInfoResponseMembers) GetAgoraID() string {
+	if x != nil {
+		return x.AgoraID
+	}
+	return ""
 }
 
 type ConferenceInfoResponseConferenceMembers struct {
