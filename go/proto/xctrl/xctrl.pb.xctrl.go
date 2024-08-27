@@ -93,9 +93,9 @@ type XNodeService interface {
 	GetState(ctx context.Context, in *GetStateRequest, opts ...client.CallOption) (*StateResponse, error)
 	// 获取通道数据
 	GetChannelData(ctx context.Context, in *GetChannelDataRequest, opts ...client.CallOption) (*ChannelDataResponse, error)
-	//  读取DTMF按键
+	// 读取DTMF按键
 	ReadDTMF(ctx context.Context, in *DTMFRequest, opts ...client.CallOption) (*DTMFResponse, error)
-	//  读取DTMF按键
+	// 读取DTMF按键
 	ReadDigits(ctx context.Context, in *DigitsRequest, opts ...client.CallOption) (*DigitsResponse, error)
 	// 语音识别
 	DetectSpeech(ctx context.Context, in *DetectRequest, opts ...client.CallOption) (*DetectResponse, error)
@@ -123,17 +123,19 @@ type XNodeService interface {
 	ConferenceInfo(ctx context.Context, in *ConferenceInfoRequest, opts ...client.CallOption) (*ConferenceInfoResponse, error)
 	// 获取全部会议信息
 	ConferenceList(ctx context.Context, in *ConferenceListRequest, opts ...client.CallOption) (*ConferenceListResponse, error)
-	//呼叫中心FIFO队列（先入先出）
+	// 呼叫中心FIFO队列（先入先出）
 	FIFO(ctx context.Context, in *FIFORequest, opts ...client.CallOption) (*FIFOResponse, error)
-	//呼叫中心Callcenter
+	// 呼叫中心Callcenter
 	Callcenter(ctx context.Context, in *CallcenterRequest, opts ...client.CallOption) (*CallcenterResponse, error)
-	//会议Conference
+	// 会议Conference
 	Conference(ctx context.Context, in *ConferenceRequest, opts ...client.CallOption) (*ConferenceResponse, error)
-	//会议AI
+	// 会议AI
 	AI(ctx context.Context, in *AIRequest, opts ...client.CallOption) (*AIResponse, error)
-	//HttAPI
+	// HttAPI
 	HttAPI(ctx context.Context, in *HttAPIRequest, opts ...client.CallOption) (*HttAPIResponse, error)
-	//Lua
+	// TTS语音合成预缓存
+	TTSPreheat(ctx context.Context, in *TTSPreheatRequest, opts ...client.CallOption) (*TTSPreheatResponse, error)
+	// Lua
 	Lua(ctx context.Context, in *LuaRequest, opts ...client.CallOption) (*LuaResponse, error)
 	// Node Register
 	Register(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error)
@@ -188,7 +190,7 @@ func (c *ChannelEvent) Answer(in *AnswerRequest, opts ...client.CallOption) *Res
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(5*time.Second))
@@ -228,7 +230,7 @@ func (c *ChannelEvent) Accept(in *AcceptRequest, opts ...client.CallOption) *Res
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(5*time.Second))
@@ -268,7 +270,7 @@ func (c *ChannelEvent) Play(in *PlayRequest, opts ...client.CallOption) *Respons
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(180*time.Second))
@@ -308,7 +310,7 @@ func (c *ChannelEvent) Stop(in *StopRequest, opts ...client.CallOption) *Respons
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(5*time.Second))
@@ -348,7 +350,7 @@ func (c *ChannelEvent) Broadcast(in *BroadcastRequest, opts ...client.CallOption
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(5*time.Second))
@@ -388,7 +390,7 @@ func (c *ChannelEvent) Mute(in *MuteRequest, opts ...client.CallOption) *Respons
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(5*time.Second))
@@ -428,7 +430,7 @@ func (c *ChannelEvent) Record(in *RecordRequest, opts ...client.CallOption) *Rec
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(5*time.Second))
@@ -468,7 +470,7 @@ func (c *ChannelEvent) Hangup(in *HangupRequest, opts ...client.CallOption) *Res
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(5*time.Second))
@@ -508,7 +510,7 @@ func (c *ChannelEvent) Bridge(in *BridgeRequest, opts ...client.CallOption) *Res
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(3600*time.Second))
@@ -548,7 +550,7 @@ func (c *ChannelEvent) ChannelBridge(in *ChannelBridgeRequest, opts ...client.Ca
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(5*time.Second))
@@ -608,7 +610,7 @@ func (c *ChannelEvent) Hold(in *HoldRequest, opts ...client.CallOption) *Respons
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(5*time.Second))
@@ -648,7 +650,7 @@ func (c *ChannelEvent) Transfer(in *TransferRequest, opts ...client.CallOption) 
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(5*time.Second))
@@ -688,7 +690,7 @@ func (c *ChannelEvent) ThreeWay(in *ThreeWayRequest, opts ...client.CallOption) 
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(3600*time.Second))
@@ -728,7 +730,7 @@ func (c *ChannelEvent) Echo2(in *Echo2Request, opts ...client.CallOption) *Respo
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(3600*time.Second))
@@ -768,7 +770,7 @@ func (c *ChannelEvent) Intercept(in *InterceptRequest, opts ...client.CallOption
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(3600*time.Second))
@@ -808,7 +810,7 @@ func (c *ChannelEvent) Consult(in *ConsultRequest, opts ...client.CallOption) *R
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(3600*time.Second))
@@ -848,7 +850,7 @@ func (c *ChannelEvent) SetVar(in *SetVarRequest, opts ...client.CallOption) *Res
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(5*time.Second))
@@ -888,7 +890,7 @@ func (c *ChannelEvent) GetVar(in *GetVarRequest, opts ...client.CallOption) *Var
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(5*time.Second))
@@ -928,7 +930,7 @@ func (c *ChannelEvent) GetState_(in *GetStateRequest, opts ...client.CallOption)
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(5*time.Second))
@@ -968,7 +970,7 @@ func (c *ChannelEvent) GetChannelData(in *GetChannelDataRequest, opts ...client.
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(5*time.Second))
@@ -1008,7 +1010,7 @@ func (c *ChannelEvent) ReadDTMF(in *DTMFRequest, opts ...client.CallOption) *DTM
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(60*time.Second))
@@ -1048,7 +1050,7 @@ func (c *ChannelEvent) ReadDigits(in *DigitsRequest, opts ...client.CallOption) 
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(60*time.Second))
@@ -1088,7 +1090,7 @@ func (c *ChannelEvent) DetectSpeech(in *DetectRequest, opts ...client.CallOption
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(180*time.Second))
@@ -1128,7 +1130,7 @@ func (c *ChannelEvent) StopDetectSpeech(in *StopDetectRequest, opts ...client.Ca
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(5*time.Second))
@@ -1151,36 +1153,6 @@ func (c *xNodeService) DetectSpeechFeedTTS(ctx context.Context, in *DetectSpeech
 		return nil, err
 	}
 	return out, nil
-}
-
-func (c *ChannelEvent) DetectSpeechFeedTTS(in *DetectSpeechFeedTTSRequest, opts ...client.CallOption) *Response {
-	if c == nil {
-		return &Response{
-			Code:    500,
-			Message: `Channel is nil`,
-		}
-	}
-	if in.GetUuid() == `` {
-		in.Uuid = c.GetUuid()
-	}
-	cOpts := client.CallOptions{}
-	for _, opt := range opts {
-		opt(&cOpts)
-	}
-	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
-	}
-	if cOpts.RequestTimeout == 0 {
-		opts = append(opts, client.WithRequestTimeout(5*time.Second))
-	}
-	response, err := Service().DetectSpeechFeedTTS(context.TODO(), in, opts...)
-	if err != nil {
-		response = new(Response)
-		e := errors.Parse(err.Error())
-		response.Code = e.Code
-		response.Message = e.Detail
-	}
-	return response
 }
 
 func (c *xNodeService) RingBackDetection(ctx context.Context, in *RingBackDetectionRequest, opts ...client.CallOption) (*Response, error) {
@@ -1208,7 +1180,7 @@ func (c *ChannelEvent) RingBackDetection(in *RingBackDetectionRequest, opts ...c
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(60*time.Second))
@@ -1248,7 +1220,7 @@ func (c *ChannelEvent) DetectFace(in *DetectFaceRequest, opts ...client.CallOpti
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(180*time.Second))
@@ -1288,7 +1260,7 @@ func (c *ChannelEvent) SendDTMF(in *SendDTMFRequest, opts ...client.CallOption) 
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(5*time.Second))
@@ -1338,7 +1310,7 @@ func (c *ChannelEvent) NativeApp(in *NativeRequest, opts ...client.CallOption) *
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(5*time.Second))
@@ -1428,7 +1400,7 @@ func (c *ChannelEvent) FIFO(in *FIFORequest, opts ...client.CallOption) *FIFORes
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(1200*time.Second))
@@ -1468,7 +1440,7 @@ func (c *ChannelEvent) Callcenter(in *CallcenterRequest, opts ...client.CallOpti
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(1200*time.Second))
@@ -1508,7 +1480,7 @@ func (c *ChannelEvent) Conference(in *ConferenceRequest, opts ...client.CallOpti
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(3600*time.Second))
@@ -1548,7 +1520,7 @@ func (c *ChannelEvent) AI(in *AIRequest, opts ...client.CallOption) *AIResponse 
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(3600*time.Second))
@@ -1588,7 +1560,7 @@ func (c *ChannelEvent) HttAPI(in *HttAPIRequest, opts ...client.CallOption) *Htt
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(3600*time.Second))
@@ -1601,6 +1573,16 @@ func (c *ChannelEvent) HttAPI(in *HttAPIRequest, opts ...client.CallOption) *Htt
 		response.Message = e.Detail
 	}
 	return response
+}
+
+func (c *xNodeService) TTSPreheat(ctx context.Context, in *TTSPreheatRequest, opts ...client.CallOption) (*TTSPreheatResponse, error) {
+	req := c.c.NewRequest(c.name, "XNode.TTSPreheat", in)
+	out := new(TTSPreheatResponse)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *xNodeService) Lua(ctx context.Context, in *LuaRequest, opts ...client.CallOption) (*LuaResponse, error) {
@@ -1628,7 +1610,7 @@ func (c *ChannelEvent) Lua(in *LuaRequest, opts ...client.CallOption) *LuaRespon
 		opt(&cOpts)
 	}
 	if len(cOpts.Address) == 0 {
-		opts = append(opts, c.WithAddress())
+		opts = append(opts, client.WithAddress(`cn.xswitch.node.`+c.GetNodeUuid()))
 	}
 	if cOpts.RequestTimeout == 0 {
 		opts = append(opts, client.WithRequestTimeout(3600*time.Second))
@@ -1712,9 +1694,9 @@ type XNodeHandler interface {
 	GetState(context.Context, *GetStateRequest, *StateResponse) error
 	// 获取通道数据
 	GetChannelData(context.Context, *GetChannelDataRequest, *ChannelDataResponse) error
-	//  读取DTMF按键
+	// 读取DTMF按键
 	ReadDTMF(context.Context, *DTMFRequest, *DTMFResponse) error
-	//  读取DTMF按键
+	// 读取DTMF按键
 	ReadDigits(context.Context, *DigitsRequest, *DigitsResponse) error
 	// 语音识别
 	DetectSpeech(context.Context, *DetectRequest, *DetectResponse) error
@@ -1742,17 +1724,19 @@ type XNodeHandler interface {
 	ConferenceInfo(context.Context, *ConferenceInfoRequest, *ConferenceInfoResponse) error
 	// 获取全部会议信息
 	ConferenceList(context.Context, *ConferenceListRequest, *ConferenceListResponse) error
-	//呼叫中心FIFO队列（先入先出）
+	// 呼叫中心FIFO队列（先入先出）
 	FIFO(context.Context, *FIFORequest, *FIFOResponse) error
-	//呼叫中心Callcenter
+	// 呼叫中心Callcenter
 	Callcenter(context.Context, *CallcenterRequest, *CallcenterResponse) error
-	//会议Conference
+	// 会议Conference
 	Conference(context.Context, *ConferenceRequest, *ConferenceResponse) error
-	//会议AI
+	// 会议AI
 	AI(context.Context, *AIRequest, *AIResponse) error
-	//HttAPI
+	// HttAPI
 	HttAPI(context.Context, *HttAPIRequest, *HttAPIResponse) error
-	//Lua
+	// TTS语音合成预缓存
+	TTSPreheat(context.Context, *TTSPreheatRequest, *TTSPreheatResponse) error
+	// Lua
 	Lua(context.Context, *LuaRequest, *LuaResponse) error
 	// Node Register
 	Register(context.Context, *Request, *Response) error
@@ -1805,6 +1789,7 @@ func RegisterXNodeHandler(s server.Server, hdlr XNodeHandler, opts ...server.Han
 		Conference(ctx context.Context, in *ConferenceRequest, out *ConferenceResponse) error
 		AI(ctx context.Context, in *AIRequest, out *AIResponse) error
 		HttAPI(ctx context.Context, in *HttAPIRequest, out *HttAPIResponse) error
+		TTSPreheat(ctx context.Context, in *TTSPreheatRequest, out *TTSPreheatResponse) error
 		Lua(ctx context.Context, in *LuaRequest, out *LuaResponse) error
 		Register(ctx context.Context, in *Request, out *Response) error
 		Shutdown(ctx context.Context, in *NodeShutDownRequest, out *Response) error
@@ -1990,6 +1975,10 @@ func (h *xNodeHandler) AI(ctx context.Context, in *AIRequest, out *AIResponse) e
 
 func (h *xNodeHandler) HttAPI(ctx context.Context, in *HttAPIRequest, out *HttAPIResponse) error {
 	return h.XNodeHandler.HttAPI(ctx, in, out)
+}
+
+func (h *xNodeHandler) TTSPreheat(ctx context.Context, in *TTSPreheatRequest, out *TTSPreheatResponse) error {
+	return h.XNodeHandler.TTSPreheat(ctx, in, out)
 }
 
 func (h *xNodeHandler) Lua(ctx context.Context, in *LuaRequest, out *LuaResponse) error {

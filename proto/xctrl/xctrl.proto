@@ -99,6 +99,9 @@ service XNode {
   //HttAPI
   rpc HttAPI(HttAPIRequest) returns (HttAPIResponse) {}
 
+  //TTS语音合成预缓存
+  rpc TTSPreheat(TTSPreheatRequest) returns (TTSPreheatResponse) {}
+
   //Lua
   rpc Lua(LuaRequest) returns (LuaResponse) {}
 
@@ -1192,6 +1195,19 @@ message HttAPIResponse {
   string message = 2;
   string node_uuid = 3;
   string uuid = 4;
+}
+
+message TTSPreheatRequest {
+  string engine = 1;
+  string voice = 2;
+  repeated string data = 3;
+}
+message TTSPreheatResponse {
+  int32 code = 1;
+  string message = 2;
+  string node_uuid = 3;
+  string uuid = 4;
+  repeated int32 data = 5;
 }
 
 message LuaRequest {
