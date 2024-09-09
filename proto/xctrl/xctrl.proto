@@ -809,6 +809,7 @@ message DetectSpeechFeedTTSRequest {
   string engine = 3;
   string voice = 4;
   string text = 5;
+  bool preheat = 6;
 }
 
 message RingBackDetectionRequest {
