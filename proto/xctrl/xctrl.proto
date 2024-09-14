@@ -431,6 +431,7 @@ message Node {
   // 历史Session最大值
   uint32 session_peak_max = 15;
   repeated SipProfile sip_profiles = 16;
+  string ext_ip = 17;
 }
 message SipProfile {
   string name = 1;
