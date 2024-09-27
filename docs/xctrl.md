@@ -1964,6 +1964,7 @@ placeholer type, do not use it, use XNativeJSResponse instead
 | session_peak_5min | [uint32](#uint32) |  | 5分钟Session最大值 |
 | session_peak_max | [uint32](#uint32) |  | 历史Session最大值 |
 | sip_profiles | [SipProfile](#xctrl.SipProfile) | repeated |  |
+| shutdown | [Shutdown](#bool) |  |  节点下线标记|
 
 
 
