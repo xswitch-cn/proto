@@ -7,9 +7,9 @@ import (
 	"strings"
 
 	"git.xswitch.cn/xswitch/proto/xctrl/cmd/protoc-gen-xctrl/generator"
-	"github.com/golang/protobuf/proto"
 	pb "github.com/golang/protobuf/protoc-gen-go/descriptor"
 	options "google.golang.org/genproto/googleapis/api/annotations"
+	"google.golang.org/protobuf/proto"
 )
 
 // Paths for packages used by code generated in this file,
@@ -327,10 +327,8 @@ func (g *micro) generateEndpoint(servName string, method *pb.MethodDescriptorPro
 		return
 	}
 	// http rules
-	r, err := proto.GetExtension(method.Options, options.E_Http)
-	if err != nil {
-		return
-	}
+	r := proto.GetExtension(method.Options, options.E_Http)
+
 	rule := r.(*options.HttpRule)
 	var meth string
 	var path string
