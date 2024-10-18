@@ -8,6 +8,7 @@ endif
 .PHONY: setup
 setup:
 	go mod tidy
+	go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.30.0
 	cd xctrl/cmd/protoc-gen-xctrl && go install && cd -
 
 .PHONY: proto
