@@ -481,6 +481,7 @@ message ChannelEvent {
   string context = 25;
   string caller_source = 26;
   string ai_robot_id = 27;
+  string billmsec = 28;
 
   // private vars, always at the last, don't use out of proto
   // tenant id, should be set if found from incoming subject
