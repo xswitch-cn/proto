@@ -44,6 +44,9 @@ service cMan {
   rpc closeConference(CloseConferenceRequest) returns (CloseConferenceResponse) {}
   // 获取NodeList
   rpc getNodeList(EmptyMessage) returns (GetNodeListResponse) {}
+  // 节点友好关机
+  rpc nodeGracefulShutdown(NodeGracefulShutdownRequest) returns (NodeGracefulShutdownResponse) {}
+
 }
 
 message EmptyMessage{
@@ -482,4 +485,13 @@ message GetNodeListResponseNodes{
 message GetNodeListResponseNodessipProfiles{
   string name = 1;
   int32 port = 2;
+}
+
+message NodeGracefulShutdownRequest{
+  string  node_uuid = 1;
+}
+
+message NodeGracefulShutdownResponse{
+  int32 code = 1;
+  string message = 2;
 }
