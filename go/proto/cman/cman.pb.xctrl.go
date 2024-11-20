@@ -78,6 +78,8 @@ type CManService interface {
 	CloseConference(ctx context.Context, in *CloseConferenceRequest, opts ...client.CallOption) (*CloseConferenceResponse, error)
 	// 获取NodeList
 	GetNodeList(ctx context.Context, in *EmptyMessage, opts ...client.CallOption) (*GetNodeListResponse, error)
+	// 节点友好关机
+	NodeGracefulShutdown(ctx context.Context, in *NodeGracefulShutdownRequest, opts ...client.CallOption) (*NodeGracefulShutdownResponse, error)
 }
 
 type cManService struct {
@@ -252,6 +254,16 @@ func (c *cManService) GetNodeList(ctx context.Context, in *EmptyMessage, opts ..
 	return out, nil
 }
 
+func (c *cManService) NodeGracefulShutdown(ctx context.Context, in *NodeGracefulShutdownRequest, opts ...client.CallOption) (*NodeGracefulShutdownResponse, error) {
+	req := c.c.NewRequest(c.name, "nodeGracefulShutdown", in)
+	out := new(NodeGracefulShutdownResponse)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // Server API for CMan service
 
 type CManHandler interface {
@@ -286,6 +298,8 @@ type CManHandler interface {
 	CloseConference(context.Context, *CloseConferenceRequest, *CloseConferenceResponse) error
 	// 获取NodeList
 	GetNodeList(context.Context, *EmptyMessage, *GetNodeListResponse) error
+	// 节点友好关机
+	NodeGracefulShutdown(context.Context, *NodeGracefulShutdownRequest, *NodeGracefulShutdownResponse) error
 }
 
 func RegisterCManHandler(s server.Server, hdlr CManHandler, opts ...server.HandlerOption) error {
@@ -306,6 +320,7 @@ func RegisterCManHandler(s server.Server, hdlr CManHandler, opts ...server.Handl
 		ChangeLeader(ctx context.Context, in *ChangeLeaderRequest, out *ChangeLeaderResponse) error
 		CloseConference(ctx context.Context, in *CloseConferenceRequest, out *CloseConferenceResponse) error
 		GetNodeList(ctx context.Context, in *EmptyMessage, out *GetNodeListResponse) error
+		NodeGracefulShutdown(ctx context.Context, in *NodeGracefulShutdownRequest, out *NodeGracefulShutdownResponse) error
 	}
 	type CMan struct {
 		cMan
@@ -380,4 +395,8 @@ func (h *cManHandler) CloseConference(ctx context.Context, in *CloseConferenceRe
 
 func (h *cManHandler) GetNodeList(ctx context.Context, in *EmptyMessage, out *GetNodeListResponse) error {
 	return h.CManHandler.GetNodeList(ctx, in, out)
+}
+
+func (h *cManHandler) NodeGracefulShutdown(ctx context.Context, in *NodeGracefulShutdownRequest, out *NodeGracefulShutdownResponse) error {
+	return h.CManHandler.NodeGracefulShutdown(ctx, in, out)
 }
