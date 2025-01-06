@@ -482,6 +482,8 @@ message ChannelEvent {
   string caller_source = 26;
   string ai_robot_id = 27;
   string billmsec = 28;
+  string main_uuid = 29;
+  string slides_uuid = 30;
 
   // private vars, always at the last, don't use out of proto
   // tenant id, should be set if found from incoming subject
@@ -1050,6 +1052,9 @@ message ConferenceInfoResponseMembers {
   string channelName = 31;
   bool sharing = 32;
   string agoraID = 33;
+  string main_uuid = 34;
+  string slides_uuid = 35;
+
 }
 
 message ConferenceInfoResponseConferenceMembers{
