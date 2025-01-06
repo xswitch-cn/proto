@@ -134,6 +134,8 @@ message ConferenceInfoResponseConferenceMembers{
   string channelName = 19;
   bool sharing = 20;
   string agoraUID = 21;
+  string mainUUID = 22;
+  string slidesUUID = 23;
 }
 
 message ConferenceInfoResponseConferenceMembersStatus{
@@ -201,6 +203,8 @@ message ConferenceInfoResponseMembers {
   string reservationID = 30;
   string channelName = 31;
   string agoraUID = 32;
+  string mainUUID = 33;
+  string slidesUUID = 34;
 }
 
 message ConferenceInfoResponseFlags {
@@ -308,6 +312,8 @@ message confControlRequest{
   string memberID = 4;
   string value = 5;
   string agoraUID = 6;
+  string mainUUID = 7;
+  string slidesUUID = 8;
 }
 
 message confControlResponse{
@@ -336,6 +342,8 @@ message pushSubCanvasRequestMembers{
   string position = 2;
   string nodeUUID = 3;
   string agoraUID = 4;
+  string mainUUID = 5;
+  string slidesUUID = 6;
 }
 
 message pushSubCanvasResponse{
@@ -354,6 +362,8 @@ message pushMainSubCanvasRequestMembers{
   string position = 2;
   string nodeUUID = 3;
   string agoraUID = 4;
+  string mainUUID = 5;
+  string slidesUUID = 6;
 }
 
 message pushMainSubCanvasResponse{
@@ -372,6 +382,8 @@ message pushWholeRequestMembers{
   string position = 2;
   string nodeUUID = 3;
   string agoraUID = 4;
+  string mainUUID = 5;
+  string slidesUUID = 6;
 }
 
 message pushWholeResponse{
@@ -389,6 +401,8 @@ message loopSomeRequestMembers{
   string memberID = 1;
   string nodeUUID = 2;
   string agoraUID = 3;
+  string mainUUID = 4;
+  string slidesUUID = 5;
 }
 
 message loopSomeResponse{
