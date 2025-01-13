@@ -314,6 +314,7 @@ message confControlRequest{
   string agoraUID = 6;
   string mainUUID = 7;
   string slidesUUID = 8;
+  bool returnErrorIfUidNotFound = 9;
 }
 
 message confControlResponse{
