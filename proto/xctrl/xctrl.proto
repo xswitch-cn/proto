@@ -433,6 +433,8 @@ message Node {
   repeated SipProfile sip_profiles = 16;
   string ext_ip = 17;
   bool shutdown = 18;
+  uint32 rank = 19;
+
 }
 message SipProfile {
   string name = 1;
