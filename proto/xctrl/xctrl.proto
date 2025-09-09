@@ -30,6 +30,8 @@ service XNode {
   rpc Bridge(BridgeRequest) returns (Response) {}
   // 桥接两个呼叫
   rpc ChannelBridge(ChannelBridgeRequest) returns (Response) {}
+  // 桥接两个呼叫(立刻返回结果)
+  rpc ChannelBridge2(ChannelBridge2Request) returns (Response) {}
   // 将桥接的呼叫分开
   rpc UnBridge(Request) returns (Response) {}
   // 将桥接的呼叫分开
@@ -204,6 +206,15 @@ message BridgeRequest {
 }
 
 message ChannelBridgeRequest {
+  string ctrl_uuid = 1;
+  string uuid = 2;
+  string peer_uuid = 3;
+  int32 bridge_delay = 4;
+  /* NONE | CALLER | CALLEE | ANY */
+  string flow_control = 5;
+}
+
+message ChannelBridge2Request {
   string ctrl_uuid = 1;
   string uuid = 2;
   string peer_uuid = 3;

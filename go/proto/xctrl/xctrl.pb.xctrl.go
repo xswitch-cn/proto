@@ -69,6 +69,8 @@ type XNodeService interface {
 	Bridge(ctx context.Context, in *BridgeRequest, opts ...client.CallOption) (*Response, error)
 	// 桥接两个呼叫
 	ChannelBridge(ctx context.Context, in *ChannelBridgeRequest, opts ...client.CallOption) (*Response, error)
+	// 桥接两个呼叫(立刻返回结果)
+	ChannelBridge2(ctx context.Context, in *ChannelBridge2Request, opts ...client.CallOption) (*Response, error)
 	// 将桥接的呼叫分开
 	UnBridge(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error)
 	// 将桥接的呼叫分开
@@ -563,6 +565,16 @@ func (c *ChannelEvent) ChannelBridge(in *ChannelBridgeRequest, opts ...client.Ca
 		response.Message = e.Detail
 	}
 	return response
+}
+
+func (c *xNodeService) ChannelBridge2(ctx context.Context, in *ChannelBridge2Request, opts ...client.CallOption) (*Response, error) {
+	req := c.c.NewRequest(c.name, "XNode.ChannelBridge2", in)
+	out := new(Response)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *xNodeService) UnBridge(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error) {
@@ -1700,6 +1712,8 @@ type XNodeHandler interface {
 	Bridge(context.Context, *BridgeRequest, *Response) error
 	// 桥接两个呼叫
 	ChannelBridge(context.Context, *ChannelBridgeRequest, *Response) error
+	// 桥接两个呼叫(立刻返回结果)
+	ChannelBridge2(context.Context, *ChannelBridge2Request, *Response) error
 	// 将桥接的呼叫分开
 	UnBridge(context.Context, *Request, *Response) error
 	// 将桥接的呼叫分开
@@ -1787,6 +1801,7 @@ func RegisterXNodeHandler(s server.Server, hdlr XNodeHandler, opts ...server.Han
 		Hangup(ctx context.Context, in *HangupRequest, out *Response) error
 		Bridge(ctx context.Context, in *BridgeRequest, out *Response) error
 		ChannelBridge(ctx context.Context, in *ChannelBridgeRequest, out *Response) error
+		ChannelBridge2(ctx context.Context, in *ChannelBridge2Request, out *Response) error
 		UnBridge(ctx context.Context, in *Request, out *Response) error
 		UnBridge2(ctx context.Context, in *Request, out *Response) error
 		Hold(ctx context.Context, in *HoldRequest, out *Response) error
@@ -1877,6 +1892,10 @@ func (h *xNodeHandler) Bridge(ctx context.Context, in *BridgeRequest, out *Respo
 
 func (h *xNodeHandler) ChannelBridge(ctx context.Context, in *ChannelBridgeRequest, out *Response) error {
 	return h.XNodeHandler.ChannelBridge(ctx, in, out)
+}
+
+func (h *xNodeHandler) ChannelBridge2(ctx context.Context, in *ChannelBridge2Request, out *Response) error {
+	return h.XNodeHandler.ChannelBridge2(ctx, in, out)
 }
 
 func (h *xNodeHandler) UnBridge(ctx context.Context, in *Request, out *Response) error {
