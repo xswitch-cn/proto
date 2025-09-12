@@ -238,6 +238,7 @@ message Media {
   string voice = 4;
   uint32 loop = 5;
   uint32 offset = 6;
+  uint32 silence_ms = 7;
 }
 
 message PlayRequest {
@@ -736,6 +737,11 @@ message SpeechRequest {
   uint32 max_speech_timeout = 9;
   bool nobreak = 10;
   uint32 nobreak_timeout = 11;
+  bool break_from_partial = 12;
+  uint32 break_delay = 13;
+  bool always_ignore = 14;
+  string break_ignore_regex = 15;
+  string break_skip_regex = 16;
 }
 
 message DetectRequest {
@@ -828,6 +834,8 @@ message DetectSpeechFeedTTSRequest {
   string voice = 4;
   string text = 5;
   bool preheat = 6;
+  bool is_last = 7;
+  uint32 silence_ms = 8;
 }
 
 message RingBackDetectionRequest {
