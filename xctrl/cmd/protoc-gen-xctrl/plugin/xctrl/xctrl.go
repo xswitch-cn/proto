@@ -133,6 +133,7 @@ var channelMethodTimeout = map[string]int{
 	"Hangup":              5,
 	"Bridge":              3600,
 	"ChannelBridge":       5,
+	"ChannelBridge2":      5,
 	"Unbrdige":            5,
 	"Unbrdige2":           5,
 	"Hold":                5,
