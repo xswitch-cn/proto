@@ -13,6 +13,7 @@ setup:
 
 .PHONY: proto
 proto:
+	cd xctrl/cmd/protoc-gen-xctrl && go install && cd -
 	protoc --proto_path=. --go_out=go proto/xctrl/*.proto --xctrl_out=go proto/xctrl/*.proto
 	protoc --proto_path=. --go_out=go proto/cman/*.proto --xctrl_out=go proto/cman/*.proto
 

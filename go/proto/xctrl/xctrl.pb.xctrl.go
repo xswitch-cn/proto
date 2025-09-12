@@ -95,9 +95,9 @@ type XNodeService interface {
 	GetState(ctx context.Context, in *GetStateRequest, opts ...client.CallOption) (*StateResponse, error)
 	// 获取通道数据
 	GetChannelData(ctx context.Context, in *GetChannelDataRequest, opts ...client.CallOption) (*ChannelDataResponse, error)
-	// 读取DTMF按键
+	//  读取DTMF按键
 	ReadDTMF(ctx context.Context, in *DTMFRequest, opts ...client.CallOption) (*DTMFResponse, error)
-	// 读取DTMF按键
+	//  读取DTMF按键
 	ReadDigits(ctx context.Context, in *DigitsRequest, opts ...client.CallOption) (*DigitsResponse, error)
 	// 语音识别
 	DetectSpeech(ctx context.Context, in *DetectRequest, opts ...client.CallOption) (*DetectResponse, error)
@@ -125,19 +125,19 @@ type XNodeService interface {
 	ConferenceInfo(ctx context.Context, in *ConferenceInfoRequest, opts ...client.CallOption) (*ConferenceInfoResponse, error)
 	// 获取全部会议信息
 	ConferenceList(ctx context.Context, in *ConferenceListRequest, opts ...client.CallOption) (*ConferenceListResponse, error)
-	// 呼叫中心FIFO队列（先入先出）
+	//呼叫中心FIFO队列（先入先出）
 	FIFO(ctx context.Context, in *FIFORequest, opts ...client.CallOption) (*FIFOResponse, error)
-	// 呼叫中心Callcenter
+	//呼叫中心Callcenter
 	Callcenter(ctx context.Context, in *CallcenterRequest, opts ...client.CallOption) (*CallcenterResponse, error)
-	// 会议Conference
+	//会议Conference
 	Conference(ctx context.Context, in *ConferenceRequest, opts ...client.CallOption) (*ConferenceResponse, error)
-	// 会议AI
+	//会议AI
 	AI(ctx context.Context, in *AIRequest, opts ...client.CallOption) (*AIResponse, error)
-	// HttAPI
+	//HttAPI
 	HttAPI(ctx context.Context, in *HttAPIRequest, opts ...client.CallOption) (*HttAPIResponse, error)
-	// TTS语音合成预缓存
+	//TTS语音合成预缓存
 	TTSPreheat(ctx context.Context, in *TTSPreheatRequest, opts ...client.CallOption) (*TTSPreheatResponse, error)
-	// Lua
+	//Lua
 	Lua(ctx context.Context, in *LuaRequest, opts ...client.CallOption) (*LuaResponse, error)
 	// Node Register
 	Register(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error)
@@ -575,6 +575,36 @@ func (c *xNodeService) ChannelBridge2(ctx context.Context, in *ChannelBridge2Req
 		return nil, err
 	}
 	return out, nil
+}
+
+func (c *ChannelEvent) ChannelBridge2(in *ChannelBridge2Request, opts ...client.CallOption) *Response {
+	if c == nil {
+		return &Response{
+			Code:    500,
+			Message: `Channel is nil`,
+		}
+	}
+	if in.GetUuid() == `` {
+		in.Uuid = c.GetUuid()
+	}
+	cOpts := client.CallOptions{}
+	for _, opt := range opts {
+		opt(&cOpts)
+	}
+	if len(cOpts.Address) == 0 {
+		opts = append(opts, c.WithAddress())
+	}
+	if cOpts.RequestTimeout == 0 {
+		opts = append(opts, client.WithRequestTimeout(5*time.Second))
+	}
+	response, err := Service().ChannelBridge2(context.TODO(), in, opts...)
+	if err != nil {
+		response = new(Response)
+		e := errors.Parse(err.Error())
+		response.Code = e.Code
+		response.Message = e.Detail
+	}
+	return response
 }
 
 func (c *xNodeService) UnBridge(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error) {
@@ -1738,9 +1768,9 @@ type XNodeHandler interface {
 	GetState(context.Context, *GetStateRequest, *StateResponse) error
 	// 获取通道数据
 	GetChannelData(context.Context, *GetChannelDataRequest, *ChannelDataResponse) error
-	// 读取DTMF按键
+	//  读取DTMF按键
 	ReadDTMF(context.Context, *DTMFRequest, *DTMFResponse) error
-	// 读取DTMF按键
+	//  读取DTMF按键
 	ReadDigits(context.Context, *DigitsRequest, *DigitsResponse) error
 	// 语音识别
 	DetectSpeech(context.Context, *DetectRequest, *DetectResponse) error
@@ -1768,19 +1798,19 @@ type XNodeHandler interface {
 	ConferenceInfo(context.Context, *ConferenceInfoRequest, *ConferenceInfoResponse) error
 	// 获取全部会议信息
 	ConferenceList(context.Context, *ConferenceListRequest, *ConferenceListResponse) error
-	// 呼叫中心FIFO队列（先入先出）
+	//呼叫中心FIFO队列（先入先出）
 	FIFO(context.Context, *FIFORequest, *FIFOResponse) error
-	// 呼叫中心Callcenter
+	//呼叫中心Callcenter
 	Callcenter(context.Context, *CallcenterRequest, *CallcenterResponse) error
-	// 会议Conference
+	//会议Conference
 	Conference(context.Context, *ConferenceRequest, *ConferenceResponse) error
-	// 会议AI
+	//会议AI
 	AI(context.Context, *AIRequest, *AIResponse) error
-	// HttAPI
+	//HttAPI
 	HttAPI(context.Context, *HttAPIRequest, *HttAPIResponse) error
-	// TTS语音合成预缓存
+	//TTS语音合成预缓存
 	TTSPreheat(context.Context, *TTSPreheatRequest, *TTSPreheatResponse) error
-	// Lua
+	//Lua
 	Lua(context.Context, *LuaRequest, *LuaResponse) error
 	// Node Register
 	Register(context.Context, *Request, *Response) error
