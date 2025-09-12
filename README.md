@@ -17,6 +17,14 @@
 
 ## 使用和开发
 
+
+### 修改proto
+
+1. 修改[proto](proto/)下的[xctrl.proto](proto/xctrl/xctrl.proto)或者[cman.proto](proto/cman/cman.proto)
+2. 如果需要实现ChannelEvent则需要在[xctrl.go](xctrl/cmd/protoc-gen-xctrl/plugin/xctrl/xctrl.go)下的**channelMethodTimeout**的Map中添加Key和Value, Key是Rpc**方法名**,Value是延迟**秒数**
+
+### 开发教程
+
 1. 克隆该项目到本地：
 
 ```shell
