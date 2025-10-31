@@ -1288,8 +1288,10 @@ message NodeShutDownRequest {
 }
 
 message MediaForkRequest {
-  string action = 1;
-  string url = 2;
+  string ctrl_uuid = 1;
+  string uuid = 2;
+  string action = 3;
+  string url = 4;
 }
 
 
