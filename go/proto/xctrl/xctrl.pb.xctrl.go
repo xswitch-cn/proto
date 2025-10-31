@@ -143,6 +143,8 @@ type XNodeService interface {
 	Register(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error)
 	// 停止接受新通话，等所有通话结束（默认最多等10分钟），停止fs节点
 	Shutdown(ctx context.Context, in *NodeShutDownRequest, opts ...client.CallOption) (*Response, error)
+	// Media Fork
+	MediaFork(ctx context.Context, in *MediaForkRequest, opts ...client.CallOption) (*MediaForkResponse, error)
 }
 
 type xNodeService struct {
@@ -1717,6 +1719,16 @@ func (c *xNodeService) Shutdown(ctx context.Context, in *NodeShutDownRequest, op
 	return out, nil
 }
 
+func (c *xNodeService) MediaFork(ctx context.Context, in *MediaForkRequest, opts ...client.CallOption) (*MediaForkResponse, error) {
+	req := c.c.NewRequest(c.name, "XNode.MediaFork", in)
+	out := new(MediaForkResponse)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // Server API for XNode service
 
 type XNodeHandler interface {
@@ -1816,6 +1828,8 @@ type XNodeHandler interface {
 	Register(context.Context, *Request, *Response) error
 	// 停止接受新通话，等所有通话结束（默认最多等10分钟），停止fs节点
 	Shutdown(context.Context, *NodeShutDownRequest, *Response) error
+	// Media Fork
+	MediaFork(context.Context, *MediaForkRequest, *MediaForkResponse) error
 }
 
 func RegisterXNodeHandler(s server.Server, hdlr XNodeHandler, opts ...server.HandlerOption) error {
@@ -1868,6 +1882,7 @@ func RegisterXNodeHandler(s server.Server, hdlr XNodeHandler, opts ...server.Han
 		Lua(ctx context.Context, in *LuaRequest, out *LuaResponse) error
 		Register(ctx context.Context, in *Request, out *Response) error
 		Shutdown(ctx context.Context, in *NodeShutDownRequest, out *Response) error
+		MediaFork(ctx context.Context, in *MediaForkRequest, out *MediaForkResponse) error
 	}
 	type XNode struct {
 		xNode
@@ -2070,4 +2085,8 @@ func (h *xNodeHandler) Register(ctx context.Context, in *Request, out *Response)
 
 func (h *xNodeHandler) Shutdown(ctx context.Context, in *NodeShutDownRequest, out *Response) error {
 	return h.XNodeHandler.Shutdown(ctx, in, out)
+}
+
+func (h *xNodeHandler) MediaFork(ctx context.Context, in *MediaForkRequest, out *MediaForkResponse) error {
+	return h.XNodeHandler.MediaFork(ctx, in, out)
 }
