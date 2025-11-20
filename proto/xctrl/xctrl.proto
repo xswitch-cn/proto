@@ -742,6 +742,7 @@ message SpeechRequest {
   bool always_ignore = 14;
   string break_ignore_regex = 15;
   string break_skip_regex = 16;
+  string nonbreakable_time = 17;
 }
 
 message DetectRequest {
