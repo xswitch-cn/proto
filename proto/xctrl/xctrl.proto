@@ -743,6 +743,9 @@ message SpeechRequest {
   string break_ignore_regex = 15;
   string break_skip_regex = 16;
   uint32 nonbreakable_time = 17;
+  string merge_delimiter = 18;
+  string asr_mode = 19;
+  string break_policy = 20;
 }
 
 message DetectRequest {
