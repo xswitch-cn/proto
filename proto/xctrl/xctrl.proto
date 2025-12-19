@@ -778,6 +778,22 @@ message DetectedData {
   string node_uuid = 12;
   string video_read_codec = 13;
   string video_write_codec = 14;
+  int32 elapsed_time = 15;
+  repeated string texts = 16;
+  repeated DetectedExtraInfo extra_info = 17;
+  bool broke = 18;
+  string broke_by = 19;
+}
+
+message DetectedExtraInfo {
+  string engine = 1;
+  int32 elapsed_time = 2;
+  string text = 3;
+  float confidence = 4;
+  EngineData engine_data = 5;
+  bool is_final = 6;
+  string uuid = 7;
+  string type = 8;
 }
 
 message EngineData {
@@ -807,6 +823,8 @@ message Payload  {
   string audio_extra_info = 10;
   string sentence_id = 11;
   double gender_score = 12;
+  string fixed_result = 13;
+  string unfixed_result = 14;
 }
 
 message StashResult {
@@ -815,6 +833,8 @@ message StashResult {
   string text = 3;
   double currentTime = 4;
   repeated string words = 5;
+  string fixedText = 6;
+  string unfixedText = 7;
 }
 
 message DetectResponse {
