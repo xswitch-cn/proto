@@ -112,6 +112,9 @@ service XNode {
 
   // 停止接受新通话，等所有通话结束（默认最多等10分钟），停止fs节点
   rpc Shutdown(NodeShutDownRequest) returns(Response) {}
+
+  // Media Fork
+  rpc MediaFork(MediaForkRequest) returns (MediaForkResponse){}
 }
 
 message AcceptRequest {
@@ -1282,4 +1285,18 @@ message CtrlStartUpRequest {
 
 message NodeShutDownRequest {
   string node_uuid = 1;
+}
+
+message MediaForkRequest {
+  string action = 1;
+  string url = 2;
+}
+
+
+message MediaForkResponse {
+  int32 code = 1;
+  string message = 2;
+  string node_uuid = 3;
+  // optional
+  string uuid = 4;
 }
