@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"testing"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/metadata"
+	"github.com/xswitch-cn/proto/xctrl/metadata"
 )
 
 func TestRequestToContext(t *testing.T) {

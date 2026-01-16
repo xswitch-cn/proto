@@ -4,7 +4,7 @@ package host
 import (
 	"net/http"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/api/resolver"
+	"github.com/xswitch-cn/proto/xctrl/api/resolver"
 )
 
 type Resolver struct {

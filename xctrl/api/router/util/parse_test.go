@@ -8,7 +8,7 @@ import (
 	"reflect"
 	"testing"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/logger"
+	"github.com/xswitch-cn/proto/xctrl/logger"
 )
 
 func TestTokenize(t *testing.T) {

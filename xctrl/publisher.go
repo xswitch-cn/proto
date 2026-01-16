@@ -3,7 +3,7 @@ package xctrl
 import (
 	"context"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/client"
+	"github.com/xswitch-cn/proto/xctrl/client"
 )
 
 type publisher struct {

@@ -6,8 +6,8 @@ import (
 
 	"github.com/go-redis/redis/v7"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/store"
-	log "git.xswitch.cn/xswitch/proto/xctrl/util/log"
+	"github.com/xswitch-cn/proto/xctrl/store"
+	log "github.com/xswitch-cn/proto/xctrl/util/log"
 )
 
 var Rediskv *rkv

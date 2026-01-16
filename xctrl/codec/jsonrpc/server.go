@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/codec"
+	"github.com/xswitch-cn/proto/xctrl/codec"
 )
 
 type serverCodec struct {

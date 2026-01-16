@@ -5,7 +5,7 @@ This is protobuf code generation for go-stack. We use protoc-gen-stack to reduce
 ## Install
 
 ```
-go get git.xswitch.cn/xswitch/xctrl/stack/cmd/protoc-gen-stack/v3
+go get github.com/xswitch-cn/xctrl/stack/cmd/protoc-gen-stack/v3
 ```
 
 Also required: 
@@ -112,7 +112,7 @@ message Response {
 }
 ```
 
-The proto generates a `RegisterGreeterHandler` function with a [api.Endpoint](https://godoc.org/git.xswitch.cn/xswitch/xctrl/stack/api#Endpoint). 
+The proto generates a `RegisterGreeterHandler` function with a [api.Endpoint](https://godoc.org/github.com/xswitch-cn/xctrl/stack/api#Endpoint). 
 
 ```diff
 func RegisterGreeterHandler(s server.Server, hdlr GreeterHandler, opts ...server.HandlerOption) error {

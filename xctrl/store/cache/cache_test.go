@@ -4,9 +4,9 @@ import (
 	"sort"
 	"testing"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/store"
-	"git.xswitch.cn/xswitch/proto/xctrl/store/memory"
 	"github.com/stretchr/testify/assert"
+	"github.com/xswitch-cn/proto/xctrl/store"
+	"github.com/xswitch-cn/proto/xctrl/store/memory"
 )
 
 func TestCache(t *testing.T) {

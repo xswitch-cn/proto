@@ -11,7 +11,7 @@ import (
 	"github.com/davecgh/go-spew/spew"
 	"github.com/kr/pretty"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/store"
+	"github.com/xswitch-cn/proto/xctrl/store"
 )
 
 func cleanup(db string, s store.Store) {

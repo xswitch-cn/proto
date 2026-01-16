@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/debug/log"
+	"github.com/xswitch-cn/proto/xctrl/debug/log"
 )
 
 func TestLogger(t *testing.T) {

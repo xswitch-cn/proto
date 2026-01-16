@@ -5,8 +5,8 @@ import (
 	"context"
 	"time"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/codec"
 	"github.com/google/uuid"
+	"github.com/xswitch-cn/proto/xctrl/codec"
 )
 
 // Server is a simple micro server abstraction

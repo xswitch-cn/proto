@@ -1,8 +1,8 @@
 package handler
 
 import (
-	"git.xswitch.cn/xswitch/proto/xctrl/api/router"
-	"git.xswitch.cn/xswitch/proto/xctrl/client"
+	"github.com/xswitch-cn/proto/xctrl/api/router"
+	"github.com/xswitch-cn/proto/xctrl/client"
 )
 
 var (

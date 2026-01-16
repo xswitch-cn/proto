@@ -5,7 +5,7 @@ import (
 	"sync"
 	"time"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/util/ring"
+	"github.com/xswitch-cn/proto/xctrl/util/ring"
 )
 
 type stats struct {

@@ -6,7 +6,7 @@ import (
 	"io"
 	"io/ioutil"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/codec"
+	"github.com/xswitch-cn/proto/xctrl/codec"
 )
 
 type Codec struct {

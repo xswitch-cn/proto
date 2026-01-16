@@ -1,4 +1,4 @@
-module git.xswitch.cn/xswitch/proto
+module github.com/xswitch-cn/proto
 
 go 1.16
 

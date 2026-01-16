@@ -6,14 +6,14 @@ import (
 	rtime "runtime"
 	"sync"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/client"
-	"git.xswitch.cn/xswitch/proto/xctrl/debug/handler"
-	"git.xswitch.cn/xswitch/proto/xctrl/debug/stats"
-	"git.xswitch.cn/xswitch/proto/xctrl/debug/trace"
-	"git.xswitch.cn/xswitch/proto/xctrl/logger"
-	"git.xswitch.cn/xswitch/proto/xctrl/server"
-	signalutil "git.xswitch.cn/xswitch/proto/xctrl/util/signal"
-	"git.xswitch.cn/xswitch/proto/xctrl/util/wrapper"
+	"github.com/xswitch-cn/proto/xctrl/client"
+	"github.com/xswitch-cn/proto/xctrl/debug/handler"
+	"github.com/xswitch-cn/proto/xctrl/debug/stats"
+	"github.com/xswitch-cn/proto/xctrl/debug/trace"
+	"github.com/xswitch-cn/proto/xctrl/logger"
+	"github.com/xswitch-cn/proto/xctrl/server"
+	signalutil "github.com/xswitch-cn/proto/xctrl/util/signal"
+	"github.com/xswitch-cn/proto/xctrl/util/wrapper"
 )
 
 type service struct {

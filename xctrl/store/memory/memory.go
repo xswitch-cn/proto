@@ -11,7 +11,7 @@ import (
 	"github.com/patrickmn/go-cache"
 	"github.com/pkg/errors"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/store"
+	"github.com/xswitch-cn/proto/xctrl/store"
 )
 
 // NewStore returns a memory store

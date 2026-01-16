@@ -5,12 +5,12 @@ import (
 	"context"
 	"time"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/client"
-	"git.xswitch.cn/xswitch/proto/xctrl/debug/log"
-	proto "git.xswitch.cn/xswitch/proto/xctrl/debug/proto"
-	"git.xswitch.cn/xswitch/proto/xctrl/debug/stats"
-	"git.xswitch.cn/xswitch/proto/xctrl/debug/trace"
-	"git.xswitch.cn/xswitch/proto/xctrl/server"
+	"github.com/xswitch-cn/proto/xctrl/client"
+	"github.com/xswitch-cn/proto/xctrl/debug/log"
+	proto "github.com/xswitch-cn/proto/xctrl/debug/proto"
+	"github.com/xswitch-cn/proto/xctrl/debug/stats"
+	"github.com/xswitch-cn/proto/xctrl/debug/trace"
+	"github.com/xswitch-cn/proto/xctrl/server"
 )
 
 // NewHandler returns an instance of the Debug Handler

@@ -1,4 +1,4 @@
-module git.xswitch.cn/xswitch/proto/xctrl/cmd/protoc-gen-xctrl
+module github.com/xswitch-cn/proto/xctrl/cmd/protoc-gen-xctrl
 
 go 1.16
 

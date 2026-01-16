@@ -5,7 +5,7 @@ import (
 	"context"
 	"time"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/metadata"
+	"github.com/xswitch-cn/proto/xctrl/metadata"
 )
 
 // Tracer is an interface for distributed tracing

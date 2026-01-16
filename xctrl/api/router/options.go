@@ -1,8 +1,8 @@
 package router
 
 import (
-	"git.xswitch.cn/xswitch/proto/xctrl/api/resolver"
-	"git.xswitch.cn/xswitch/proto/xctrl/api/resolver/vpath"
+	"github.com/xswitch-cn/proto/xctrl/api/resolver"
+	"github.com/xswitch-cn/proto/xctrl/api/resolver/vpath"
 )
 
 type Options struct {

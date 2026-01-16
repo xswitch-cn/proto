@@ -4,8 +4,8 @@ import (
 	"context"
 	"time"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/util/ring"
 	"github.com/google/uuid"
+	"github.com/xswitch-cn/proto/xctrl/util/ring"
 )
 
 type memTracer struct {

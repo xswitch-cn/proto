@@ -4,8 +4,8 @@ package memory
 import (
 	"fmt"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/debug/log"
-	"git.xswitch.cn/xswitch/proto/xctrl/util/ring"
+	"github.com/xswitch-cn/proto/xctrl/debug/log"
+	"github.com/xswitch-cn/proto/xctrl/util/ring"
 )
 
 var (

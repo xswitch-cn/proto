@@ -8,8 +8,8 @@ import (
 
 	"github.com/patrickmn/go-cache"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/store"
 	"github.com/kr/pretty"
+	"github.com/xswitch-cn/proto/xctrl/store"
 )
 
 func TestMemoryReInit(t *testing.T) {
