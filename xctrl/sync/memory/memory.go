@@ -5,7 +5,7 @@ import (
 	gosync "sync"
 	"time"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/sync"
+	"github.com/xswitch-cn/proto/xctrl/sync"
 )
 
 type memorySync struct {

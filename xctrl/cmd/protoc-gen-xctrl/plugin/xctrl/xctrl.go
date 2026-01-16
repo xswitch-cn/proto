@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"strings"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/cmd/protoc-gen-xctrl/generator"
 	pb "github.com/golang/protobuf/protoc-gen-go/descriptor"
+	"github.com/xswitch-cn/proto/xctrl/cmd/protoc-gen-xctrl/generator"
 	options "google.golang.org/genproto/googleapis/api/annotations"
 	"google.golang.org/protobuf/proto"
 )
@@ -15,12 +15,12 @@ import (
 // Paths for packages used by code generated in this file,
 // relative to the import_prefix of the generator.Generator.
 const (
-	apiPkgPath     = "git.xswitch.cn/xswitch/proto/xctrl/api"
+	apiPkgPath     = "github.com/xswitch-cn/proto/xctrl/api"
 	contextPkgPath = "context"
 	timePkgPath    = "time"
-	clientPkgPath  = "git.xswitch.cn/xswitch/proto/xctrl/client"
-	serverPkgPath  = "git.xswitch.cn/xswitch/proto/xctrl/server"
-	errorsPkgPath  = "git.xswitch.cn/xswitch/proto/xctrl/errors"
+	clientPkgPath  = "github.com/xswitch-cn/proto/xctrl/client"
+	serverPkgPath  = "github.com/xswitch-cn/proto/xctrl/server"
+	errorsPkgPath  = "github.com/xswitch-cn/proto/xctrl/errors"
 )
 
 func init() {

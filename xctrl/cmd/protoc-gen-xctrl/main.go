@@ -58,8 +58,8 @@ import (
 	"io"
 	"os"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/cmd/protoc-gen-xctrl/generator"
-	_ "git.xswitch.cn/xswitch/proto/xctrl/cmd/protoc-gen-xctrl/plugin/xctrl"
+	"github.com/xswitch-cn/proto/xctrl/cmd/protoc-gen-xctrl/generator"
+	_ "github.com/xswitch-cn/proto/xctrl/cmd/protoc-gen-xctrl/plugin/xctrl"
 	"google.golang.org/protobuf/proto"
 )
 

@@ -10,7 +10,7 @@ Set the logger for micro libraries
 
 ```go
 // import go-micro/util/log
-import "git.xswitch.cn/xswitch/xctrl/stack/util/log"
+import "github.com/xswitch-cn/xctrl/stack/util/log"
 
 // SetLogger expects github.com/go-log/log.Logger interface
 log.SetLogger(mylogger)

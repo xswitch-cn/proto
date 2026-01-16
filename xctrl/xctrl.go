@@ -4,8 +4,8 @@ package xctrl
 import (
 	"context"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/client"
-	"git.xswitch.cn/xswitch/proto/xctrl/server"
+	"github.com/xswitch-cn/proto/xctrl/client"
+	"github.com/xswitch-cn/proto/xctrl/server"
 )
 
 type serviceKey struct{}

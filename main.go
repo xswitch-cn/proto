@@ -6,10 +6,10 @@ import (
 
 	"log"
 
-	"git.xswitch.cn/xswitch/proto/go/proto/cman"
-	"git.xswitch.cn/xswitch/proto/go/proto/xctrl"
-	"git.xswitch.cn/xswitch/proto/xctrl/client"
-	ulog "git.xswitch.cn/xswitch/proto/xctrl/util/log"
+	"github.com/xswitch-cn/proto/go/proto/cman"
+	"github.com/xswitch-cn/proto/go/proto/xctrl"
+	"github.com/xswitch-cn/proto/xctrl/client"
+	ulog "github.com/xswitch-cn/proto/xctrl/util/log"
 )
 
 type Logger struct {

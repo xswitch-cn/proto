@@ -8,11 +8,11 @@ import (
 	"strings"
 	"sync"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/api"
-	"git.xswitch.cn/xswitch/proto/xctrl/api/router"
-	"git.xswitch.cn/xswitch/proto/xctrl/api/router/util"
-	"git.xswitch.cn/xswitch/proto/xctrl/logger"
-	"git.xswitch.cn/xswitch/proto/xctrl/metadata"
+	"github.com/xswitch-cn/proto/xctrl/api"
+	"github.com/xswitch-cn/proto/xctrl/api/router"
+	"github.com/xswitch-cn/proto/xctrl/api/router/util"
+	"github.com/xswitch-cn/proto/xctrl/logger"
+	"github.com/xswitch-cn/proto/xctrl/metadata"
 )
 
 type endpoint struct {

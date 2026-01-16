@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"strings"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/metadata"
+	"github.com/xswitch-cn/proto/xctrl/metadata"
 )
 
 func FromRequest(r *http.Request) context.Context {

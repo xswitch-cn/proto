@@ -3,7 +3,7 @@ package client
 import (
 	"context"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/errors"
+	"github.com/xswitch-cn/proto/xctrl/errors"
 )
 
 // note that returning either false or a non-nil error will result in the call not being retried

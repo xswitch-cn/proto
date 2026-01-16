@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"strings"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/logger"
+	"github.com/xswitch-cn/proto/xctrl/logger"
 )
 
 var (

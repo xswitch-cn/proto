@@ -6,7 +6,7 @@ import (
 	"log"
 	"time"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/codec"
+	"github.com/xswitch-cn/proto/xctrl/codec"
 )
 
 const defaultTimeout = 60 * time.Second

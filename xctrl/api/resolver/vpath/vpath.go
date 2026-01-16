@@ -7,7 +7,7 @@ import (
 	"regexp"
 	"strings"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/api/resolver"
+	"github.com/xswitch-cn/proto/xctrl/api/resolver"
 )
 
 func NewResolver(opts ...resolver.Option) resolver.Resolver {

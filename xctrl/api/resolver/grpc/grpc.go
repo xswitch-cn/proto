@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"strings"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/api/resolver"
+	"github.com/xswitch-cn/proto/xctrl/api/resolver"
 )
 
 type Resolver struct{}

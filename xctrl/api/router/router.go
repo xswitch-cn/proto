@@ -4,7 +4,7 @@ package router
 import (
 	"net/http"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/api"
+	"github.com/xswitch-cn/proto/xctrl/api"
 )
 
 // Router is used to determine an endpoint for a request

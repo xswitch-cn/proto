@@ -6,7 +6,7 @@ import (
 	"io"
 	"sync"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/codec"
+	"github.com/xswitch-cn/proto/xctrl/codec"
 )
 
 type clientCodec struct {

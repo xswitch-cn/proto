@@ -10,7 +10,7 @@ import (
 	"sync"
 	"time"
 
-	dlog "git.xswitch.cn/xswitch/proto/xctrl/debug/log"
+	dlog "github.com/xswitch-cn/proto/xctrl/debug/log"
 )
 
 func init() {

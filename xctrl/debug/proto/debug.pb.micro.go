@@ -11,8 +11,8 @@ import (
 
 import (
 	context "context"
-	client "git.xswitch.cn/xswitch/proto/xctrl/client"
-	server "git.xswitch.cn/xswitch/proto/xctrl/server"
+	client "github.com/xswitch-cn/proto/xctrl/client"
+	server "github.com/xswitch-cn/proto/xctrl/server"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.

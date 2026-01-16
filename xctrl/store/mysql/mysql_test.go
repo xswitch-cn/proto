@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/store"
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/xswitch-cn/proto/xctrl/store"
 )
 
 var (

@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/client"
+	"github.com/xswitch-cn/proto/xctrl/client"
 )
 
 // Options contains configuration for the Store

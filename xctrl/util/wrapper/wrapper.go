@@ -4,11 +4,11 @@ import (
 	"context"
 	"strings"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/client"
-	"git.xswitch.cn/xswitch/proto/xctrl/debug/stats"
-	"git.xswitch.cn/xswitch/proto/xctrl/debug/trace"
-	"git.xswitch.cn/xswitch/proto/xctrl/metadata"
-	"git.xswitch.cn/xswitch/proto/xctrl/server"
+	"github.com/xswitch-cn/proto/xctrl/client"
+	"github.com/xswitch-cn/proto/xctrl/debug/stats"
+	"github.com/xswitch-cn/proto/xctrl/debug/trace"
+	"github.com/xswitch-cn/proto/xctrl/metadata"
+	"github.com/xswitch-cn/proto/xctrl/server"
 )
 
 type fromServiceWrapper struct {

@@ -10,11 +10,11 @@ import (
 	"strings"
 	"time"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/api/handler"
-	proto "git.xswitch.cn/xswitch/proto/xctrl/api/proto"
-	"git.xswitch.cn/xswitch/proto/xctrl/util/ctx"
 	"github.com/google/uuid"
 	"github.com/oxtoacart/bpool"
+	"github.com/xswitch-cn/proto/xctrl/api/handler"
+	proto "github.com/xswitch-cn/proto/xctrl/api/proto"
+	"github.com/xswitch-cn/proto/xctrl/util/ctx"
 )
 
 var (

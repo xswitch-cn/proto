@@ -12,10 +12,10 @@ import (
 
 import (
 	context "context"
-	api "git.xswitch.cn/xswitch/proto/xctrl/api"
-	client "git.xswitch.cn/xswitch/proto/xctrl/client"
-	errors "git.xswitch.cn/xswitch/proto/xctrl/errors"
-	server "git.xswitch.cn/xswitch/proto/xctrl/server"
+	api "github.com/xswitch-cn/proto/xctrl/api"
+	client "github.com/xswitch-cn/proto/xctrl/client"
+	errors "github.com/xswitch-cn/proto/xctrl/errors"
+	server "github.com/xswitch-cn/proto/xctrl/server"
 	time "time"
 )
 

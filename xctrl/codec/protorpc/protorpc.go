@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"sync"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/codec"
 	"github.com/golang/protobuf/proto"
+	"github.com/xswitch-cn/proto/xctrl/codec"
 )
 
 type flusher interface {

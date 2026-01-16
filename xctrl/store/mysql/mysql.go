@@ -8,8 +8,8 @@ import (
 
 	"github.com/pkg/errors"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/store"
-	"git.xswitch.cn/xswitch/proto/xctrl/util/log"
+	"github.com/xswitch-cn/proto/xctrl/store"
+	"github.com/xswitch-cn/proto/xctrl/util/log"
 )
 
 var (

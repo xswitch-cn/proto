@@ -3,15 +3,15 @@
 本仓库包含以下内容：
 
 - proto：Protocol Buffer描述文件。
-- go：Go语言SDK，配合[xctrl](https://git.xswitch.cn/xswitch/xctrl)使用。
+- go：Go语言SDK，配合[xctrl](https://github.com/xswitch-cn/xctrl)使用。
 - java：Java语言SDK。
 - docs：文档。
 - xctrl：Go Protobuf代码生成器和插件。
 
 相关文档：
 
-- [xctrl](https://git.xswitch.cn/xswitch/xctrl)：Go语言SDK使用和开发文档。
-- 协议参考文档参见：<https://git.xswitch.cn/xswitch/proto/src/branch/main/docs>。
+- [xctrl](https://github.com/xswitch-cn/xctrl)：Go语言SDK使用和开发文档。
+- 协议参考文档参见：<https://github.com/xswitch-cn/proto/src/branch/main/docs>。
 - 示例：<https://git.xswitch.cn/xswitch/xcc-examples/src/branch/master/go> 。
 - XCC API文档：<https://docs.xswitch.cn/xcc-api/> 。
 
@@ -28,7 +28,7 @@
 1. 克隆该项目到本地：
 
 ```shell
-git clone https://git.xswitch.cn/xswitch/xctrl.git
+git clone https://github.com/xswitch-cn/xctrl.git
 cd xctrl
 ```
 

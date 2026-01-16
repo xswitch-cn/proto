@@ -1,7 +1,7 @@
 package memory
 
 import (
-	"git.xswitch.cn/xswitch/proto/xctrl/debug/log"
+	"github.com/xswitch-cn/proto/xctrl/debug/log"
 )
 
 type logStream struct {

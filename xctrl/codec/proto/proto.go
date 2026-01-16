@@ -5,8 +5,8 @@ import (
 	"io"
 	"io/ioutil"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/codec"
 	"github.com/golang/protobuf/proto"
+	"github.com/xswitch-cn/proto/xctrl/codec"
 )
 
 type Codec struct {

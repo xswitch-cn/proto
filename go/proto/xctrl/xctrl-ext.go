@@ -1,7 +1,7 @@
 package xctrl
 
 import (
-	client "git.xswitch.cn/xswitch/proto/xctrl/client"
+	client "github.com/xswitch-cn/proto/xctrl/client"
 
 	"encoding/json"
 )

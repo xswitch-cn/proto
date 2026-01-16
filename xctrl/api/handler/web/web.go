@@ -9,8 +9,8 @@ import (
 	"net/url"
 	"strings"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/api"
-	"git.xswitch.cn/xswitch/proto/xctrl/api/handler"
+	"github.com/xswitch-cn/proto/xctrl/api"
+	"github.com/xswitch-cn/proto/xctrl/api/handler"
 )
 
 const (

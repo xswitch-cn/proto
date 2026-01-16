@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/store"
 	"github.com/go-redis/redis/v7"
+	"github.com/xswitch-cn/proto/xctrl/store"
 )
 
 func init() {

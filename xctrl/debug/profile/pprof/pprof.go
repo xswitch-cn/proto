@@ -9,7 +9,7 @@ import (
 	"sync"
 	"time"
 
-	"git.xswitch.cn/xswitch/proto/xctrl/debug/profile"
+	"github.com/xswitch-cn/proto/xctrl/debug/profile"
 )
 
 type profiler struct {
