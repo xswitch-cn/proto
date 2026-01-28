@@ -775,7 +775,7 @@ message DetectedData {
   // the ASR engine
   string engine = 8;
   // string or JSON Struct, detailed object returned from ASR engine
-  EngineData engine_data = 9;
+  google.protobuf.Struct engine_data = 9;
   uint32 offset = 10;
   string uuid = 11;
   string node_uuid = 12;

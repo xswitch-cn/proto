@@ -1,5 +1,6 @@
 GOPATH:=$(shell go env GOPATH)
 LOCAL_YML=
+JAVA_VERSION ?= 0.3.11
 
 ifeq ($(VERSION),)
 VERSION := latest
@@ -19,8 +20,19 @@ proto:
 
 .PHONY: java
 java:
-	protoc --proto_path=${GOPATH}/src:. --java_out=java proto/xctrl/*.proto
-	protoc --proto_path=${GOPATH}/src:. --java_out=java proto/cman/*.proto
+	protoc --proto_path=. --java_out=java proto/xctrl/*.proto
+	protoc --proto_path=. --java_out=java proto/cman/*.proto
+
+.PHONY: java-push
+java-push:
+	@command -v mvn >/dev/null 2>&1 || (echo "mvn not found" && exit 1)
+	mvn -f java/pom.xml -Prelease clean deploy
+
+.PHONY: java-push-local
+java-push-local:
+	@command -v mvn >/dev/null 2>&1 || (echo "mvn not found" && exit 1)
+	mvn -f java/pom.xml clean package
+	@echo "jar: java/target/xswitch-proto-$(JAVA_VERSION).jar"
 
 doc-md:
 	protoc --doc_out=docs --doc_opt=template/default.md,base.md proto/base/base.proto
