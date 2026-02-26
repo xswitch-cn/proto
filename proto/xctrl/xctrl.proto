@@ -749,6 +749,7 @@ message SpeechRequest {
   string merge_delimiter = 18;
   string asr_mode = 19;
   string break_policy = 20;
+  bool wait_feed_tts = 21;
 }
 
 message DetectRequest {
