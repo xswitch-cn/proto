@@ -750,7 +750,7 @@ message SpeechRequest {
   string asr_mode = 19;
   string break_policy = 20;
   bool wait_feed_tts = 21;
-  bool expect_100_trying = 22;
+  bool expect_100_continue = 22;
 }
 
 message DetectRequest {
