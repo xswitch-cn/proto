@@ -788,6 +788,8 @@ message DetectedData {
   repeated DetectedExtraInfo extra_info = 17;
   bool broke = 18;
   string broke_by = 19;
+  string segment_recording_path = 20;
+  int32 segment_recording_duration = 21;
 }
 
 message DetectedExtraInfo {
