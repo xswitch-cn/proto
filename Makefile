@@ -10,6 +10,7 @@ endif
 setup:
 	go mod tidy
 	go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.30.0
+	go install github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc@v1.5.1
 	cd xctrl/cmd/protoc-gen-xctrl && go install && cd -
 
 .PHONY: proto
@@ -40,7 +41,7 @@ doc-md:
 	protoc --doc_out=docs --doc_opt=template/default.md,cman.md proto/cman/cman.proto
 	sed -i -e 's/#map<string, string>/#map-string-string/' docs/xctrl.md
 	sed -i -e 's/#map<string, string>/#map-string-string/' docs/cman.md
-	rm docs/*.md-e
+	rm -f docs/*.md-e
 
 doc-html:
 	protoc --doc_out=docs --doc_opt=html,xctrl.html proto/xctrl/xctrl.proto
