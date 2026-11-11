@@ -867,6 +867,9 @@ message DetectSpeechFeedTTSRequest {
   bool preheat = 6;
   bool is_last = 7;
   uint32 silence_ms = 8;
+  string transfer_after_play = 9;
+  string hangup_cause = 10;
+  bool hangup_after_play = 11;
 }
 
 message RingBackDetectionRequest {
